@@ -36,4 +36,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: main  # deploying branch
-          cname: brainynight.github.io/second-brain/
+          cname: brainynight.github.io/second-brain
