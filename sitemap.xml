@@ -2,65 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://brainynight.github.io/second-brain/notes/setup/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
-  </url><url>
-    <loc>https://brainynight.github.io/second-brain/notes/editing/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
-  </url><url>
-    <loc>https://brainynight.github.io/second-brain/notes/obsidian/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
-  </url><url>
-    <loc>https://brainynight.github.io/second-brain/notes/preview-changes/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
-  </url><url>
-    <loc>https://brainynight.github.io/second-brain/notes/hosting/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
-  </url><url>
-    <loc>https://brainynight.github.io/second-brain/notes/callouts/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
+    <loc>https://brainynight.github.io/second-brain/categories/blog/</loc>
+    <lastmod>2023-04-09T18:39:03+08:00</lastmod>
   </url><url>
     <loc>https://brainynight.github.io/second-brain/categories/</loc>
+    <lastmod>2023-04-09T18:39:03+08:00</lastmod>
   </url><url>
-    <loc>https://brainynight.github.io/second-brain/notes/CJK-&#43;-Latex-Support-%E6%B5%8B%E8%AF%95/</loc>
+    <loc>https://brainynight.github.io/second-brain/categories/hugo/</loc>
+    <lastmod>2023-04-09T18:39:03+08:00</lastmod>
   </url><url>
-    <loc>https://brainynight.github.io/second-brain/notes/config/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
-  </url><url>
-    <loc>https://brainynight.github.io/second-brain/notes/custom-Domain/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
-  </url><url>
-    <loc>https://brainynight.github.io/second-brain/notes/docker/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
-  </url><url>
-    <loc>https://brainynight.github.io/second-brain/notes/ignore-notes/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
+    <loc>https://brainynight.github.io/second-brain/notes/Area/Hugo/Hugo-Publish-Simple-Page/</loc>
+    <lastmod>2023-04-09T18:39:03+08:00</lastmod>
   </url><url>
     <loc>https://brainynight.github.io/second-brain/notes/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
+    <lastmod>2023-04-09T18:39:03+08:00</lastmod>
   </url><url>
-    <loc>https://brainynight.github.io/second-brain/notes/philosophy/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
+    <loc>https://brainynight.github.io/second-brain/notes/Area/Hugo/usable-meta-data/</loc>
+    <lastmod>2023-04-09T18:39:03+08:00</lastmod>
   </url><url>
-    <loc>https://brainynight.github.io/second-brain/notes/search/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
+    <loc>https://brainynight.github.io/second-brain/categories/Obsidian/</loc>
+    <lastmod>2023-04-09T18:39:03+08:00</lastmod>
   </url><url>
-    <loc>https://brainynight.github.io/second-brain/tags/setup/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
+    <loc>https://brainynight.github.io/second-brain/notes/Area/Obsidian/ObsidianPlugins/</loc>
+    <lastmod>2023-04-09T18:39:03+08:00</lastmod>
   </url><url>
-    <loc>https://brainynight.github.io/second-brain/notes/showcase/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
+    <loc>https://brainynight.github.io/second-brain/tags/Quartz/</loc>
+    <lastmod>2023-04-09T18:39:03+08:00</lastmod>
+  </url><url>
+    <loc>https://brainynight.github.io/second-brain/categories/Quartz/</loc>
+    <lastmod>2023-04-09T18:39:03+08:00</lastmod>
+  </url><url>
+    <loc>https://brainynight.github.io/second-brain/notes/Archive/Special-Syntax-in-Theme-Things-2/</loc>
+    <lastmod>2023-04-09T18:39:03+08:00</lastmod>
+  </url><url>
+    <loc>https://brainynight.github.io/second-brain/notes/Area/Obsidian/SyncObsidian/</loc>
+    <lastmod>2023-04-09T18:39:03+08:00</lastmod>
   </url><url>
     <loc>https://brainynight.github.io/second-brain/tags/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
+    <lastmod>2023-04-09T18:39:03+08:00</lastmod>
   </url><url>
-    <loc>https://brainynight.github.io/second-brain/notes/troubleshooting/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
+    <loc>https://brainynight.github.io/second-brain/notes/Area/PKM/%E4%BD%BF%E7%94%A8-Quartz-%E5%BB%BA%E7%AB%8B%E9%83%A8%E8%90%BD%E6%A0%BC/</loc>
   </url><url>
-    <loc>https://brainynight.github.io/second-brain/notes/updating/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
+    <loc>https://brainynight.github.io/second-brain/notes/Area/PKM/Publish-Quartz-to-Github-Page/</loc>
+    <lastmod>2023-04-09T18:39:03+08:00</lastmod>
+  </url><url>
+    <loc>https://brainynight.github.io/second-brain/notes/Resource/Books/The-Second-Brain/</loc>
+    <lastmod>2023-04-09T18:39:03+08:00</lastmod>
+  </url><url>
+    <loc>https://brainynight.github.io/second-brain/notes/Resource/Whisky/%E6%A0%BC%E8%98%AD%E5%82%91-%E5%96%AE%E4%B8%80%E9%BA%A5%E8%8A%BD%E5%A8%81%E5%A3%AB%E5%BF%8C/</loc>
+  </url><url>
+    <loc>https://brainynight.github.io/second-brain/notes/Resource/Whisky/%E9%A1%98%E6%9C%9B%E6%B8%85%E5%96%AE/</loc>
   </url><url>
     <loc>https://brainynight.github.io/second-brain/</loc>
-    <lastmod>2023-04-09T14:57:49+08:00</lastmod>
+    <lastmod>2023-04-09T18:39:03+08:00</lastmod>
   </url>
 </urlset>

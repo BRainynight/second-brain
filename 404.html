@@ -23,11 +23,6 @@
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
   
     
-      
-      <meta name="twitter:site" content="_jzhao" />
-    
-  
-    
   
 
   <title>
@@ -135,13 +130,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.ee9d154f7b958862b42d9147b1373a58.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.ed5187e342860f65bed32e40607500de.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.fc8cb357049e400dff71eb35ef72a639.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.f5ab295fa571f52152f4bab258e25629.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on </title>
+    <link>https://brainynight.github.io/second-brain/categories/hugo/</link>
+    <description>Recent content in hugo on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://brainynight.github.io/second-brain/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo Publish Simple Page</title>
+      <link>https://brainynight.github.io/second-brain/notes/Area/Hugo/Hugo-Publish-Simple-Page/</link>
+      <pubDate>Sun, 09 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Area/Hugo/Hugo-Publish-Simple-Page/</guid>
+      <description>Hugo 建立部落格的範例 直接用 Hugo 建立部落格，不使用 Quartz 的範例:
+Start hugo new site quickstart
+cd quickstart
+git init
+git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke</description>
+    </item>
+    
+  </channel>
+</rss>

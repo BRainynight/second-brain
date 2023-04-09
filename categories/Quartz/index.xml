@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quartz on </title>
+    <link>https://brainynight.github.io/second-brain/categories/Quartz/</link>
+    <description>Recent content in Quartz on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://brainynight.github.io/second-brain/categories/Quartz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 Quartz 建立部落格</title>
+      <link>https://brainynight.github.io/second-brain/notes/Area/PKM/%E4%BD%BF%E7%94%A8-Quartz-%E5%BB%BA%E7%AB%8B%E9%83%A8%E8%90%BD%E6%A0%BC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Area/PKM/%E4%BD%BF%E7%94%A8-Quartz-%E5%BB%BA%E7%AB%8B%E9%83%A8%E8%90%BD%E6%A0%BC/</guid>
+      <description>Install  Git Go lang Hugo: 需要手動加環境變數 go-obsidian 1  go install github.com/jackyzha0/hugo-obsidian@latest    Optional make `: Windows 下須使用 MinGW 安裝，參考: C++ 開發環境 在 Windows 11 中安裝 mingw-w64 及設定環境變數  Hugo 需要以 PowerShell]( https://learn.</description>
+    </item>
+    
+    <item>
+      <title>將Quartz發佈到Github Page</title>
+      <link>https://brainynight.github.io/second-brain/notes/Area/PKM/Publish-Quartz-to-Github-Page/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Area/PKM/Publish-Quartz-to-Github-Page/</guid>
+      <description>由於我對 github action 不熟悉，在設置到 github page 的時候遇到了一點困難&amp;hellip;。
+首先，如果專案是從 templage fork 過來的，它應該分成 hugo 跟 master 兩個 branch。其中
+ hugo: 存放 config, markdown files (content 底下) 的地方 master: 利用 github action 把專案內容轉成靜態網頁  我因為是 clone 下來再 push 到自己的專案，沒有遵守這兩個命名方式而遇到了一點困難。在我的專案中，main 對應的是存放 markdown files (轉換前) 的 page，publish 才是 github page 再生成時所根據的 branch。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Obsidian on </title>
+    <link>https://brainynight.github.io/second-brain/categories/Obsidian/</link>
+    <description>Recent content in Obsidian on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://brainynight.github.io/second-brain/categories/Obsidian/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ObsidianPlugins</title>
+      <link>https://brainynight.github.io/second-brain/notes/Area/Obsidian/ObsidianPlugins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Area/Obsidian/ObsidianPlugins/</guid>
+      <description>Theme  當前用的是 Thing2  minimal 也是熱門的主題，且與許多 plugin 相容  但是 header 之間不同階級沒有大小之分，我不喜歡，要用需要改 CSS。    Plugin  Obsidian Dataview mode: like notion https://ithelp.</description>
+    </item>
+    
+    <item>
+      <title>SyncObsidian</title>
+      <link>https://brainynight.github.io/second-brain/notes/Area/Obsidian/SyncObsidian/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Area/Obsidian/SyncObsidian/</guid>
+      <description>想在 IOS 上面也有 Sync 的 Obsidian 可以用!
+社群的作法是裝 ISH 以 Git 同步，我想實驗用 Terminus (比起 ISH 有在維護)
+  Sync with git on iOS for free using iSH  Setting up iOS git-based syncing with mobile app (using Working Copy)  </description>
+    </item>
+    
+  </channel>
+</rss>
