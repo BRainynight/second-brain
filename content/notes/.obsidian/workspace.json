@@ -1,0 +1,216 @@
+{
+  "main": {
+    "id": "9a07cae7f0ed3404",
+    "type": "split",
+    "children": [
+      {
+        "id": "f232df4d6ae0bcbe",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c0595570a22c2568",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Area/Hugo/Hugo front matter.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ce9843188060a7f4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Area/Obsidian/ObsidianPlugins.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "517cdc575eae1f38",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Area/Hugo/Hugo front matter.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c1af9e5e39bb9b9b",
+    "type": "split",
+    "children": [
+      {
+        "id": "90fce5908d1649ad",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9a2be32fa8b77c2a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "b106f598921cb1c7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "7a0d62804cf4d36f",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9481d0cc9008d9b0",
+    "type": "split",
+    "children": [
+      {
+        "id": "acd311b7c994d74b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f8eb981e8c296532",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Area/Hugo/Hugo front matter.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3038429f4a8e34ea",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Area/Hugo/Hugo front matter.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "9f3892eb9b50e874",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "378eeed0b2e9ffb1",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Area/Hugo/Hugo front matter.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:開啟快速切換": false,
+      "graph:查看關聯圖": false,
+      "canvas:建立新畫布": false,
+      "templates:插入模板": false,
+      "command-palette:開啟命令面板": false,
+      "random-note:開始漫遊筆記": false
+    }
+  },
+  "active": "517cdc575eae1f38",
+  "lastOpenFiles": [
+    "Area/Hugo/Hugo Publish Simple Page.md",
+    "Area/PKM/Publish Quartz to Github Page.md",
+    "Area/Hugo/Hugo front matter.md",
+    "Resource/Whisky/願望清單.md",
+    "Resource/Whisky/格蘭傑-單一麥芽威士忌.md",
+    "Resource/Books/The Second Brain.md",
+    "Area/PKM/使用 Quartz 建立部落格.md",
+    "Area/Obsidian/SyncObsidian.md",
+    "Area/Obsidian/ObsidianPlugins.md",
+    "Area/Obsidian",
+    "template/content.md",
+    "Area/PKM/The Second Brain.md",
+    "Area/Hugo",
+    "Area/新增資料夾",
+    "Area/PKM/Hugo front matter.md",
+    "Area/PKM",
+    "Resource/PKM/SyncObsidian.md",
+    "Resource/PKM/The Second Brain.md",
+    "Resource/PKM/Setup Quartz.md",
+    "Resource/PKM/ObsidianPlugins.md",
+    "Resource/PKM",
+    "Private/Dashboard.md",
+    "Private",
+    "新增資料夾",
+    "Resource/PersonalDB/The Second Brain.md",
+    "Dashboard.md",
+    "Resource/PersonalDB/SyncObsidian.md",
+    "Resource/PersonalDB/Setup Quartz.md",
+    "Resource/PersonalDB/ObsidianPlugins.md",
+    "Archive/Special Syntax in Theme Things 2.md",
+    "template",
+    "Project/新增資料夾",
+    "未命名.canvas",
+    "2023-03-26.md",
+    "波本威士忌.md",
+    "Resource/Whisky"
+  ]
+}
