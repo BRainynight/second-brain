@@ -6,4 +6,5 @@ content/.obsidian
 assets/indices/linkIndex.json
 assets/indices/contentIndex.json
 linkmap
-./*.sh
+convertFromContent.sh
+runHugoServer.sh
