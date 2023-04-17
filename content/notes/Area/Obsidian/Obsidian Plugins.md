@@ -1,5 +1,5 @@
 ---
-title: "ObsidianPlugins"
+title: "Obsidian Plugins"
 categories:
 - Obsidian
 ---

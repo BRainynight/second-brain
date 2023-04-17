@@ -10,9 +10,9 @@ enableSPA: true
 enableFooter: true
 enableContextualBacklinks: true
 enableRecentNotes: false
-enableGitHubEdit: true
+enableGitHubEdit: false
 enableMermaid: true
-GitHubLink: https://github.com/jackyzha0/quartz/tree/hugo/content
+GitHubLink: https://github.com/BRainynight/
 search:
   enableSemanticSearch: false
   operandApiKey: "REPLACE-WITH-YOUR-OPERAND-API-KEY"
@@ -20,7 +20,7 @@ search:
 description:
   Host my second brain and digital garden here.
 page_title:
-  "🪴 Quartz 3.3"
+  "🪴 Digital Note"
 links:
   - link_name: GitHub
     link: https://github.com/BRainynight

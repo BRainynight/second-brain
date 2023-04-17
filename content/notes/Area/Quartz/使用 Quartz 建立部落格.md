@@ -59,7 +59,9 @@ Hugo 需要以 PowerShell](https://learn.microsoft.com/en-us/powershell/scriptin
 
 ## 發佈到 Github Page
 
-參考 [[Publish Quartz to Github Page]]
+參考 
+
+![[Publish Quartz to Github Page]]
 
 
 ## 修改首頁

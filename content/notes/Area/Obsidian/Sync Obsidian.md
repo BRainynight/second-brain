@@ -1,5 +1,5 @@
 ---
-title: "SyncObsidian"
+title: "Obsidian Publish 的替代選擇"
 categories:
 - Obsidian
 ---

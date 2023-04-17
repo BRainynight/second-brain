@@ -1,5 +1,5 @@
 ---
-title: "將Quartz發佈到Github Page"
+title: "將 Quartz 發佈到 Github Page"
 categories:
 - Quartz
 tags:

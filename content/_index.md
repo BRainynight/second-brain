@@ -9,12 +9,18 @@ enableToc: false
 
 ## 近期閱讀
 
-- [[notes/Resource/Books/TheSecondBrain]]
+- [[notes/Resource/Books/The Second Brain]]
 
 
 ## 文章引導
 
 - [[notes]]
 - [[tags]]
-- 
+- [[notes/Project/Effective C++ Series/Effective C++ Outline]]
+
+## 注意事項
+
+Quartz 的 Graph 目前內建只支援絕對路徑!! 
+
+
 

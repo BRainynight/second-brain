@@ -1,5 +1,5 @@
 ---
-title: "可使用的metadata"
+title: "Hugo 可使用的metadata"
 date: 2023-04-09
 categories:
 - blog
@@ -28,7 +28,7 @@ title: spf13-vim 3.0 release and new website
 
 可建立 Obsidian 模板:
 
-```
+```yaml
 title: 
 date: {{date}}
 description: 
@@ -42,7 +42,7 @@ categories:
 ```
 
 本頁所使用的 metadata: 
-```
+```yaml
 title: "可使用的metadata"
 date: 2023-04-09
 slug: usable meta data # 網址變成此名稱
@@ -62,3 +62,6 @@ categories:
 
 但似乎 quartz 支援的只有 tags 而沒有 categories。我想參考這篇文章試試看能不能打開該功能: 
 https://ithelp.ithome.com.tw/articles/10244921
+
+## Description
+沒有用，不會改變預覽頁面的內容。

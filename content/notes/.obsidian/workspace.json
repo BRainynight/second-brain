@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "f232df4d6ae0bcbe",
+        "id": "63678a94fc02db4a",
         "type": "tabs",
         "children": [
           {
-            "id": "c0595570a22c2568",
+            "id": "4e0d2006b379c287",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Area/Hugo/Hugo front matter.md",
+                "file": "Project/Effective C++ Series/思維誤區-物件很小就可以 Pass By value.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -21,33 +21,19 @@
             }
           },
           {
-            "id": "ce9843188060a7f4",
+            "id": "67ea48fe0f5f3934",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Area/Obsidian/ObsidianPlugins.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "517cdc575eae1f38",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Area/Hugo/Hugo front matter.md",
+                "file": "Project/Effective C++ Series/The Copying in Pass by value.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -113,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Area/Hugo/Hugo front matter.md",
+                "file": "Project/Effective C++ Series/思維誤區-物件很小就可以 Pass By value.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Area/Hugo/Hugo front matter.md",
+                "file": "Project/Effective C++ Series/思維誤區-物件很小就可以 Pass By value.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Area/Hugo/Hugo front matter.md"
+                "file": "Project/Effective C++ Series/思維誤區-物件很小就可以 Pass By value.md"
               }
             }
           }
@@ -174,43 +160,45 @@
       "random-note:開始漫遊筆記": false
     }
   },
-  "active": "517cdc575eae1f38",
+  "active": "4e0d2006b379c287",
   "lastOpenFiles": [
-    "Area/Hugo/Hugo Publish Simple Page.md",
-    "Area/PKM/Publish Quartz to Github Page.md",
-    "Area/Hugo/Hugo front matter.md",
-    "Resource/Whisky/願望清單.md",
-    "Resource/Whisky/格蘭傑-單一麥芽威士忌.md",
-    "Resource/Books/The Second Brain.md",
-    "Area/PKM/使用 Quartz 建立部落格.md",
-    "Area/Obsidian/SyncObsidian.md",
-    "Area/Obsidian/ObsidianPlugins.md",
+    "Project/Effective C++ Series/Effective C++ Outline.md",
+    "Project/Effective C++ Series/思維誤區-物件很小就可以 Pass By value.md",
+    "Project/Effective C++ Series/The Copying in Pass by value.md",
+    "Project/Effective C++ Series/Const member function.md",
+    "Project/Effective C++ Series/Const in C++.md",
+    "Project/Effective C++ Series/讓介面容易被使用.md",
+    "Project/Effective C++ Series/Copying Function.md",
+    "Project/Effective C++ Series/為什麼要用獨立句將物件放入 Smart Pointer.md",
+    "Project/Effective C++ Series/Smart Pointer.md",
+    "Project/Effective C++ Series/Item54 Familiarize yourself with the standard library including TR1.md",
+    "Project/Effective C++ Series/Virtual Function.md",
+    "Project/Effective C++ Series/Itm10_TranscationUML.png",
+    "Project/Effective C++ Series/Itm10_TranscationUML.png.md",
+    "Project/Effective C++ Series/解構式與異常.md",
+    "Project/Effective C++ Series/為多型用途的基礎類別宣告 virtual 解構式.md",
+    "Project/Effective C++ Series/Item47 Use traits classes for information about types.md",
+    "Project/Effective C++ Series/Do not Declare Virtural Function in Non-polymorphic Base Class.md",
+    "Project/Effective C++ Series/Pure Virtual Destructor.md",
+    "Project/Effective C++ Series/Item55 Familiarize yourself with Boost.md",
+    "Project/Effective C++ Series/Deleted Function.md",
+    "Project/Effective C++ Series/Default Generated Functions.md",
+    "Project/Effective C++ Series/Replace define with const.md",
+    "Project/Effective C++ Series/Item28 Avoid returning handles to object internals.md",
+    "Project/Effective C++ Series/Member Initialization List.md",
+    "Project/Effective C++ Series/讓介面易於被使用.md",
+    "Project/Effective C++ Series/打破 Constness 限制.md",
+    "Private/Dashboard.md",
+    "Project/Effective C++ Series",
     "Area/Obsidian",
-    "template/content.md",
-    "Area/PKM/The Second Brain.md",
     "Area/Hugo",
     "Area/新增資料夾",
-    "Area/PKM/Hugo front matter.md",
     "Area/PKM",
-    "Resource/PKM/SyncObsidian.md",
-    "Resource/PKM/The Second Brain.md",
-    "Resource/PKM/Setup Quartz.md",
-    "Resource/PKM/ObsidianPlugins.md",
     "Resource/PKM",
-    "Private/Dashboard.md",
     "Private",
     "新增資料夾",
-    "Resource/PersonalDB/The Second Brain.md",
-    "Dashboard.md",
-    "Resource/PersonalDB/SyncObsidian.md",
-    "Resource/PersonalDB/Setup Quartz.md",
-    "Resource/PersonalDB/ObsidianPlugins.md",
-    "Archive/Special Syntax in Theme Things 2.md",
     "template",
     "Project/新增資料夾",
-    "未命名.canvas",
-    "2023-03-26.md",
-    "波本威士忌.md",
-    "Resource/Whisky"
+    "未命名.canvas"
   ]
 }

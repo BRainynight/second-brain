@@ -1,5 +1,5 @@
 ---
-title: "Hugo Publish Simple Page"
+title: "以 Hugo 發佈簡單的頁面"
 date: 2023-04-09
 categories:
 - hugo
