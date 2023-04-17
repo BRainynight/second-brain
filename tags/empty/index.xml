@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>empty on </title>
+    <link>https://brainynight.github.io/second-brain/tags/empty/</link>
+    <description>Recent content in empty on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://brainynight.github.io/second-brain/tags/empty/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Item28 Avoid returning handles to object internals</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item28-Avoid-returning-handles-to-object-internals/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item28-Avoid-returning-handles-to-object-internals/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>enum hack</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/enum-hack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/enum-hack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Item 18 Make interfaces easy to use correctly and hard to use incorrectly</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8/</guid>
+      <description>用 struct 包覆簡單的資料結構可以帶來可讀性 考量下面的例子:
+1 2 3 4 5 6 7  class Date { public: Date(int month, int day, int year); } Date(3, 31, 1999); // 正確 Date(30, 3, 1999); // 可能會誤打 Date(3, 40, 1999); // 可能有無效值   如果我們改以 struct如下，你幾乎不會犯下寫錯格的錯，Compiler 會自動提醒!</description>
+    </item>
+    
+    <item>
+      <title>Item30 Understand the ins and outs of inlining</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item30-Understand-the-ins-and-outs-of-inlining/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item30-Understand-the-ins-and-outs-of-inlining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Item47 Use traits classes for information about types</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item47-Use-traits-classes-for-information-about-types/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item47-Use-traits-classes-for-information-about-types/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Item54 Familiarize yourself with the standard library including TR1</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item54-Familiarize-yourself-with-the-standard-library-including-TR1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item54-Familiarize-yourself-with-the-standard-library-including-TR1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Item55 Familiarize yourself with Boost</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item55-Familiarize-yourself-with-Boost/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item55-Familiarize-yourself-with-Boost/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Singleton</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Singleton/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Singleton/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The definition and declaration of static const</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/The-definition-and-declaration-of-static-const/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/The-definition-and-declaration-of-static-const/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

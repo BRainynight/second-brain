@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cpp on </title>
+    <link>https://brainynight.github.io/second-brain/tags/cpp/</link>
+    <description>Recent content in cpp on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://brainynight.github.io/second-brain/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Const in C&#43;&#43;</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Const-in-C&#43;&#43;/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Const-in-C&#43;&#43;/</guid>
+      <description>Const Iterator 同理上述，宣告一個 iterator 為 const 表示這個 iterator 不能改變指向的對象，但是指向的對象之內容本身可以變。
+1  const std::vector&amp;lt;int&amp;gt;::iterator iter = vec.bgein();   如果想要指向一個不可被改變內容的物件，需要使用 const_iterator</description>
+    </item>
+    
+    <item>
+      <title>Const member function</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Const-member-function/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Const-member-function/</guid>
+      <description>The purpose of const on member functions is to identify which member functions may be invoked on const object.</description>
+    </item>
+    
+    <item>
+      <title>Effective C&#43;&#43; Outline</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Effective-C&#43;&#43;-Outline/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Effective-C&#43;&#43;-Outline/</guid>
+      <description>Chapter 1 條款1 C++ 是一個語言聯邦 C++ 融合了多種形式的 programming 手法，物件導向、procedural、generic、metaprogramming、functional&amp;hellip;。
+條款2 盡量以 const , enum, inline 取代 #define  以 const, enum, inline 取代 #define， 寧可以編譯器 (compiler) 取代前處理器 (pre-processor)。 對於單純的常數，以 const 或 enum 取代 對於形似 function 的巨集(macro)，用 inline 取代。  Const  [[Replace define with const]] [[The definition and declaration of static const ]] P14  Enum  [[enum hack]]  Inline 條款3 盡可能使用 const 盡可能的使用 const，它可以確保物件不被改變。特別是 custom class designer 更加需要注意 operator 的 constness。</description>
+    </item>
+    
+    <item>
+      <title>Copying Function</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Copying-Function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Copying-Function/</guid>
+      <description>Effective C++ 中，Copying Function 指的是 Copy construcot &amp;amp; Copy Assignment
+   當 Programmer 自己定義 Copying function 時，Compiler 不會警告你出錯!</description>
+    </item>
+    
+    <item>
+      <title>Do not Declare Virtural Function in Non-polymorphic Base Class</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Do-not-Declare-Virtural-Function-in-Non-polymorphic-Base-Class/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Do-not-Declare-Virtural-Function-in-Non-polymorphic-Base-Class/</guid>
+      <description>無端將不該擁有 virtual 的 class 宣告 virtual，與無端將所有的 function 宣告成 virtual，都是有毒的。
+ 當類別不作為 Base Class，或是不作為多型時的基本 Class 時，不應該使用 virtual。 原因是，virtual 背後是以 vptr (virtual table pointer) 和 vtbl (virtual table) 實作 virtual，需要耗費額外的記憶體。</description>
+    </item>
+    
+    <item>
+      <title>Identify Initialization and Assignment</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Identify-Initialization-and-Assignment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Identify-Initialization-and-Assignment/</guid>
+      <description>C++ 規定，member data initialization 發生在進入 Constructor 之前。在 Constructor 賦值屬於 assignment。 正確的 initialization 是使用 member initialization list (成員初值列)，取代賦值 (assignment)。
+ 此例中，第一種的做法效率好:</description>
+    </item>
+    
+    <item>
+      <title>Implicit TemplateInstantiation</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Implicit-TemplateInstantiation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Implicit-TemplateInstantiation/</guid>
+      <description> Occurs when a template is used to declare a pointer variable or a variable with the provided arguments
+ </description>
+    </item>
+    
+    <item>
+      <title>Member Initialization List</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Member-Initialization-List/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Member-Initialization-List/</guid>
+      <description>無論如何，使用 member initializer list 對 member data 初始化是最好的。儘管這麼做對內建型別的資料沒差，對非內建型別卻有巨大的意義。
+ 如果你就是想要 call member data 的 default constructor，依然可以透過 member initializer list 達成。只要給予空括號，不填內容即可。 這樣的好處是明白地列出所有 member data，避免有 data 忘記給初始值，特別是對非內建型別的member data，沒有初始化的結果是災難的。</description>
+    </item>
+    
+    <item>
+      <title>Pure Virtual Destructor</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Pure-Virtual-Destructor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Pure-Virtual-Destructor/</guid>
+      <description>現在的情境是，如果，你想要有一個抽象類 &amp;ndash; 抽象類的好處是自身無法被實例化。然而，抽象類的定義是，至少有一個 function 是 Pure Virtural Function。該選擇 &amp;ldquo;誰&amp;rdquo; 成為 Pure virtural function 呢? 洽巧手上沒有適合的人選! Destructor 會是個好選擇。因為
+ Abstract Class 總是被當作 Base Class Base Class 作為多型用途時，應當帶有 virtural destructor Pure Virtural Function 可使該 Class 形成 Abstract 三個點串起來&amp;ndash;「讓 destructor 變成 Pure Virtural 吧」，這樣不會有不該被 virtural 的 function 遭殃!</description>
+    </item>
+    
+    <item>
+      <title>Replace define with const</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Replace-define-with-const/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Replace-define-with-const/</guid>
+      <description>以編譯器取代前處理器 #define 的本質是 word replacement，如: #define RATIO 1.653，編譯器可能不認得 RATIO 並在錯誤訊息中從頭到尾以 1.653 取代 RATIO。
+1  const double Ratio=1.653; // Prefer   當以 const 取代 #define 時，有兩個需要注意的點</description>
+    </item>
+    
+    <item>
+      <title>Static Object</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Static-Object/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Static-Object/</guid>
+      <description>壽命從被建構出來，持續到程式結束為止。
+ 因此 Stack 和 Heap-based 物件都不是 static object。 這種物件包含 Global Object，定義在 Namespace Scope 的物件，Class &amp;amp; Function &amp;amp; File 內宣告成 static 的物件。</description>
+    </item>
+    
+    <item>
+      <title>Translation Unit</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Translation-Unit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Translation-Unit/</guid>
+      <description>A translation unit is the source code giving rise to a single object file. It&amp;rsquo;s basically a single source file, plus all of its #include files.</description>
+    </item>
+    
+    <item>
+      <title>思維誤區-物件很小就可以 Pass By value</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E6%80%9D%E7%B6%AD%E8%AA%A4%E5%8D%80-%E7%89%A9%E4%BB%B6%E5%BE%88%E5%B0%8F%E5%B0%B1%E5%8F%AF%E4%BB%A5-Pass-By-value/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E6%80%9D%E7%B6%AD%E8%AA%A4%E5%8D%80-%E7%89%A9%E4%BB%B6%E5%BE%88%E5%B0%8F%E5%B0%B1%E5%8F%AF%E4%BB%A5-Pass-By-value/</guid>
+      <description>有三個主因:
+ 並非「該物件/container」看起來很小，用 Pass by value 就沒有問題。許多 STL Container 在實作上的大小也就一個 Pointer 大一點，但 Copy Container 卻有「複製每一個 Pointer 所指向的物件」的風險在。 視 Compiler 而定，有些 Compiler 對待 Custom class 跟 built-in class 的態度大不相同，即使底層表述(underlying representation) 相同，仍可能以不同的操作對待，導致 Copy 在 Custom Class 就是比較慢。 Type 實作可能發生改變，現在 Copy 的代價不昂貴，不代表以後不會。  Pass By Value 的代價 [[The Copying in Pass by value]]</description>
+    </item>
+    
+    <item>
+      <title>打破 Constness 限制</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E6%89%93%E7%A0%B4-Constness-%E9%99%90%E5%88%B6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E6%89%93%E7%A0%B4-Constness-%E9%99%90%E5%88%B6/</guid>
+      <description>Physical Constness  編譯器堅守的觀點: Physical Constness，又稱 Bitwise constness。Const member function 不可以修改任何 non-static member data。
+ 然而，請看下例: operator[] 確實不會更動到 member data，可以通過 Bitwise Testing，卻把「改動權」暴露給 Client 端，造成不應該的賦值行為。</description>
+    </item>
+    
+    <item>
+      <title>讓介面易於被使用</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E6%98%93%E6%96%BC%E8%A2%AB%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E6%98%93%E6%96%BC%E8%A2%AB%E4%BD%BF%E7%94%A8/</guid>
+      <description>Return Const Value 避免回傳值被修改，如此例中，類別 Rational (有理數) 的乘積符號禁止其回傳值被賦予值 (assignment)。
+1 2  class Rational { ... }; const Rational operator*(const Rational&amp;amp; lhs, const Rational&amp;amp; rhs);   聽起來有點怪，但它可以預防 client 端寫出這種 code:</description>
+    </item>
+    
+  </channel>
+</rss>

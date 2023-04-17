@@ -1,0 +1,1999 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta
+    name="description"
+    content="Chapter 1 條款1 C&#43;&#43; 是一個語言聯邦 C&#43;&#43; 融合了多種形式的 programming 手法，物件導向、procedural、generic、metaprogramming、functional&hellip;。
+條款2 盡量以 const , enum, inline 取代 #define  以 const, enum, inline 取代 #define， 寧可以編譯器 (compiler) 取代前處理器 (pre-processor)。 對於單純的常數，以 const 或 enum 取代 對於形似 function 的巨集(macro)，用 inline 取代。  Const  [[Replace define with const]] [[The definition and declaration of static const ]] P14  Enum  [[enum hack]]  Inline 條款3 盡可能使用 const 盡可能的使用 const，它可以確保物件不被改變。特別是 custom class designer 更加需要注意 operator 的 constness。"
+  />
+  <meta property="og:title" content="Effective C&#43;&#43; Outline">
+  <meta property="og:description" content="Chapter 1 條款1 C&#43;&#43; 是一個語言聯邦 C&#43;&#43; 融合了多種形式的 programming 手法，物件導向、procedural、generic、metaprogramming、functional&hellip;。
+條款2 盡量以 const , enum, inline 取代 #define  以 const, enum, inline 取代 #define， 寧可以編譯器 (compiler) 取代前處理器 (pre-processor)。 對於單純的常數，以 const 或 enum 取代 對於形似 function 的巨集(macro)，用 inline 取代。  Const  [[Replace define with const]] [[The definition and declaration of static const ]] P14  Enum  [[enum hack]]  Inline 條款3 盡可能使用 const 盡可能的使用 const，它可以確保物件不被改變。特別是 custom class designer 更加需要注意 operator 的 constness。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
+  <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Effective-C&#43;&#43;-Outline/">
+  <meta property="og:width" content="200">
+  <meta property="og:height" content="200">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Effective C&#43;&#43; Outline" />
+  <meta name="twitter:description" content="Chapter 1 條款1 C&#43;&#43; 是一個語言聯邦 C&#43;&#43; 融合了多種形式的 programming 手法，物件導向、procedural、generic、metaprogramming、functional&hellip;。
+條款2 盡量以 const , enum, inline 取代 #define  以 const, enum, inline 取代 #define， 寧可以編譯器 (compiler) 取代前處理器 (pre-processor)。 對於單純的常數，以 const 或 enum 取代 對於形似 function 的巨集(macro)，用 inline 取代。  Const  [[Replace define with const]] [[The definition and declaration of static const ]] P14  Enum  [[enum hack]]  Inline 條款3 盡可能使用 const 盡可能的使用 const，它可以確保物件不被改變。特別是 custom class designer 更加需要注意 operator 的 constness。" />
+  <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
+  
+    
+  
+
+  <title>
+    Effective C&#43;&#43; Outline
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+  
+  
+  
+  
+  <link rel="shortcut icon" type="image/png"  href="https://brainynight.github.io/second-brain//icon.png" />
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <link href="https://brainynight.github.io/second-brain/styles.80333fa2099c0bee674efa435fde378c.min.css" rel="stylesheet" />
+
+  
+  <link href="https://brainynight.github.io/second-brain/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css" rel="stylesheet" id="theme-link">
+
+   
+  
+  
+  
+  
+  <script src="https://brainynight.github.io/second-brain/js/darkmode.ad5fa1629664e806f9e2c4589974fc3d.min.js"></script>
+  
+  
+  
+  <script src="https://brainynight.github.io/second-brain/js/util.00639692264b21bc3ee219733d38a8be.min.js"></script>
+  
+  
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"
+        integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx"
+        crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js"
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+        crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js"
+        integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A"
+        crossorigin="anonymous"></script>
+
+
+  
+  
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.2.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.2.1"></script>
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/popover.aa9bc99c7c38d3ae9538f218f1416adb.min.js"></script>
+
+  
+  
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js"></script>
+  
+
+  
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js"></script>
+  
+
+  
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js"></script>
+  
+
+  
+   
+  <script>
+    const SEARCH_ENABLED =  false 
+    const LATEX_ENABLED =  true 
+    const PRODUCTION =  true 
+    const BASE_URL = "https://brainynight.github.io/second-brain/"
+    const fetchData = Promise.all([
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.5774176485c8190c10df29ac55310a04.min.json")
+            .then(data => data.json())
+            .then(data => ({
+              index: data.index,
+              links: data.links,
+            })),
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9b8e45df320f913d0a228377efab5675.min.json")
+            .then(data => data.json()),
+        ])
+        .then(([{index, links}, content]) => ({
+          index,
+          links,
+          content,
+        }))
+
+      const render = () => {
+      
+
+      const siteBaseURL = new URL(BASE_URL);
+      const pathBase = siteBaseURL.pathname;
+      const pathWindow = window.location.pathname;
+      const isHome = pathBase == pathWindow;
+
+      addCopyButtons();
+      
+
+      addTitleToCodeBlocks();
+      
+
+      addCollapsibleCallouts();
+      
+
+      
+      initPopover(
+        "https://brainynight.github.io/second-brain",
+         true 
+      )
+      
+
+      
+      const footer = document.getElementById("footer")
+      if (footer) {
+        const container = document.getElementById("graph-container")
+        
+        if (!container) return requestAnimationFrame(render)
+        
+        container.textContent = ""
+
+        const drawGlobal = isHome &&  false ;
+        drawGraph(
+            "https://brainynight.github.io/second-brain",
+            drawGlobal,
+            [{"/moc":"#4388cc"}],
+            drawGlobal ? {"centerForce":1,"depth":-1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.5,"linkDistance":1,"opacityScale":3,"repelForce":1,"scale":1.4} : {"centerForce":1,"depth":1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.6,"linkDistance":1,"opacityScale":3,"repelForce":2,"scale":1.2}
+          );
+
+        }
+      
+
+      
+        var els = document.getElementsByClassName("mermaid");
+        if (els.length > 0) {
+          import('https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs').then(
+            (obj) => {
+              
+              
+              obj.default.init();
+            }
+          )
+        }
+      
+      
+      
+      function clickHandler(evt) {
+        const target = evt.target 
+        const classNames = target.className.split(" ")
+        const broken = classNames.includes("broken")
+        const internal = classNames.includes("internal-link")
+        plausible("Link Click", {
+          props: {
+            href: target.href,
+            broken,
+            internal,
+            graph: false,
+          }
+        })
+      }
+
+      const links = document.querySelectorAll("a")
+      for (link of links) {
+        if (link.className.includes("root-title")) {
+          link.addEventListener('click', clickHandler, {once: true})
+        }
+      }
+    }
+
+    const init = (doc = document) => {
+      
+      addCopyButtons();
+      
+
+      addTitleToCodeBlocks();
+      renderMathInElement(doc.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+        ],
+        macros: {
+          '’': "'"
+        },
+        throwOnError : false
+      });
+      
+    };
+  </script>
+  
+  
+  <script type="module">
+    import { attachSPARouting } from "https:\/\/brainynight.github.io\/second-brain\/js\/router.d6fe6bd821db9ea97f9aeefae814d8e7.min.js"
+    attachSPARouting(init, render)
+  </script>
+  
+  
+  <script defer data-domain="brainynight.github.io/second-brain" src="https://plausible.io/js/script.js"></script>
+  <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+</head>
+
+
+<body>
+<div id="search-container">
+  <div id="search-space">
+    <input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search"
+      placeholder="Search for something..." dir="">
+    <div id="results-container">
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"
+  integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin="anonymous" defer></script>
+
+<script defer src="https://brainynight.github.io/second-brain/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js"></script>
+
+
+
+<div class="singlePage">
+    
+    <header>
+    
+    <h1 id="page-title"><a class="root-title" href="https://brainynight.github.io/second-brain/">🪴 Digital Note</a></h1>
+    <div class="spacer"></div>
+    <div id="search-icon">
+      <p>Search</p>
+      <svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg>
+    </div>
+    <div class='darkmode'>
+    <input class='toggle' id='darkmode-toggle' type='checkbox' tabindex="-1">
+    <label id="toggle-label-light" for='darkmode-toggle' tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35;" xml:space="preserve">
+            <title>Light Mode</title>
+            <path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z" />
+        </svg>
+    </label>
+    <label id="toggle-label-dark" for='darkmode-toggle' tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'" xml:space="preserve">
+            <title>Dark Mode</title>
+            <path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z" />
+        </svg>
+    </label>
+</div>
+</header>
+
+
+    <article>
+      <h1>Effective C&#43;&#43; Outline</h1>
+      <p class="meta">
+        Last updated 
+Apr 10, 2023
+
+ 
+          
+
+      </p>
+      <ul class="tags">
+          
+          <li><a href="https://brainynight.github.io/second-brain/tags/cpp/">
+          
+            Cpp
+          
+            </a>
+           </li>
+          
+      </ul>
+      
+
+<aside class="mainTOC">
+    <details open >
+        <summary>Table of Contents</summary>
+        <nav id="TableOfContents">
+  <ol>
+    <li><a href="#chapter-1">Chapter 1</a>
+      <ol>
+        <li><a href="#條款1-c-是一個語言聯邦">條款1 C++ 是一個語言聯邦</a></li>
+        <li><a href="#條款2-盡量以-const--enum-inline-取代-define">條款2 盡量以 <code>const</code> , <code>enum</code>, <code>inline</code> 取代 <code>#define</code></a></li>
+        <li><a href="#條款3-盡可能使用-const">條款3 盡可能使用 const</a></li>
+        <li><a href="#條款4-確定物件在使用前已經初始化">條款4 確定物件在使用前已經初始化</a></li>
+      </ol>
+    </li>
+    <li><a href="#chapter2-建構解構賦值運算">Chapter2 建構、解構、賦值運算</a>
+      <ol>
+        <li><a href="#條款5-了解-c默默編寫並呼叫哪些函式">條款5 了解 C++默默編寫並呼叫哪些函式</a></li>
+        <li><a href="#條款6-明確拒絕不要編譯器自動生成的函式">條款6 明確拒絕不要編譯器自動生成的函式</a></li>
+        <li><a href="#條款7-為多型用途的基礎類別宣告-virtual-解構式">條款7 為多型用途的基礎類別宣告 virtual 解構式</a></li>
+        <li><a href="#條款8-不讓異常逃離解構式">條款8 不讓異常逃離解構式</a></li>
+        <li><a href="#條款9-不在建構與解構中呼叫-virtual-函式">條款9 不在建構與解構中呼叫 virtual 函式</a></li>
+        <li><a href="#條款10-讓-operator-回傳自身的-reference">條款10 讓 operator= 回傳自身的 reference</a></li>
+        <li><a href="#條款11-在-operator-處理自我賦值">條款11 在 operator= 處理自我賦值</a></li>
+        <li><a href="#條款12-複製物件時記得每一個部分">條款12 複製物件時記得每一個部分</a></li>
+      </ol>
+    </li>
+    <li><a href="#chapter3-資源管理">Chapter3 資源管理</a>
+      <ol>
+        <li><a href="#條款13-使用資源管理器">條款13 使用資源管理器</a></li>
+        <li><a href="#條款14-仔細考慮資源管理類別的-copy-行為">條款14 仔細考慮資源管理類別的 Copy 行為</a></li>
+        <li><a href="#條款15">條款15</a></li>
+        <li><a href="#條款16">條款16</a></li>
+        <li><a href="#條款17-以獨立的語句將物件放入-smart-pointer">條款17 以獨立的語句將物件放入 Smart Pointer</a></li>
+      </ol>
+    </li>
+    <li><a href="#chapter-4-設計與宣告">Chapter 4 設計與宣告</a>
+      <ol>
+        <li><a href="#條款18-讓介面容易被使用防範誤用">條款18 讓介面容易被使用、防範誤用</a></li>
+        <li><a href="#條款19-設計-class-猶如設計-type">條款19 設計 Class 猶如設計 Type</a></li>
+        <li><a href="#條款20-以-pass-by-const-ref-取代-pass-by-value">條款20 以 Pass by const ref 取代 Pass by value</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+    </details>
+</aside>
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+      
+      
+        
+      
+      
+      
+      
+    
+    
+  
+    
+    
+      
+      
+        
+      
+      
+      
+      
+    
+    
+  
+  
+  
+  
+
+
+
+
+
+
+<a href="#chapter-1"><h2 id="chapter-1"><span class="hanchor" ariaLabel="Anchor"># </span>Chapter 1</h2></a>
+<a href="#條款1-c-是一個語言聯邦"><h3 id="條款1-c-是一個語言聯邦"><span class="hanchor" ariaLabel="Anchor"># </span>條款1 C++ 是一個語言聯邦</h3></a>
+<p>C++ 融合了多種形式的 programming 手法，物件導向、procedural、generic、metaprogramming、functional&hellip;。</p>
+<a href="#條款2-盡量以-const--enum-inline-取代-define"><h3 id="條款2-盡量以-const--enum-inline-取代-define"><span class="hanchor" ariaLabel="Anchor"># </span>條款2 盡量以 <code>const</code> , <code>enum</code>, <code>inline</code> 取代 <code>#define</code></h3></a>
+<ul>
+<li>以 const, enum, inline 取代 <code>#define</code>， 寧可以編譯器 (compiler) 取代前處理器 (pre-processor)。</li>
+<li>對於單純的常數，以 <code>const</code> 或 <code>enum</code> 取代</li>
+<li>對於形似 function 的巨集(macro)，用 <code>inline</code> 取代。</li>
+</ul>
+<a href="#const"><h4 id="const"><span class="hanchor" ariaLabel="Anchor"># </span>Const</h4></a>
+<ul>
+<li><a href="/second-brain/notes/Project/Effective-C++-Series/Replace-define-with-const" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Replace-define-with-const">Replace define with const</a></li>
+<li>[[The definition and declaration of static const ]] P14</li>
+</ul>
+<a href="#enum"><h4 id="enum"><span class="hanchor" ariaLabel="Anchor"># </span>Enum</h4></a>
+<ul>
+<li><a href="/second-brain/notes/Project/Effective-C++-Series/enum-hack" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/enum-hack">enum hack</a></li>
+</ul>
+<a href="#inline"><h4 id="inline"><span class="hanchor" ariaLabel="Anchor"># </span>Inline</h4></a>
+<a href="#條款3-盡可能使用-const"><h3 id="條款3-盡可能使用-const"><span class="hanchor" ariaLabel="Anchor"># </span>條款3 盡可能使用 const</h3></a>
+<p>盡可能的使用 <code>const</code>，它可以確保物件不被改變。特別是 custom class designer 更加需要注意 operator 的 constness。</p>
+<ul>
+<li><code>const</code> 在星號左邊: 被 point 的物件是常數</li>
+<li><code>const</code> 在星號右邊: pointer 自身是常數</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">greeting</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&#34;Hello&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">char</span><span class="o">*</span> <span class="n">p</span> <span class="n">greeting</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">gretting</span><span class="p">;</span> <span class="c1">// non-const ptr, const data
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">char</span> <span class="k">const</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">gretting</span><span class="p">;</span> <span class="c1">// same 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">char</span><span class="o">*</span> <span class="k">const</span> <span class="n">p</span> <span class="o">=</span> <span class="n">greeting</span><span class="p">;</span> <span class="c1">// const ptr, non-const data
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="k">const</span> <span class="n">p</span> <span class="o">=</span> <span class="n">greeting</span><span class="p">;</span> <span class="c1">// const ptr, const data
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>當 <code>const</code> 在 <code>*</code> 前，不管是先寫 const 修飾的類、或是先寫 const 都是一樣的，就是在修飾 <code>char</code> 物件具有常數性。
+<a href="/second-brain/notes/Project/Effective-C++-Series/Const-in-C++" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Const-in-C++">Const in C++</a></p>
+<a href="#條款4-確定物件在使用前已經初始化"><h3 id="條款4-確定物件在使用前已經初始化"><span class="hanchor" ariaLabel="Anchor"># </span>條款4 確定物件在使用前已經初始化</h3></a>
+<p>不是所有的物件宣告時自帶初始化，它的規則過於複雜，只需要謹記: 宣告時就要初始化!
+(通常是 C-style 的，像是 array 不保證會發生初始化)，而 non-C part 的 (like <code>std::vector</code>) 有其他規則，就自帶初始化)</p>
+<p>對於內建型別 (int, char, double)，初始化就是手動給值。對於內建型別之外的，則要寫 constructor。</p>
+<p>為了避免沒有初始化帶來的不確定性，確保三件事</p>
+<ol>
+<li>對於不是 member data 的 built-in type object，手動初始化。C++ 並不保證會初始化所有的 Built-in type Object (ex. array)。</li>
+<li>對於 Custom Class，使用 <a href="/second-brain/notes/Project/Effective-C++-Series/Member-Initialization-List" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Member-Initialization-List">Member Initialization List</a> 初始化 member data。原因參見 <a href="/second-brain/notes/Project/Effective-C++-Series/Identify-Initialization-and-Assignment" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Identify-Initialization-and-Assignment">Identify Initialization and Assignment</a></li>
+<li>若初始化順序具有不確定性，想辦法加強 design，確保不會發生 circle (兩個變數相互依賴) 或競速問題。</li>
+<li>當 static object 之間有依賴關係時，local static objects 勝過 non-local static objects。參見 <a href="/second-brain/notes/Project/Effective-C++-Series/Static-Object" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Static-Object">Static Object</a></li>
+</ol>
+<a href="#chapter2-建構解構賦值運算"><h2 id="chapter2-建構解構賦值運算"><span class="hanchor" ariaLabel="Anchor"># </span>Chapter2 建構、解構、賦值運算</h2></a>
+<a href="#條款5-了解-c默默編寫並呼叫哪些函式"><h3 id="條款5-了解-c默默編寫並呼叫哪些函式"><span class="hanchor" ariaLabel="Anchor"># </span>條款5 了解 C++默默編寫並呼叫哪些函式</h3></a>
+<p>當我們宣告了一個 Class，而不去實踐任何細節，Compiler 會偷偷地幫我們生成一些 function，他們分別是</p>
+<ul>
+<li>default constructor, destructor</li>
+<li>copy constructor, copy assignment
+且都是 public inline function - <a href="/second-brain/notes/Project/Effective-C++-Series/Item30-Understand-the-ins-and-outs-of-inlining" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item30-Understand-the-ins-and-outs-of-inlining">Item30 Understand the ins and outs of inlining</a></li>
+</ul>
+<p>更確切來說，是當這些 function 被需要 (被呼叫) 時產生。
+<a href="/second-brain/notes/Project/Effective-C++-Series/Default-Generated-Functions" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Default-Generated-Functions">Default Generated Functions</a></p>
+<a href="#條款6-明確拒絕不要編譯器自動生成的函式"><h3 id="條款6-明確拒絕不要編譯器自動生成的函式"><span class="hanchor" ariaLabel="Anchor"># </span>條款6 明確拒絕不要編譯器自動生成的函式</h3></a>
+<p>在 C++11 引入了新的概念 
+<a href="https://www.ibm.com/docs/en/zos/2.4.0?topic=definitions-deleted-functions-c11" rel="noopener">Deleted functions</a>，書中教的方法依然有其壞處。直接在 declaration 後面接著 <code>=delete</code> 就可以阻止 copmiler 生成它。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">A</span><span class="p">(</span><span class="k">const</span> <span class="n">A</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a href="/second-brain/notes/Project/Effective-C++-Series/Deleted-Function" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Deleted-Function">Deleted Function</a></p>
+<a href="#條款7-為多型用途的基礎類別宣告-virtual-解構式"><h3 id="條款7-為多型用途的基礎類別宣告-virtual-解構式"><span class="hanchor" ariaLabel="Anchor"># </span>條款7 為多型用途的基礎類別宣告 virtual 解構式</h3></a>
+<p>首先申明，這條規則<strong>只針對</strong>多型的 Base Class。首先就先說明多型的用意。
+<a href="/second-brain/notes/Project/Effective-C++-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F">為多型用途的基礎類別宣告 virtual 解構式</a></p>
+<a href="#條款8-不讓異常逃離解構式"><h3 id="條款8-不讓異常逃離解構式"><span class="hanchor" ariaLabel="Anchor"># </span>條款8 不讓異常逃離解構式</h3></a>
+<p>C++ 不會禁止 Exception 發生於 Destructor，但這麼做具有相當的風險。一旦 Exception 發生而跳出了 Destructor，會中止銷毀物件的程序。
+特別是 STL Container 或 Array 這種資料結構中，若前面有某個 element 在銷毀過程中 thorw Exception 使得 Container 的 Destructor 被中斷，則後面的 elements 有可能不被銷毀，而導致記憶體洩漏!</p>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/%E8%A7%A3%E6%A7%8B%E5%BC%8F%E8%88%87%E7%95%B0%E5%B8%B8" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E8%A7%A3%E6%A7%8B%E5%BC%8F%E8%88%87%E7%95%B0%E5%B8%B8">解構式與異常</a></p>
+<a href="#條款9-不在建構與解構中呼叫-virtual-函式"><h3 id="條款9-不在建構與解構中呼叫-virtual-函式"><span class="hanchor" ariaLabel="Anchor"># </span>條款9 不在建構與解構中呼叫 virtual 函式</h3></a>
+<p>不要在 Constructor 與 Destructor 中呼叫 virtural 函式。這和 Java 與 C# 不同!!!</p>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/Virtual-Function" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Virtual-Function">Virtual Function</a></p>
+<a href="#條款10-讓-operator-回傳自身的-reference"><h3 id="條款10-讓-operator-回傳自身的-reference"><span class="hanchor" ariaLabel="Anchor"># </span>條款10 讓 operator= 回傳自身的 reference</h3></a>
+<p>讓 <code>operator=</code>, <code>operator+=</code> 等 assignment 符號回傳自身的 Reference。
+這是一項協議，並非強制規定。但在 STL 提供的型別，或是即將 support 的 type (<a href="/second-brain/notes/Project/Effective-C++-Series/Item54-Familiarize-yourself-with-the-standard-library-including-TR1" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item54-Familiarize-yourself-with-the-standard-library-including-TR1">Item54 Familiarize yourself with the standard library including TR1</a>)，都會遵守這個協定，請從眾。</p>
+<a href="#條款11-在-operator-處理自我賦值"><h3 id="條款11-在-operator-處理自我賦值"><span class="hanchor" ariaLabel="Anchor"># </span>條款11 在 operator= 處理自我賦值</h3></a>
+<p>在撰寫 <code>operator=</code> 時，需要考量當 <code>rhs==this</code> 的狀況。
+即使不是如下面的方式 handle 自我賦值，記住，不要讓這個函式 raise exception (exception safety) 就對了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Widget</span><span class="o">&amp;</span> <span class="n">Widget</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Widget</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">==</span> <span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span> <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span> <span class="c1">// assignment to self
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">delete</span> <span class="n">pb</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">pb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bitmap</span><span class="p">(</span><span class="o">*</span><span class="n">rhs</span><span class="p">.</span><span class="n">pb</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><a href="#條款12-複製物件時記得每一個部分"><h3 id="條款12-複製物件時記得每一個部分"><span class="hanchor" ariaLabel="Anchor"># </span>條款12 複製物件時記得每一個部分</h3></a>
+<p>當 Programmer 自己定義 <a href="/second-brain/notes/Project/Effective-C++-Series/Copying-Function" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Copying-Function">Copying function</a> 時，Compiler 不會警告你出錯! 你需要自己注意!!</p>
+<a href="#chapter3-資源管理"><h2 id="chapter3-資源管理"><span class="hanchor" ariaLabel="Anchor"># </span>Chapter3 資源管理</h2></a>
+<a href="#條款13-使用資源管理器"><h3 id="條款13-使用資源管理器"><span class="hanchor" ariaLabel="Anchor"># </span>條款13 使用資源管理器</h3></a>
+<ul>
+<li>資源取得的時機就是初始化的時機 (Resource Acquisition Is Initialization, 
+<a href="https://zh.wikipedia.org/zh-tw/RAII" rel="noopener">RAII</a>)</li>
+<li><a href="/second-brain/notes/Project/Effective-C++-Series/Smart-Pointer" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Smart-Pointer">Smart Pointer</a> 是個好選擇</li>
+</ul>
+<a href="#條款14-仔細考慮資源管理類別的-copy-行為"><h3 id="條款14-仔細考慮資源管理類別的-copy-行為"><span class="hanchor" ariaLabel="Anchor"># </span>條款14 仔細考慮資源管理類別的 Copy 行為</h3></a>
+<ul>
+<li>有些資源並不是 Heap-based Resource，就不一定適合 auto_ptr。</li>
+<li>書中以 Mutex (互斥鎖) 舉例。</li>
+</ul>
+<blockquote class="todo-callout">
+<p>
+查一查 RAII，這整個章節我看不太懂。</p>
+</blockquote>
+<blockquote class="question-callout">
+<p>
+(此處是舊版，新版有對應的東西嗎?</p>
+</blockquote>
+<a href="#條款15"><h3 id="條款15"><span class="hanchor" ariaLabel="Anchor"># </span>條款15</h3></a>
+<a href="#條款16"><h3 id="條款16"><span class="hanchor" ariaLabel="Anchor"># </span>條款16</h3></a>
+<a href="#條款17-以獨立的語句將物件放入-smart-pointer"><h3 id="條款17-以獨立的語句將物件放入-smart-pointer"><span class="hanchor" ariaLabel="Anchor"># </span>條款17 以獨立的語句將物件放入 Smart Pointer</h3></a>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span> <span class="n">pw</span><span class="p">(</span><span class="k">new</span> <span class="n">Widget</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">processWidget</span><span class="p">(</span><span class="n">pw</span><span class="p">,</span> <span class="n">priority</span><span class="p">());</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a href="/second-brain/notes/Project/Effective-C++-Series/%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8%E7%8D%A8%E7%AB%8B%E5%8F%A5%E5%B0%87%E7%89%A9%E4%BB%B6%E6%94%BE%E5%85%A5-Smart-Pointer" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8%E7%8D%A8%E7%AB%8B%E5%8F%A5%E5%B0%87%E7%89%A9%E4%BB%B6%E6%94%BE%E5%85%A5-Smart-Pointer">為什麼要用獨立句將物件放入 Smart Pointer</a></p>
+<a href="#chapter-4-設計與宣告"><h2 id="chapter-4-設計與宣告"><span class="hanchor" ariaLabel="Anchor"># </span>Chapter 4 設計與宣告</h2></a>
+<a href="#條款18-讓介面容易被使用防範誤用"><h3 id="條款18-讓介面容易被使用防範誤用"><span class="hanchor" ariaLabel="Anchor"># </span>條款18 讓介面容易被使用、防範誤用</h3></a>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8">讓介面容易被使用</a></p>
+<a href="#條款19-設計-class-猶如設計-type"><h3 id="條款19-設計-class-猶如設計-type"><span class="hanchor" ariaLabel="Anchor"># </span>條款19 設計 Class 猶如設計 Type</h3></a>
+<a href="#條款20-以-pass-by-const-ref-取代-pass-by-value"><h3 id="條款20-以-pass-by-const-ref-取代-pass-by-value"><span class="hanchor" ariaLabel="Anchor"># </span>條款20 以 Pass by const ref 取代 Pass by value</h3></a>
+<p>合理的 Pass by value 幾乎只有下面三種</p>
+<ol>
+<li>內建型態</li>
+<li>STL Iterator</li>
+<li>Function Object</li>
+</ol>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/%E6%80%9D%E7%B6%AD%E8%AA%A4%E5%8D%80-%E7%89%A9%E4%BB%B6%E5%BE%88%E5%B0%8F%E5%B0%B1%E5%8F%AF%E4%BB%A5-Pass-By-value" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E6%80%9D%E7%B6%AD%E8%AA%A4%E5%8D%80-%E7%89%A9%E4%BB%B6%E5%BE%88%E5%B0%8F%E5%B0%B1%E5%8F%AF%E4%BB%A5-Pass-By-value">思維誤區-物件很小就可以 Pass By value</a></p>
+
+
+    </article>
+    
+
+<hr/>
+
+
+<div class="page-end" id="footer">
+    <div class="backlinks-container">
+        <h3>Backlinks</h3>
+<ul class="backlinks">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+      
+    
+      
+      
+      <li>
+        <a href="/second-brain//" data-ctx="notes/Project/Effective C&#43;&#43; Series/Effective C&#43;&#43; Outline" data-src="/" class="internal-link">🪴 Main Page</a>
+      </li>
+      
+      
+      
+</ul>
+
+    </div>
+    <div>
+        <script
+  src="https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js"
+  integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI="
+  crossorigin="anonymous"
+></script>
+<h3>Interactive Graph</h3>
+<div id="graph-container"></div>
+<style>
+  :root {
+    --g-node: var(--secondary);
+    --g-node-active: var(--primary);
+    --g-node-inactive: var(--visited);
+    --g-link: var(--outlinegray);
+    --g-link-active: #5a7282;
+  }
+</style>
+
+<script src="https://brainynight.github.io/second-brain/js/graph.6579af7b10c818dbd2ca038702db0224.js"></script>
+
+    </div>
+</div>
+
+
+
+
+
+
+<div id="contact_buttons">
+    <footer>
+        
+        
+        <p>Made by Judy using <a href="https://github.com/jackyzha0/quartz">Quartz</a>, © 2023</p>
+        <ul>
+            
+            <li><a href="https://brainynight.github.io/second-brain/">Home</a></li>
+            <li><a href="https://github.com/BRainynight">GitHub</a></li></ul>
+    </footer>
+</div>
+
+
+</div>
+</body>
+</html>

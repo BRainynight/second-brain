@@ -130,13 +130,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.ed5187e342860f65bed32e40607500de.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.5774176485c8190c10df29ac55310a04.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.560683a95cb291d3e83f7ed002862803.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9b8e45df320f913d0a228377efab5675.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -279,7 +279,7 @@
     
     <header>
     
-    <h1 id="page-title"><a class="root-title" href="https://brainynight.github.io/second-brain/">🪴 Quartz 3.3</a></h1>
+    <h1 id="page-title"><a class="root-title" href="https://brainynight.github.io/second-brain/">🪴 Digital Note</a></h1>
     <div class="spacer"></div>
     <div id="search-icon">
       <p>Search</p>
@@ -311,8 +311,6 @@ Apr 9, 2023
 
  
           
-<a href="https://github.com/jackyzha0/quartz/tree/hugo/content/notes/Archive/Special%20Syntax%20in%20Theme%20Things%202.md" rel="noopener">Edit Source</a>
-
 
       </p>
       <ul class="tags">

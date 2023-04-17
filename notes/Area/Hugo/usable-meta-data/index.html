@@ -12,7 +12,7 @@
 舉例:
 1 2 3 4 5 6 7 8 9 10 11 12 13  categories:- Development- VIMdate:&#34;2012-04-06&#34;description:spf13-vim is a cross platform distribution of vim plugins and resourcesfor Vim."
   />
-  <meta property="og:title" content="可使用的metadata">
+  <meta property="og:title" content="Hugo 可使用的metadata">
   <meta property="og:description" content="Source: https://gohugo.io/content-management/front-matter/
 舉例:
 1 2 3 4 5 6 7 8 9 10 11 12 13  categories:- Development- VIMdate:&#34;2012-04-06&#34;description:spf13-vim is a cross platform distribution of vim plugins and resourcesfor Vim.">
@@ -22,7 +22,7 @@
   <meta property="og:width" content="200">
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="可使用的metadata" />
+  <meta name="twitter:title" content="Hugo 可使用的metadata" />
   <meta name="twitter:description" content="Source: https://gohugo.io/content-management/front-matter/
 舉例:
 1 2 3 4 5 6 7 8 9 10 11 12 13  categories:- Development- VIMdate:&#34;2012-04-06&#34;description:spf13-vim is a cross platform distribution of vim plugins and resourcesfor Vim." />
@@ -32,7 +32,7 @@
   
 
   <title>
-    可使用的metadata
+    Hugo 可使用的metadata
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -136,13 +136,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.ed5187e342860f65bed32e40607500de.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.5774176485c8190c10df29ac55310a04.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.560683a95cb291d3e83f7ed002862803.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9b8e45df320f913d0a228377efab5675.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -285,7 +285,7 @@
     
     <header>
     
-    <h1 id="page-title"><a class="root-title" href="https://brainynight.github.io/second-brain/">🪴 Quartz 3.3</a></h1>
+    <h1 id="page-title"><a class="root-title" href="https://brainynight.github.io/second-brain/">🪴 Digital Note</a></h1>
     <div class="spacer"></div>
     <div id="search-icon">
       <p>Search</p>
@@ -310,15 +310,13 @@
 
 
     <article>
-      <h1>可使用的metadata</h1>
+      <h1>Hugo 可使用的metadata</h1>
       <p class="meta">
         Last updated 
 Apr 9, 2023
 
  
           
-<a href="https://github.com/jackyzha0/quartz/tree/hugo/content/notes/Area/Hugo/Hugo%20front%20matter.md" rel="noopener">Edit Source</a>
-
 
       </p>
       <ul class="tags">
@@ -332,6 +330,7 @@ Apr 9, 2023
         <nav id="TableOfContents">
   <ol>
     <li><a href="#category-vs-tag">Category vs. Tag</a></li>
+    <li><a href="#description">Description</a></li>
   </ol>
 </nav>
     </details>
@@ -425,16 +424,16 @@ Apr 9, 2023
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">title: 
-</span></span><span class="line"><span class="cl">date: {{date}}
-</span></span><span class="line"><span class="cl">description: 
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">slug: alias-name
-</span></span><span class="line"><span class="cl">tags:
-</span></span><span class="line"><span class="cl">- default
-</span></span><span class="line"><span class="cl">categories:
-</span></span><span class="line"><span class="cl">- default
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">title</span><span class="p">:</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">date</span><span class="p">:</span><span class="w"> </span>{{<span class="l">date}}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">description</span><span class="p">:</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">slug</span><span class="p">:</span><span class="w"> </span><span class="l">alias-name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">tags</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="l">default</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">categories</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="l">default</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>本頁所使用的 metadata:</p>
 <div class="highlight"><div class="chroma">
@@ -446,12 +445,12 @@ Apr 9, 2023
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">title: &#34;可使用的metadata&#34;
-</span></span><span class="line"><span class="cl">date: 2023-04-09
-</span></span><span class="line"><span class="cl">slug: usable meta data # 網址變成此名稱
-</span></span><span class="line"><span class="cl">categories:
-</span></span><span class="line"><span class="cl">- blog
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;可使用的metadata&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="ld">2023-04-09</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">slug</span><span class="p">:</span><span class="w"> </span><span class="l">usable meta data</span><span class="w"> </span><span class="c"># 網址變成此名稱</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">categories</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="l">blog</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>這裡，我讓檔案名稱變成</p>
 <ul>
@@ -464,6 +463,8 @@ Apr 9, 2023
 <p>但似乎 quartz 支援的只有 tags 而沒有 categories。我想參考這篇文章試試看能不能打開該功能:
 
 <a href="https://ithelp.ithome.com.tw/articles/10244921" rel="noopener">https://ithelp.ithome.com.tw/articles/10244921</a></p>
+<a href="#description"><h2 id="description"><span class="hanchor" ariaLabel="Anchor"># </span>Description</h2></a>
+<p>沒有用，不會改變預覽頁面的內容。</p>
 
 
     </article>

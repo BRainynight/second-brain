@@ -131,13 +131,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.ed5187e342860f65bed32e40607500de.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.5774176485c8190c10df29ac55310a04.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.560683a95cb291d3e83f7ed002862803.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9b8e45df320f913d0a228377efab5675.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -280,7 +280,7 @@
     
     <header>
     
-    <h1 id="page-title"><a class="root-title" href="https://brainynight.github.io/second-brain/">🪴 Quartz 3.3</a></h1>
+    <h1 id="page-title"><a class="root-title" href="https://brainynight.github.io/second-brain/">🪴 Digital Note</a></h1>
     <div class="spacer"></div>
     <div id="search-icon">
       <p>Search</p>
@@ -350,13 +350,12 @@
     
     
     
-      
-      
     
     
     
-      
-      
+
+    
+    
       
       
       
@@ -365,10 +364,47 @@
     
     
 
+  
+
+  
+  
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
     
     
       
       
+      
+      
+      
+    
     
 
   
@@ -485,14 +521,16 @@
 <p>我會將我所讀所學的一點點摘要進來，希望有一天他們可以建構起強大的知識網路。</p>
 <a href="#近期閱讀"><h2 id="近期閱讀"><span class="hanchor" ariaLabel="Anchor"># </span>近期閱讀</h2></a>
 <ul>
-<li><a class="internal-link broken">TheSecondBrain</a></li>
+<li><a href="/second-brain/notes/Resource/Books/The-Second-Brain" rel="noopener" class="internal-link" data-src="/second-brain/notes/Resource/Books/The-Second-Brain">The Second Brain</a></li>
 </ul>
 <a href="#文章引導"><h2 id="文章引導"><span class="hanchor" ariaLabel="Anchor"># </span>文章引導</h2></a>
 <ul>
 <li><a href="/second-brain/notes" rel="noopener" class="internal-link" data-src="/second-brain/notes">notes</a></li>
 <li><a href="/second-brain/tags" rel="noopener" class="internal-link" data-src="/second-brain/tags">tags</a></li>
-<li></li>
+<li><a href="/second-brain/notes/Project/Effective-C++-Series/Effective-C++-Outline" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Effective-C++-Outline">Effective C++ Outline</a></li>
 </ul>
+<a href="#注意事項"><h2 id="注意事項"><span class="hanchor" ariaLabel="Anchor"># </span>注意事項</h2></a>
+<p>Quartz 的 Graph 目前內建只支援絕對路徑!!</p>
 
 
         
