@@ -142,13 +142,13 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.5774176485c8190c10df29ac55310a04.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.242a1dea32cdde9a20839098772c4ba1.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.365f033a276929424bcf0475452b666e.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ce4254ebb7c1b5affb2b005a15e1275.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({

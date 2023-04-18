@@ -136,13 +136,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.5774176485c8190c10df29ac55310a04.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.242a1dea32cdde9a20839098772c4ba1.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.365f033a276929424bcf0475452b666e.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ce4254ebb7c1b5affb2b005a15e1275.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -361,13 +361,6 @@ Unknown
     
     
   
-    
-    
-      
-      
-    
-    
-  
   
   
   
@@ -414,8 +407,6 @@ Unknown
 <li>smart pointer constructor</li>
 </ol>
 <p>如果不幸的，編譯器選擇這種順序，並且在把物件放入 smart pointer 之前發生了錯誤，這塊記憶體將沒有 smart pointer 協助銷毀!</p>
-<blockquote>
-</blockquote>
 
 
     </article>

@@ -99,16 +99,6 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     
     <item>
       <title></title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/The-Copying-in-Pass-by-value/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/The-Copying-in-Pass-by-value/</guid>
-      <description>Simple Pass By Value 考量下面的程式 validateStudent(s) 執行的成本有什麼?
-1 2 3 4 5  class Person; class Student: public Person; bool validateStudent(Student s); // pass by value = copy Student s = Student(); validateStudent(s);   成本是</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Virtual-Function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -321,6 +311,16 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     </item>
     
     <item>
+      <title>The Copying in Pass by value</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/The-Copying-in-Pass-by-value/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/The-Copying-in-Pass-by-value/</guid>
+      <description>Simple Pass By Value 考量下面的程式 validateStudent(s) 執行的成本有什麼?
+1 2 3 4 5  class Person; class Student: public Person; bool validateStudent(Student s); // pass by value = copy Student s = Student(); validateStudent(s);   成本是</description>
+    </item>
+    
+    <item>
       <title>The definition and declaration of static const</title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/The-definition-and-declaration-of-static-const/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -405,6 +405,16 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
       <guid>https://brainynight.github.io/second-brain/notes/Resource/Whisky/%E6%A0%BC%E8%98%AD%E5%82%91-%E5%96%AE%E4%B8%80%E9%BA%A5%E8%8A%BD%E5%A8%81%E5%A3%AB%E5%BF%8C/</guid>
       <description>Glenmorangie X Single Malt Scotch Whisky
  買於好事多，跟 &amp;ldquo;知多&amp;rdquo; 喝起來差不多，CP 值極佳!! 理想價格: 600-650  </description>
+    </item>
+    
+    <item>
+      <title>設計新 Class 的準則</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%A8%AD%E8%A8%88%E6%96%B0-Class-%E7%9A%84%E6%BA%96%E5%89%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%A8%AD%E8%A8%88%E6%96%B0-Class-%E7%9A%84%E6%BA%96%E5%89%87/</guid>
+      <description>在設計 class 之前，思考以下問題
+ 記憶體如何產生跟銷毀? (參見第八章) 物件初始化與賦值的差別? Constructor &amp;amp; Assignment  [[Effective C++ Outline#條款4 確定物件在使用前已經初始化 |條款4 確定物件在使用前已經初始化]]   Pass by value 對它代表甚麼?</description>
     </item>
     
     <item>

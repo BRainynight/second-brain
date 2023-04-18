@@ -26,16 +26,6 @@
     </item>
     
     <item>
-      <title>Item 18 Make interfaces easy to use correctly and hard to use incorrectly</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8/</guid>
-      <description>用 struct 包覆簡單的資料結構可以帶來可讀性 考量下面的例子:
-1 2 3 4 5 6 7  class Date { public: Date(int month, int day, int year); } Date(3, 31, 1999); // 正確 Date(30, 3, 1999); // 可能會誤打 Date(3, 40, 1999); // 可能有無效值   如果我們改以 struct如下，你幾乎不會犯下寫錯格的錯，Compiler 會自動提醒!</description>
-    </item>
-    
-    <item>
       <title>Item30 Understand the ins and outs of inlining</title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item30-Understand-the-ins-and-outs-of-inlining/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

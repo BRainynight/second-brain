@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.5774176485c8190c10df29ac55310a04.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.242a1dea32cdde9a20839098772c4ba1.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.365f033a276929424bcf0475452b666e.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ce4254ebb7c1b5affb2b005a15e1275.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -310,7 +310,7 @@
       
       <p class="meta">
         Last updated 
-Apr 17, 2023
+Apr 19, 2023
 
  
           
@@ -321,6 +321,18 @@ Apr 17, 2023
       </ul>
       
 
+<aside class="mainTOC">
+    <details open >
+        <summary>Table of Contents</summary>
+        <nav id="TableOfContents">
+  <ol>
+    <li><a href="#smart-pointer-當中的顯式與隱式轉換">Smart Pointer 當中的顯式與隱式轉換</a></li>
+    <li><a href="#顯式隱式轉換介面">顯式/隱式轉換介面</a></li>
+  </ol>
+</nav>
+    </details>
+</aside>
+
 
       
 
@@ -339,6 +351,65 @@ Apr 17, 2023
 
   
   
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
   
     
   
@@ -410,6 +481,15 @@ Apr 17, 2023
 <p>在<a href="/second-brain/notes/Project/Effective-C++-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F">為多型用途的基礎類別宣告 virtual 解構式</a>文章中的 <code>TimeKeeper</code> 例子，我們提及了工廠函式 (factory function)，在該例子，我們把 delete <code>new</code> resource 的責任交給 Client。</p>
 <p>然而有很多情況&ndash;例如 main flow 中過早的 return，resource 可能沒有成功被銷毀。善用 Pointer-like 物件，並把銷毀資源的操作<strong>確實</strong>的寫在 Destructor 中可以避免這些問題。</p>
 <p>Smart Pointer 的原理是利用一個 object 去 own (or manage, 管理) 一個 heap-based 的資源，當 Smart Pointer Object 脫離 Scope，Compiler 試圖去 destructor 時，藉機呼叫手上 Object 的 destructor。</p>
+<a href="#smart-pointer-當中的顯式與隱式轉換"><h2 id="smart-pointer-當中的顯式與隱式轉換"><span class="hanchor" ariaLabel="Anchor"># </span>Smart Pointer 當中的顯式與隱式轉換</h2></a>
+<ol>
+<li>Smart Pointer 的 <code>get</code> function 是一種顯式轉換 (explicit)，允許 client 取得原始物件的原始型別指標。</li>
+<li>Smart Pointer Override 了 <code>operation*</code> 和 <code>operator-&gt;</code>，因此 client 端可以直接對它做指標操作，有如對待 raw pointer，這隱含的是隱式轉換 (implicit)</li>
+</ol>
+<a href="#顯式隱式轉換介面"><h2 id="顯式隱式轉換介面"><span class="hanchor" ariaLabel="Anchor"># </span>顯式/隱式轉換介面</h2></a>
+<p>如上述， <code>get</code> function 是一種顯式轉換 (explicit)，它的優點是使用時意圖清楚，缺點是很醜。
+其實，亦可以提供個隱式轉換的介面，如此當這個物件被放到 base resource 的類別時，就不用特別透過 <code>get</code> 提取 base resource，缺點是會提升發生錯誤的風險。</p>
+<p>選擇何種，取決於使用情境，記住 <a href="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8">讓介面容易被使用</a>，不要讓你的介面容易被誤用，即可。</p>
 
 
     </article>

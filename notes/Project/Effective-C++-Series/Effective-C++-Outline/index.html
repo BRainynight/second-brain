@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.5774176485c8190c10df29ac55310a04.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.242a1dea32cdde9a20839098772c4ba1.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.365f033a276929424bcf0475452b666e.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ce4254ebb7c1b5affb2b005a15e1275.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -357,8 +357,8 @@ Apr 10, 2023
       <ol>
         <li><a href="#條款13-使用資源管理器">條款13 使用資源管理器</a></li>
         <li><a href="#條款14-仔細考慮資源管理類別的-copy-行為">條款14 仔細考慮資源管理類別的 Copy 行為</a></li>
-        <li><a href="#條款15">條款15</a></li>
-        <li><a href="#條款16">條款16</a></li>
+        <li><a href="#條款15-在資源管理類中提供對原始資源的存取">條款15 在資源管理類中提供對原始資源的存取</a></li>
+        <li><a href="#條款16-成對的使用-new-和-delete-並採用相同型式">條款16 成對的使用 <code>new</code> 和 <code>delete</code> 並採用相同型式</a></li>
         <li><a href="#條款17-以獨立的語句將物件放入-smart-pointer">條款17 以獨立的語句將物件放入 Smart Pointer</a></li>
       </ol>
     </li>
@@ -367,6 +367,8 @@ Apr 10, 2023
         <li><a href="#條款18-讓介面容易被使用防範誤用">條款18 讓介面容易被使用、防範誤用</a></li>
         <li><a href="#條款19-設計-class-猶如設計-type">條款19 設計 Class 猶如設計 Type</a></li>
         <li><a href="#條款20-以-pass-by-const-ref-取代-pass-by-value">條款20 以 Pass by const ref 取代 Pass by value</a></li>
+        <li><a href="#條款21-當必須回傳物件時不要考慮回傳-reference">條款21 當必須回傳物件時，不要考慮回傳 Reference</a></li>
+        <li><a href="#條款22-將成員變數宣告成-private">條款22 將成員變數宣告成 Private</a></li>
       </ol>
     </li>
   </ol>
@@ -423,6 +425,265 @@ Apr 10, 2023
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
   
 
@@ -463,8 +724,18 @@ Apr 10, 2023
 
   
 
+  
+  
+  
+    
+  
+    
+  
+    
   
+    
   
+    
   
     
   
@@ -536,8 +807,18 @@ Apr 10, 2023
 
   
 
+  
+  
+  
+    
   
+    
+  
+    
   
+    
+  
+    
   
     
   
@@ -609,8 +890,16 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -642,6 +931,8 @@ Apr 10, 2023
   
     
   
+    
+  
 
   
 
@@ -682,8 +973,18 @@ Apr 10, 2023
 
   
 
+  
+  
+  
+    
+  
+    
+  
+    
   
+    
   
+    
   
     
   
@@ -755,8 +1056,18 @@ Apr 10, 2023
 
   
 
+  
+  
+  
+    
+  
+    
+  
+    
   
+    
   
+    
   
     
   
@@ -828,8 +1139,18 @@ Apr 10, 2023
 
   
 
+  
+  
+  
+    
+  
+    
+  
+    
   
+    
   
+    
   
     
   
@@ -901,8 +1222,18 @@ Apr 10, 2023
 
   
 
+  
+  
   
+    
+  
+    
+  
+    
+  
+    
   
+    
   
     
   
@@ -974,8 +1305,18 @@ Apr 10, 2023
 
   
 
+  
+  
+  
+    
+  
+    
+  
+    
   
+    
   
+    
   
     
   
@@ -1047,8 +1388,18 @@ Apr 10, 2023
 
   
 
+  
+  
   
+    
+  
+    
+  
+    
+  
+    
   
+    
   
     
   
@@ -1120,8 +1471,18 @@ Apr 10, 2023
 
   
 
+  
+  
+  
+    
+  
+    
+  
+    
   
+    
   
+    
   
     
   
@@ -1193,8 +1554,18 @@ Apr 10, 2023
 
   
 
+  
+  
   
+    
+  
+    
+  
+    
+  
+    
   
+    
   
     
   
@@ -1266,8 +1637,18 @@ Apr 10, 2023
 
   
 
+  
+  
+  
+    
+  
+    
   
+    
+  
+    
   
+    
   
     
   
@@ -1339,8 +1720,18 @@ Apr 10, 2023
 
   
 
+  
+  
   
+    
+  
+    
+  
+    
+  
+    
   
+    
   
     
   
@@ -1412,8 +1803,18 @@ Apr 10, 2023
 
   
 
+  
+  
+  
+    
+  
+    
   
+    
+  
+    
   
+    
   
     
   
@@ -1485,8 +1886,18 @@ Apr 10, 2023
 
   
 
+  
+  
+  
+    
+  
+    
   
+    
+  
+    
   
+    
   
     
   
@@ -1558,8 +1969,18 @@ Apr 10, 2023
 
   
 
+  
+  
+  
+    
+  
+    
   
+    
+  
+    
   
+    
   
     
   
@@ -1631,8 +2052,18 @@ Apr 10, 2023
 
   
 
+  
+  
+  
+    
+  
+    
   
+    
+  
+    
   
+    
   
     
   
@@ -1834,8 +2265,10 @@ Apr 10, 2023
 </div>
 </div><p><a href="/second-brain/notes/Project/Effective-C++-Series/Deleted-Function" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Deleted-Function">Deleted Function</a></p>
 <a href="#條款7-為多型用途的基礎類別宣告-virtual-解構式"><h3 id="條款7-為多型用途的基礎類別宣告-virtual-解構式"><span class="hanchor" ariaLabel="Anchor"># </span>條款7 為多型用途的基礎類別宣告 virtual 解構式</h3></a>
-<p>首先申明，這條規則<strong>只針對</strong>多型的 Base Class。首先就先說明多型的用意。
-<a href="/second-brain/notes/Project/Effective-C++-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F">為多型用途的基礎類別宣告 virtual 解構式</a></p>
+<p>申明，這條規則<strong>只針對</strong>多型的 Base Class</p>
+<ul>
+<li>首先就先說明多型的用意: <a href="/second-brain/notes/Project/Effective-C++-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F">為多型用途的基礎類別宣告 virtual 解構式</a></li>
+</ul>
 <a href="#條款8-不讓異常逃離解構式"><h3 id="條款8-不讓異常逃離解構式"><span class="hanchor" ariaLabel="Anchor"># </span>條款8 不讓異常逃離解構式</h3></a>
 <p>C++ 不會禁止 Exception 發生於 Destructor，但這麼做具有相當的風險。一旦 Exception 發生而跳出了 Destructor，會中止銷毀物件的程序。
 特別是 STL Container 或 Array 這種資料結構中，若前面有某個 element 在銷毀過程中 thorw Exception 使得 Container 的 Destructor 被中斷，則後面的 elements 有可能不被銷毀，而導致記憶體洩漏!</p>
@@ -1891,8 +2324,17 @@ Apr 10, 2023
 <p>
 (此處是舊版，新版有對應的東西嗎?</p>
 </blockquote>
-<a href="#條款15"><h3 id="條款15"><span class="hanchor" ariaLabel="Anchor"># </span>條款15</h3></a>
-<a href="#條款16"><h3 id="條款16"><span class="hanchor" ariaLabel="Anchor"># </span>條款16</h3></a>
+<a href="#條款15-在資源管理類中提供對原始資源的存取"><h3 id="條款15-在資源管理類中提供對原始資源的存取"><span class="hanchor" ariaLabel="Anchor"># </span>條款15 在資源管理類中提供對原始資源的存取</h3></a>
+<p>儘管使用 <a href="/second-brain/notes/Project/Effective-C++-Series/Smart-Pointer" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Smart-Pointer">Smart Pointer</a> 管理資源很方便，我們仍有機會需要取得原始的 Pointer。Smart Pointer 同時有提供顯示介面 (explicit) 與隱式介面:</p>
+<ul>
+<li>explicit : 以 <code>get</code> 取得 Raw Pointer。</li>
+<li>implicit : <code>operator*</code>, <code>operator-&gt;</code>。</li>
+</ul>
+<a href="#條款16-成對的使用-new-和-delete-並採用相同型式"><h3 id="條款16-成對的使用-new-和-delete-並採用相同型式"><span class="hanchor" ariaLabel="Anchor"># </span>條款16 成對的使用 <code>new</code> 和 <code>delete</code> 並採用相同型式</h3></a>
+<ol>
+<li>盡可能不要用 C-style Array</li>
+<li>STL所提供的 vector, string 等 templates 可以降低對 Array 的需求，減少錯誤的發生。</li>
+</ol>
 <a href="#條款17-以獨立的語句將物件放入-smart-pointer"><h3 id="條款17-以獨立的語句將物件放入-smart-pointer"><span class="hanchor" ariaLabel="Anchor"># </span>條款17 以獨立的語句將物件放入 Smart Pointer</h3></a>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1909,14 +2351,26 @@ Apr 10, 2023
 <a href="#條款18-讓介面容易被使用防範誤用"><h3 id="條款18-讓介面容易被使用防範誤用"><span class="hanchor" ariaLabel="Anchor"># </span>條款18 讓介面容易被使用、防範誤用</h3></a>
 <p><a href="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8">讓介面容易被使用</a></p>
 <a href="#條款19-設計-class-猶如設計-type"><h3 id="條款19-設計-class-猶如設計-type"><span class="hanchor" ariaLabel="Anchor"># </span>條款19 設計 Class 猶如設計 Type</h3></a>
+<p>設計 Class 請遵守準則想過一遍: <a href="/second-brain/notes/Project/Effective-C++-Series/%E8%A8%AD%E8%A8%88%E6%96%B0-Class-%E7%9A%84%E6%BA%96%E5%89%87" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E8%A8%AD%E8%A8%88%E6%96%B0-Class-%E7%9A%84%E6%BA%96%E5%89%87">設計新 Class 的準則</a></p>
 <a href="#條款20-以-pass-by-const-ref-取代-pass-by-value"><h3 id="條款20-以-pass-by-const-ref-取代-pass-by-value"><span class="hanchor" ariaLabel="Anchor"># </span>條款20 以 Pass by const ref 取代 Pass by value</h3></a>
-<p>合理的 Pass by value 幾乎只有下面三種</p>
+<p>合理的 Pass by value 幾乎只有下面三種選擇</p>
 <ol>
 <li>內建型態</li>
 <li>STL Iterator</li>
 <li>Function Object</li>
 </ol>
-<p><a href="/second-brain/notes/Project/Effective-C++-Series/%E6%80%9D%E7%B6%AD%E8%AA%A4%E5%8D%80-%E7%89%A9%E4%BB%B6%E5%BE%88%E5%B0%8F%E5%B0%B1%E5%8F%AF%E4%BB%A5-Pass-By-value" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E6%80%9D%E7%B6%AD%E8%AA%A4%E5%8D%80-%E7%89%A9%E4%BB%B6%E5%BE%88%E5%B0%8F%E5%B0%B1%E5%8F%AF%E4%BB%A5-Pass-By-value">思維誤區-物件很小就可以 Pass By value</a></p>
+<p>除此之外，包含 STL Container 應盡可能用 Pass by const reference !</p>
+<ul>
+<li><a href="/second-brain/notes/Project/Effective-C++-Series/%E6%80%9D%E7%B6%AD%E8%AA%A4%E5%8D%80-%E7%89%A9%E4%BB%B6%E5%BE%88%E5%B0%8F%E5%B0%B1%E5%8F%AF%E4%BB%A5-Pass-By-value" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E6%80%9D%E7%B6%AD%E8%AA%A4%E5%8D%80-%E7%89%A9%E4%BB%B6%E5%BE%88%E5%B0%8F%E5%B0%B1%E5%8F%AF%E4%BB%A5-Pass-By-value">思維誤區-物件很小就可以 Pass By Value</a></li>
+</ul>
+<a href="#條款21-當必須回傳物件時不要考慮回傳-reference"><h3 id="條款21-當必須回傳物件時不要考慮回傳-reference"><span class="hanchor" ariaLabel="Anchor"># </span>條款21 當必須回傳物件時，不要考慮回傳 Reference</h3></a>
+<p>絕對不要</p>
+<ol>
+<li>將 Pointer 或 Reference 指向一個 local 物件回傳。</li>
+<li>讓 Reference 指向 heap-based object (<code>new</code>)</li>
+<li>當設計出「回傳 ptr/ref 指向 local static」，並且有很多個物件都採用這種形式時提高警覺，很有可能走入了 Bad design。對於怎麼樣是「合理」使用 Local static object : 參見 <a href="/second-brain/notes/Project/Effective-C++-Series/Static-Object" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Static-Object">Static Object</a>。</li>
+</ol>
+<a href="#條款22-將成員變數宣告成-private"><h3 id="條款22-將成員變數宣告成-private"><span class="hanchor" ariaLabel="Anchor"># </span>條款22 將成員變數宣告成 Private</h3></a>
 
 
     </article>

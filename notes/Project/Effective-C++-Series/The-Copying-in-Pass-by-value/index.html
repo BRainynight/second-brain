@@ -11,7 +11,7 @@
     content="Simple Pass By Value 考量下面的程式 validateStudent(s) 執行的成本有什麼?
 1 2 3 4 5  class Person; class Student: public Person; bool validateStudent(Student s); // pass by value = copy Student s = Student(); validateStudent(s);   成本是"
   />
-  <meta property="og:title" content="">
+  <meta property="og:title" content="The Copying in Pass by value">
   <meta property="og:description" content="Simple Pass By Value 考量下面的程式 validateStudent(s) 執行的成本有什麼?
 1 2 3 4 5  class Person; class Student: public Person; bool validateStudent(Student s); // pass by value = copy Student s = Student(); validateStudent(s);   成本是">
   <meta property="og:type" content="website">
@@ -20,7 +20,7 @@
   <meta property="og:width" content="200">
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="" />
+  <meta name="twitter:title" content="The Copying in Pass by value" />
   <meta name="twitter:description" content="Simple Pass By Value 考量下面的程式 validateStudent(s) 執行的成本有什麼?
 1 2 3 4 5  class Person; class Student: public Person; bool validateStudent(Student s); // pass by value = copy Student s = Student(); validateStudent(s);   成本是" />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
@@ -29,7 +29,7 @@
   
 
   <title>
-    🪴 Digital Note
+    The Copying in Pass by value
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.5774176485c8190c10df29ac55310a04.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.242a1dea32cdde9a20839098772c4ba1.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.365f033a276929424bcf0475452b666e.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ce4254ebb7c1b5affb2b005a15e1275.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -307,16 +307,23 @@
 
 
     <article>
-      
+      <h1>The Copying in Pass by value</h1>
       <p class="meta">
         Last updated 
-Apr 17, 2023
+Apr 19, 2023
 
  
           
 
       </p>
       <ul class="tags">
+          
+          <li><a href="https://brainynight.github.io/second-brain/tags/cpp/">
+          
+            Cpp
+          
+            </a>
+           </li>
           
       </ul>
       
