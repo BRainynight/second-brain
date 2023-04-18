@@ -1,3 +1,9 @@
+---
+title: "The Copying in Pass by value"
+date: 2023-04-17 23:57
+tags:
+- cpp
+---
 
 ## Simple Pass By Value
 考量下面的程式 `validateStudent(s)` 執行的成本有什麼?

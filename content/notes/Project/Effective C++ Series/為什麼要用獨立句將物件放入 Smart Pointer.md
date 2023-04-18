@@ -27,4 +27,3 @@ processWidget(std::shared_ptr<Widget> pw(new Widget), priority());
 3. smart pointer constructor
 
 如果不幸的，編譯器選擇這種順序，並且在把物件放入 smart pointer 之前發生了錯誤，這塊記憶體將沒有 smart pointer 協助銷毀! 
->

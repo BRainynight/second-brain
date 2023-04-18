@@ -74,9 +74,8 @@ A(const A&) = delete;
 [[Deleted Function]]
 
 ### 條款7 為多型用途的基礎類別宣告 virtual 解構式
-首先申明，這條規則**只針對**多型的 Base Class。首先就先說明多型的用意。
-[[為多型用途的基礎類別宣告 virtual 解構式]]
-
+申明，這條規則**只針對**多型的 Base Class
+- 首先就先說明多型的用意: [[為多型用途的基礎類別宣告 virtual 解構式]]
 
 ### 條款8 不讓異常逃離解構式
 C++ 不會禁止 Exception 發生於 Destructor，但這麼做具有相當的風險。一旦 Exception 發生而跳出了 Destructor，會中止銷毀物件的程序。
@@ -133,10 +132,16 @@ Widget& Widget::operator=(const Widget& rhs)
 > [!question]
 > (此處是舊版，新版有對應的東西嗎?
 
+### 條款15 在資源管理類中提供對原始資源的存取
 
-### 條款15
+儘管使用 [[Smart Pointer]] 管理資源很方便，我們仍有機會需要取得原始的 Pointer。Smart Pointer 同時有提供顯示介面 (explicit) 與隱式介面: 
+- explicit : 以 `get` 取得 Raw Pointer。
+- implicit : `operator*`, `operator->`。
 
-### 條款16
+### 條款16 成對的使用 `new` 和 `delete` 並採用相同型式
+1. 盡可能不要用 C-style Array
+2. STL所提供的 vector, string 等 templates 可以降低對 Array 的需求，減少錯誤的發生。
+
 
 ### 條款17 以獨立的語句將物件放入 Smart Pointer
 
@@ -153,12 +158,24 @@ processWidget(pw, priority());
 [[讓介面容易被使用]]
 
 ### 條款19 設計 Class 猶如設計 Type
+設計 Class 請遵守準則想過一遍: [[設計新 Class 的準則]]
 
 ### 條款20 以 Pass by const ref 取代 Pass by value 
 
-合理的 Pass by value 幾乎只有下面三種
+合理的 Pass by value 幾乎只有下面三種選擇
 1. 內建型態
 2. STL Iterator 
 3. Function Object
 
-[[思維誤區-物件很小就可以 Pass By value]]
+除此之外，包含 STL Container 應盡可能用 Pass by const reference !
+- [[思維誤區-物件很小就可以 Pass By Value]]
+
+### 條款21 當必須回傳物件時，不要考慮回傳 Reference 
+
+絕對不要
+ 1. 將 Pointer 或 Reference 指向一個 local 物件回傳。
+ 2. 讓 Reference 指向 heap-based object (`new`)
+ 3. 當設計出「回傳 ptr/ref 指向 local static」，並且有很多個物件都採用這種形式時提高警覺，很有可能走入了 Bad design。對於怎麼樣是「合理」使用 Local static object : 參見 [[Static Object]]。
+
+
+### 條款22 將成員變數宣告成 Private
