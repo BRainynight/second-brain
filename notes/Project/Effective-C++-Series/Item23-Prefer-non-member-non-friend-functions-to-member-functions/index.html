@@ -8,28 +8,37 @@
   <meta charset="UTF-8" />
   <meta
     name="description"
-    content=" Occurs when a template is used to declare a pointer variable or a variable with the provided arguments
- "
+    content="物件導向要求，資料(data) 以及操作資料的函式應該盡量綁在一起，不代表物件導向推崇 member function 是比較好的選擇。
+物件導向要求資料應該盡可能地被封裝，與直觀相反的，non-member function 的封裝性優於 member function。為什麼?
+封裝 為什麼封裝被推崇?
+ 封裝使得我們在改變事物時，只影響有限的客戶。
+  被封裝的東西變得不可見 -&gt; 越多封裝就越少 client 可以 access -&gt; 對實作方而言，有更大的彈性改變它，因為能 access 它的客戶有限，改變的影響力小。  如何衡量封裝程度 這個問句可以換句話說，如何量測「有多少 function 可以看到某一塊資料?"
   />
-  <meta property="og:title" content="Implicit TemplateInstantiation">
-  <meta property="og:description" content=" Occurs when a template is used to declare a pointer variable or a variable with the provided arguments
- ">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="物件導向要求，資料(data) 以及操作資料的函式應該盡量綁在一起，不代表物件導向推崇 member function 是比較好的選擇。
+物件導向要求資料應該盡可能地被封裝，與直觀相反的，non-member function 的封裝性優於 member function。為什麼?
+封裝 為什麼封裝被推崇?
+ 封裝使得我們在改變事物時，只影響有限的客戶。
+  被封裝的東西變得不可見 -&gt; 越多封裝就越少 client 可以 access -&gt; 對實作方而言，有更大的彈性改變它，因為能 access 它的客戶有限，改變的影響力小。  如何衡量封裝程度 這個問句可以換句話說，如何量測「有多少 function 可以看到某一塊資料?">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
-  <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Implicit-TemplateInstantiation/">
+  <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item23-Prefer-non-member-non-friend-functions-to-member-functions/">
   <meta property="og:width" content="200">
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Implicit TemplateInstantiation" />
-  <meta name="twitter:description" content=" Occurs when a template is used to declare a pointer variable or a variable with the provided arguments
- " />
+  <meta name="twitter:title" content="" />
+  <meta name="twitter:description" content="物件導向要求，資料(data) 以及操作資料的函式應該盡量綁在一起，不代表物件導向推崇 member function 是比較好的選擇。
+物件導向要求資料應該盡可能地被封裝，與直觀相反的，non-member function 的封裝性優於 member function。為什麼?
+封裝 為什麼封裝被推崇?
+ 封裝使得我們在改變事物時，只影響有限的客戶。
+  被封裝的東西變得不可見 -&gt; 越多封裝就越少 client 可以 access -&gt; 對實作方而言，有更大的彈性改變它，因為能 access 它的客戶有限，改變的影響力小。  如何衡量封裝程度 這個問句可以換句話說，如何量測「有多少 function 可以看到某一塊資料?" />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
   
     
   
 
   <title>
-    Implicit TemplateInstantiation
+    🪴 Digital Note
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -307,10 +316,10 @@
 
 
     <article>
-      <h1>Implicit TemplateInstantiation</h1>
+      
       <p class="meta">
         Last updated 
-Apr 17, 2023
+Apr 21, 2023
 
  
           
@@ -318,16 +327,24 @@ Apr 17, 2023
       </p>
       <ul class="tags">
           
-          <li><a href="https://brainynight.github.io/second-brain/tags/cpp/">
-          
-            Cpp
-          
-            </a>
-           </li>
-          
       </ul>
       
 
+<aside class="mainTOC">
+    <details open >
+        <summary>Table of Contents</summary>
+        <nav id="TableOfContents">
+  <ol>
+    <li><a href="#封裝">封裝</a>
+      <ol>
+        <li><a href="#如何衡量封裝程度">如何衡量封裝程度</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+    </details>
+</aside>
+
 
       
 
@@ -365,18 +382,38 @@ Apr 17, 2023
     
     
   
+    
+    
+      
+      
+    
+    
   
   
   
+  
 
 
 
 
 
 
+<p>物件導向要求，資料(data) 以及操作資料的函式應該盡量綁在一起，不代表物件導向推崇 member function 是比較好的選擇。</p>
+<p>物件導向要求資料應該盡可能地被封裝，與直觀相反的，non-member function 的封裝性優於  member function。為什麼?</p>
+<a href="#封裝"><h2 id="封裝"><span class="hanchor" ariaLabel="Anchor"># </span>封裝</h2></a>
+<p>為什麼封裝被推崇?</p>
 <blockquote>
-<p>Occurs when a template is used to declare a pointer variable or a variable with the provided arguments</p>
+<p>封裝使得我們在改變事物時，只影響有限的客戶。</p>
 </blockquote>
+<ul>
+<li>被封裝的東西變得不可見 -&gt; 越多封裝就越少 client 可以 access -&gt; 對實作方而言，有更大的彈性改變它，因為能 access 它的客戶有限，改變的影響力小。</li>
+</ul>
+<a href="#如何衡量封裝程度"><h3 id="如何衡量封裝程度"><span class="hanchor" ariaLabel="Anchor"># </span>如何衡量封裝程度</h3></a>
+<p>這個問句可以換句話說，如何量測「有多少 function 可以看到某一塊資料?」。</p>
+<blockquote>
+<p>計算能夠存取該資料的函式，越多函式存取則封裝度越低。</p>
+</blockquote>
+<p>對於 Private Member data 而言，能存取它的就是所有的 member function。</p>
 
 
     </article>

@@ -9,11 +9,11 @@
   <meta
     name="description"
     content="Chapter 1 條款1 C&#43;&#43; 是一個語言聯邦 C&#43;&#43; 融合了多種形式的 programming 手法，物件導向、procedural、generic、metaprogramming、functional&hellip;。
-條款2 盡量以 const , enum, inline 取代 #define  以 const, enum, inline 取代 #define， 寧可以編譯器 (compiler) 取代前處理器 (pre-processor)。 對於單純的常數，以 const 或 enum 取代 對於形似 function 的巨集(macro)，用 inline 取代。  Const  [[Replace define with const]] [[The definition and declaration of static const ]] P14  Enum  [[enum hack]]  Inline 條款3 盡可能使用 const 盡可能的使用 const，它可以確保物件不被改變。特別是 custom class designer 更加需要注意 operator 的 constness。"
+條款2 盡量以 const , enum, inline 取代 #define  以 const, enum, inline 取代 #define， 寧可以編譯器 (compiler) 取代前處理器 (pre-processor)。 對於單純的常數，以 const 或 enum 取代 對於形似 function 的巨集(macro)，用 inline 取代。  Const  [[Replace define with const]] [[The definition and declaration of static const]] P14  Enum  [[enum hack]]  Inline 條款3 盡可能使用 const 盡可能的使用 const，它可以確保物件不被改變。特別是 custom class designer 更加需要注意 operator 的 constness。"
   />
   <meta property="og:title" content="Effective C&#43;&#43; Outline">
   <meta property="og:description" content="Chapter 1 條款1 C&#43;&#43; 是一個語言聯邦 C&#43;&#43; 融合了多種形式的 programming 手法，物件導向、procedural、generic、metaprogramming、functional&hellip;。
-條款2 盡量以 const , enum, inline 取代 #define  以 const, enum, inline 取代 #define， 寧可以編譯器 (compiler) 取代前處理器 (pre-processor)。 對於單純的常數，以 const 或 enum 取代 對於形似 function 的巨集(macro)，用 inline 取代。  Const  [[Replace define with const]] [[The definition and declaration of static const ]] P14  Enum  [[enum hack]]  Inline 條款3 盡可能使用 const 盡可能的使用 const，它可以確保物件不被改變。特別是 custom class designer 更加需要注意 operator 的 constness。">
+條款2 盡量以 const , enum, inline 取代 #define  以 const, enum, inline 取代 #define， 寧可以編譯器 (compiler) 取代前處理器 (pre-processor)。 對於單純的常數，以 const 或 enum 取代 對於形似 function 的巨集(macro)，用 inline 取代。  Const  [[Replace define with const]] [[The definition and declaration of static const]] P14  Enum  [[enum hack]]  Inline 條款3 盡可能使用 const 盡可能的使用 const，它可以確保物件不被改變。特別是 custom class designer 更加需要注意 operator 的 constness。">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
   <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Effective-C&#43;&#43;-Outline/">
@@ -22,7 +22,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Effective C&#43;&#43; Outline" />
   <meta name="twitter:description" content="Chapter 1 條款1 C&#43;&#43; 是一個語言聯邦 C&#43;&#43; 融合了多種形式的 programming 手法，物件導向、procedural、generic、metaprogramming、functional&hellip;。
-條款2 盡量以 const , enum, inline 取代 #define  以 const, enum, inline 取代 #define， 寧可以編譯器 (compiler) 取代前處理器 (pre-processor)。 對於單純的常數，以 const 或 enum 取代 對於形似 function 的巨集(macro)，用 inline 取代。  Const  [[Replace define with const]] [[The definition and declaration of static const ]] P14  Enum  [[enum hack]]  Inline 條款3 盡可能使用 const 盡可能的使用 const，它可以確保物件不被改變。特別是 custom class designer 更加需要注意 operator 的 constness。" />
+條款2 盡量以 const , enum, inline 取代 #define  以 const, enum, inline 取代 #define， 寧可以編譯器 (compiler) 取代前處理器 (pre-processor)。 對於單純的常數，以 const 或 enum 取代 對於形似 function 的巨集(macro)，用 inline 取代。  Const  [[Replace define with const]] [[The definition and declaration of static const]] P14  Enum  [[enum hack]]  Inline 條款3 盡可能使用 const 盡可能的使用 const，它可以確保物件不被改變。特別是 custom class designer 更加需要注意 operator 的 constness。" />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
   
     
@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.242a1dea32cdde9a20839098772c4ba1.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.455859c31e7c72d8119d99f27097b0f2.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ce4254ebb7c1b5affb2b005a15e1275.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.a375c091d913fbf13f59ba3ecfe85025.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -369,6 +369,16 @@ Apr 10, 2023
         <li><a href="#條款20-以-pass-by-const-ref-取代-pass-by-value">條款20 以 Pass by const ref 取代 Pass by value</a></li>
         <li><a href="#條款21-當必須回傳物件時不要考慮回傳-reference">條款21 當必須回傳物件時，不要考慮回傳 Reference</a></li>
         <li><a href="#條款22-將成員變數宣告成-private">條款22 將成員變數宣告成 Private</a></li>
+        <li><a href="#條款23-寧以non-member-non-friend替換-member函數">條款23 寧以non-member, non-friend替換 member函數</a></li>
+        <li><a href="#條款24-如果所有的參數都需要型別轉換請為此採用-non-member-函式">條款24 如果所有的參數都需要型別轉換，請為此採用 non-member 函式</a></li>
+        <li><a href="#條款25-考慮寫出一個不拋異常的-swap-函式">條款25 考慮寫出一個不拋異常的 Swap 函式</a></li>
+      </ol>
+    </li>
+    <li><a href="#ch5-implementation">Ch5 Implementation</a>
+      <ol>
+        <li><a href="#條款26-盡可能延後變數定義式的出現時間">條款26 盡可能延後變數定義式的出現時間</a></li>
+        <li><a href="#條款2">條款2</a></li>
+        <li><a href="#條款2-1">條款2</a></li>
       </ol>
     </li>
   </ol>
@@ -391,6 +401,338 @@ Apr 10, 2023
 
 
 
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
 
   
   
@@ -2194,7 +2536,7 @@ Apr 10, 2023
 <a href="#const"><h4 id="const"><span class="hanchor" ariaLabel="Anchor"># </span>Const</h4></a>
 <ul>
 <li><a href="/second-brain/notes/Project/Effective-C++-Series/Replace-define-with-const" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Replace-define-with-const">Replace define with const</a></li>
-<li>[[The definition and declaration of static const ]] P14</li>
+<li><a href="/second-brain/notes/Project/Effective-C++-Series/The-definition-and-declaration-of-static-const" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/The-definition-and-declaration-of-static-const">The definition and declaration of static const</a> P14</li>
 </ul>
 <a href="#enum"><h4 id="enum"><span class="hanchor" ariaLabel="Anchor"># </span>Enum</h4></a>
 <ul>
@@ -2371,6 +2713,27 @@ Apr 10, 2023
 <li>當設計出「回傳 ptr/ref 指向 local static」，並且有很多個物件都採用這種形式時提高警覺，很有可能走入了 Bad design。對於怎麼樣是「合理」使用 Local static object : 參見 <a href="/second-brain/notes/Project/Effective-C++-Series/Static-Object" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Static-Object">Static Object</a>。</li>
 </ol>
 <a href="#條款22-將成員變數宣告成-private"><h3 id="條款22-將成員變數宣告成-private"><span class="hanchor" ariaLabel="Anchor"># </span>條款22 將成員變數宣告成 Private</h3></a>
+<ul>
+<li>只提供必要的 Getter 給客戶端，隱藏你的實作有絕佳的好處。</li>
+</ul>
+<p>思維誤區: Protected 不比 Public 具有更好的封裝性</p>
+<ul>
+<li>取消一個 Public Member Data 的成本: 所有使用他的客戶端</li>
+<li>取消一個 Protected Member Data 的成本 : 所有繼承他的 Derived Class
+這兩種 Access Level 的封裝性都不佳，仍該盡可能的使用 Private。</li>
+</ul>
+<a href="#條款23-寧以non-member-non-friend替換-member函數"><h3 id="條款23-寧以non-member-non-friend替換-member函數"><span class="hanchor" ariaLabel="Anchor"># </span>條款23 寧以non-member, non-friend替換 member函數</h3></a>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/Item23-Prefer-non-member-non-friend-functions-to-member-functions" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item23-Prefer-non-member-non-friend-functions-to-member-functions">Item23 Prefer non-member non-friend functions to member functions</a></p>
+<a href="#條款24-如果所有的參數都需要型別轉換請為此採用-non-member-函式"><h3 id="條款24-如果所有的參數都需要型別轉換請為此採用-non-member-函式"><span class="hanchor" ariaLabel="Anchor"># </span>條款24 如果所有的參數都需要型別轉換，請為此採用 non-member 函式</h3></a>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/Item24-Declare-non-member-functions-when-type-conversions-should-apply-to-all-parameters" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item24-Declare-non-member-functions-when-type-conversions-should-apply-to-all-parameters">Item24 Declare non-member functions when type conversions should apply to all parameters</a></p>
+<a href="#條款25-考慮寫出一個不拋異常的-swap-函式"><h3 id="條款25-考慮寫出一個不拋異常的-swap-函式"><span class="hanchor" ariaLabel="Anchor"># </span>條款25 考慮寫出一個不拋異常的 Swap 函式</h3></a>
+<a href="#ch5-implementation"><h2 id="ch5-implementation"><span class="hanchor" ariaLabel="Anchor"># </span>Ch5 Implementation</h2></a>
+<a href="#條款26-盡可能延後變數定義式的出現時間"><h3 id="條款26-盡可能延後變數定義式的出現時間"><span class="hanchor" ariaLabel="Anchor"># </span>條款26 盡可能延後變數定義式的出現時間</h3></a>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/Item26-Postpone-variable-definitions-as-long-as-possible" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item26-Postpone-variable-definitions-as-long-as-possible">Item26 Postpone variable definitions as long as possible</a></p>
+<a href="#條款2"><h3 id="條款2"><span class="hanchor" ariaLabel="Anchor"># </span>條款2</h3></a>
+<a href="#條款2-1"><h3 id="條款2-1"><span class="hanchor" ariaLabel="Anchor"># </span>條款2</h3></a>
+<p>簡體目錄: 
+<a href="https://blog.csdn.net/weixin_45926547/article/details/121276226" rel="noopener">https://blog.csdn.net/weixin_45926547/article/details/121276226</a></p>
 
 
     </article>

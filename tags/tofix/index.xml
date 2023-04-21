@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tofix on </title>
+    <link>https://brainynight.github.io/second-brain/tags/tofix/</link>
+    <description>Recent content in tofix on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://brainynight.github.io/second-brain/tags/tofix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Copying Function</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Copying-Function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Copying-Function/</guid>
+      <description>Effective C++ 中，Copying Function 指的是 Copy construcot &amp;amp; Copy Assignment
+   當 Programmer 自己定義 Copying function 時，Compiler 不會警告你出錯!</description>
+    </item>
+    
+  </channel>
+</rss>

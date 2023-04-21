@@ -32,7 +32,7 @@
       
       <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Effective-C&#43;&#43;-Outline/</guid>
       <description>Chapter 1 條款1 C++ 是一個語言聯邦 C++ 融合了多種形式的 programming 手法，物件導向、procedural、generic、metaprogramming、functional&amp;hellip;。
-條款2 盡量以 const , enum, inline 取代 #define  以 const, enum, inline 取代 #define， 寧可以編譯器 (compiler) 取代前處理器 (pre-processor)。 對於單純的常數，以 const 或 enum 取代 對於形似 function 的巨集(macro)，用 inline 取代。  Const  [[Replace define with const]] [[The definition and declaration of static const ]] P14  Enum  [[enum hack]]  Inline 條款3 盡可能使用 const 盡可能的使用 const，它可以確保物件不被改變。特別是 custom class designer 更加需要注意 operator 的 constness。</description>
+條款2 盡量以 const , enum, inline 取代 #define  以 const, enum, inline 取代 #define， 寧可以編譯器 (compiler) 取代前處理器 (pre-processor)。 對於單純的常數，以 const 或 enum 取代 對於形似 function 的巨集(macro)，用 inline 取代。  Const  [[Replace define with const]] [[The definition and declaration of static const]] P14  Enum  [[enum hack]]  Inline 條款3 盡可能使用 const 盡可能的使用 const，它可以確保物件不被改變。特別是 custom class designer 更加需要注意 operator 的 constness。</description>
     </item>
     
     <item>
@@ -84,6 +84,37 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
       
       <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Deleted-Function/</guid>
       <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  class A{ public: A(int x) : m(x) {} A&amp;amp; operator = (const A &amp;amp;) = delete; // Declare the copy assignment operator  // as a deleted function.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item23-Prefer-non-member-non-friend-functions-to-member-functions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item23-Prefer-non-member-non-friend-functions-to-member-functions/</guid>
+      <description>物件導向要求，資料(data) 以及操作資料的函式應該盡量綁在一起，不代表物件導向推崇 member function 是比較好的選擇。
+物件導向要求資料應該盡可能地被封裝，與直觀相反的，non-member function 的封裝性優於 member function。為什麼?
+封裝 為什麼封裝被推崇?
+ 封裝使得我們在改變事物時，只影響有限的客戶。
+  被封裝的東西變得不可見 -&amp;gt; 越多封裝就越少 client 可以 access -&amp;gt; 對實作方而言，有更大的彈性改變它，因為能 access 它的客戶有限，改變的影響力小。  如何衡量封裝程度 這個問句可以換句話說，如何量測「有多少 function 可以看到某一塊資料?</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item24-Declare-non-member-functions-when-type-conversions-should-apply-to-all-parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item24-Declare-non-member-functions-when-type-conversions-should-apply-to-all-parameters/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item26-Postpone-variable-definitions-as-long-as-possible/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item26-Postpone-variable-definitions-as-long-as-possible/</guid>
+      <description></description>
     </item>
     
     <item>

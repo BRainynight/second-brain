@@ -33,7 +33,7 @@
       
       <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Effective-C&#43;&#43;-Outline/</guid>
       <description>Chapter 1 條款1 C++ 是一個語言聯邦 C++ 融合了多種形式的 programming 手法，物件導向、procedural、generic、metaprogramming、functional&amp;hellip;。
-條款2 盡量以 const , enum, inline 取代 #define  以 const, enum, inline 取代 #define， 寧可以編譯器 (compiler) 取代前處理器 (pre-processor)。 對於單純的常數，以 const 或 enum 取代 對於形似 function 的巨集(macro)，用 inline 取代。  Const  [[Replace define with const]] [[The definition and declaration of static const ]] P14  Enum  [[enum hack]]  Inline 條款3 盡可能使用 const 盡可能的使用 const，它可以確保物件不被改變。特別是 custom class designer 更加需要注意 operator 的 constness。</description>
+條款2 盡量以 const , enum, inline 取代 #define  以 const, enum, inline 取代 #define， 寧可以編譯器 (compiler) 取代前處理器 (pre-processor)。 對於單純的常數，以 const 或 enum 取代 對於形似 function 的巨集(macro)，用 inline 取代。  Const  [[Replace define with const]] [[The definition and declaration of static const]] P14  Enum  [[enum hack]]  Inline 條款3 盡可能使用 const 盡可能的使用 const，它可以確保物件不被改變。特別是 custom class designer 更加需要注意 operator 的 constness。</description>
     </item>
     
     <item>

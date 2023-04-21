@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.242a1dea32cdde9a20839098772c4ba1.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.455859c31e7c72d8119d99f27097b0f2.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ce4254ebb7c1b5affb2b005a15e1275.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.a375c091d913fbf13f59ba3ecfe85025.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -310,7 +310,7 @@
       <h1>Static Object</h1>
       <p class="meta">
         Last updated 
-Apr 17, 2023
+Apr 21, 2023
 
  
           
@@ -706,7 +706,7 @@ Apr 17, 2023
 <li>其他被稱為 non-local static object
 它們的 deconstructor 會在 main 結束時被喚起。</li>
 </ul>
-<p>當我們有兩個編譯單元(<a href="/second-brain/notes/Project/Effective-C++-Series/Translation-Unit" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Translation-Unit">Translation Unit</a>)，通常表示兩份 Source Code。兩份 Source Code 中都有 non-local static object，且其中一份 static object 的初始化需要使用到另一份 source code 的 static object。</p>
+<p>當我們有兩個編譯單元 (<a href="/second-brain/notes/Project/Effective-C++-Series/Translation-Unit" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Translation-Unit">Translation Unit</a>)，通常表示兩份 Source Code。兩份 Source Code 中都有 non-local static object，且其中一份 static object 的初始化需要使用到另一份 source code 的 static object。</p>
 <p>問題在於，有可能要被使用的那個物件尚未被初始化!</p>
 <blockquote>
 <p>C++ 對於不同 <a href="/second-brain/notes/Project/Effective-C++-Series/Translation-Unit" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Translation-Unit">Translation Unit</a> 中 non-local Static object 初始化的順序並沒有明確的定義。

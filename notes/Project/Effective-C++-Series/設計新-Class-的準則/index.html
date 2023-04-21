@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.242a1dea32cdde9a20839098772c4ba1.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.455859c31e7c72d8119d99f27097b0f2.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ce4254ebb7c1b5affb2b005a15e1275.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.a375c091d913fbf13f59ba3ecfe85025.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -567,18 +567,7 @@ Unknown
     
     
     
-      
-      
     
-    
-    
-      
-      
-      
-      
-      
-      
-      
     
     
 
@@ -586,6 +575,10 @@ Unknown
     
       
       
+      
+      
+      
+    
     
 
   
@@ -619,18 +612,7 @@ Unknown
     
     
     
-      
-      
     
-    
-    
-      
-      
-      
-      
-      
-      
-      
     
     
 
@@ -638,6 +620,10 @@ Unknown
     
       
       
+      
+      
+      
+    
     
 
   
@@ -671,18 +657,7 @@ Unknown
     
     
     
-      
-      
     
-    
-    
-      
-      
-      
-      
-      
-      
-      
     
     
 
@@ -690,6 +665,10 @@ Unknown
     
       
       
+      
+      
+      
+    
     
 
   
@@ -745,9 +724,9 @@ Unknown
 <li>需要考量轉換嗎? 隱性轉換與顯性轉換?</li>
 <li>甚麼運算子與函式對此新類別式合理的?
 <ul>
-<li><a class="internal-link broken">Item23 Prefer non-member non-friend functions to member functions</a></li>
-<li><a class="internal-link broken">Item24 Declare non-member functions when type conversions should apply to all parameters</a></li>
-<li><a class="internal-link broken">Item26 Postpone variable definitions as long as possible</a></li>
+<li><a href="/second-brain/notes/Project/Effective-C++-Series/Item23-Prefer-non-member-non-friend-functions-to-member-functions" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item23-Prefer-non-member-non-friend-functions-to-member-functions">Item23 Prefer non-member non-friend functions to member functions</a></li>
+<li><a href="/second-brain/notes/Project/Effective-C++-Series/Item24-Declare-non-member-functions-when-type-conversions-should-apply-to-all-parameters" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item24-Declare-non-member-functions-when-type-conversions-should-apply-to-all-parameters">Item24 Declare non-member functions when type conversions should apply to all parameters</a></li>
+<li><a href="/second-brain/notes/Project/Effective-C++-Series/Item26-Postpone-variable-definitions-as-long-as-possible" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item26-Postpone-variable-definitions-as-long-as-possible">Item26 Postpone variable definitions as long as possible</a></li>
 </ul>
 </li>
 <li>什麼標準宣告式是需要駁回的? 請用 <code>delete</code> 明確刪除它。</li>
