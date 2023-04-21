@@ -15,7 +15,7 @@ jobs:
 
       - name: Build Link Index
         # uses: jackyzha0/hugo-obsidian@v2.20
-        uses: BRainynight/second-brain
+        uses: BRainynight/hugo-obsidian@v0.0
         with:
           index: true
           input: content
