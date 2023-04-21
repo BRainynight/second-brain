@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "63678a94fc02db4a",
+        "id": "6085a2ac2f2c532a",
         "type": "tabs",
         "children": [
           {
-            "id": "4e0d2006b379c287",
+            "id": "425947c379409e69",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/Effective C++ Series/Effective C++ Outline.md",
+                "file": "Project/Effective C++ Series/Copying Function.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -21,7 +21,20 @@
             }
           },
           {
-            "id": "0ad9f32e53a18eb0",
+            "id": "26261aefa343488c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project/Effective C++ Series/Item23 Prefer non-member non-friend functions to member functions.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3858d3197d088a15",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -34,12 +47,12 @@
             }
           },
           {
-            "id": "be89647d5da79a36",
+            "id": "d838b349903166ed",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/Effective C++ Series/Effective C++ Outline.md",
+                "file": "Project/Effective C++ Series/Item26 Postpone variable definitions as long as possible.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -47,12 +60,12 @@
             }
           },
           {
-            "id": "4f8119937c10d3d7",
+            "id": "d65c4cec2124f788",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/Effective C++ Series/Effective C++ Outline.md",
+                "file": "Project/Effective C++ Series/Item23 Prefer non-member non-friend functions to member functions.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -60,38 +73,12 @@
             }
           },
           {
-            "id": "f66961a798054bdc",
+            "id": "46fdbeaf55689dc7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/Effective C++ Series/Static Object.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "bda0f1fa1e56a0ca",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project/Effective C++ Series/Smart Pointer.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c67f40fafb52142c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project/Effective C++ Series/Smart Pointer.md",
+                "file": "Project/Effective C++ Series/Item24 Declare non-member functions when type conversions should apply to all parameters.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -148,7 +135,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "9481d0cc9008d9b0",
@@ -164,7 +152,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Project/Effective C++ Series/Effective C++ Outline.md",
+                "file": "Project/Effective C++ Series/Copying Function.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -181,7 +169,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Project/Effective C++ Series/Effective C++ Outline.md",
+                "file": "Project/Effective C++ Series/Copying Function.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -204,7 +192,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project/Effective C++ Series/Effective C++ Outline.md"
+                "file": "Project/Effective C++ Series/Copying Function.md"
               }
             }
           }
@@ -225,18 +213,24 @@
       "random-note:開始漫遊筆記": false
     }
   },
-  "active": "4e0d2006b379c287",
+  "active": "425947c379409e69",
   "lastOpenFiles": [
-    "Project/Effective C++ Series/設計新 Class 的準則.md",
+    "Project/Effective C++ Series/Const in C++.md",
     "Project/Effective C++ Series/Effective C++ Outline.md",
+    "Project/Effective C++ Series/Item23 Prefer non-member non-friend functions to member functions.md",
+    "Project/Effective C++ Series/Item26 Postpone variable definitions as long as possible.md",
+    "Project/Effective C++ Series/設計新 Class 的準則.md",
+    "Project/Effective C++ Series/Item24 Declare non-member functions when type conversions should apply to all parameters.md",
     "Project/Effective C++ Series/Static Object.md",
-    "Project/Effective C++ Series/為什麼要用獨立句將物件放入 Smart Pointer.md",
     "Project/Effective C++ Series/Smart Pointer.md",
+    "Project/Effective C++ Series/Implicit TemplateInstantiation.md",
     "Project/Effective C++ Series/The Copying in Pass by value.md",
+    "Project/Effective C++ Series/The definition and declaration of static const.md",
+    "Project/Effective C++ Series/Translation Unit.md",
+    "Project/Effective C++ Series/為什麼要用獨立句將物件放入 Smart Pointer.md",
     "Project/Effective C++ Series/讓介面容易被使用.md",
     "Project/Effective C++ Series/思維誤區-物件很小就可以 Pass By Value.md",
     "Project/Effective C++ Series/Const member function.md",
-    "Project/Effective C++ Series/Const in C++.md",
     "Project/Effective C++ Series/Copying Function.md",
     "Project/Effective C++ Series/Item54 Familiarize yourself with the standard library including TR1.md",
     "Project/Effective C++ Series/Virtual Function.md",
@@ -248,12 +242,6 @@
     "Project/Effective C++ Series/Do not Declare Virtural Function in Non-polymorphic Base Class.md",
     "Project/Effective C++ Series/Pure Virtual Destructor.md",
     "Project/Effective C++ Series/Item55 Familiarize yourself with Boost.md",
-    "Project/Effective C++ Series/Deleted Function.md",
-    "Project/Effective C++ Series/Default Generated Functions.md",
-    "Project/Effective C++ Series/Replace define with const.md",
-    "Project/Effective C++ Series/Item28 Avoid returning handles to object internals.md",
-    "Project/Effective C++ Series/Member Initialization List.md",
-    "Project/Effective C++ Series/讓介面易於被使用.md",
     "Project/Effective C++ Series",
     "Area/Obsidian",
     "Area/Hugo",

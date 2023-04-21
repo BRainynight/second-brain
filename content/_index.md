@@ -18,9 +18,4 @@ enableToc: false
 - [[tags]]
 - [[notes/Project/Effective C++ Series/Effective C++ Outline]]
 
-## 注意事項
-
-Quartz 的 Graph 目前內建只支援絕對路徑!! 
-
-
 

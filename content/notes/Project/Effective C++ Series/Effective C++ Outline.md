@@ -15,7 +15,7 @@ C++ 融合了多種形式的 programming 手法，物件導向、procedural、ge
 - 對於形似 function 的巨集(macro)，用 `inline` 取代。
 #### Const
 - [[Replace define with const]]
-- [[The definition and declaration of static const ]] P14
+- [[The definition and declaration of static const]] P14
 #### Enum
 - [[enum hack]]
 #### Inline
@@ -179,3 +179,38 @@ processWidget(pw, priority());
 
 
 ### 條款22 將成員變數宣告成 Private
+
+- 只提供必要的 Getter 給客戶端，隱藏你的實作有絕佳的好處。
+
+思維誤區: Protected 不比 Public 具有更好的封裝性
+- 取消一個 Public Member Data 的成本: 所有使用他的客戶端
+- 取消一個 Protected Member Data 的成本 : 所有繼承他的 Derived Class
+這兩種 Access Level 的封裝性都不佳，仍該盡可能的使用 Private。
+
+### 條款23 寧以non-member, non-friend替換 member函數
+[[Item23 Prefer non-member non-friend functions to member functions]]
+
+
+
+### 條款24 如果所有的參數都需要型別轉換，請為此採用 non-member 函式
+[[Item24 Declare non-member functions when type conversions should apply to all parameters]]
+
+
+### 條款25 考慮寫出一個不拋異常的 Swap 函式
+
+
+## Ch5 Implementation
+
+### 條款26 盡可能延後變數定義式的出現時間
+[[Item26 Postpone variable definitions as long as possible]]
+
+### 條款2
+
+### 條款2
+
+
+
+
+
+
+簡體目錄: https://blog.csdn.net/weixin_45926547/article/details/121276226

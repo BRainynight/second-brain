@@ -13,7 +13,7 @@ tags:
 - 其他被稱為 non-local static object
 它們的 deconstructor 會在 main 結束時被喚起。
 
-當我們有兩個編譯單元([[Translation Unit]])，通常表示兩份 Source Code。兩份 Source Code 中都有 non-local static object，且其中一份 static object 的初始化需要使用到另一份 source code 的 static object。
+當我們有兩個編譯單元 ([[Translation Unit]])，通常表示兩份 Source Code。兩份 Source Code 中都有 non-local static object，且其中一份 static object 的初始化需要使用到另一份 source code 的 static object。
 
 問題在於，有可能要被使用的那個物件尚未被初始化! 
 > C++ 對於不同 [[Translation Unit]] 中 non-local Static object 初始化的順序並沒有明確的定義。
