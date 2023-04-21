@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.455859c31e7c72d8119d99f27097b0f2.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.149d9e9be8e7689e99f3c036bac7592b.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.a375c091d913fbf13f59ba3ecfe85025.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.b74eeab80d8710b231db9646b93b6a13.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -423,10 +423,20 @@ Apr 17, 2023
     
     
     
-    <li>
-      No backlinks found
-    </li>
     
+    
+      
+      
+      
+    
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F/" data-ctx="Pure Virtual Destructor" data-src="/notes/Project/Effective-C&#43;&#43;-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F" class="internal-link">為多型用途的基礎類別宣告 virtual 解構式</a>
+      </li>
+      
+      
+      
 </ul>
 
     </div>

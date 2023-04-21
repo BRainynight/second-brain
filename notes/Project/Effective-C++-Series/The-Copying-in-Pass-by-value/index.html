@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.455859c31e7c72d8119d99f27097b0f2.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.149d9e9be8e7689e99f3c036bac7592b.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.a375c091d913fbf13f59ba3ecfe85025.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.b74eeab80d8710b231db9646b93b6a13.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -440,10 +440,20 @@ Apr 19, 2023
     
     
     
-    <li>
-      No backlinks found
-    </li>
     
+    
+      
+      
+      
+    
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E6%80%9D%E7%B6%AD%E8%AA%A4%E5%8D%80-%E7%89%A9%E4%BB%B6%E5%BE%88%E5%B0%8F%E5%B0%B1%E5%8F%AF%E4%BB%A5-Pass-By-value/" data-ctx="The Copying in Pass by value" data-src="/notes/Project/Effective-C&#43;&#43;-Series/%E6%80%9D%E7%B6%AD%E8%AA%A4%E5%8D%80-%E7%89%A9%E4%BB%B6%E5%BE%88%E5%B0%8F%E5%B0%B1%E5%8F%AF%E4%BB%A5-Pass-By-value" class="internal-link">思維誤區-物件很小就可以 Pass By value</a>
+      </li>
+      
+      
+      
 </ul>
 
     </div>
