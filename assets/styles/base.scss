@@ -67,8 +67,12 @@ p, ul, text, a, tr, td, li, ol, ul {
   padding: revert;
 }
 
-tbody, li, p {
+tbody, p {
   line-height: 1.5em;
+}
+
+li {
+  line-height: 1.8;
 }
 
 .mainTOC {
@@ -210,6 +214,9 @@ article {
 
   & p {
     overflow-wrap: anywhere;
+    & strong {
+      color: var(--strong);
+    }
   }
 }
 
