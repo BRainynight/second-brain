@@ -188,7 +188,8 @@ processWidget(pw, priority());
 這兩種 Access Level 的封裝性都不佳，仍該盡可能的使用 Private。
 
 ### 條款23 寧以non-member, non-friend替換 member函數
-[[Item23 Prefer non-member non-friend functions to member functions]]
+
+[[Non-member && Non-friend Function 的封裝度優於 Member Function]]
 
 
 

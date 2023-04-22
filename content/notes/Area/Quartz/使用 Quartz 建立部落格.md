@@ -16,7 +16,7 @@ categories:
     ```
 5. **Optional**  `make` `: Windows 下須使用 MinGW 安裝，參考: [C++ 開發環境 在 Windows 11 中安裝 mingw-w64 及設定環境變數](http://kaiching.org/pydoing/cpp-guide4/how-to-install-mingw-w64-and-set-environment-variable.html)
 
-Hugo 需要以 PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows) 或 WSL , Git Bash 這種 linux-based terminal 運行。
+Hugo 需要以 [PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows) 或 WSL , Git Bash 這種 linux-based terminal 運行。
 
 ## Start to Quzrtz
 官方網站有相關的教學: 
@@ -57,11 +57,12 @@ Hugo 需要以 PowerShell](https://learn.microsoft.com/en-us/powershell/scriptin
 - 可以參考此文介紹如何建立模板 [【Obsidian 使用教學】筆記篇 05 — 結合資訊處理流程，讓筆記的 Metadata 變得更詳細](https://medium.com/pm%E7%9A%84%E7%94%9F%E7%94%A2%E5%8A%9B%E5%B7%A5%E5%85%B7%E7%AE%B1/obsidian-%E4%BD%BF%E7%94%A8%E6%95%99%E5%AD%B8-%E7%AD%86%E8%A8%98%E7%AF%87-05-%E7%B5%90%E5%90%88%E8%B3%87%E8%A8%8A%E8%99%95%E7%90%86%E6%B5%81%E7%A8%8B-e6a953438f43)
 - 要注意，插入模板的時候，需要打完檔案名稱，並把 Insert 的鼠標要在 Header 1 下的第一行。
 
+## Obsidian Embed 
+在 Obsidian 會把頁面嵌入，在 Quartz 會直接轉換成內部連結。
+
 ## 發佈到 Github Page
 
-參考 
-
-![[Publish Quartz to Github Page]]
+參考 [[Publish Quartz to Github Page]]
 
 
 ## 修改首頁
@@ -75,3 +76,11 @@ Hugo 需要以 PowerShell](https://learn.microsoft.com/en-us/powershell/scriptin
 ```
 2.  注意結尾不要多加反斜線    
 3.  主頁相對於各檔案都是以 `note/` 開始
+
+## graphConfig
+在 `data/graphConfig` 最下面有一個設定項 `paths`，這是可以設定指定頁面節點的顏色，通常針對 MOC Page，如下例就是把 Effective-C++-Outline 的節點設成藍色。
+
+```yaml
+paths:
+    - /notes/Project/Effective-C++-Series/Effective-C++-Outline: "#4388cc"
+```

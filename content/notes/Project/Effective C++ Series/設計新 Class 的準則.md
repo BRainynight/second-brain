@@ -18,7 +18,7 @@ tags:
 		- [[Effective C++ Outline#條款7 為多型用途的基礎類別宣告 virtual 解構式|條款7 為多型用途的基礎類別宣告 virtual 解構式]]
 - 需要考量轉換嗎? 隱性轉換與顯性轉換?
 - 甚麼運算子與函式對此新類別式合理的?
-	- [[Item23 Prefer non-member non-friend functions to member functions]]
+	- [[Non-member && Non-friend Function 的封裝度優於 Member Function]]
 	- [[Item24 Declare non-member functions when type conversions should apply to all parameters]]
 	- [[Item26 Postpone variable definitions as long as possible]]
 - 什麼標準宣告式是需要駁回的? 請用 `delete` 明確刪除它。

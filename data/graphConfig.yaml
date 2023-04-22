@@ -34,4 +34,5 @@ globalGraph:
 ### For all graphs ###
 
 paths:
-  - /moc: "#4388cc"
+#   - /moc: "#4388cc"
+    - /notes/Project/Effective-C++-Series/Effective-C++-Outline: "#4388cc" #specfiy node to present different color
