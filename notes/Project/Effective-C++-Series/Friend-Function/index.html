@@ -8,30 +8,24 @@
   <meta charset="UTF-8" />
   <meta
     name="description"
-    content="物件導向要求，資料(data) 以及操作資料的函式應該盡量綁在一起，不代表物件導向推崇 member function 是比較好的選擇。
-物件導向要求資料應該盡可能地被封裝，與直觀相反的，non-member function 的封裝性優於 member function。為什麼?
-封裝 為什麼封裝被推崇?
- 封裝使得我們在改變事物時，只影響有限的客戶。
-  被封裝的東西變得不可見 -&gt; 越多封裝就越少 client 可以 access -&gt; 對實作方而言，有更大的彈性改變它，因為能 access 它的客戶有限，改變的影響力小。  如何衡量封裝程度 這個問句可以換句話說，如何量測「有多少 function 可以看到某一塊資料?"
+    content="提供私用成員給某些外部函式來存取，這個有權調用某類別私有成員的函式就稱為 Friend Function
+ Friend Function 實質上定義在外面，但是在 Class 內部需要用 keyword friend 再提及一次該 function。因此，Friend Function 是 Non-member function !
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  class Ball; int compare(Ball &amp;b1, Ball &amp;b2) { // 可直接存取私用成員  if(b1."
   />
   <meta property="og:title" content="">
-  <meta property="og:description" content="物件導向要求，資料(data) 以及操作資料的函式應該盡量綁在一起，不代表物件導向推崇 member function 是比較好的選擇。
-物件導向要求資料應該盡可能地被封裝，與直觀相反的，non-member function 的封裝性優於 member function。為什麼?
-封裝 為什麼封裝被推崇?
- 封裝使得我們在改變事物時，只影響有限的客戶。
-  被封裝的東西變得不可見 -&gt; 越多封裝就越少 client 可以 access -&gt; 對實作方而言，有更大的彈性改變它，因為能 access 它的客戶有限，改變的影響力小。  如何衡量封裝程度 這個問句可以換句話說，如何量測「有多少 function 可以看到某一塊資料?">
+  <meta property="og:description" content="提供私用成員給某些外部函式來存取，這個有權調用某類別私有成員的函式就稱為 Friend Function
+ Friend Function 實質上定義在外面，但是在 Class 內部需要用 keyword friend 再提及一次該 function。因此，Friend Function 是 Non-member function !
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  class Ball; int compare(Ball &amp;b1, Ball &amp;b2) { // 可直接存取私用成員  if(b1.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
-  <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item23-Prefer-non-member-non-friend-functions-to-member-functions/">
+  <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Friend-Function/">
   <meta property="og:width" content="200">
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="" />
-  <meta name="twitter:description" content="物件導向要求，資料(data) 以及操作資料的函式應該盡量綁在一起，不代表物件導向推崇 member function 是比較好的選擇。
-物件導向要求資料應該盡可能地被封裝，與直觀相反的，non-member function 的封裝性優於 member function。為什麼?
-封裝 為什麼封裝被推崇?
- 封裝使得我們在改變事物時，只影響有限的客戶。
-  被封裝的東西變得不可見 -&gt; 越多封裝就越少 client 可以 access -&gt; 對實作方而言，有更大的彈性改變它，因為能 access 它的客戶有限，改變的影響力小。  如何衡量封裝程度 這個問句可以換句話說，如何量測「有多少 function 可以看到某一塊資料?" />
+  <meta name="twitter:description" content="提供私用成員給某些外部函式來存取，這個有權調用某類別私有成員的函式就稱為 Friend Function
+ Friend Function 實質上定義在外面，但是在 Class 內部需要用 keyword friend 再提及一次該 function。因此，Friend Function 是 Non-member function !
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  class Ball; int compare(Ball &amp;b1, Ball &amp;b2) { // 可直接存取私用成員  if(b1." />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
   
     
@@ -142,13 +136,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.5b2da100ae78d1d91d5159411919ebd8.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.92fd273254a7ff7072081003d185a2ad.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9d346648ee78263aff9463c89ab48e4f.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.6fd3f25879cb2a524ca83d7f3438bf35.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -194,7 +188,7 @@
         drawGraph(
             "https://brainynight.github.io/second-brain",
             drawGlobal,
-            [{"/moc":"#4388cc"}],
+            [{"/notes/Project/Effective-C++-Series/Effective-C++-Outline":"#4388cc"}],
             drawGlobal ? {"centerForce":1,"depth":-1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.5,"linkDistance":1,"opacityScale":3,"repelForce":1,"scale":1.4} : {"centerForce":1,"depth":1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.6,"linkDistance":1,"opacityScale":3,"repelForce":2,"scale":1.2}
           );
 
@@ -319,7 +313,7 @@
       
       <p class="meta">
         Last updated 
-Apr 21, 2023
+Apr 22, 2023
 
  
           
@@ -335,11 +329,7 @@ Apr 21, 2023
         <summary>Table of Contents</summary>
         <nav id="TableOfContents">
   <ol>
-    <li><a href="#封裝">封裝</a>
-      <ol>
-        <li><a href="#如何衡量封裝程度">如何衡量封裝程度</a></li>
-      </ol>
-    </li>
+    <li><a href="#resource">Resource</a></li>
   </ol>
 </nav>
     </details>
@@ -382,13 +372,6 @@ Apr 21, 2023
     
     
   
-    
-    
-      
-      
-    
-    
-  
   
   
   
@@ -398,22 +381,67 @@ Apr 21, 2023
 
 
 
-<p>物件導向要求，資料(data) 以及操作資料的函式應該盡量綁在一起，不代表物件導向推崇 member function 是比較好的選擇。</p>
-<p>物件導向要求資料應該盡可能地被封裝，與直觀相反的，non-member function 的封裝性優於  member function。為什麼?</p>
-<a href="#封裝"><h2 id="封裝"><span class="hanchor" ariaLabel="Anchor"># </span>封裝</h2></a>
-<p>為什麼封裝被推崇?</p>
 <blockquote>
-<p>封裝使得我們在改變事物時，只影響有限的客戶。</p>
+<p>提供私用成員給某些外部函式來存取，這個有權調用某類別私有成員的函式就稱為 Friend Function</p>
 </blockquote>
-<ul>
-<li>被封裝的東西變得不可見 -&gt; 越多封裝就越少 client 可以 access -&gt; 對實作方而言，有更大的彈性改變它，因為能 access 它的客戶有限，改變的影響力小。</li>
-</ul>
-<a href="#如何衡量封裝程度"><h3 id="如何衡量封裝程度"><span class="hanchor" ariaLabel="Anchor"># </span>如何衡量封裝程度</h3></a>
-<p>這個問句可以換句話說，如何量測「有多少 function 可以看到某一塊資料?」。</p>
-<blockquote>
-<p>計算能夠存取該資料的函式，越多函式存取則封裝度越低。</p>
-</blockquote>
-<p>對於 Private Member data 而言，能存取它的就是所有的 member function。</p>
+<p>Friend Function 實質上定義在外面，但是在 Class 內部需要用 keyword <code>friend</code> 再提及一次該 function。因此，Friend Function 是 Non-member function !</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Ball</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">compare</span><span class="p">(</span><span class="n">Ball</span> <span class="o">&amp;</span><span class="n">b1</span><span class="p">,</span> <span class="n">Ball</span> <span class="o">&amp;</span><span class="n">b2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 可直接存取私用成員
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span><span class="p">(</span><span class="n">b1</span><span class="p">.</span><span class="n">_radius</span> <span class="o">==</span> <span class="n">b2</span><span class="p">.</span><span class="n">_radius</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">b1</span><span class="p">.</span><span class="n">_radius</span> <span class="o">&gt;</span> <span class="n">b2</span><span class="p">.</span><span class="n">_radius</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Ball</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">Ball</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">radius</span><span class="p">(</span><span class="kt">double</span> <span class="n">radius</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_radius</span> <span class="o">=</span> <span class="n">radius</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> 
+</span></span><span class="line"><span class="cl">    <span class="c1">// 宣告朋友函式 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">friend</span> <span class="kt">int</span> <span class="nf">compare</span><span class="p">(</span><span class="n">Ball</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">Ball</span><span class="o">&amp;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">_radius</span><span class="p">;</span> <span class="c1">// 半徑
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><a href="#resource"><h2 id="resource"><span class="hanchor" ariaLabel="Anchor"># </span>Resource</h2></a>
+<p>
+<a href="https://openhome.cc/Gossip/CppGossip/friendFunctionClass.html" rel="noopener">friend 函式、friend 類別</a></p>
 
 
     </article>
@@ -441,18 +469,8 @@ Apr 21, 2023
     
       
       
-      
-    
-      
-      
       <li>
-        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%A8%AD%E8%A8%88%E6%96%B0-Class-%E7%9A%84%E6%BA%96%E5%89%87/" data-ctx="Item23 Prefer non-member non-friend functions to member functions" data-src="/notes/Project/Effective-C&#43;&#43;-Series/%E8%A8%AD%E8%A8%88%E6%96%B0-Class-%E7%9A%84%E6%BA%96%E5%89%87" class="internal-link">設計新 Class 的準則</a>
-      </li>
-      
-      
-      
-      <li>
-        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Effective-C&#43;&#43;-Outline/" data-ctx="Item23 Prefer non-member non-friend functions to member functions" data-src="/notes/Project/Effective-C&#43;&#43;-Series/Effective-C&#43;&#43;-Outline" class="internal-link">Effective C&#43;&#43; Outline</a>
+        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Non-member-Non-friend-Function-%E7%9A%84%E5%B0%81%E8%A3%9D%E5%BA%A6%E5%84%AA%E6%96%BC-Member-Function/" data-ctx="Friend Function" data-src="/notes/Project/Effective-C&#43;&#43;-Series/Non-member-Non-friend-Function-%E7%9A%84%E5%B0%81%E8%A3%9D%E5%BA%A6%E5%84%AA%E6%96%BC-Member-Function" class="internal-link">Non-member &amp;&amp; Non-friend Function 的封裝度優於 Member Function</a>
       </li>
       
       

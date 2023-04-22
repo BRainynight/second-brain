@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.5b2da100ae78d1d91d5159411919ebd8.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.92fd273254a7ff7072081003d185a2ad.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9d346648ee78263aff9463c89ab48e4f.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.6fd3f25879cb2a524ca83d7f3438bf35.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -185,7 +185,7 @@
         drawGraph(
             "https://brainynight.github.io/second-brain",
             drawGlobal,
-            [{"/moc":"#4388cc"}],
+            [{"/notes/Project/Effective-C++-Series/Effective-C++-Outline":"#4388cc"}],
             drawGlobal ? {"centerForce":1,"depth":-1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.5,"linkDistance":1,"opacityScale":3,"repelForce":1,"scale":1.4} : {"centerForce":1,"depth":1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.6,"linkDistance":1,"opacityScale":3,"repelForce":2,"scale":1.2}
           );
 
@@ -310,7 +310,7 @@
       <h1>Copying Function</h1>
       <p class="meta">
         Last updated 
-Apr 21, 2023
+Apr 22, 2023
 
  
           
@@ -321,13 +321,6 @@ Apr 21, 2023
           <li><a href="https://brainynight.github.io/second-brain/tags/cpp/">
           
             Cpp
-          
-            </a>
-           </li>
-          
-          <li><a href="https://brainynight.github.io/second-brain/tags/tofix/">
-          
-            Tofix
           
             </a>
            </li>
@@ -396,34 +389,49 @@ Apr 21, 2023
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code></code></pre></td>
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Copy Construcotr 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">PriorityCustomer</span><span class="o">::</span><span class="n">PriorityCustomer</span><span class="p">(</span><span class="k">const</span> <span class="n">PriorityCustomer</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">:</span> <span class="n">Customer</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span> <span class="c1">// invoke base class copy ctor
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">priority</span><span class="p">(</span><span class="n">rhs</span><span class="p">.</span><span class="n">priority</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">logCall</span><span class="p">(</span><span class="s">&#34;PriorityCustomer copy constructor&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Copy Assignment
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">PriorityCustomer</span><span class="o">&amp;</span>
+</span></span><span class="line"><span class="cl"><span class="n">PriorityCustomer</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">PriorityCustomer</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">logCall</span><span class="p">(</span><span class="s">&#34;PriorityCustomer copy assignment operator&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Customer</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">rhs</span><span class="p">);</span> <span class="c1">// assign base class parts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">priority</span> <span class="o">=</span> <span class="n">rhs</span><span class="p">.</span><span class="n">priority</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-</ol>
-<dl>
-<dt>// Copy Construcotr</dt>
-<dt>PriorityCustomer::PriorityCustomer(const PriorityCustomer&amp; rhs)</dt>
-<dd>Customer(rhs), // invoke base class copy ctor
-priority(rhs.priority)
-{
-logCall(&ldquo;PriorityCustomer copy constructor&rdquo;);
-}</dd>
-</dl>
-<p>// Copy Assignment
-PriorityCustomer&amp;
-PriorityCustomer::operator=(const PriorityCustomer&amp; rhs)
-{
-logCall(&ldquo;PriorityCustomer copy assignment operator&rdquo;);
-Customer::operator=(rhs); // assign base class parts
-priority = rhs.priority;
-return *this;
-}</p>
-<pre><code>```
-</code></pre>
-<ol start="3">
-<li>Copy Constructor 與 Copy Assignment 不應該 Call 彼此，如果有 Reusable Code，應該另外抽一個 private function 去共用。</li>
+</div><p>``</p>
+</li>
+<li>
+<p>Copy Constructor 與 Copy Assignment 不應該 Call 彼此，如果有 Reusable Code，應該另外抽一個 private function 去共用。</p>
+</li>
 </ol>
 
 

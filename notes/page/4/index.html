@@ -130,13 +130,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.5b2da100ae78d1d91d5159411919ebd8.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.92fd273254a7ff7072081003d185a2ad.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9d346648ee78263aff9463c89ab48e4f.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.6fd3f25879cb2a524ca83d7f3438bf35.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -182,7 +182,7 @@
         drawGraph(
             "https://brainynight.github.io/second-brain",
             drawGlobal,
-            [{"/moc":"#4388cc"}],
+            [{"/notes/Project/Effective-C++-Series/Effective-C++-Outline":"#4388cc"}],
             drawGlobal ? {"centerForce":1,"depth":-1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.5,"linkDistance":1,"opacityScale":3,"repelForce":1,"scale":1.4} : {"centerForce":1,"depth":1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.6,"linkDistance":1,"opacityScale":3,"repelForce":2,"scale":1.2}
           );
 
@@ -351,24 +351,6 @@ Apr 17, 2023
 
             </p>
             <div class="desc">
-              <h3><a href="https://brainynight.github.io/second-brain/notes/Area/Quartz/Publish-Quartz-to-Github-Page/" class="internal-link" data-src="/second-brain/notes/Area/Quartz/Publish-Quartz-to-Github-Page/">將 Quartz 發佈到 Github Page</a></h3>
-            </div>
-            <div class="spacer"></div>
-            <ul class="tags">
-                
-                <li><a href="https://brainynight.github.io/second-brain/tags/Quartz/">Quartz</a></li>
-                
-            </ul>
-        </div>
-    </li><li class="section-li">
-        <div class="section">
-            <p class="meta">
-                
-Apr 17, 2023
-
-
-            </p>
-            <div class="desc">
               <h3><a href="https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Translation-Unit/" class="internal-link" data-src="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Translation-Unit/">Translation Unit</a></h3>
             </div>
             <div class="spacer"></div>
@@ -424,6 +406,24 @@ Apr 17, 2023
             </p>
             <div class="desc">
               <h3><a href="https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Replace-define-with-const/" class="internal-link" data-src="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Replace-define-with-const/">Replace define with const</a></h3>
+            </div>
+            <div class="spacer"></div>
+            <ul class="tags">
+                
+                <li><a href="https://brainynight.github.io/second-brain/tags/cpp/">Cpp</a></li>
+                
+            </ul>
+        </div>
+    </li><li class="section-li">
+        <div class="section">
+            <p class="meta">
+                
+Apr 17, 2023
+
+
+            </p>
+            <div class="desc">
+              <h3><a href="https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Pure-Virtual-Destructor/" class="internal-link" data-src="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Pure-Virtual-Destructor/">Pure Virtual Destructor</a></h3>
             </div>
             <div class="spacer"></div>
             <ul class="tags">
