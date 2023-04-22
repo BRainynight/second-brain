@@ -136,13 +136,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.149d9e9be8e7689e99f3c036bac7592b.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.5b2da100ae78d1d91d5159411919ebd8.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.e767b63330eb50889149a0abd6b80270.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9d346648ee78263aff9463c89ab48e4f.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
