@@ -58,7 +58,15 @@ const char* const p = greeting; // const ptr, const data
 ### 條款5 了解 C++默默編寫並呼叫哪些函式
 當我們宣告了一個 Class，而不去實踐任何細節，Compiler 會偷偷地幫我們生成一些 function，他們分別是
 - default constructor, destructor
+```cpp
+Empty() { ... } // default constructor
+~Empty() { ... }
+```
 - copy constructor, copy assignment
+```cpp
+Empty(const Empty& rhs) { ... } // copy constructor
+Empty& operator=(const Empty& rhs) { ... } // copy assignment 
+```
 且都是 public inline function - [[Item30 Understand the ins and outs of inlining]]
 
 更確切來說，是當這些 function 被需要 (被呼叫) 時產生。
@@ -189,25 +197,53 @@ processWidget(pw, priority());
 
 ### 條款23 寧以non-member, non-friend替換 member函數
 
+這條是針對 Object-Oriented C++ 的法則，站在 Template C++ 又有其他需要考慮的地方，形成了 [[Item46 需要型別轉換時請為模板定義非成員函式]]
+
 [[Non-member && Non-friend Function 的封裝度優於 Member Function]]
 
 
 
 ### 條款24 如果所有的參數都需要型別轉換，請為此採用 non-member 函式
-[[Item24 Declare non-member functions when type conversions should apply to all parameters]]
+[[當所函式所有的參數都需要型別轉換，採用 Non-member Function]]
 
 
 ### 條款25 考慮寫出一個不拋異常的 Swap 函式
+[[Swap and pimpl]]
+
+> [!danger]
+> 讀到 P111，我懷疑 C++11 之後有不同的做法，先不細看。
 
 
 ## Ch5 Implementation
 
 ### 條款26 盡可能延後變數定義式的出現時間
-[[Item26 Postpone variable definitions as long as possible]]
 
-### 條款2
+盡可能當已經擁有初始值了，再一口氣定義+賦予初始值，不去調用多餘的 constructor ! 
+- [[盡可能延後變數定義式的出現時間]]
 
-### 條款2
+----
+
+### 條款27 少做轉型動作 (Minimize Casting)
+[[少做轉型動作(Minimize casting)]]
+
+### 條款28 避免傳回 Handles 指向物件內部成分
+[[避免傳回 Handles 指向物件內部成分]]
+
+
+### 條款29 為異常安全 (Exception-safe) 而努力是值得的
+
+### 條款30 透徹了解 Inline
+
+### 條款31 將檔案間的編譯依存降到最低
+
+
+## Ch6 繼承與物件導向
+
+
+
+## Ch7 Template and Generic Programming
+
+- [[Item46 需要型別轉換時請為模板定義非成員函式]]
 
 
 

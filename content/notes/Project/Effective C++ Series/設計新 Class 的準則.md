@@ -19,8 +19,8 @@ tags:
 - 需要考量轉換嗎? 隱性轉換與顯性轉換?
 - 甚麼運算子與函式對此新類別式合理的?
 	- [[Non-member && Non-friend Function 的封裝度優於 Member Function]]
-	- [[Item24 Declare non-member functions when type conversions should apply to all parameters]]
-	- [[Item26 Postpone variable definitions as long as possible]]
+	- [[當所函式所有的參數都需要型別轉換，採用 Non-member Function]]
+	- [[盡可能延後變數定義式的出現時間]]
 - 什麼標準宣告式是需要駁回的? 請用 `delete` 明確刪除它。
 - 哪些 member 需要暴露出來? (public/private/protected)
 - 什麼是它的未宣告介面(undeclared interface)?

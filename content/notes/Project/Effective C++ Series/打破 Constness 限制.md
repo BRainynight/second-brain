@@ -9,7 +9,7 @@ tags:
 > 編譯器堅守的觀點: Physical Constness，又稱 Bitwise constness。Const member function 不可以修改任何 non-static member data。
 
 然而，請看下例: `operator[]` 確實不會更動到 member data，可以通過 Bitwise Testing，卻把「改動權」暴露給 Client 端，造成不應該的賦值行為。
-- [[Item28 Avoid returning handles to object internals]]
+- [[避免傳回 Handles 指向物件內部成分]]
 
 ```cpp
 class CTextBlock {

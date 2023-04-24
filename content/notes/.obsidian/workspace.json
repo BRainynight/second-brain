@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "805560d84460100b",
+        "id": "019a19586664c8eb",
         "type": "tabs",
         "children": [
           {
-            "id": "3c7eef9727bc51f2",
+            "id": "36718addfda5f2f9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Area/Quartz/使用 Quartz 建立部落格.md",
+                "file": "Project/Effective C++ Series/Effective C++ Outline.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -21,12 +21,12 @@
             }
           },
           {
-            "id": "b429f17bf03f4e13",
+            "id": "00a2da0d29484d67",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/Effective C++ Series/Non-member && Non-friend Function 的封裝度優於 Member Function.md",
+                "file": "Project/Effective C++ Series/Virtual Function.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -34,12 +34,12 @@
             }
           },
           {
-            "id": "8f197df4cadd872e",
+            "id": "b08500c5da71ea03",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/Effective C++ Series/Friend Function.md",
+                "file": "Project/Effective C++ Series/Effective C++ Outline.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -47,12 +47,12 @@
             }
           },
           {
-            "id": "eab2044a0a41729a",
+            "id": "4ada2e4fabec7f46",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/Effective C++ Series/Non-member && Non-friend Function 的封裝度優於 Member Function.md",
+                "file": "Project/Effective C++ Series/打破 Constness 限制.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -60,12 +60,12 @@
             }
           },
           {
-            "id": "5f0d06be1b01bd6a",
+            "id": "17420a093ffb9829",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Area/Quartz/Publish Quartz to Github Page.md",
+                "file": "Project/Effective C++ Series/避免傳回 Handles 指向物件內部成分.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -101,7 +101,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "C++ resources",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -138,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Area/Quartz/使用 Quartz 建立部落格.md",
+                "file": "Project/Effective C++ Series/Effective C++ Outline.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -155,7 +155,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Area/Quartz/使用 Quartz 建立部落格.md",
+                "file": "Project/Effective C++ Series/Effective C++ Outline.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -178,7 +178,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Area/Quartz/使用 Quartz 建立部落格.md"
+                "file": "Project/Effective C++ Series/Effective C++ Outline.md"
               }
             }
           }
@@ -199,45 +199,45 @@
       "random-note:開始漫遊筆記": false
     }
   },
-  "active": "3c7eef9727bc51f2",
+  "active": "36718addfda5f2f9",
   "lastOpenFiles": [
-    "Project/Effective C++ Series/Non-member && Non-friend Function 的封裝度優於 Member Function.md",
-    "Area/Quartz/使用 Quartz 建立部落格.md",
-    "Area/Quartz/Publish Quartz to Github Page.md",
+    "Project/Effective C++ Series/少做轉型動作(Minimize casting).md",
     "Project/Effective C++ Series/Effective C++ Outline.md",
-    "Project/Effective C++ Series/Friend Function.md",
-    "Project/Effective C++ Series/Item24 Declare non-member functions when type conversions should apply to all parameters.md",
+    "Project/Effective C++ Series/避免傳回 Handles 指向物件內部成分.md",
+    "Project/Effective C++ Series/Virtual Function.md",
     "Project/Effective C++ Series/打破 Constness 限制.md",
+    "Project/Effective C++ Series/Item27  Minimize casting.md",
+    "Project/Effective C++ Series/Item34 Differentiate between inheritance of interface and inheritance of implementation.md",
+    "Project/Effective C++ Series/盡可能延後變數定義式的出現時間.md",
+    "Project/Effective C++ Series/Swap and pimpl.md",
+    "Project/Effective C++ Series/Total Template Specialization.md",
+    "Project/Effective C++ Series/Default Generated Functions.md",
+    "Project/Effective C++ Series/當所函式所有的參數都需要型別轉換，採用 Non-member Function.md",
+    "Project/Effective C++ Series/Item46 需要型別轉換時請為模板定義非成員函式.md",
+    "Project/Effective C++ Series/Item31 將檔案的編譯依存關係降到最低.md",
+    "Project/Effective C++ Series/code/Item25.cpp",
+    "Resource/MOCs/C++ Resources.md",
+    "Project/Effective C++ Series/code/Item24.cpp",
+    "Project/Effective C++ Series/code",
+    "Item24.cpp",
+    "Private/Year Completed Project.md",
+    "Resource/MOCs",
+    "Project/Effective C++ Series/未命名.md",
+    "Area/Quartz/Publish Quartz to Github Page.md",
+    "Project/Effective C++ Series/Non-member && Non-friend Function 的封裝度優於 Member Function.md",
+    "Project/Effective C++ Series/Friend Function.md",
+    "Area/Quartz/使用 Quartz 建立部落格.md",
     "Area/Hugo/Hugo front matter.md",
     "Private/Dashboard.md",
-    "Private/Year Completed Project.md",
-    "Project/Effective C++ Series/Virtual Function.md",
     "Project/Effective C++ Series/Translation Unit.md",
     "Project/Effective C++ Series/The definition and declaration of static const.md",
     "Project/Effective C++ Series/The Copying in Pass by value.md",
-    "Project/Effective C++ Series/Static Object.md",
-    "Project/Effective C++ Series/Smart Pointer.md",
-    "Project/Effective C++ Series/Singleton.md",
-    "Project/Effective C++ Series/Replace define with const.md",
-    "Project/Effective C++ Series/Pure Virtual Destructor.md",
-    "Project/Effective C++ Series/Member Initialization List.md",
     "Project/Effective C++ Series/Itm10_TranscationUML.png",
-    "Project/Effective C++ Series/Item55 Familiarize yourself with Boost.md",
-    "Project/Effective C++ Series/Item54 Familiarize yourself with the standard library including TR1.md",
-    "Project/Effective C++ Series/Item47 Use traits classes for information about types.md",
-    "Project/Effective C++ Series/Item30 Understand the ins and outs of inlining.md",
-    "Project/Effective C++ Series/Item28 Avoid returning handles to object internals.md",
-    "Project/Effective C++ Series/Item26 Postpone variable definitions as long as possible.md",
     "Project/Effective C++ Series",
     "Area/Obsidian",
     "Area/Hugo",
     "Area/新增資料夾",
     "Area/PKM",
-    "Resource/PKM",
-    "Private",
-    "新增資料夾",
-    "template",
-    "Project/新增資料夾",
     "未命名.canvas"
   ]
 }

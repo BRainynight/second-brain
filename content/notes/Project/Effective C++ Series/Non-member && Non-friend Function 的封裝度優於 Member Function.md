@@ -56,8 +56,6 @@ Namespace 提供一個比較寬鬆的組織方式，即使跨越 header file 仍
 
 當然，不能改變定義式，繼承是個解決方法。
 
-然而 C++ 的繼承中，Child 是不能取得 Parent 的 Private Data 的。這點跟 non-member && non-friend function 如出一轍，沒有佔上風。
+然而 C++ 的繼承中，Child 是不能取得 Parent 的 Private Data 的。繼承可以擴充 Public 方法，這點跟 non-member && non-friend function 如出一轍，沒有佔上風，卻在 package fexility 上輸了一截。
 
-繼承可以擴充 Public 方法，功能近乎跟 non-member && non-friend function 一樣，卻在 package fexility 上輸了一截。
-
-這種程度的「擴展機能」相較 Namespace 就打了折扣。
+這種程度的「擴展機能」相較共用 Namespace 能拆分 Header file 依賴度，就打了折扣。

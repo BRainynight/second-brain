@@ -10,7 +10,7 @@
 > 在 Drived Class Object 執行 Based Class Constructor 期間，物件的型別實際上是 Base Class。
 
 這是根本的原因，由於在 Based Class Constructor 物件是 Base Class，呼叫 Base Class 的 function 也是自然的事。
-不只是 virtual function 會被決議(resolve to) 至 Base Class，如果使用 `dynamic_cast` (Runtime type infomation)，也會把物件視為 Base Class! [[Item27  Minimize casting]]
+不只是 virtual function 會被決議(resolve to) 至 Base Class，如果使用 `dynamic_cast` (Runtime type infomation)，也會把物件視為 Base Class! [[少做轉型動作(Minimize casting)]]
 
 相同的問題也存在於 Destructor，在 Destructor 中 Drived Class 的部分會先被消滅，一旦進入 Base Class Destructor ，C++ 就會看待它為一個 Base Class。
 
