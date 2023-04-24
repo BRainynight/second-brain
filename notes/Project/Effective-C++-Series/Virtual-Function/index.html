@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.92fd273254a7ff7072081003d185a2ad.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.36967371ba7bd13e46a7eb2121284123.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.6fd3f25879cb2a524ca83d7f3438bf35.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.afbb5f954918a4da00054728a01084d0.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -310,7 +310,7 @@
       
       <p class="meta">
         Last updated 
-Apr 17, 2023
+Apr 24, 2023
 
  
           
@@ -434,18 +434,7 @@ Apr 17, 2023
     
     
     
-      
-      
     
-    
-    
-      
-      
-      
-      
-      
-      
-      
     
     
 
@@ -453,6 +442,10 @@ Apr 17, 2023
     
       
       
+      
+      
+      
+    
     
 
   
@@ -488,18 +481,7 @@ Apr 17, 2023
     
     
     
-      
-      
     
-    
-    
-      
-      
-      
-      
-      
-      
-      
     
     
 
@@ -507,6 +489,10 @@ Apr 17, 2023
     
       
       
+      
+      
+      
+    
     
 
   
@@ -549,14 +535,14 @@ Apr 17, 2023
 <a href="#在-ctor--dtor-呼叫-virtual-function"><h2 id="在-ctor--dtor-呼叫-virtual-function"><span class="hanchor" ariaLabel="Anchor"># </span>在 Ctor / Dtor 呼叫 virtual function</h2></a>
 <p><a class="internal-link broken">Itm10_TranscationUML.png</a></p>
 <p>在這裡，Transcation 的 Constructor 呼叫的會是 <code>Transcation::logTranscation</code>。
-又，該 function 為 Pure virtural function，若它沒被定義，則當編譯器呼叫時會引發錯誤，而若有&hellip;. 就會 Link 到該 base class function。Related: <a class="internal-link broken">Item34 Differentiate between inheritance of interface and inheritance of implementation</a>
+又，該 function 為 Pure virtural function，若它沒被定義，則當編譯器呼叫時會引發錯誤，而若有&hellip;. 就會 Link 到該 base class function。Related: <a href="/second-brain/notes/Project/Effective-C++-Series/Item34-Differentiate-between-inheritance-of-interface-and-inheritance-of-implementation" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item34-Differentiate-between-inheritance-of-interface-and-inheritance-of-implementation">Item34 Differentiate between inheritance of interface and inheritance of implementation</a>
 一個不正式的講法: Base Calss 建構期間，所呼叫的 virtual function 不是 virtual function。</p>
 <blockquote class="important-callout">
 <p>
 在 Drived Class Object 執行 Based Class Constructor 期間，物件的型別實際上是 Base Class。</p>
 </blockquote>
 <p>這是根本的原因，由於在 Based Class Constructor 物件是 Base Class，呼叫 Base Class 的 function 也是自然的事。
-不只是 virtual function 會被決議(resolve to) 至 Base Class，如果使用 <code>dynamic_cast</code> (Runtime type infomation)，也會把物件視為 Base Class! <a class="internal-link broken">Item27  Minimize casting</a></p>
+不只是 virtual function 會被決議(resolve to) 至 Base Class，如果使用 <code>dynamic_cast</code> (Runtime type infomation)，也會把物件視為 Base Class! <a href="/second-brain/notes/Project/Effective-C++-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting">少做轉型動作(Minimize casting)</a></p>
 <p>相同的問題也存在於 Destructor，在 Destructor 中 Drived Class 的部分會先被消滅，一旦進入 Base Class Destructor ，C++ 就會看待它為一個 Base Class。</p>
 <a href="#以傳遞參數給-non-virtual-function取代使用-virtual-function"><h2 id="以傳遞參數給-non-virtual-function取代使用-virtual-function"><span class="hanchor" ariaLabel="Anchor"># </span>以傳遞參數給 non-virtual function，取代使用 Virtual function</h2></a>
 <p>將 virtual function 從 con/desturctor 中移除! 說來容易，卻不易察覺。Constructor 可能 call 別的 function，而 virtual 可能藏身在其中! 並且，很難確保 Child Class 也會服從這項規定。</p>

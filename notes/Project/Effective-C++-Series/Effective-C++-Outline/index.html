@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.92fd273254a7ff7072081003d185a2ad.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.36967371ba7bd13e46a7eb2121284123.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.6fd3f25879cb2a524ca83d7f3438bf35.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.afbb5f954918a4da00054728a01084d0.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -377,10 +377,15 @@ Apr 10, 2023
     <li><a href="#ch5-implementation">Ch5 Implementation</a>
       <ol>
         <li><a href="#條款26-盡可能延後變數定義式的出現時間">條款26 盡可能延後變數定義式的出現時間</a></li>
-        <li><a href="#條款2">條款2</a></li>
-        <li><a href="#條款2-1">條款2</a></li>
+        <li><a href="#條款27-少做轉型動作-minimize-casting">條款27 少做轉型動作 (Minimize Casting)</a></li>
+        <li><a href="#條款28-避免傳回-handles-指向物件內部成分">條款28 避免傳回 Handles 指向物件內部成分</a></li>
+        <li><a href="#條款29-為異常安全-exception-safe-而努力是值得的">條款29 為異常安全 (Exception-safe) 而努力是值得的</a></li>
+        <li><a href="#條款30-透徹了解-inline">條款30 透徹了解 Inline</a></li>
+        <li><a href="#條款31-將檔案間的編譯依存降到最低">條款31 將檔案間的編譯依存降到最低</a></li>
       </ol>
     </li>
+    <li><a href="#ch6-繼承與物件導向">Ch6 繼承與物件導向</a></li>
+    <li><a href="#ch7-template-and-generic-programming">Ch7 Template and Generic Programming</a></li>
   </ol>
 </nav>
     </details>
@@ -445,6 +450,358 @@ Apr 10, 2023
   
     
   
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
   
 
@@ -485,8 +842,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -568,8 +929,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -651,8 +1016,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -734,8 +1103,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -817,8 +1190,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -900,8 +1277,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -983,8 +1364,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -1066,8 +1451,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -1149,8 +1538,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -1232,8 +1625,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -1315,8 +1712,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -1398,8 +1799,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -1481,8 +1886,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -1564,8 +1973,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -1647,8 +2060,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -1730,8 +2147,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -1813,8 +2234,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -1896,8 +2321,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -1979,8 +2408,12 @@ Apr 10, 2023
 
   
 
+  
   
   
+    
+  
+    
   
     
   
@@ -2041,12 +2474,23 @@ Apr 10, 2023
     
     
 
+    
     
     
     
     
+      
+      
     
     
+    
+      
+      
+      
+      
+      
+      
+      
     
     
 
@@ -2062,8 +2506,12 @@ Apr 10, 2023
 
   
 
+  
+  
   
+    
   
+    
   
     
   
@@ -2145,8 +2593,12 @@ Apr 10, 2023
 
   
 
+  
+  
   
+    
   
+    
   
     
   
@@ -2228,8 +2680,12 @@ Apr 10, 2023
 
   
 
+  
+  
   
+    
   
+    
   
     
   
@@ -2295,20 +2751,96 @@ Apr 10, 2023
     
     
     
-      
-      
     
     
     
-      
-      
+
+    
+    
       
       
       
       
       
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
     
     
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
 
     
     
@@ -2322,8 +2854,12 @@ Apr 10, 2023
 
   
 
+  
+  
   
+    
   
+    
   
     
   
@@ -2405,8 +2941,12 @@ Apr 10, 2023
 
   
 
+  
+  
   
+    
   
+    
   
     
   
@@ -2501,6 +3041,18 @@ Apr 10, 2023
   
   
   
+  
+    
+    
+      
+      
+        
+      
+      
+      
+      
+    
+    
   
     
     
@@ -2600,9 +3152,31 @@ Apr 10, 2023
 <p>當我們宣告了一個 Class，而不去實踐任何細節，Compiler 會偷偷地幫我們生成一些 function，他們分別是</p>
 <ul>
 <li>default constructor, destructor</li>
-<li>copy constructor, copy assignment
-且都是 public inline function - <a href="/second-brain/notes/Project/Effective-C++-Series/Item30-Understand-the-ins-and-outs-of-inlining" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item30-Understand-the-ins-and-outs-of-inlining">Item30 Understand the ins and outs of inlining</a></li>
 </ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Empty</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="c1">// default constructor
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">~</span><span class="n">Empty</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>copy constructor, copy assignment</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Empty</span><span class="p">(</span><span class="k">const</span> <span class="n">Empty</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="c1">// copy constructor
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Empty</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Empty</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="c1">// copy assignment 
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>且都是 public inline function - <a href="/second-brain/notes/Project/Effective-C++-Series/Item30-Understand-the-ins-and-outs-of-inlining" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item30-Understand-the-ins-and-outs-of-inlining">Item30 Understand the ins and outs of inlining</a></p>
 <p>更確切來說，是當這些 function 被需要 (被呼叫) 時產生。
 <a href="/second-brain/notes/Project/Effective-C++-Series/Default-Generated-Functions" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Default-Generated-Functions">Default Generated Functions</a></p>
 <a href="#條款6-明確拒絕不要編譯器自動生成的函式"><h3 id="條款6-明確拒絕不要編譯器自動生成的函式"><span class="hanchor" ariaLabel="Anchor"># </span>條款6 明確拒絕不要編譯器自動生成的函式</h3></a>
@@ -2734,15 +3308,35 @@ Apr 10, 2023
 這兩種 Access Level 的封裝性都不佳，仍該盡可能的使用 Private。</li>
 </ul>
 <a href="#條款23-寧以non-member-non-friend替換-member函數"><h3 id="條款23-寧以non-member-non-friend替換-member函數"><span class="hanchor" ariaLabel="Anchor"># </span>條款23 寧以non-member, non-friend替換 member函數</h3></a>
+<p>這條是針對 Object-Oriented C++ 的法則，站在 Template C++ 又有其他需要考慮的地方，形成了 <a href="/second-brain/notes/Project/Effective-C++-Series/Item46-%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item46-%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F">Item46 需要型別轉換時請為模板定義非成員函式</a></p>
 <p><a href="/second-brain/notes/Project/Effective-C++-Series/Non-member-Non-friend-Function-%E7%9A%84%E5%B0%81%E8%A3%9D%E5%BA%A6%E5%84%AA%E6%96%BC-Member-Function" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Non-member-Non-friend-Function-%E7%9A%84%E5%B0%81%E8%A3%9D%E5%BA%A6%E5%84%AA%E6%96%BC-Member-Function">Non-member &amp;&amp; Non-friend Function 的封裝度優於 Member Function</a></p>
 <a href="#條款24-如果所有的參數都需要型別轉換請為此採用-non-member-函式"><h3 id="條款24-如果所有的參數都需要型別轉換請為此採用-non-member-函式"><span class="hanchor" ariaLabel="Anchor"># </span>條款24 如果所有的參數都需要型別轉換，請為此採用 non-member 函式</h3></a>
-<p><a href="/second-brain/notes/Project/Effective-C++-Series/Item24-Declare-non-member-functions-when-type-conversions-should-apply-to-all-parameters" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item24-Declare-non-member-functions-when-type-conversions-should-apply-to-all-parameters">Item24 Declare non-member functions when type conversions should apply to all parameters</a></p>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/%E7%95%B6%E6%89%80%E5%87%BD%E5%BC%8F%E6%89%80%E6%9C%89%E7%9A%84%E5%8F%83%E6%95%B8%E9%83%BD%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%8E%A1%E7%94%A8-Non-member-Function" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E7%95%B6%E6%89%80%E5%87%BD%E5%BC%8F%E6%89%80%E6%9C%89%E7%9A%84%E5%8F%83%E6%95%B8%E9%83%BD%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%8E%A1%E7%94%A8-Non-member-Function">當所函式所有的參數都需要型別轉換，採用 Non-member Function</a></p>
 <a href="#條款25-考慮寫出一個不拋異常的-swap-函式"><h3 id="條款25-考慮寫出一個不拋異常的-swap-函式"><span class="hanchor" ariaLabel="Anchor"># </span>條款25 考慮寫出一個不拋異常的 Swap 函式</h3></a>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/Swap-and-pimpl" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Swap-and-pimpl">Swap and pimpl</a></p>
+<blockquote class="danger-callout">
+<p>
+讀到 P111，我懷疑 C++11 之後有不同的做法，先不細看。</p>
+</blockquote>
 <a href="#ch5-implementation"><h2 id="ch5-implementation"><span class="hanchor" ariaLabel="Anchor"># </span>Ch5 Implementation</h2></a>
 <a href="#條款26-盡可能延後變數定義式的出現時間"><h3 id="條款26-盡可能延後變數定義式的出現時間"><span class="hanchor" ariaLabel="Anchor"># </span>條款26 盡可能延後變數定義式的出現時間</h3></a>
-<p><a href="/second-brain/notes/Project/Effective-C++-Series/Item26-Postpone-variable-definitions-as-long-as-possible" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item26-Postpone-variable-definitions-as-long-as-possible">Item26 Postpone variable definitions as long as possible</a></p>
-<a href="#條款2"><h3 id="條款2"><span class="hanchor" ariaLabel="Anchor"># </span>條款2</h3></a>
-<a href="#條款2-1"><h3 id="條款2-1"><span class="hanchor" ariaLabel="Anchor"># </span>條款2</h3></a>
+<p>盡可能當已經擁有初始值了，再一口氣定義+賦予初始值，不去調用多餘的 constructor !</p>
+<ul>
+<li><a href="/second-brain/notes/Project/Effective-C++-Series/%E7%9B%A1%E5%8F%AF%E8%83%BD%E5%BB%B6%E5%BE%8C%E8%AE%8A%E6%95%B8%E5%AE%9A%E7%BE%A9%E5%BC%8F%E7%9A%84%E5%87%BA%E7%8F%BE%E6%99%82%E9%96%93" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E7%9B%A1%E5%8F%AF%E8%83%BD%E5%BB%B6%E5%BE%8C%E8%AE%8A%E6%95%B8%E5%AE%9A%E7%BE%A9%E5%BC%8F%E7%9A%84%E5%87%BA%E7%8F%BE%E6%99%82%E9%96%93">盡可能延後變數定義式的出現時間</a></li>
+</ul>
+<hr>
+<a href="#條款27-少做轉型動作-minimize-casting"><h3 id="條款27-少做轉型動作-minimize-casting"><span class="hanchor" ariaLabel="Anchor"># </span>條款27 少做轉型動作 (Minimize Casting)</h3></a>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting">少做轉型動作(Minimize casting)</a></p>
+<a href="#條款28-避免傳回-handles-指向物件內部成分"><h3 id="條款28-避免傳回-handles-指向物件內部成分"><span class="hanchor" ariaLabel="Anchor"># </span>條款28 避免傳回 Handles 指向物件內部成分</h3></a>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E5%85%A7%E9%83%A8%E6%88%90%E5%88%86" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E5%85%A7%E9%83%A8%E6%88%90%E5%88%86">避免傳回 Handles 指向物件內部成分</a></p>
+<a href="#條款29-為異常安全-exception-safe-而努力是值得的"><h3 id="條款29-為異常安全-exception-safe-而努力是值得的"><span class="hanchor" ariaLabel="Anchor"># </span>條款29 為異常安全 (Exception-safe) 而努力是值得的</h3></a>
+<a href="#條款30-透徹了解-inline"><h3 id="條款30-透徹了解-inline"><span class="hanchor" ariaLabel="Anchor"># </span>條款30 透徹了解 Inline</h3></a>
+<a href="#條款31-將檔案間的編譯依存降到最低"><h3 id="條款31-將檔案間的編譯依存降到最低"><span class="hanchor" ariaLabel="Anchor"># </span>條款31 將檔案間的編譯依存降到最低</h3></a>
+<a href="#ch6-繼承與物件導向"><h2 id="ch6-繼承與物件導向"><span class="hanchor" ariaLabel="Anchor"># </span>Ch6 繼承與物件導向</h2></a>
+<a href="#ch7-template-and-generic-programming"><h2 id="ch7-template-and-generic-programming"><span class="hanchor" ariaLabel="Anchor"># </span>Ch7 Template and Generic Programming</h2></a>
+<ul>
+<li><a href="/second-brain/notes/Project/Effective-C++-Series/Item46-%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item46-%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F">Item46 需要型別轉換時請為模板定義非成員函式</a></li>
+</ul>
 <p>簡體目錄: 
 <a href="https://blog.csdn.net/weixin_45926547/article/details/121276226" rel="noopener">https://blog.csdn.net/weixin_45926547/article/details/121276226</a></p>
 
@@ -2780,6 +3374,10 @@ Apr 10, 2023
     
       
       
+      
+    
+      
+      
       <li>
         <a href="/second-brain//" data-ctx="notes/Project/Effective C&#43;&#43; Series/Effective C&#43;&#43; Outline" data-src="/" class="internal-link">🪴 Main Page</a>
       </li>
@@ -2788,6 +3386,12 @@ Apr 10, 2023
       
       <li>
         <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%A8%AD%E8%A8%88%E6%96%B0-Class-%E7%9A%84%E6%BA%96%E5%89%87/" data-ctx="條款7 為多型用途的基礎類別宣告 virtual 解構式" data-src="/notes/Project/Effective-C&#43;&#43;-Series/%E8%A8%AD%E8%A8%88%E6%96%B0-Class-%E7%9A%84%E6%BA%96%E5%89%87" class="internal-link">設計新 Class 的準則</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/second-brain/notes/Resource/MOCs/C&#43;&#43;-Resources/" data-ctx="Effective C&#43;&#43; Outline" data-src="/notes/Resource/MOCs/C&#43;&#43;-Resources" class="internal-link">C&#43;&#43; Resources</a>
       </li>
       
       

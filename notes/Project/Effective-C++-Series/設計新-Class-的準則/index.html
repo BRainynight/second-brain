@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.92fd273254a7ff7072081003d185a2ad.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.36967371ba7bd13e46a7eb2121284123.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.6fd3f25879cb2a524ca83d7f3438bf35.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.afbb5f954918a4da00054728a01084d0.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -418,18 +418,7 @@ Unknown
     
     
     
-      
-      
     
-    
-    
-      
-      
-      
-      
-      
-      
-      
     
     
 
@@ -437,6 +426,10 @@ Unknown
     
       
       
+      
+      
+      
+    
     
 
   
@@ -724,7 +717,7 @@ Unknown
 </li>
 <li>它需要配合某個繼承圖系(inheritance graph) 嗎?
 <ul>
-<li>會受到父輩們的約束，特別是函式是 virtural or non-virtual <a class="internal-link broken">Item34 Differentiate between inheritance of interface and inheritance of implementation</a>、<a class="internal-link broken">Item36 Never redefine an inherited non-virtual function</a>。</li>
+<li>會受到父輩們的約束，特別是函式是 virtural or non-virtual <a href="/second-brain/notes/Project/Effective-C++-Series/Item34-Differentiate-between-inheritance-of-interface-and-inheritance-of-implementation" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item34-Differentiate-between-inheritance-of-interface-and-inheritance-of-implementation">Item34 Differentiate between inheritance of interface and inheritance of implementation</a>、<a class="internal-link broken">Item36 Never redefine an inherited non-virtual function</a>。</li>
 <li>如果允許其他類別繼承此 class，請將必要的函式宣告為 virtual，特別是 destructor。
 <ul>
 <li><a href="/second-brain/notes/Project/Effective-C++-Series/Effective-C++-Outline#%e6%a2%9d%e6%ac%be7-%e7%82%ba%e5%a4%9a%e5%9e%8b%e7%94%a8%e9%80%94%e7%9a%84%e5%9f%ba%e7%a4%8e%e9%a1%9e%e5%88%a5%e5%ae%a3%e5%91%8a-virtual-%e8%a7%a3%e6%a7%8b%e5%bc%8f" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Effective-C++-Outline">條款7 為多型用途的基礎類別宣告 virtual 解構式</a></li>
@@ -736,8 +729,8 @@ Unknown
 <li>甚麼運算子與函式對此新類別式合理的?
 <ul>
 <li><a href="/second-brain/notes/Project/Effective-C++-Series/Non-member-Non-friend-Function-%E7%9A%84%E5%B0%81%E8%A3%9D%E5%BA%A6%E5%84%AA%E6%96%BC-Member-Function" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Non-member-Non-friend-Function-%E7%9A%84%E5%B0%81%E8%A3%9D%E5%BA%A6%E5%84%AA%E6%96%BC-Member-Function">Non-member &amp;&amp; Non-friend Function 的封裝度優於 Member Function</a></li>
-<li><a href="/second-brain/notes/Project/Effective-C++-Series/Item24-Declare-non-member-functions-when-type-conversions-should-apply-to-all-parameters" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item24-Declare-non-member-functions-when-type-conversions-should-apply-to-all-parameters">Item24 Declare non-member functions when type conversions should apply to all parameters</a></li>
-<li><a href="/second-brain/notes/Project/Effective-C++-Series/Item26-Postpone-variable-definitions-as-long-as-possible" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item26-Postpone-variable-definitions-as-long-as-possible">Item26 Postpone variable definitions as long as possible</a></li>
+<li><a href="/second-brain/notes/Project/Effective-C++-Series/%E7%95%B6%E6%89%80%E5%87%BD%E5%BC%8F%E6%89%80%E6%9C%89%E7%9A%84%E5%8F%83%E6%95%B8%E9%83%BD%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%8E%A1%E7%94%A8-Non-member-Function" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E7%95%B6%E6%89%80%E5%87%BD%E5%BC%8F%E6%89%80%E6%9C%89%E7%9A%84%E5%8F%83%E6%95%B8%E9%83%BD%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%8E%A1%E7%94%A8-Non-member-Function">當所函式所有的參數都需要型別轉換，採用 Non-member Function</a></li>
+<li><a href="/second-brain/notes/Project/Effective-C++-Series/%E7%9B%A1%E5%8F%AF%E8%83%BD%E5%BB%B6%E5%BE%8C%E8%AE%8A%E6%95%B8%E5%AE%9A%E7%BE%A9%E5%BC%8F%E7%9A%84%E5%87%BA%E7%8F%BE%E6%99%82%E9%96%93" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E7%9B%A1%E5%8F%AF%E8%83%BD%E5%BB%B6%E5%BE%8C%E8%AE%8A%E6%95%B8%E5%AE%9A%E7%BE%A9%E5%BC%8F%E7%9A%84%E5%87%BA%E7%8F%BE%E6%99%82%E9%96%93">盡可能延後變數定義式的出現時間</a></li>
 </ul>
 </li>
 <li>什麼標準宣告式是需要駁回的? 請用 <code>delete</code> 明確刪除它。</li>

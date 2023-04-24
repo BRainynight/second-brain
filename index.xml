@@ -37,10 +37,10 @@
     
     <item>
       <title>Item28 Avoid returning handles to object internals</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item28-Avoid-returning-handles-to-object-internals/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E5%85%A7%E9%83%A8%E6%88%90%E5%88%86/</link>
       <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item28-Avoid-returning-handles-to-object-internals/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E5%85%A7%E9%83%A8%E6%88%90%E5%88%86/</guid>
       <description></description>
     </item>
     
@@ -99,24 +99,6 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     
     <item>
       <title></title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item24-Declare-non-member-functions-when-type-conversions-should-apply-to-all-parameters/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item24-Declare-non-member-functions-when-type-conversions-should-apply-to-all-parameters/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item26-Postpone-variable-definitions-as-long-as-possible/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item26-Postpone-variable-definitions-as-long-as-possible/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Non-member-Non-friend-Function-%E7%9A%84%E5%B0%81%E8%A3%9D%E5%BA%A6%E5%84%AA%E6%96%BC-Member-Function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -137,12 +119,31 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     
     <item>
       <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Swap-and-pimpl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Swap-and-pimpl/</guid>
+      <description>std::swap STL 的 swap 平凡無奇，涉及了三次的複製。
+1 2 3 4 5 6 7 8  namespace std { template&amp;lt;typename T&amp;gt; void swap (T&amp;amp; a, T&amp;amp; b) { T tmp(a); a = b; b = tmp; } }   但對於「某些型別」而言，他們滿足某些資格。因為有這種前提，std::swap 的標準做法(三次複製)是多餘的，他們有更快的解法。</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Virtual-Function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Virtual-Function/</guid>
       <description>在 Ctor / Dtor 呼叫 virtual function ![[Itm10_TranscationUML.png]]
 在這裡，Transcation 的 Constructor 呼叫的會是 Transcation::logTranscation。 又，該 function 為 Pure virtural function，若它沒被定義，則當編譯器呼叫時會引發錯誤，而若有&amp;hellip;. 就會 Link 到該 base class function。Related: [[Item34 Differentiate between inheritance of interface and inheritance of implementation]] 一個不正式的講法: Base Calss 建構期間，所呼叫的 virtual function 不是 virtual function。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E6%9C%AA%E5%91%BD%E5%90%8D/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E6%9C%AA%E5%91%BD%E5%90%8D/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -167,12 +168,31 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     
     <item>
       <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%9B%A1%E5%8F%AF%E8%83%BD%E5%BB%B6%E5%BE%8C%E8%AE%8A%E6%95%B8%E5%AE%9A%E7%BE%A9%E5%BC%8F%E7%9A%84%E5%87%BA%E7%8F%BE%E6%99%82%E9%96%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%9B%A1%E5%8F%AF%E8%83%BD%E5%BB%B6%E5%BE%8C%E8%AE%8A%E6%95%B8%E5%AE%9A%E7%BE%A9%E5%BC%8F%E7%9A%84%E5%87%BA%E7%8F%BE%E6%99%82%E9%96%93/</guid>
+      <description>不只延後變數的定義式的出現，甚至該嘗試延後這份定義直到能夠給它初始值引數為止。
+  盡可能延後參數的定義，直到它被使用的前一刻再定義。  過早的定義它，有可能根本沒用到就先 return 了，無謂的承受了該變數的 construct &amp;amp; destruct 成本。   「前一刻」甚至是指: 得到初始值了再一口氣「建構並指定初始值」  1 2 3 4 5 6 7 8 9 10 11 12 13 14  std::string worstCase(const std::string&amp;amp; password) { std::string encrypted; // 過早宣告: 承受建構成本 	if (password.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%A7%A3%E6%A7%8B%E5%BC%8F%E8%88%87%E7%95%B0%E5%B8%B8/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%A7%A3%E6%A7%8B%E5%BC%8F%E8%88%87%E7%95%B0%E5%B8%B8/</guid>
       <description>情境: 當Destructor 必須執行某項會丟Exception 的程序 舉例，我們有一個資料庫連線的 class DBConnection，這類資源管理的 Class 在 [[Chapter3]] 中會有更詳細的探討。
 1 2 3 4 5 6 7  class DBConnection { public: .</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; Resources</title>
+      <link>https://brainynight.github.io/second-brain/notes/Resource/MOCs/C&#43;&#43;-Resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Resource/MOCs/C&#43;&#43;-Resources/</guid>
+      <description>Books  [[../../Project/Effective C++ Series/Effective C++ Outline |Effective C++ Outline]]  Webs   CppCoreGuidelines  CppDeveloperRoadmap  </description>
     </item>
     
     <item>
@@ -235,11 +255,47 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     </item>
     
     <item>
+      <title>Item27  Minimize casting</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Item30 Understand the ins and outs of inlining</title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item30-Understand-the-ins-and-outs-of-inlining/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item30-Understand-the-ins-and-outs-of-inlining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Item31 將檔案的編譯依存關係降到最低</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item31-%E5%B0%87%E6%AA%94%E6%A1%88%E7%9A%84%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98%E9%97%9C%E4%BF%82%E9%99%8D%E5%88%B0%E6%9C%80%E4%BD%8E/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item31-%E5%B0%87%E6%AA%94%E6%A1%88%E7%9A%84%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98%E9%97%9C%E4%BF%82%E9%99%8D%E5%88%B0%E6%9C%80%E4%BD%8E/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Item34 Differentiate between inheritance of interface and inheritance of implementation</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item34-Differentiate-between-inheritance-of-interface-and-inheritance-of-implementation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item34-Differentiate-between-inheritance-of-interface-and-inheritance-of-implementation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Item46 需要型別轉換時請為模板定義非成員函式</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item46-%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item46-%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F/</guid>
       <description></description>
     </item>
     
@@ -368,6 +424,15 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     </item>
     
     <item>
+      <title>Total Template Specialization</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Total-Template-Specialization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Total-Template-Specialization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Translation Unit</title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Translation-Unit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -443,6 +508,16 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
       <guid>https://brainynight.github.io/second-brain/notes/Resource/Whisky/%E6%A0%BC%E8%98%AD%E5%82%91-%E5%96%AE%E4%B8%80%E9%BA%A5%E8%8A%BD%E5%A8%81%E5%A3%AB%E5%BF%8C/</guid>
       <description>Glenmorangie X Single Malt Scotch Whisky
  買於好事多，跟 &amp;ldquo;知多&amp;rdquo; 喝起來差不多，CP 值極佳!! 理想價格: 600-650  </description>
+    </item>
+    
+    <item>
+      <title>當所函式所有的參數都需要型別轉換，採用 Non-member Function</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%95%B6%E6%89%80%E5%87%BD%E5%BC%8F%E6%89%80%E6%9C%89%E7%9A%84%E5%8F%83%E6%95%B8%E9%83%BD%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%8E%A1%E7%94%A8-Non-member-Function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%95%B6%E6%89%80%E5%87%BD%E5%BC%8F%E6%89%80%E6%9C%89%E7%9A%84%E5%8F%83%E6%95%B8%E9%83%BD%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%8E%A1%E7%94%A8-Non-member-Function/</guid>
+      <description>讓 Class 支援隱式轉換通常不是好事 &amp;ndash; 但也有例外，最常見的就是數值型別。書中以有理數 Rational 為例，他設計了一個允許 Int 隱式轉換成 Rational 的 Constructor。
+1 2 3 4 5 6 7 8 9  class Rational { public: Rational(int numerator=0, int denominator=1); // 允許 int-to-Rational 的隱式轉換  int numerator(); // 分子  int denominator(); // 分母  const Rational operator*(const Rational rhs) const; }   當實作乘法運算時，若兩個數字都是有理數沒有問題。與 Int 相乘，Int 在前項卻出了問題。</description>
     </item>
     
     <item>
