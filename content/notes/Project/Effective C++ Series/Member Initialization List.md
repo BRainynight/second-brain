@@ -11,7 +11,8 @@ tags:
 這樣的好處是明白地列出所有 member data，避免有 data 忘記給初始值，特別是對**非內建型別**的member data，沒有初始化的結果是災難的。
 
 對於內建型別的 Reference & const，他們**不能被賦值**，**必須透過 member initializer list 初始化**。
-- Related: [[Item5 Know What Functions C++ Silently Writes and Calls]]
+- Related: [[Effective C++ Outline#條款5 了解 C++默默編寫並呼叫哪些函式]]
+
 
 ## 合理的使用 Assignment
 某些時候，類別擁有多個 Constructor，每個 Constructor 都需要有自己的 Member initializer list，這又會導致 dumplicated。

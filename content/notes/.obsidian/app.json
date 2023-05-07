@@ -2,5 +2,7 @@
   "alwaysUpdateLinks": true,
   "attachmentFolderPath": "./",
   "newFileLocation": "current",
-  "newLinkFormat": "relative"
+  "newLinkFormat": "relative",
+  "vimMode": false,
+  "promptDelete": false
 }

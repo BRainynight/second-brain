@@ -1,3 +1,9 @@
+---
+title: "Friend Function"
+date: 2023-05-07 13:27
+tags:
+- cpp
+---
 
 > 提供私用成員給某些外部函式來存取，這個有權調用某類別私有成員的函式就稱為 Friend Function 
 

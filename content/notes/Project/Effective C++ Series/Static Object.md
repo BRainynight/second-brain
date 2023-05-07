@@ -62,7 +62,7 @@ Directory& tempDir()
 在此例子中，`tmpDir` 創建物件 `td`，在 call `Directory` Constructor 時，會再 call `tfs` ，此時才創建 static object `fs`。透過 function call，確保了物件初始化的順序，先初始化 `fs`，再創建 `td`。
 
 ### 優點
-特別在頻繁呼叫的時候，搭配 [[Item30 Understand the ins and outs of inlining]]。
+特別在頻繁呼叫的時候，搭配 [[了解 Inline 的裡裡外外]]。
 
 ### 缺點
 在 multi-thread 中有不確定性。任何一種 non-const static 物件如果**依賴於其他事件的發生**，都很麻煩。常見的解決方法是，在 single-threaded startup portion 手動喚起所有 reference-returning function，手動解決 race conditions。

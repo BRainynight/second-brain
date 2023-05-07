@@ -1,3 +1,9 @@
+---
+title: "Default Generated Functions"
+date: 2023-05-07 13:27
+tags:
+- cpp
+---
 
 ```cpp
 class Empty; // you declare, but implement nothing. 

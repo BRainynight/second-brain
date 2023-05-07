@@ -1,3 +1,10 @@
+---
+title: "Non-member && Non-friend Function 的封裝度優於 Member Function"
+date: 2023-05-07 13:27
+tags:
+- cpp
+---
+
 > Non-member function 帶來更佳的封裝度、與 Packaging 彈性。
 
 

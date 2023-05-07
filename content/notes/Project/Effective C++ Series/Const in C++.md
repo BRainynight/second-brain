@@ -16,7 +16,7 @@ std::vector<int>::const_iterator citer = vec.bgein();
 ```
 
 #### Return Const Value
-[[讓介面易於被使用]]
+[[讓介面容易被使用#Return Const Value]]
 
 #### Const member function
 [[Const member function]]

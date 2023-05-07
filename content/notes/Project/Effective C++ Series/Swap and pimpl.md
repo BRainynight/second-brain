@@ -1,3 +1,9 @@
+---
+title: "Swap and pimpl"
+date: 2023-05-07 13:28
+tags:
+- cpp
+---
 
 ## std::swap
 STL 的 swap 平凡無奇，涉及了三次的複製。
@@ -12,9 +18,9 @@ namespace std {
 }
 ```
 
-但對於「某些型別」而言，他們滿足某些資格。因為有這種前提，std::swap 的標準做法(三次複製)是多餘的，他們有更快的解法。
+但對於「某些型別」而言，他們滿足某些資格。因為有這種前提，`std::swap` 的標準做法(三次複製)是多餘的，他們有更快的解法。
 
-「以指標指向一個物件，那個物件含有真正的資料」的型別，就是那些特殊的、滿足資格的傢伙。常見的手法是 pimpl (pointer to implementation, [[Item31 將檔案的編譯依存關係降到最低]])，Pattern 如下: 
+「以指標指向一個物件，那個物件含有真正的資料」的型別，就是那些特殊的、滿足資格的傢伙。常見的手法是 [[pimpl idiom (pointer to implementation)]] ，Pattern 如下: 
 - `Widget` 的 Copy Assignment 實際上是複製 `rhs.pImpl` 所有內容到自己的 `pImpl` 複製一份過來。
 ```cpp
 class WidgetImpl {

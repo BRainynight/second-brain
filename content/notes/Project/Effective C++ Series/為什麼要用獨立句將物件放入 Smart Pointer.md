@@ -1,4 +1,9 @@
-
+---
+title: "為什麼要用獨立句將物件放入 Smart Pointer"
+date: 2023-05-07 13:26
+tags:
+- cpp
+---
 > 盡可能確保 `new` 出來的物件，可以立即被放入 smart pointer 裡面，避免任何額外的步驟。只要有多餘的步驟，就可能因為意外而使得 smart pointer 沒有真正掌控到資源。
 
 以獨立一句話將 newed 物件加入 smart pointer，格式如下

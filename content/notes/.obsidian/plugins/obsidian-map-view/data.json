@@ -1,0 +1,146 @@
+{
+  "defaultState": {
+    "name": "Default",
+    "mapZoom": 1,
+    "mapCenter": {
+      "lat": 40.44694705960048,
+      "lng": -180.70312500000003
+    },
+    "query": "",
+    "chosenMapSource": 0
+  },
+  "savedStates": [],
+  "markerIconRules": [
+    {
+      "ruleName": "default",
+      "preset": true,
+      "iconDetails": {
+        "prefix": "fas",
+        "icon": "fa-circle",
+        "markerColor": "blue",
+        "innerHTML": "<svg class=\"map-view-icon\"><use xlink:href=\"#icon-1804148836\"></use></svg>"
+      }
+    },
+    {
+      "ruleName": "#trip",
+      "preset": false,
+      "iconDetails": {
+        "prefix": "fas",
+        "icon": "fa-hiking",
+        "markerColor": "green"
+      }
+    },
+    {
+      "ruleName": "#food",
+      "preset": false,
+      "iconDetails": {
+        "prefix": "fas",
+        "icon": "fa-utensils",
+        "markerColor": "orange"
+      }
+    },
+    {
+      "ruleName": "#coffee",
+      "preset": false,
+      "iconDetails": {
+        "prefix": "fas",
+        "icon": "fa-coffee",
+        "markerColor": "pink"
+      }
+    },
+    {
+      "ruleName": "#bbq",
+      "preset": false,
+      "iconDetails": {
+        "prefix": "fas",
+        "icon": "fa-drumstick-bite",
+        "markerColor": "Red"
+      }
+    },
+    {
+      "ruleName": "#sushi",
+      "preset": false,
+      "iconDetails": {
+        "prefix": "fas",
+        "icon": "fa-fish",
+        "markerColor": "cyan"
+      }
+    }
+  ],
+  "zoomOnGoFromNote": 15,
+  "autoZoom": true,
+  "markerClickBehavior": "replaceCurrent",
+  "markerCtrlClickBehavior": "dedicatedPane",
+  "markerMiddleClickBehavior": "dedicatedTab",
+  "openMapBehavior": "replaceCurrent",
+  "openMapCtrlClickBehavior": "dedicatedPane",
+  "openMapMiddleClickBehavior": "dedicatedTab",
+  "newNoteNameFormat": "{{query}}",
+  "showNoteNamePopup": true,
+  "showNotePreview": true,
+  "showClusterPreview": false,
+  "debug": false,
+  "openIn": [
+    {
+      "name": "Google Maps",
+      "urlPattern": "https://maps.google.com/?q={x},{y}"
+    }
+  ],
+  "urlParsingRules": [
+    {
+      "name": "OpenStreetMap Show Address",
+      "regExp": "https:\\/\\/www.openstreetmap.org\\S*query=([0-9\\.\\-]+%2C[0-9\\.\\-]+)\\S*",
+      "ruleType": "latLng",
+      "preset": true
+    },
+    {
+      "name": "Generic Lat,Lng",
+      "regExp": "([0-9\\.\\-]+),[,\\ ] ([0-9\\.\\-]+)",
+      "ruleType": "latLng",
+      "preset": true
+    },
+    {
+      "name": "GoogleMap",
+      "regExp": "https:\\/\\/www.google.com.tw\\/maps\\/place\\/\\S*\\/@([0-9\\.\\-]+),[,\\ ] ([0-9\\.\\-]+)\\/\\S*",
+      "preset": false,
+      "ruleType": "latLng"
+    }
+  ],
+  "mapControls": {
+    "filtersDisplayed": true,
+    "viewDisplayed": false,
+    "presetsDisplayed": false
+  },
+  "maxClusterRadiusPixels": 20,
+  "searchProvider": "google",
+  "useGooglePlaces": false,
+  "mapSources": [
+    {
+      "name": "GoogleMap",
+      "urlLight": "https://mts1.google.com/vt/lyrs=m@186112443&hl=x-local&src=app&x={x}&y={y}&z={z}&s=Galile",
+      "preset": true,
+      "maxZoom": 25
+    },
+    {
+      "name": "CartoDB",
+      "urlLight": "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png",
+      "maxZoom": 19,
+      "currentMode": "auto"
+    },
+    {
+      "name": "GoogleMap",
+      "urlLight": "https://mts1.google.com/vt/lyrs=m@186112443&hl=x-local&src=app&x={x}&y={y}&z={z}&s=Galile",
+      "maxZoom": 19,
+      "currentMode": "auto"
+    }
+  ],
+  "chosenMapMode": "light",
+  "saveHistory": true,
+  "letZoomBeyondMax": false,
+  "queryForFollowActiveNote": "path:\"$PATH$\"",
+  "supportRealTimeGeolocation": false,
+  "fixFrontMatterOnPaste": true,
+  "geocodingApiKey": "AIzaSyAJF6vg6JPoGfinDMtm7wSephCk8r4FI-g",
+  "newNoteTemplate": "template/3 template-food.md",
+  "newNotePath": "Resource/Restaurant"
+}

@@ -1,3 +1,9 @@
+---
+title: "Deleted Function"
+date: 2023-05-07 13:27
+tags:
+- cpp
+---
 
 
 ```cpp

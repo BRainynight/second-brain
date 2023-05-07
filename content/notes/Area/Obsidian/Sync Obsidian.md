@@ -1,7 +1,7 @@
 ---
 title: "Obsidian Publish 的替代選擇"
 categories:
-- Obsidian
+- obsidian
 ---
 想在 IOS 上面也有 Sync 的 Obsidian 可以用!
 

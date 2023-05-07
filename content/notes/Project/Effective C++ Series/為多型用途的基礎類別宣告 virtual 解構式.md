@@ -1,3 +1,9 @@
+---
+title: "為多型用途的基礎類別宣告 virtual 解構式"
+date: 2023-05-07 13:27
+tags:
+- cpp
+---
 
 ## 多型
 多型有個特點: Base Class 的存在是為了「經由 Base Class Interface 處置 Drived Class Object」，以下例來說， `TimeKeeper` 是一個 Polymorphic Base Class，所以持有一個 `TimeKeeper` Pointer 就可以處理 `WaterClock`, `WristWatch` 物件，這就是上面那句話的意思。
@@ -23,7 +29,7 @@ TimeKeeper* getTimeKeeper();
 
 
 ## 多型的 Base Class 沒有 Virtural Destructor 又如何
-多型 (polymorphic) 的手法使我們可以持有 base class 的 Pointer 指向各種 child class 的實作。工廠(Factory) Pattern 就是典型的實作。
+多型 (polymorphic) 的手法使我們可以持有 base class 的 Pointer 指向各種 child class 的實作。[[工廠函式 (Factory Function)]]  就是典型的實作。
 
 > [!question]
 > 為了遵守 factory function 的規矩，哪來的規矩?
@@ -34,7 +40,7 @@ TimeKeeper* ptk = getTimeKeeper();
 delete ptk;
 ```
 
-儘管 [[Item13]] 和 [[讓介面容易被使用]] 說明了依賴 client 做 delete 有潛在的危險跟不確定，這裡要說明的是更嚴重、更根本性的問題。
+儘管 [[Smart Pointer|條款13 使用資源管理器]] 和 [[讓介面容易被使用]] 說明了依賴 client 做 `delete` 有潛在的危險跟不確定，這裡要說明的是更嚴重、更根本性的問題。
 - 我們宣告的是 **Base class pointer**，指向的是 **child class 物件**。
 - Base class 擁有一個 non-virtural 的 destructor
 - C++ 明白的告訴我們，當 child 物件經由擁有 non-virtural destructor 的 Base class pointer 持有，而這個 pointer 被刪除時，屬於 **Undefined behavior**

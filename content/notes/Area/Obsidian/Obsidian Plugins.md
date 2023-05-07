@@ -1,7 +1,7 @@
 ---
 title: "Obsidian Plugins"
 categories:
-- Obsidian
+- obsidian
 ---
 ## Theme
 - 當前用的是 Thing2
@@ -12,5 +12,5 @@ categories:
 
 ## Plugin
 - Obsidian Dataview mode: like notion https://ithelp.ithome.com.tw/articles/10279262
-
-
+- [[Obsidian Map View]]: [source](https://github.com/esm7/obsidian-map-view#intro)
+- 

@@ -38,7 +38,7 @@ const char* const p = greeting; // const ptr, const data
 ```
 
 當 `const` 在 `*` 前，不管是先寫 const 修飾的類、或是先寫 const 都是一樣的，就是在修飾 `char` 物件具有常數性。
-[[Const in C++]]
+- [[Const in C++]]
 
 
 ### 條款4 確定物件在使用前已經初始化
@@ -56,6 +56,7 @@ const char* const p = greeting; // const ptr, const data
 ## Chapter2 建構、解構、賦值運算
 
 ### 條款5 了解 C++默默編寫並呼叫哪些函式
+
 當我們宣告了一個 Class，而不去實踐任何細節，Compiler 會偷偷地幫我們生成一些 function，他們分別是
 - default constructor, destructor
 ```cpp
@@ -67,10 +68,10 @@ Empty() { ... } // default constructor
 Empty(const Empty& rhs) { ... } // copy constructor
 Empty& operator=(const Empty& rhs) { ... } // copy assignment 
 ```
-且都是 public inline function - [[Item30 Understand the ins and outs of inlining]]
 
-更確切來說，是當這些 function 被需要 (被呼叫) 時產生。
-[[Default Generated Functions]]
+並且，都是 public inline function!! 關於這些 function 被 inline 會帶來什麼危害，見 [[建構和解構式是 inline 的糟糕人選]]。
+
+更確切來說，是當這些 function 被需要 (被呼叫) 時產生: [[Default Generated Functions]]
 
 ### 條款6 明確拒絕不要編譯器自動生成的函式
 在 C++11 引入了新的概念 [Deleted functions](https://www.ibm.com/docs/en/zos/2.4.0?topic=definitions-deleted-functions-c11)，書中教的方法依然有其壞處。直接在 declaration 後面接著 `=delete` 就可以阻止 copmiler 生成它。
@@ -129,12 +130,13 @@ Widget& Widget::operator=(const Widget& rhs)
 - [[Smart Pointer]] 是個好選擇
 
 ### 條款14 仔細考慮資源管理類別的 Copy 行為
-
-- 有些資源並不是 Heap-based Resource，就不一定適合 auto_ptr。
-- 書中以 Mutex (互斥鎖) 舉例。
+- Smart Pointer 那類的資源管理器，適合用來掌握 heap-based resource 的生命週期。
+- 並非所有的資源物件，都適合用 Smart Pointer 管理。
+- 書中以 [[Mutex]] (互斥鎖) 舉例。
 
 > [!Todo]
-> 查一查 RAII，這整個章節我看不太懂。
+> 1. 查一查 RAII，這整個章節我看不太懂。
+> 2. 看到 P67，面對複製的問題還沒看。
 
 
 > [!question]
@@ -215,39 +217,102 @@ processWidget(pw, priority());
 
 
 ## Ch5 Implementation
-
 ### 條款26 盡可能延後變數定義式的出現時間
-
-盡可能當已經擁有初始值了，再一口氣定義+賦予初始值，不去調用多餘的 constructor ! 
+盡可能等到已經擁有初始值了，再一口氣定義+賦予初始值。如此不必調用多餘的 constructor ! 
 - [[盡可能延後變數定義式的出現時間]]
 
 ----
 
 ### 條款27 少做轉型動作 (Minimize Casting)
+- 如果轉型是必要的，試圖把它隱藏在函式之後，不讓 User 在他們的程式中轉型。
+- 作為 Client，如果需要轉型，考慮使用新式的轉型，即使用舊式看起來也合情合理。
 [[少做轉型動作(Minimize casting)]]
 
 ### 條款28 避免傳回 Handles 指向物件內部成分
-[[避免傳回 Handles 指向物件內部成分]]
+[[避免傳回 Handles 指向物件的 Private & Protected Member Data]]，目的是盡可能消滅 dangling handles 出現的可能。
 
 
 ### 條款29 為異常安全 (Exception-safe) 而努力是值得的
 
+[[為異常安全 (Exception-safe) 而努力是值得的]]
+
+> [!Todo]
+> Read to P132
+ 
 ### 條款30 透徹了解 Inline
 
-### 條款31 將檔案間的編譯依存降到最低
+宣告 inline 前，先透徹讀完: [[了解 Inline 的裡裡外外]]
 
+### 條款31 將檔案間的編譯依存降到最低
+[[將檔案的編譯依存關係降到最低]]
 
 ## Ch6 繼承與物件導向
 
+### 條款32 確定你的 Public 繼承塑出 is-a 關係
 
+
+### 條款33 避免遮掩繼承而來的名稱
+
+
+### 條款34 區分介面繼承與實作繼承
+[[Item34 Differentiate between inheritance of interface and inheritance of implementation]]
+
+### 條款35 考慮 Virtual 函式以外的其他選擇
+
+### 條款36 絕不重新定義繼承來的 Non-virtual Function
+
+### 條款37 絕不重新定義繼承來的預設參數值
+
+### 條款38 透過複合模塑出 Has-a 或 根據某物實作出
+Model "has-a" or "is-implemented in terms of " through composition.
+
+### 條款39 明智審慎的使用 Private 繼承
+
+### 條款40 明智審慎的使用多重繼承
 
 ## Ch7 Template and Generic Programming
+### 條款41 了解隱式介面和編譯多型
+
+### 條款42 了解 typename 的雙重意義
+
+### 條款43 學習處理模板化基礎類別內的名稱
+
+### 條款44 將與參數無關的程式碼抽離 Templates
+
+
+### 條款45 運用成員函式模板接受所有相容型別
+
+
+### 條款46 需要型別轉換時請為模板定義非成員函式
+
 
 - [[Item46 需要型別轉換時請為模板定義非成員函式]]
 
+### 條款47 請使用 Traits Classes 表現型別資訊
+
+### 條款48 認識 Template 超編程
+
+## Ch8 自訂 new 和 delete
+
+### 條款49 了解 new-handler 的行為
+
+### 條款50 了解 new 和 delete 的合理替換時機
+
+### 條款51 編寫 new 和 delete 時需固守常規
+
+### 條款52 寫了 placement new 也要寫 placement delete
 
 
 
+## Ch9 雜項討論
+### 條款53 不要輕忽邊義器的警告
+
+### 條款54 讓自己熟悉包刮 TR1 在內的標準函式庫
+[[Item54 Familiarize yourself with the standard library including TR1]]
+
+### 條款55 讓自己熟悉 Boost
+
+[[Item55 Familiarize yourself with Boost]]
 
 
 簡體目錄: https://blog.csdn.net/weixin_45926547/article/details/121276226
