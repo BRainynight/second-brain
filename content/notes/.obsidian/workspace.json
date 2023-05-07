@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/Effective C++ Series/建構和解構式是 inline 的糟糕人選.md",
+                "file": "Project/Effective C++ Series/思維誤區-物件很小就可以 Pass By Value.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "constructor",
+                "query": "思維誤區-物件很小就可以-Pass-By-Value",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -66,7 +66,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -86,6 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Project/Effective C++ Series/思維誤區-物件很小就可以 Pass By Value.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,6 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Project/Effective C++ Series/思維誤區-物件很小就可以 Pass By Value.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +126,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Project/Effective C++ Series/思維誤區-物件很小就可以 Pass By Value.md"
+              }
             }
           }
         ]
@@ -144,9 +149,16 @@
       "obsidian-map-view:Open map view": false
     }
   },
-  "active": "9a2be32fa8b77c2a",
+  "active": "feff2a572964dcfe",
   "lastOpenFiles": [
+    "思維誤區-物件很小就可以-Pass-By-Value.md",
+    "Project/Effective C++ Series/思維誤區-物件很小就可以 Pass By Value.md",
     "Project/Effective C++ Series/Effective C++ Outline.md",
+    "Project/Effective C++ Series/Const in C++.md",
+    "Project/Effective C++ Series/Const member function.md",
+    "Private/GDB Python Interface.md",
+    "Project/Effective C++ Series/建構和解構式是 inline 的糟糕人選.md",
+    "未命名.canvas",
     "Resource/MOCs/C++ Resources.md",
     "Resource/Travel/日本旅遊.md",
     "Area/Obsidian/Obsidian Map View.md",
@@ -166,18 +178,11 @@
     "Project/Effective C++ Series/Static Object.md",
     "Project/Effective C++ Series/Smart Pointer.md",
     "Project/Effective C++ Series/Singleton.md",
-    "Project/Effective C++ Series/Replace define with const.md",
-    "Project/Effective C++ Series/Pure Virtual Destructor.md",
-    "Project/Effective C++ Series/pimpl idiom (pointer to implementation).md",
-    "Project/Effective C++ Series/Non-member && Non-friend Function 的封裝度優於 Member Function.md",
-    "Project/Effective C++ Series/Mutex.md",
-    "Project/Effective C++ Series/Modern C++ nothrow.md",
     "Resource/Travel",
     "Resource/新增資料夾",
     "Resource/Restaurant",
     "Resource/Eestaurant",
     "Resource/Resturant",
-    "未命名.canvas",
     "Area/GDB",
     "Project/Effective C++ Series/code/Item25.cpp",
     "Project/Effective C++ Series/code/Item24.cpp",

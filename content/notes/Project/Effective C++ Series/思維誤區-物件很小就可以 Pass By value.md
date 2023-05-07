@@ -1,5 +1,5 @@
 ---
-title: "思維誤區-物件很小就可以 Pass By value"
+title: "思維誤區-物件很小就可以 Pass By Value"
 date: 2023-04-17 23:25
 tags:
 - cpp
