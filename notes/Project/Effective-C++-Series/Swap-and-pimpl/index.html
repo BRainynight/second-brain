@@ -11,7 +11,7 @@
     content="std::swap STL 的 swap 平凡無奇，涉及了三次的複製。
 1 2 3 4 5 6 7 8  namespace std { template&lt;typename T&gt; void swap (T&amp; a, T&amp; b) { T tmp(a); a = b; b = tmp; } }   但對於「某些型別」而言，他們滿足某些資格。因為有這種前提，std::swap 的標準做法(三次複製)是多餘的，他們有更快的解法。"
   />
-  <meta property="og:title" content="">
+  <meta property="og:title" content="Swap and pimpl">
   <meta property="og:description" content="std::swap STL 的 swap 平凡無奇，涉及了三次的複製。
 1 2 3 4 5 6 7 8  namespace std { template&lt;typename T&gt; void swap (T&amp; a, T&amp; b) { T tmp(a); a = b; b = tmp; } }   但對於「某些型別」而言，他們滿足某些資格。因為有這種前提，std::swap 的標準做法(三次複製)是多餘的，他們有更快的解法。">
   <meta property="og:type" content="website">
@@ -20,7 +20,7 @@
   <meta property="og:width" content="200">
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="" />
+  <meta name="twitter:title" content="Swap and pimpl" />
   <meta name="twitter:description" content="std::swap STL 的 swap 平凡無奇，涉及了三次的複製。
 1 2 3 4 5 6 7 8  namespace std { template&lt;typename T&gt; void swap (T&amp; a, T&amp; b) { T tmp(a); a = b; b = tmp; } }   但對於「某些型別」而言，他們滿足某些資格。因為有這種前提，std::swap 的標準做法(三次複製)是多餘的，他們有更快的解法。" />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
@@ -29,7 +29,7 @@
   
 
   <title>
-    🪴 Digital Note
+    Swap and pimpl
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.36967371ba7bd13e46a7eb2121284123.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.afbb5f954918a4da00054728a01084d0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.496262f247629e5459f020bcf6037d2d.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -307,16 +307,23 @@
 
 
     <article>
-      
+      <h1>Swap and pimpl</h1>
       <p class="meta">
         Last updated 
-Apr 24, 2023
+May 7, 2023
 
  
           
 
       </p>
       <ul class="tags">
+          
+          <li><a href="https://brainynight.github.io/second-brain/tags/cpp/">
+          
+            Cpp
+          
+            </a>
+           </li>
           
       </ul>
       
@@ -371,48 +378,52 @@ Apr 24, 2023
   
     
   
-
-  
-
     
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-      
-      
-      
-      
-      
-    
-    
-
   
 
   
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
   
+
+  
+  
+  
+    
   
     
   
@@ -531,8 +542,8 @@ Apr 24, 2023
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>但對於「某些型別」而言，他們滿足某些資格。因為有這種前提，std::swap 的標準做法(三次複製)是多餘的，他們有更快的解法。</p>
-<p>「以指標指向一個物件，那個物件含有真正的資料」的型別，就是那些特殊的、滿足資格的傢伙。常見的手法是 pimpl (pointer to implementation, <a href="/second-brain/notes/Project/Effective-C++-Series/Item31-%E5%B0%87%E6%AA%94%E6%A1%88%E7%9A%84%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98%E9%97%9C%E4%BF%82%E9%99%8D%E5%88%B0%E6%9C%80%E4%BD%8E" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item31-%E5%B0%87%E6%AA%94%E6%A1%88%E7%9A%84%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98%E9%97%9C%E4%BF%82%E9%99%8D%E5%88%B0%E6%9C%80%E4%BD%8E">Item31 將檔案的編譯依存關係降到最低</a>)，Pattern 如下:</p>
+</div><p>但對於「某些型別」而言，他們滿足某些資格。因為有這種前提，<code>std::swap</code> 的標準做法(三次複製)是多餘的，他們有更快的解法。</p>
+<p>「以指標指向一個物件，那個物件含有真正的資料」的型別，就是那些特殊的、滿足資格的傢伙。常見的手法是 <a href="/second-brain/notes/Project/Effective-C++-Series/pimpl-idiom-pointer-to-implementation" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/pimpl-idiom-pointer-to-implementation">pimpl idiom (pointer to implementation)</a> ，Pattern 如下:</p>
 <ul>
 <li><code>Widget</code> 的 Copy Assignment 實際上是複製 <code>rhs.pImpl</code> 所有內容到自己的 <code>pImpl</code> 複製一份過來。</li>
 </ul>

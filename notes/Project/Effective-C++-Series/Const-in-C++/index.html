@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.36967371ba7bd13e46a7eb2121284123.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.afbb5f954918a4da00054728a01084d0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.496262f247629e5459f020bcf6037d2d.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -573,7 +573,7 @@ Apr 10, 2023
 </span></span></code></pre></td></tr></table>
 </div>
 </div><a href="#return-const-value"><h4 id="return-const-value"><span class="hanchor" ariaLabel="Anchor"># </span>Return Const Value</h4></a>
-<p><a href="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E6%98%93%E6%96%BC%E8%A2%AB%E4%BD%BF%E7%94%A8" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E6%98%93%E6%96%BC%E8%A2%AB%E4%BD%BF%E7%94%A8">讓介面易於被使用</a></p>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8#return-const-value" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8">讓介面容易被使用</a></p>
 <a href="#const-member-function"><h4 id="const-member-function"><span class="hanchor" ariaLabel="Anchor"># </span>Const member function</h4></a>
 <p><a href="/second-brain/notes/Project/Effective-C++-Series/Const-member-function" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Const-member-function">Const member function</a></p>
 <a href="#const-argument"><h4 id="const-argument"><span class="hanchor" ariaLabel="Anchor"># </span>Const Argument</h4></a>

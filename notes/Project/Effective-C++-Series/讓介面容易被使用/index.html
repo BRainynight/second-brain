@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.36967371ba7bd13e46a7eb2121284123.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.afbb5f954918a4da00054728a01084d0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.496262f247629e5459f020bcf6037d2d.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -337,6 +337,7 @@ Unknown
     <li><a href="#以函式取代物件">以函式取代物件</a></li>
     <li><a href="#和內建型別的行為一致不要搞怪">和內建型別的行為一致，不要搞怪</a></li>
     <li><a href="#任何介面如果有要求客戶記得做某件事就有不正確使用的傾向因為客戶可能會忘記">任何介面如果有要求客戶「記得做」某件事，就有「不正確使用」的傾向，因為客戶可能會忘記。</a></li>
+    <li><a href="#return-const-value">Return Const Value</a></li>
   </ol>
 </nav>
     </details>
@@ -360,6 +361,12 @@ Unknown
 
   
   
+  
+    
+  
+    
+  
+    
   
     
   
@@ -515,6 +522,34 @@ Unknown
 <a href="#任何介面如果有要求客戶記得做某件事就有不正確使用的傾向因為客戶可能會忘記"><h2 id="任何介面如果有要求客戶記得做某件事就有不正確使用的傾向因為客戶可能會忘記"><span class="hanchor" ariaLabel="Anchor"># </span>任何介面如果有要求客戶「記得做」某件事，就有「不正確使用」的傾向，因為客戶可能會忘記。</h2></a>
 <p>例如: 比起回傳一個 raw pointer 並期許客戶端記得刪除記憶體，回傳 smart pointer 能解決問題。</p>
 <p>防範客戶端可能發生的錯誤是有代價的，像是 Shared pointer，它比原本的體積更大、且更慢。但在許多程式中這些成本的影響並不顯著，防範客戶端愚蠢行為帶來的益處卻極為顯著。</p>
+<a href="#return-const-value"><h2 id="return-const-value"><span class="hanchor" ariaLabel="Anchor"># </span>Return Const Value</h2></a>
+<p>避免回傳值被修改，如此例中，類別 <code>Rational</code> (有理數) 的乘積符號禁止其回傳值被賦予值 (assignment)。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Rational</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span> 
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">Rational</span> <span class="k">operator</span><span class="o">*</span><span class="p">(</span><span class="k">const</span> <span class="n">Rational</span><span class="o">&amp;</span> <span class="n">lhs</span><span class="p">,</span> <span class="k">const</span> <span class="n">Rational</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>聽起來有點怪，但它可以預防 client 端寫出這種 code:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Rational</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我想，作者的舉這個例子有 Defensive programming 的概念在。如若這些變數是內建型別 (ex. int)，這種寫法直接就會被擋掉。但像此例，它們是 User-defined 的型別，對於設計 class 的 designer 而言，最好將這種無意義的行為擋掉。</p>
 
 
     </article>
@@ -554,6 +589,10 @@ Unknown
     
       
       
+      
+    
+      
+      
       <li>
         <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F/" data-ctx="讓介面容易被使用" data-src="/notes/Project/Effective-C&#43;&#43;-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F" class="internal-link">為多型用途的基礎類別宣告 virtual 解構式</a>
       </li>
@@ -562,6 +601,12 @@ Unknown
       
       <li>
         <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%A7%A3%E6%A7%8B%E5%BC%8F%E8%88%87%E7%95%B0%E5%B8%B8/" data-ctx="讓介面容易被使用" data-src="/notes/Project/Effective-C&#43;&#43;-Series/%E8%A7%A3%E6%A7%8B%E5%BC%8F%E8%88%87%E7%95%B0%E5%B8%B8" class="internal-link">解構式與異常</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Const-in-C&#43;&#43;/" data-ctx="讓介面容易被使用#Return Const Value" data-src="/notes/Project/Effective-C&#43;&#43;-Series/Const-in-C&#43;&#43;" class="internal-link">Const in C&#43;&#43;</a>
       </li>
       
       

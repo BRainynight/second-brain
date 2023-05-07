@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.36967371ba7bd13e46a7eb2121284123.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.afbb5f954918a4da00054728a01084d0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.496262f247629e5459f020bcf6037d2d.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -384,8 +384,46 @@ Apr 10, 2023
         <li><a href="#條款31-將檔案間的編譯依存降到最低">條款31 將檔案間的編譯依存降到最低</a></li>
       </ol>
     </li>
-    <li><a href="#ch6-繼承與物件導向">Ch6 繼承與物件導向</a></li>
-    <li><a href="#ch7-template-and-generic-programming">Ch7 Template and Generic Programming</a></li>
+    <li><a href="#ch6-繼承與物件導向">Ch6 繼承與物件導向</a>
+      <ol>
+        <li><a href="#條款32-確定你的-public-繼承塑出-is-a-關係">條款32 確定你的 Public 繼承塑出 is-a 關係</a></li>
+        <li><a href="#條款33-避免遮掩繼承而來的名稱">條款33 避免遮掩繼承而來的名稱</a></li>
+        <li><a href="#條款34-區分介面繼承與實作繼承">條款34 區分介面繼承與實作繼承</a></li>
+        <li><a href="#條款35-考慮-virtual-函式以外的其他選擇">條款35 考慮 Virtual 函式以外的其他選擇</a></li>
+        <li><a href="#條款36-絕不重新定義繼承來的-non-virtual-function">條款36 絕不重新定義繼承來的 Non-virtual Function</a></li>
+        <li><a href="#條款37-絕不重新定義繼承來的預設參數值">條款37 絕不重新定義繼承來的預設參數值</a></li>
+        <li><a href="#條款38-透過複合模塑出-has-a-或-根據某物實作出">條款38 透過複合模塑出 Has-a 或 根據某物實作出</a></li>
+        <li><a href="#條款39-明智審慎的使用-private-繼承">條款39 明智審慎的使用 Private 繼承</a></li>
+        <li><a href="#條款40-明智審慎的使用多重繼承">條款40 明智審慎的使用多重繼承</a></li>
+      </ol>
+    </li>
+    <li><a href="#ch7-template-and-generic-programming">Ch7 Template and Generic Programming</a>
+      <ol>
+        <li><a href="#條款41-了解隱式介面和編譯多型">條款41 了解隱式介面和編譯多型</a></li>
+        <li><a href="#條款42-了解-typename-的雙重意義">條款42 了解 typename 的雙重意義</a></li>
+        <li><a href="#條款43-學習處理模板化基礎類別內的名稱">條款43 學習處理模板化基礎類別內的名稱</a></li>
+        <li><a href="#條款44-將與參數無關的程式碼抽離-templates">條款44 將與參數無關的程式碼抽離 Templates</a></li>
+        <li><a href="#條款45-運用成員函式模板接受所有相容型別">條款45 運用成員函式模板接受所有相容型別</a></li>
+        <li><a href="#條款46-需要型別轉換時請為模板定義非成員函式">條款46 需要型別轉換時請為模板定義非成員函式</a></li>
+        <li><a href="#條款47-請使用-traits-classes-表現型別資訊">條款47 請使用 Traits Classes 表現型別資訊</a></li>
+        <li><a href="#條款48-認識-template-超編程">條款48 認識 Template 超編程</a></li>
+      </ol>
+    </li>
+    <li><a href="#ch8-自訂-new-和-delete">Ch8 自訂 new 和 delete</a>
+      <ol>
+        <li><a href="#條款49-了解-new-handler-的行為">條款49 了解 new-handler 的行為</a></li>
+        <li><a href="#條款50-了解-new-和-delete-的合理替換時機">條款50 了解 new 和 delete 的合理替換時機</a></li>
+        <li><a href="#條款51-編寫-new-和-delete-時需固守常規">條款51 編寫 new 和 delete 時需固守常規</a></li>
+        <li><a href="#條款52-寫了-placement-new-也要寫-placement-delete">條款52 寫了 placement new 也要寫 placement delete</a></li>
+      </ol>
+    </li>
+    <li><a href="#ch9-雜項討論">Ch9 雜項討論</a>
+      <ol>
+        <li><a href="#條款53-不要輕忽邊義器的警告">條款53 不要輕忽邊義器的警告</a></li>
+        <li><a href="#條款54-讓自己熟悉包刮-tr1-在內的標準函式庫">條款54 讓自己熟悉包刮 TR1 在內的標準函式庫</a></li>
+        <li><a href="#條款55-讓自己熟悉-boost">條款55 讓自己熟悉 Boost</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
     </details>
@@ -2479,6 +2517,539 @@ Apr 10, 2023
     
     
     
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
       
       
     
@@ -3028,12 +3599,99 @@ Apr 10, 2023
 
   
 
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
 
 
 
 
 
 
+
   
   
   
@@ -3041,6 +3699,18 @@ Apr 10, 2023
   
   
   
+  
+    
+    
+      
+      
+        
+      
+      
+      
+      
+    
+    
   
     
     
@@ -3134,8 +3804,10 @@ Apr 10, 2023
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="k">const</span> <span class="n">p</span> <span class="o">=</span> <span class="n">greeting</span><span class="p">;</span> <span class="c1">// const ptr, const data
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>當 <code>const</code> 在 <code>*</code> 前，不管是先寫 const 修飾的類、或是先寫 const 都是一樣的，就是在修飾 <code>char</code> 物件具有常數性。
-<a href="/second-brain/notes/Project/Effective-C++-Series/Const-in-C++" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Const-in-C++">Const in C++</a></p>
+</div><p>當 <code>const</code> 在 <code>*</code> 前，不管是先寫 const 修飾的類、或是先寫 const 都是一樣的，就是在修飾 <code>char</code> 物件具有常數性。</p>
+<ul>
+<li><a href="/second-brain/notes/Project/Effective-C++-Series/Const-in-C++" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Const-in-C++">Const in C++</a></li>
+</ul>
 <a href="#條款4-確定物件在使用前已經初始化"><h3 id="條款4-確定物件在使用前已經初始化"><span class="hanchor" ariaLabel="Anchor"># </span>條款4 確定物件在使用前已經初始化</h3></a>
 <p>不是所有的物件宣告時自帶初始化，它的規則過於複雜，只需要謹記: 宣告時就要初始化!
 (通常是 C-style 的，像是 array 不保證會發生初始化)，而 non-C part 的 (like <code>std::vector</code>) 有其他規則，就自帶初始化)</p>
@@ -3176,9 +3848,8 @@ Apr 10, 2023
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Empty</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Empty</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="c1">// copy assignment 
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>且都是 public inline function - <a href="/second-brain/notes/Project/Effective-C++-Series/Item30-Understand-the-ins-and-outs-of-inlining" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item30-Understand-the-ins-and-outs-of-inlining">Item30 Understand the ins and outs of inlining</a></p>
-<p>更確切來說，是當這些 function 被需要 (被呼叫) 時產生。
-<a href="/second-brain/notes/Project/Effective-C++-Series/Default-Generated-Functions" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Default-Generated-Functions">Default Generated Functions</a></p>
+</div><p>並且，都是 public inline function!! 關於這些 function 被 inline 會帶來什麼危害，見 <a href="/second-brain/notes/Project/Effective-C++-Series/%E5%BB%BA%E6%A7%8B%E5%92%8C%E8%A7%A3%E6%A7%8B%E5%BC%8F%E6%98%AF-inline-%E7%9A%84%E7%B3%9F%E7%B3%95%E4%BA%BA%E9%81%B8" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E5%BB%BA%E6%A7%8B%E5%92%8C%E8%A7%A3%E6%A7%8B%E5%BC%8F%E6%98%AF-inline-%E7%9A%84%E7%B3%9F%E7%B3%95%E4%BA%BA%E9%81%B8">建構和解構式是 inline 的糟糕人選</a>。</p>
+<p>更確切來說，是當這些 function 被需要 (被呼叫) 時產生: <a href="/second-brain/notes/Project/Effective-C++-Series/Default-Generated-Functions" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Default-Generated-Functions">Default Generated Functions</a></p>
 <a href="#條款6-明確拒絕不要編譯器自動生成的函式"><h3 id="條款6-明確拒絕不要編譯器自動生成的函式"><span class="hanchor" ariaLabel="Anchor"># </span>條款6 明確拒絕不要編譯器自動生成的函式</h3></a>
 <p>在 C++11 引入了新的概念 
 <a href="https://www.ibm.com/docs/en/zos/2.4.0?topic=definitions-deleted-functions-c11" rel="noopener">Deleted functions</a>，書中教的方法依然有其壞處。直接在 declaration 後面接著 <code>=delete</code> 就可以阻止 copmiler 生成它。</p>
@@ -3240,12 +3911,16 @@ Apr 10, 2023
 </ul>
 <a href="#條款14-仔細考慮資源管理類別的-copy-行為"><h3 id="條款14-仔細考慮資源管理類別的-copy-行為"><span class="hanchor" ariaLabel="Anchor"># </span>條款14 仔細考慮資源管理類別的 Copy 行為</h3></a>
 <ul>
-<li>有些資源並不是 Heap-based Resource，就不一定適合 auto_ptr。</li>
-<li>書中以 Mutex (互斥鎖) 舉例。</li>
+<li>Smart Pointer 那類的資源管理器，適合用來掌握 heap-based resource 的生命週期。</li>
+<li>並非所有的資源物件，都適合用 Smart Pointer 管理。</li>
+<li>書中以 <a href="/second-brain/notes/Project/Effective-C++-Series/Mutex" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Mutex">Mutex</a> (互斥鎖) 舉例。</li>
 </ul>
 <blockquote class="todo-callout">
-<p>
-查一查 RAII，這整個章節我看不太懂。</p>
+<p></p>
+<ol>
+<li>查一查 RAII，這整個章節我看不太懂。</li>
+<li>看到 P67，面對複製的問題還沒看。</li>
+</ol>
 </blockquote>
 <blockquote class="question-callout">
 <p>
@@ -3320,23 +3995,64 @@ Apr 10, 2023
 </blockquote>
 <a href="#ch5-implementation"><h2 id="ch5-implementation"><span class="hanchor" ariaLabel="Anchor"># </span>Ch5 Implementation</h2></a>
 <a href="#條款26-盡可能延後變數定義式的出現時間"><h3 id="條款26-盡可能延後變數定義式的出現時間"><span class="hanchor" ariaLabel="Anchor"># </span>條款26 盡可能延後變數定義式的出現時間</h3></a>
-<p>盡可能當已經擁有初始值了，再一口氣定義+賦予初始值，不去調用多餘的 constructor !</p>
+<p>盡可能等到已經擁有初始值了，再一口氣定義+賦予初始值。如此不必調用多餘的 constructor !</p>
 <ul>
 <li><a href="/second-brain/notes/Project/Effective-C++-Series/%E7%9B%A1%E5%8F%AF%E8%83%BD%E5%BB%B6%E5%BE%8C%E8%AE%8A%E6%95%B8%E5%AE%9A%E7%BE%A9%E5%BC%8F%E7%9A%84%E5%87%BA%E7%8F%BE%E6%99%82%E9%96%93" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E7%9B%A1%E5%8F%AF%E8%83%BD%E5%BB%B6%E5%BE%8C%E8%AE%8A%E6%95%B8%E5%AE%9A%E7%BE%A9%E5%BC%8F%E7%9A%84%E5%87%BA%E7%8F%BE%E6%99%82%E9%96%93">盡可能延後變數定義式的出現時間</a></li>
 </ul>
 <hr>
 <a href="#條款27-少做轉型動作-minimize-casting"><h3 id="條款27-少做轉型動作-minimize-casting"><span class="hanchor" ariaLabel="Anchor"># </span>條款27 少做轉型動作 (Minimize Casting)</h3></a>
-<p><a href="/second-brain/notes/Project/Effective-C++-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting">少做轉型動作(Minimize casting)</a></p>
+<ul>
+<li>如果轉型是必要的，試圖把它隱藏在函式之後，不讓 User 在他們的程式中轉型。</li>
+<li>作為 Client，如果需要轉型，考慮使用新式的轉型，即使用舊式看起來也合情合理。
+<a href="/second-brain/notes/Project/Effective-C++-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting">少做轉型動作(Minimize casting)</a></li>
+</ul>
 <a href="#條款28-避免傳回-handles-指向物件內部成分"><h3 id="條款28-避免傳回-handles-指向物件內部成分"><span class="hanchor" ariaLabel="Anchor"># </span>條款28 避免傳回 Handles 指向物件內部成分</h3></a>
-<p><a href="/second-brain/notes/Project/Effective-C++-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E5%85%A7%E9%83%A8%E6%88%90%E5%88%86" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E5%85%A7%E9%83%A8%E6%88%90%E5%88%86">避免傳回 Handles 指向物件內部成分</a></p>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E7%9A%84-Private-Protected-Member-Data" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E7%9A%84-Private-Protected-Member-Data">避免傳回 Handles 指向物件的 Private &amp; Protected Member Data</a>，目的是盡可能消滅 dangling handles 出現的可能。</p>
 <a href="#條款29-為異常安全-exception-safe-而努力是值得的"><h3 id="條款29-為異常安全-exception-safe-而努力是值得的"><span class="hanchor" ariaLabel="Anchor"># </span>條款29 為異常安全 (Exception-safe) 而努力是值得的</h3></a>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/%E7%82%BA%E7%95%B0%E5%B8%B8%E5%AE%89%E5%85%A8-Exception-safe-%E8%80%8C%E5%8A%AA%E5%8A%9B%E6%98%AF%E5%80%BC%E5%BE%97%E7%9A%84" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E7%82%BA%E7%95%B0%E5%B8%B8%E5%AE%89%E5%85%A8-Exception-safe-%E8%80%8C%E5%8A%AA%E5%8A%9B%E6%98%AF%E5%80%BC%E5%BE%97%E7%9A%84">為異常安全 (Exception-safe) 而努力是值得的</a></p>
+<blockquote class="todo-callout">
+<p>
+Read to P132</p>
+</blockquote>
 <a href="#條款30-透徹了解-inline"><h3 id="條款30-透徹了解-inline"><span class="hanchor" ariaLabel="Anchor"># </span>條款30 透徹了解 Inline</h3></a>
+<p>宣告 inline 前，先透徹讀完: <a href="/second-brain/notes/Project/Effective-C++-Series/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96">了解 Inline 的裡裡外外</a></p>
 <a href="#條款31-將檔案間的編譯依存降到最低"><h3 id="條款31-將檔案間的編譯依存降到最低"><span class="hanchor" ariaLabel="Anchor"># </span>條款31 將檔案間的編譯依存降到最低</h3></a>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/%E5%B0%87%E6%AA%94%E6%A1%88%E7%9A%84%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98%E9%97%9C%E4%BF%82%E9%99%8D%E5%88%B0%E6%9C%80%E4%BD%8E" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E5%B0%87%E6%AA%94%E6%A1%88%E7%9A%84%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98%E9%97%9C%E4%BF%82%E9%99%8D%E5%88%B0%E6%9C%80%E4%BD%8E">將檔案的編譯依存關係降到最低</a></p>
 <a href="#ch6-繼承與物件導向"><h2 id="ch6-繼承與物件導向"><span class="hanchor" ariaLabel="Anchor"># </span>Ch6 繼承與物件導向</h2></a>
+<a href="#條款32-確定你的-public-繼承塑出-is-a-關係"><h3 id="條款32-確定你的-public-繼承塑出-is-a-關係"><span class="hanchor" ariaLabel="Anchor"># </span>條款32 確定你的 Public 繼承塑出 is-a 關係</h3></a>
+<a href="#條款33-避免遮掩繼承而來的名稱"><h3 id="條款33-避免遮掩繼承而來的名稱"><span class="hanchor" ariaLabel="Anchor"># </span>條款33 避免遮掩繼承而來的名稱</h3></a>
+<a href="#條款34-區分介面繼承與實作繼承"><h3 id="條款34-區分介面繼承與實作繼承"><span class="hanchor" ariaLabel="Anchor"># </span>條款34 區分介面繼承與實作繼承</h3></a>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/Item34-Differentiate-between-inheritance-of-interface-and-inheritance-of-implementation" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item34-Differentiate-between-inheritance-of-interface-and-inheritance-of-implementation">Item34 Differentiate between inheritance of interface and inheritance of implementation</a></p>
+<a href="#條款35-考慮-virtual-函式以外的其他選擇"><h3 id="條款35-考慮-virtual-函式以外的其他選擇"><span class="hanchor" ariaLabel="Anchor"># </span>條款35 考慮 Virtual 函式以外的其他選擇</h3></a>
+<a href="#條款36-絕不重新定義繼承來的-non-virtual-function"><h3 id="條款36-絕不重新定義繼承來的-non-virtual-function"><span class="hanchor" ariaLabel="Anchor"># </span>條款36 絕不重新定義繼承來的 Non-virtual Function</h3></a>
+<a href="#條款37-絕不重新定義繼承來的預設參數值"><h3 id="條款37-絕不重新定義繼承來的預設參數值"><span class="hanchor" ariaLabel="Anchor"># </span>條款37 絕不重新定義繼承來的預設參數值</h3></a>
+<a href="#條款38-透過複合模塑出-has-a-或-根據某物實作出"><h3 id="條款38-透過複合模塑出-has-a-或-根據某物實作出"><span class="hanchor" ariaLabel="Anchor"># </span>條款38 透過複合模塑出 Has-a 或 根據某物實作出</h3></a>
+<p>Model &ldquo;has-a&rdquo; or &ldquo;is-implemented in terms of &quot; through composition.</p>
+<a href="#條款39-明智審慎的使用-private-繼承"><h3 id="條款39-明智審慎的使用-private-繼承"><span class="hanchor" ariaLabel="Anchor"># </span>條款39 明智審慎的使用 Private 繼承</h3></a>
+<a href="#條款40-明智審慎的使用多重繼承"><h3 id="條款40-明智審慎的使用多重繼承"><span class="hanchor" ariaLabel="Anchor"># </span>條款40 明智審慎的使用多重繼承</h3></a>
 <a href="#ch7-template-and-generic-programming"><h2 id="ch7-template-and-generic-programming"><span class="hanchor" ariaLabel="Anchor"># </span>Ch7 Template and Generic Programming</h2></a>
+<a href="#條款41-了解隱式介面和編譯多型"><h3 id="條款41-了解隱式介面和編譯多型"><span class="hanchor" ariaLabel="Anchor"># </span>條款41 了解隱式介面和編譯多型</h3></a>
+<a href="#條款42-了解-typename-的雙重意義"><h3 id="條款42-了解-typename-的雙重意義"><span class="hanchor" ariaLabel="Anchor"># </span>條款42 了解 typename 的雙重意義</h3></a>
+<a href="#條款43-學習處理模板化基礎類別內的名稱"><h3 id="條款43-學習處理模板化基礎類別內的名稱"><span class="hanchor" ariaLabel="Anchor"># </span>條款43 學習處理模板化基礎類別內的名稱</h3></a>
+<a href="#條款44-將與參數無關的程式碼抽離-templates"><h3 id="條款44-將與參數無關的程式碼抽離-templates"><span class="hanchor" ariaLabel="Anchor"># </span>條款44 將與參數無關的程式碼抽離 Templates</h3></a>
+<a href="#條款45-運用成員函式模板接受所有相容型別"><h3 id="條款45-運用成員函式模板接受所有相容型別"><span class="hanchor" ariaLabel="Anchor"># </span>條款45 運用成員函式模板接受所有相容型別</h3></a>
+<a href="#條款46-需要型別轉換時請為模板定義非成員函式"><h3 id="條款46-需要型別轉換時請為模板定義非成員函式"><span class="hanchor" ariaLabel="Anchor"># </span>條款46 需要型別轉換時請為模板定義非成員函式</h3></a>
 <ul>
 <li><a href="/second-brain/notes/Project/Effective-C++-Series/Item46-%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item46-%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F">Item46 需要型別轉換時請為模板定義非成員函式</a></li>
 </ul>
+<a href="#條款47-請使用-traits-classes-表現型別資訊"><h3 id="條款47-請使用-traits-classes-表現型別資訊"><span class="hanchor" ariaLabel="Anchor"># </span>條款47 請使用 Traits Classes 表現型別資訊</h3></a>
+<a href="#條款48-認識-template-超編程"><h3 id="條款48-認識-template-超編程"><span class="hanchor" ariaLabel="Anchor"># </span>條款48 認識 Template 超編程</h3></a>
+<a href="#ch8-自訂-new-和-delete"><h2 id="ch8-自訂-new-和-delete"><span class="hanchor" ariaLabel="Anchor"># </span>Ch8 自訂 new 和 delete</h2></a>
+<a href="#條款49-了解-new-handler-的行為"><h3 id="條款49-了解-new-handler-的行為"><span class="hanchor" ariaLabel="Anchor"># </span>條款49 了解 new-handler 的行為</h3></a>
+<a href="#條款50-了解-new-和-delete-的合理替換時機"><h3 id="條款50-了解-new-和-delete-的合理替換時機"><span class="hanchor" ariaLabel="Anchor"># </span>條款50 了解 new 和 delete 的合理替換時機</h3></a>
+<a href="#條款51-編寫-new-和-delete-時需固守常規"><h3 id="條款51-編寫-new-和-delete-時需固守常規"><span class="hanchor" ariaLabel="Anchor"># </span>條款51 編寫 new 和 delete 時需固守常規</h3></a>
+<a href="#條款52-寫了-placement-new-也要寫-placement-delete"><h3 id="條款52-寫了-placement-new-也要寫-placement-delete"><span class="hanchor" ariaLabel="Anchor"># </span>條款52 寫了 placement new 也要寫 placement delete</h3></a>
+<a href="#ch9-雜項討論"><h2 id="ch9-雜項討論"><span class="hanchor" ariaLabel="Anchor"># </span>Ch9 雜項討論</h2></a>
+<a href="#條款53-不要輕忽邊義器的警告"><h3 id="條款53-不要輕忽邊義器的警告"><span class="hanchor" ariaLabel="Anchor"># </span>條款53 不要輕忽邊義器的警告</h3></a>
+<a href="#條款54-讓自己熟悉包刮-tr1-在內的標準函式庫"><h3 id="條款54-讓自己熟悉包刮-tr1-在內的標準函式庫"><span class="hanchor" ariaLabel="Anchor"># </span>條款54 讓自己熟悉包刮 TR1 在內的標準函式庫</h3></a>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/Item54-Familiarize-yourself-with-the-standard-library-including-TR1" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item54-Familiarize-yourself-with-the-standard-library-including-TR1">Item54 Familiarize yourself with the standard library including TR1</a></p>
+<a href="#條款55-讓自己熟悉-boost"><h3 id="條款55-讓自己熟悉-boost"><span class="hanchor" ariaLabel="Anchor"># </span>條款55 讓自己熟悉 Boost</h3></a>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/Item55-Familiarize-yourself-with-Boost" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item55-Familiarize-yourself-with-Boost">Item55 Familiarize yourself with Boost</a></p>
 <p>簡體目錄: 
 <a href="https://blog.csdn.net/weixin_45926547/article/details/121276226" rel="noopener">https://blog.csdn.net/weixin_45926547/article/details/121276226</a></p>
 
@@ -3378,6 +4094,14 @@ Apr 10, 2023
     
       
       
+      
+    
+      
+      
+      
+    
+      
+      
       <li>
         <a href="/second-brain//" data-ctx="notes/Project/Effective C&#43;&#43; Series/Effective C&#43;&#43; Outline" data-src="/" class="internal-link">🪴 Main Page</a>
       </li>
@@ -3386,6 +4110,18 @@ Apr 10, 2023
       
       <li>
         <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%A8%AD%E8%A8%88%E6%96%B0-Class-%E7%9A%84%E6%BA%96%E5%89%87/" data-ctx="條款7 為多型用途的基礎類別宣告 virtual 解構式" data-src="/notes/Project/Effective-C&#43;&#43;-Series/%E8%A8%AD%E8%A8%88%E6%96%B0-Class-%E7%9A%84%E6%BA%96%E5%89%87" class="internal-link">設計新 Class 的準則</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E7%9A%84-Private-Protected-Member-Data/" data-ctx="Effective C&#43;&#43; Outline#條款3 盡可能使用 const" data-src="/notes/Project/Effective-C&#43;&#43;-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E7%9A%84-Private-Protected-Member-Data" class="internal-link">避免傳回 Handles 指向物件的 Private &amp; Protected Member Data</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Member-Initialization-List/" data-ctx="Effective C&#43;&#43; Outline#條款5 了解 C&#43;&#43;默默編寫並呼叫哪些函式" data-src="/notes/Project/Effective-C&#43;&#43;-Series/Member-Initialization-List" class="internal-link">Member Initialization List</a>
       </li>
       
       

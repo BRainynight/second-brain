@@ -11,7 +11,7 @@
     content="情境: 當Destructor 必須執行某項會丟Exception 的程序 舉例，我們有一個資料庫連線的 class DBConnection，這類資源管理的 Class 在 [[Chapter3]] 中會有更詳細的探討。
 1 2 3 4 5 6 7  class DBConnection { public: ."
   />
-  <meta property="og:title" content="">
+  <meta property="og:title" content="解構式與異常">
   <meta property="og:description" content="情境: 當Destructor 必須執行某項會丟Exception 的程序 舉例，我們有一個資料庫連線的 class DBConnection，這類資源管理的 Class 在 [[Chapter3]] 中會有更詳細的探討。
 1 2 3 4 5 6 7  class DBConnection { public: .">
   <meta property="og:type" content="website">
@@ -20,7 +20,7 @@
   <meta property="og:width" content="200">
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="" />
+  <meta name="twitter:title" content="解構式與異常" />
   <meta name="twitter:description" content="情境: 當Destructor 必須執行某項會丟Exception 的程序 舉例，我們有一個資料庫連線的 class DBConnection，這類資源管理的 Class 在 [[Chapter3]] 中會有更詳細的探討。
 1 2 3 4 5 6 7  class DBConnection { public: ." />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
@@ -29,7 +29,7 @@
   
 
   <title>
-    🪴 Digital Note
+    解構式與異常
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.36967371ba7bd13e46a7eb2121284123.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.afbb5f954918a4da00054728a01084d0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.496262f247629e5459f020bcf6037d2d.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -307,7 +307,7 @@
 
 
     <article>
-      
+      <h1>解構式與異常</h1>
       <p class="meta">
         Last updated 
 Unknown
@@ -317,6 +317,13 @@ Unknown
 
       </p>
       <ul class="tags">
+          
+          <li><a href="https://brainynight.github.io/second-brain/tags/cpp/">
+          
+            Cpp
+          
+            </a>
+           </li>
           
       </ul>
       

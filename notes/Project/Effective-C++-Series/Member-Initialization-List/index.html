@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.36967371ba7bd13e46a7eb2121284123.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.afbb5f954918a4da00054728a01084d0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.496262f247629e5459f020bcf6037d2d.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -310,7 +310,7 @@
       <h1>Member Initialization List</h1>
       <p class="meta">
         Last updated 
-Apr 17, 2023
+May 7, 2023
 
  
           
@@ -382,18 +382,7 @@ Apr 17, 2023
     
     
     
-      
-      
     
-    
-    
-      
-      
-      
-      
-      
-      
-      
     
     
 
@@ -401,6 +390,10 @@ Apr 17, 2023
     
       
       
+      
+      
+      
+    
     
 
   
@@ -442,7 +435,7 @@ Apr 17, 2023
 這樣的好處是明白地列出所有 member data，避免有 data 忘記給初始值，特別是對<strong>非內建型別</strong>的member data，沒有初始化的結果是災難的。</p>
 <p>對於內建型別的 Reference &amp; const，他們<strong>不能被賦值</strong>，<strong>必須透過 member initializer list 初始化</strong>。</p>
 <ul>
-<li>Related: <a class="internal-link broken">Item5 Know What Functions C++ Silently Writes and Calls</a></li>
+<li>Related: <a href="/second-brain/notes/Project/Effective-C++-Series/Effective-C++-Outline#%e6%a2%9d%e6%ac%be5-%e4%ba%86%e8%a7%a3-c++%e9%bb%98%e9%bb%98%e7%b7%a8%e5%af%ab%e4%b8%a6%e5%91%bc%e5%8f%ab%e5%93%aa%e4%ba%9b%e5%87%bd%e5%bc%8f" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Effective-C++-Outline">Effective C++ Outline</a></li>
 </ul>
 <a href="#合理的使用-assignment"><h2 id="合理的使用-assignment"><span class="hanchor" ariaLabel="Anchor"># </span>合理的使用 Assignment</h2></a>
 <p>某些時候，類別擁有多個 Constructor，每個 Constructor 都需要有自己的 Member initializer list，這又會導致 dumplicated。

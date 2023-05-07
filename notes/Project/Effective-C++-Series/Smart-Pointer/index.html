@@ -11,7 +11,7 @@
     content="在[[為多型用途的基礎類別宣告 virtual 解構式]]文章中的 TimeKeeper 例子，我們提及了工廠函式 (factory function)，在該例子，我們把 delete new resource 的責任交給 Client。
 然而有很多情況&ndash;例如 main flow 中過早的 return，resource 可能沒有成功被銷毀。善用 Pointer-like 物件，並把銷毀資源的操作確實的寫在 Destructor 中可以避免這些問題。"
   />
-  <meta property="og:title" content="">
+  <meta property="og:title" content="Smart Pointer">
   <meta property="og:description" content="在[[為多型用途的基礎類別宣告 virtual 解構式]]文章中的 TimeKeeper 例子，我們提及了工廠函式 (factory function)，在該例子，我們把 delete new resource 的責任交給 Client。
 然而有很多情況&ndash;例如 main flow 中過早的 return，resource 可能沒有成功被銷毀。善用 Pointer-like 物件，並把銷毀資源的操作確實的寫在 Destructor 中可以避免這些問題。">
   <meta property="og:type" content="website">
@@ -20,7 +20,7 @@
   <meta property="og:width" content="200">
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="" />
+  <meta name="twitter:title" content="Smart Pointer" />
   <meta name="twitter:description" content="在[[為多型用途的基礎類別宣告 virtual 解構式]]文章中的 TimeKeeper 例子，我們提及了工廠函式 (factory function)，在該例子，我們把 delete new resource 的責任交給 Client。
 然而有很多情況&ndash;例如 main flow 中過早的 return，resource 可能沒有成功被銷毀。善用 Pointer-like 物件，並把銷毀資源的操作確實的寫在 Destructor 中可以避免這些問題。" />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
@@ -29,7 +29,7 @@
   
 
   <title>
-    🪴 Digital Note
+    Smart Pointer
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.36967371ba7bd13e46a7eb2121284123.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.afbb5f954918a4da00054728a01084d0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.496262f247629e5459f020bcf6037d2d.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -307,16 +307,23 @@
 
 
     <article>
-      
+      <h1>Smart Pointer</h1>
       <p class="meta">
         Last updated 
-Apr 19, 2023
+May 7, 2023
 
  
           
 
       </p>
       <ul class="tags">
+          
+          <li><a href="https://brainynight.github.io/second-brain/tags/cpp/">
+          
+            Cpp
+          
+            </a>
+           </li>
           
       </ul>
       
@@ -519,6 +526,16 @@ Apr 19, 2023
       
       
     
+      
+      
+      
+    
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F/" data-ctx="條款13 使用資源管理器" data-src="/notes/Project/Effective-C&#43;&#43;-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F" class="internal-link">為多型用途的基礎類別宣告 virtual 解構式</a>
+      </li>
+      
       
       
       <li>

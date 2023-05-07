@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.36967371ba7bd13e46a7eb2121284123.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.afbb5f954918a4da00054728a01084d0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.496262f247629e5459f020bcf6037d2d.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -310,7 +310,7 @@
       <h1>Static Object</h1>
       <p class="meta">
         Last updated 
-Apr 21, 2023
+May 7, 2023
 
  
           
@@ -773,7 +773,7 @@ The relative order of initialization of non-local static objects defined in diff
 </div><p>此種手法稱為 reference-returning。</p>
 <p>在此例子中，<code>tmpDir</code> 創建物件 <code>td</code>，在 call <code>Directory</code> Constructor 時，會再 call <code>tfs</code> ，此時才創建 static object <code>fs</code>。透過 function call，確保了物件初始化的順序，先初始化 <code>fs</code>，再創建 <code>td</code>。</p>
 <a href="#優點"><h3 id="優點"><span class="hanchor" ariaLabel="Anchor"># </span>優點</h3></a>
-<p>特別在頻繁呼叫的時候，搭配 <a href="/second-brain/notes/Project/Effective-C++-Series/Item30-Understand-the-ins-and-outs-of-inlining" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item30-Understand-the-ins-and-outs-of-inlining">Item30 Understand the ins and outs of inlining</a>。</p>
+<p>特別在頻繁呼叫的時候，搭配 <a href="/second-brain/notes/Project/Effective-C++-Series/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96">了解 Inline 的裡裡外外</a>。</p>
 <a href="#缺點"><h3 id="缺點"><span class="hanchor" ariaLabel="Anchor"># </span>缺點</h3></a>
 <p>在 multi-thread 中有不確定性。任何一種 non-const static 物件如果<strong>依賴於其他事件的發生</strong>，都很麻煩。常見的解決方法是，在 single-threaded startup portion 手動喚起所有 reference-returning function，手動解決 race conditions。</p>
 

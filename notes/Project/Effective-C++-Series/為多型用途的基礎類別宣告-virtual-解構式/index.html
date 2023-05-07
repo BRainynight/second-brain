@@ -10,7 +10,7 @@
     name="description"
     content="多型 多型有個特點: Base Class 的存在是為了「經由 Base Class Interface 處置 Drived Class Object」，以下例來說， TimeKeeper 是一個 Polymorphic Base Class，所以持有一個 TimeKeeper Pointer 就可以處理 WaterClock, WristWatch 物件，這就是上面那句話的意思。"
   />
-  <meta property="og:title" content="">
+  <meta property="og:title" content="為多型用途的基礎類別宣告 virtual 解構式">
   <meta property="og:description" content="多型 多型有個特點: Base Class 的存在是為了「經由 Base Class Interface 處置 Drived Class Object」，以下例來說， TimeKeeper 是一個 Polymorphic Base Class，所以持有一個 TimeKeeper Pointer 就可以處理 WaterClock, WristWatch 物件，這就是上面那句話的意思。">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
@@ -18,7 +18,7 @@
   <meta property="og:width" content="200">
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="" />
+  <meta name="twitter:title" content="為多型用途的基礎類別宣告 virtual 解構式" />
   <meta name="twitter:description" content="多型 多型有個特點: Base Class 的存在是為了「經由 Base Class Interface 處置 Drived Class Object」，以下例來說， TimeKeeper 是一個 Polymorphic Base Class，所以持有一個 TimeKeeper Pointer 就可以處理 WaterClock, WristWatch 物件，這就是上面那句話的意思。" />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
   
@@ -26,7 +26,7 @@
   
 
   <title>
-    🪴 Digital Note
+    為多型用途的基礎類別宣告 virtual 解構式
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -130,13 +130,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.36967371ba7bd13e46a7eb2121284123.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.afbb5f954918a4da00054728a01084d0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.496262f247629e5459f020bcf6037d2d.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -304,7 +304,7 @@
 
 
     <article>
-      
+      <h1>為多型用途的基礎類別宣告 virtual 解構式</h1>
       <p class="meta">
         Last updated 
 Unknown
@@ -314,6 +314,13 @@ Unknown
 
       </p>
       <ul class="tags">
+          
+          <li><a href="https://brainynight.github.io/second-brain/tags/cpp/">
+          
+            Cpp
+          
+            </a>
+           </li>
           
       </ul>
       
@@ -379,75 +386,6 @@ Unknown
   
     
   
-
-  
-
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-      
-      
-      
-      
-      
-    
-    
-
-  
-
-  
-  
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
 
@@ -474,13 +412,12 @@ Unknown
     
     
     
-      
-      
     
     
     
-      
-      
+
+    
+    
       
       
       
@@ -489,16 +426,12 @@ Unknown
     
     
 
-    
-    
-      
-      
-    
-
   
 
   
   
+  
+    
   
     
   
@@ -599,6 +532,81 @@ Unknown
   
     
   
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
   
 
@@ -670,6 +678,81 @@ Unknown
   
     
   
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
   
 
@@ -712,6 +795,8 @@ Unknown
 
   
   
+  
+    
   
     
   
@@ -860,7 +945,7 @@ Unknown
 </div><p>繼承與多型之間並非充分必要條件，<strong>非所有的 Base Class 都是作為多型使用</strong>。
 像是 <a href="/second-brain/notes/Project/Effective-C++-Series/Item47-Use-traits-classes-for-information-about-types" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item47-Use-traits-classes-for-information-about-types">Item47 Use traits classes for information about types</a> 的 <code>input_iterator_tag</code>，繼承更像是 &ldquo;enable 某種特性&rdquo; 的用途。</p>
 <a href="#多型的-base-class-沒有-virtural-destructor-又如何"><h2 id="多型的-base-class-沒有-virtural-destructor-又如何"><span class="hanchor" ariaLabel="Anchor"># </span>多型的 Base Class 沒有 Virtural Destructor 又如何</h2></a>
-<p>多型 (polymorphic) 的手法使我們可以持有 base class 的 Pointer 指向各種 child class 的實作。工廠(Factory) Pattern 就是典型的實作。</p>
+<p>多型 (polymorphic) 的手法使我們可以持有 base class 的 Pointer 指向各種 child class 的實作。<a href="/second-brain/notes/Project/Effective-C++-Series/%E5%B7%A5%E5%BB%A0%E5%87%BD%E5%BC%8F-Factory-Function" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E5%B7%A5%E5%BB%A0%E5%87%BD%E5%BC%8F-Factory-Function">工廠函式 (Factory Function)</a>  就是典型的實作。</p>
 <blockquote class="question-callout">
 <p>
 為了遵守 factory function 的規矩，哪來的規矩?</p>
@@ -876,7 +961,7 @@ Unknown
 </span></span><span class="line"><span class="cl"><span class="k">delete</span> <span class="n">ptk</span><span class="p">;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>儘管 <a class="internal-link broken">Item13</a> 和 <a href="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8">讓介面容易被使用</a> 說明了依賴 client 做 delete 有潛在的危險跟不確定，這裡要說明的是更嚴重、更根本性的問題。</p>
+</div><p>儘管 <a href="/second-brain/notes/Project/Effective-C++-Series/Smart-Pointer" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Smart-Pointer">條款13 使用資源管理器</a> 和 <a href="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8">讓介面容易被使用</a> 說明了依賴 client 做 <code>delete</code> 有潛在的危險跟不確定，這裡要說明的是更嚴重、更根本性的問題。</p>
 <ul>
 <li>我們宣告的是 <strong>Base class pointer</strong>，指向的是 <strong>child class 物件</strong>。</li>
 <li>Base class 擁有一個 non-virtural 的 destructor</li>
@@ -946,6 +1031,10 @@ Unknown
     
       
       
+      
+    
+      
+      
       <li>
         <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Default-Generated-Functions/" data-ctx="為多型用途的基礎類別宣告 virtual 解構式" data-src="/notes/Project/Effective-C&#43;&#43;-Series/Default-Generated-Functions" class="internal-link">Default Generated Functions</a>
       </li>
@@ -960,6 +1049,12 @@ Unknown
       
       <li>
         <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Smart-Pointer/" data-ctx="為多型用途的基礎類別宣告 virtual 解構式" data-src="/notes/Project/Effective-C&#43;&#43;-Series/Smart-Pointer" class="internal-link">Smart Pointer</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/pimpl-idiom-pointer-to-implementation/" data-ctx="為多型用途的基礎類別宣告 virtual 解構式" data-src="/notes/Project/Effective-C&#43;&#43;-Series/pimpl-idiom-pointer-to-implementation" class="internal-link">pimpl idiom (pointer to implementation)</a>
       </li>
       
       

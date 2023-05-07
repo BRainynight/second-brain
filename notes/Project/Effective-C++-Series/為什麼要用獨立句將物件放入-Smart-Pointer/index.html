@@ -12,7 +12,7 @@
  以獨立一句話將 newed 物件加入 smart pointer，格式如下
 1 2  std::shared_ptr&lt;Widget&gt; pw(new Widget); processWidget(pw, priority());    其原因是，如果像以下寫法"
   />
-  <meta property="og:title" content="">
+  <meta property="og:title" content="為什麼要用獨立句將物件放入 Smart Pointer">
   <meta property="og:description" content="盡可能確保 new 出來的物件，可以立即被放入 smart pointer 裡面，避免任何額外的步驟。只要有多餘的步驟，就可能因為意外而使得 smart pointer 沒有真正掌控到資源。
  以獨立一句話將 newed 物件加入 smart pointer，格式如下
 1 2  std::shared_ptr&lt;Widget&gt; pw(new Widget); processWidget(pw, priority());    其原因是，如果像以下寫法">
@@ -22,7 +22,7 @@
   <meta property="og:width" content="200">
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="" />
+  <meta name="twitter:title" content="為什麼要用獨立句將物件放入 Smart Pointer" />
   <meta name="twitter:description" content="盡可能確保 new 出來的物件，可以立即被放入 smart pointer 裡面，避免任何額外的步驟。只要有多餘的步驟，就可能因為意外而使得 smart pointer 沒有真正掌控到資源。
  以獨立一句話將 newed 物件加入 smart pointer，格式如下
 1 2  std::shared_ptr&lt;Widget&gt; pw(new Widget); processWidget(pw, priority());    其原因是，如果像以下寫法" />
@@ -32,7 +32,7 @@
   
 
   <title>
-    🪴 Digital Note
+    為什麼要用獨立句將物件放入 Smart Pointer
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -136,13 +136,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.36967371ba7bd13e46a7eb2121284123.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.afbb5f954918a4da00054728a01084d0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.496262f247629e5459f020bcf6037d2d.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -310,7 +310,7 @@
 
 
     <article>
-      
+      <h1>為什麼要用獨立句將物件放入 Smart Pointer</h1>
       <p class="meta">
         Last updated 
 Unknown
@@ -320,6 +320,13 @@ Unknown
 
       </p>
       <ul class="tags">
+          
+          <li><a href="https://brainynight.github.io/second-brain/tags/cpp/">
+          
+            Cpp
+          
+            </a>
+           </li>
           
       </ul>
       

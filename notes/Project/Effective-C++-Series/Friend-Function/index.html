@@ -12,7 +12,7 @@
  Friend Function 實質上定義在外面，但是在 Class 內部需要用 keyword friend 再提及一次該 function。因此，Friend Function 是 Non-member function !
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  class Ball; int compare(Ball &amp;b1, Ball &amp;b2) { // 可直接存取私用成員  if(b1."
   />
-  <meta property="og:title" content="">
+  <meta property="og:title" content="Friend Function">
   <meta property="og:description" content="提供私用成員給某些外部函式來存取，這個有權調用某類別私有成員的函式就稱為 Friend Function
  Friend Function 實質上定義在外面，但是在 Class 內部需要用 keyword friend 再提及一次該 function。因此，Friend Function 是 Non-member function !
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  class Ball; int compare(Ball &amp;b1, Ball &amp;b2) { // 可直接存取私用成員  if(b1.">
@@ -22,7 +22,7 @@
   <meta property="og:width" content="200">
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="" />
+  <meta name="twitter:title" content="Friend Function" />
   <meta name="twitter:description" content="提供私用成員給某些外部函式來存取，這個有權調用某類別私有成員的函式就稱為 Friend Function
  Friend Function 實質上定義在外面，但是在 Class 內部需要用 keyword friend 再提及一次該 function。因此，Friend Function 是 Non-member function !
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  class Ball; int compare(Ball &amp;b1, Ball &amp;b2) { // 可直接存取私用成員  if(b1." />
@@ -32,7 +32,7 @@
   
 
   <title>
-    🪴 Digital Note
+    Friend Function
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -136,13 +136,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.36967371ba7bd13e46a7eb2121284123.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.afbb5f954918a4da00054728a01084d0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.496262f247629e5459f020bcf6037d2d.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -310,16 +310,23 @@
 
 
     <article>
-      
+      <h1>Friend Function</h1>
       <p class="meta">
         Last updated 
-Apr 22, 2023
+May 7, 2023
 
  
           
 
       </p>
       <ul class="tags">
+          
+          <li><a href="https://brainynight.github.io/second-brain/tags/cpp/">
+          
+            Cpp
+          
+            </a>
+           </li>
           
       </ul>
       

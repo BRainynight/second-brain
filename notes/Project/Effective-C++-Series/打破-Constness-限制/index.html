@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.36967371ba7bd13e46a7eb2121284123.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.afbb5f954918a4da00054728a01084d0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.496262f247629e5459f020bcf6037d2d.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -406,7 +406,18 @@ Unknown
     
     
     
+      
+      
     
+    
+    
+      
+      
+      
+      
+      
+      
+      
     
     
 
@@ -479,7 +490,7 @@ Unknown
 </blockquote>
 <p>然而，請看下例: <code>operator[]</code> 確實不會更動到 member data，可以通過 Bitwise Testing，卻把「改動權」暴露給 Client 端，造成不應該的賦值行為。</p>
 <ul>
-<li><a href="/second-brain/notes/Project/Effective-C++-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E5%85%A7%E9%83%A8%E6%88%90%E5%88%86" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E5%85%A7%E9%83%A8%E6%88%90%E5%88%86">避免傳回 Handles 指向物件內部成分</a></li>
+<li><a href="/second-brain/notes/Project/Effective-C++-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E7%9A%84-Private-Protected-Member-Data" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E7%9A%84-Private-Protected-Member-Data">避免傳回 Handles 指向物件的 Private &amp; Protected Member Data</a></li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -613,6 +624,16 @@ Unknown
       
       
     
+      
+      
+      
+    
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E7%9A%84-Private-Protected-Member-Data/" data-ctx="打破 Constness 限制#Physical Constness" data-src="/notes/Project/Effective-C&#43;&#43;-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E7%9A%84-Private-Protected-Member-Data" class="internal-link">避免傳回 Handles 指向物件的 Private &amp; Protected Member Data</a>
+      </li>
+      
       
       
       <li>

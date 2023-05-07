@@ -6,7 +6,17 @@
     <description>Recent content in cpp on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://brainynight.github.io/second-brain/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://brainynight.github.io/second-brain/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>避免傳回 Handles 指向物件的 Private &amp; Protected Member Data</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E7%9A%84-Private-Protected-Member-Data/</link>
+      <pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E7%9A%84-Private-Protected-Member-Data/</guid>
+      <description>消滅 handles 的暴露可能
+ 大忌: 回傳一個 Non-Const handles 在 [[打破 Constness 限制#Physical Constness]] 當中，我們探討過 Physical (bitwise) Constness 的問題。 讓 Getter 回傳一個 non-const reference 指向 member data，會出現讓 private data 暴露在外 (等同於 public) 的詭異現象。 此問題不限於 ref，pointer、iterator 這些 handles (用以取得某個物件)，都有相同的風險。</description>
+    </item>
+    
     <item>
       <title>Const in C&#43;&#43;</title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Const-in-C&#43;&#43;/</link>
@@ -56,6 +66,24 @@
     </item>
     
     <item>
+      <title>Default Generated Functions</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Default-Generated-Functions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Default-Generated-Functions/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  class Empty; // you declare, but implement nothing.</description>
+    </item>
+    
+    <item>
+      <title>Deleted Function</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Deleted-Function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Deleted-Function/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  class A{ public: A(int x) : m(x) {} A&amp;amp; operator = (const A &amp;amp;) = delete; // Declare the copy assignment operator  // as a deleted function.</description>
+    </item>
+    
+    <item>
       <title>Do not Declare Virtural Function in Non-polymorphic Base Class</title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Do-not-Declare-Virtural-Function-in-Non-polymorphic-Base-Class/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -63,6 +91,17 @@
       <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Do-not-Declare-Virtural-Function-in-Non-polymorphic-Base-Class/</guid>
       <description>無端將不該擁有 virtual 的 class 宣告 virtual，與無端將所有的 function 宣告成 virtual，都是有毒的。
  當類別不作為 Base Class，或是不作為多型時的基本 Class 時，不應該使用 virtual。 原因是，virtual 背後是以 vptr (virtual table pointer) 和 vtbl (virtual table) 實作 virtual，需要耗費額外的記憶體。</description>
+    </item>
+    
+    <item>
+      <title>Friend Function</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Friend-Function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Friend-Function/</guid>
+      <description>提供私用成員給某些外部函式來存取，這個有權調用某類別私有成員的函式就稱為 Friend Function
+ Friend Function 實質上定義在外面，但是在 Class 內部需要用 keyword friend 再提及一次該 function。因此，Friend Function 是 Non-member function !
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  class Ball; int compare(Ball &amp;amp;b1, Ball &amp;amp;b2) { // 可直接存取私用成員  if(b1.</description>
     </item>
     
     <item>
@@ -96,6 +135,25 @@
     </item>
     
     <item>
+      <title>Item14</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Mutex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Mutex/</guid>
+      <description>假設我們用 C API 處理 Mutex 物件
+1 2  void lock(Mutex *pm); // lock mutex pointed to by pm void unlock(Mutex *pm); // unlock the mutex   使用者需要自己手動分別呼叫 lock 與 unlock。為了確保不會忘記幫 Mutex 解鎖，可以建立一個由 RAII 守則支配的 Class &amp;ndash;資源在建構期間獲得(lock)，在解構期間釋放(unlock)&amp;ndash;來管理資源「Mutex 物件」。</description>
+    </item>
+    
+    <item>
+      <title>Item27  Minimize casting</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting/</guid>
+      <description>常見的轉型語法 1 2 3 4 5 6 7 8 9  // 舊式轉型 (T) expr; // C-style T(expr); // func style  // New-style/ C++ Style casting const_cast&amp;lt;T&amp;gt;(expr); static_cast&amp;lt;T&amp;gt;(expr); reinterpret_cast&amp;lt;T&amp;gt;(expr); dynamic_cast&amp;lt;T&amp;gt;(expr);    dynamic_cast: 安全向下轉型 (safe downcasting)，是一個可能耗費重大執行成本的轉型動作 static_cast: 強迫隱式轉換，像是 non-const to const, int to double&amp;hellip;，但不能做 const to non-const.</description>
+    </item>
+    
+    <item>
       <title>Member Initialization List</title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Member-Initialization-List/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -103,6 +161,27 @@
       <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Member-Initialization-List/</guid>
       <description>無論如何，使用 member initializer list 對 member data 初始化是最好的。儘管這麼做對內建型別的資料沒差，對非內建型別卻有巨大的意義。
  如果你就是想要 call member data 的 default constructor，依然可以透過 member initializer list 達成。只要給予空括號，不填內容即可。 這樣的好處是明白地列出所有 member data，避免有 data 忘記給初始值，特別是對非內建型別的member data，沒有初始化的結果是災難的。</description>
+    </item>
+    
+    <item>
+      <title>Non-member &amp;&amp; Non-friend Function 的封裝度優於 Member Function</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Non-member-Non-friend-Function-%E7%9A%84%E5%B0%81%E8%A3%9D%E5%BA%A6%E5%84%AA%E6%96%BC-Member-Function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Non-member-Non-friend-Function-%E7%9A%84%E5%B0%81%E8%A3%9D%E5%BA%A6%E5%84%AA%E6%96%BC-Member-Function/</guid>
+      <description>Non-member function 帶來更佳的封裝度、與 Packaging 彈性。
+ 這邊說的是 Non-member 且(AND) Non-friend function (Pure function) vs. Member Function。(關於 [[Friend Function]] )</description>
+    </item>
+    
+    <item>
+      <title>pimpl idiom (pointer to implementation)</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/pimpl-idiom-pointer-to-implementation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/pimpl-idiom-pointer-to-implementation/</guid>
+      <description>將物件的實作細目隱藏在一個指標背後
+ 此手法會把一個類別分成兩個 Class:
+ 一個是暴露給客戶端的接口 Handle Class (ex. Person)，它只會擁有一個 pointer 指向實作 class 一個是實作類別 Implementation Class (ex. Personimpl) ，所有真正要存的資料都在這裡面。  由於接口 Person 只 own 一個 smart pointer ，它不需要知道 PersonImpl 有多大，因此可以用 forward declare 解決。它還提供了一些 getter，但提供 getter 也都可以透過 forward declare 解決一切。</description>
     </item>
     
     <item>
@@ -126,6 +205,16 @@
     </item>
     
     <item>
+      <title>Smart Pointer</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Smart-Pointer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Smart-Pointer/</guid>
+      <description>在[[為多型用途的基礎類別宣告 virtual 解構式]]文章中的 TimeKeeper 例子，我們提及了工廠函式 (factory function)，在該例子，我們把 delete new resource 的責任交給 Client。
+然而有很多情況&amp;ndash;例如 main flow 中過早的 return，resource 可能沒有成功被銷毀。善用 Pointer-like 物件，並把銷毀資源的操作確實的寫在 Destructor 中可以避免這些問題。</description>
+    </item>
+    
+    <item>
       <title>Static Object</title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Static-Object/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -133,6 +222,16 @@
       <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Static-Object/</guid>
       <description>壽命從被建構出來，持續到程式結束為止。
  因此 Stack 和 Heap-based 物件都不是 static object。 這種物件包含 Global Object，定義在 Namespace Scope 的物件，Class &amp;amp; Function &amp;amp; File 內宣告成 static 的物件。</description>
+    </item>
+    
+    <item>
+      <title>Swap and pimpl</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Swap-and-pimpl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Swap-and-pimpl/</guid>
+      <description>std::swap STL 的 swap 平凡無奇，涉及了三次的複製。
+1 2 3 4 5 6 7 8  namespace std { template&amp;lt;typename T&amp;gt; void swap (T&amp;amp; a, T&amp;amp; b) { T tmp(a); a = b; b = tmp; } }   但對於「某些型別」而言，他們滿足某些資格。因為有這種前提，std::swap 的標準做法(三次複製)是多餘的，他們有更快的解法。</description>
     </item>
     
     <item>
@@ -152,6 +251,56 @@
       
       <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Translation-Unit/</guid>
       <description>A translation unit is the source code giving rise to a single object file. It&amp;rsquo;s basically a single source file, plus all of its #include files.</description>
+    </item>
+    
+    <item>
+      <title>Virtual Function</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Virtual-Function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Virtual-Function/</guid>
+      <description>在 Ctor / Dtor 呼叫 virtual function ![[Itm10_TranscationUML.png]]
+在這裡，Transcation 的 Constructor 呼叫的會是 Transcation::logTranscation。 又，該 function 為 Pure virtural function，若它沒被定義，則當編譯器呼叫時會引發錯誤，而若有&amp;hellip;. 就會 Link 到該 base class function。 Related: [[Item34 Differentiate between inheritance of interface and inheritance of implementation]]</description>
+    </item>
+    
+    <item>
+      <title>了解 Inline 的裡裡外外</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96/</guid>
+      <description>原理 用程式碼取代 function call
+向 Compiler 發出申請 Programmer 可以明確的提出請求，或隱喻的提出。但編譯器可以拒絕這個申請，大部分過於複雜的函式都會被拒絕 inline:
+ 有 loop 的 多數的 virtual function (等 Runtime 才確定哪個被喚醒)  顯示與隱式的分別:</description>
+    </item>
+    
+    <item>
+      <title>將檔案的編譯依存關係降到最低</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%87%E6%AA%94%E6%A1%88%E7%9A%84%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98%E9%97%9C%E4%BF%82%E9%99%8D%E5%88%B0%E6%9C%80%E4%BD%8E/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%87%E6%AA%94%E6%A1%88%E7%9A%84%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98%E9%97%9C%E4%BF%82%E9%99%8D%E5%88%B0%E6%9C%80%E4%BD%8E/</guid>
+      <description>首先清楚此內容: [[編譯依存-宣告式、定義式與實作細節]]。 接著，需要分清楚「被 include 的對象」與「被前置宣告的對象」。
+被 include 的對象  當需要創建某類別的物件，例如 : 要創建 member data m_date，則需要 include Date.hpp。 有用到 STL 物件，則直接 include STL 函式庫。  對於 STL 函式庫，應該用 #include，而不是使用前置宣告。include 標準函式庫的 header file 幾乎不會造成編譯瓶頸。</description>
+    </item>
+    
+    <item>
+      <title>工廠函式 (Factory Function)</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B7%A5%E5%BB%A0%E5%87%BD%E5%BC%8F-Factory-Function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B7%A5%E5%BB%A0%E5%87%BD%E5%BC%8F-Factory-Function/</guid>
+      <description>Factory method pattern enables us to create an object without exposing the creation logic to the client and refer to the newly-created object using a common interface.</description>
+    </item>
+    
+    <item>
+      <title>建構和解構式是 inline 的糟糕人選</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%BB%BA%E6%A7%8B%E5%92%8C%E8%A7%A3%E6%A7%8B%E5%BC%8F%E6%98%AF-inline-%E7%9A%84%E7%B3%9F%E7%B3%95%E4%BA%BA%E9%81%B8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%BB%BA%E6%A7%8B%E5%92%8C%E8%A7%A3%E6%A7%8B%E5%BC%8F%E6%98%AF-inline-%E7%9A%84%E7%B3%9F%E7%B3%95%E4%BA%BA%E9%81%B8/</guid>
+      <description>考量以下例子:
+1 2 3 4 5 6 7 8 9 10 11 12 13  class Base { public: ... private: std::string bm1, bm2; // base members 1 and 2 }; class Derived: public Base { public: Derived() {} // Derived’s ctor is empty — or is it?</description>
     </item>
     
     <item>
@@ -175,6 +324,36 @@
     </item>
     
     <item>
+      <title>為什麼要用獨立句將物件放入 Smart Pointer</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8%E7%8D%A8%E7%AB%8B%E5%8F%A5%E5%B0%87%E7%89%A9%E4%BB%B6%E6%94%BE%E5%85%A5-Smart-Pointer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8%E7%8D%A8%E7%AB%8B%E5%8F%A5%E5%B0%87%E7%89%A9%E4%BB%B6%E6%94%BE%E5%85%A5-Smart-Pointer/</guid>
+      <description>盡可能確保 new 出來的物件，可以立即被放入 smart pointer 裡面，避免任何額外的步驟。只要有多餘的步驟，就可能因為意外而使得 smart pointer 沒有真正掌控到資源。
+ 以獨立一句話將 newed 物件加入 smart pointer，格式如下
+1 2  std::shared_ptr&amp;lt;Widget&amp;gt; pw(new Widget); processWidget(pw, priority());    其原因是，如果像以下寫法</description>
+    </item>
+    
+    <item>
+      <title>為多型用途的基礎類別宣告 virtual 解構式</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F/</guid>
+      <description>多型 多型有個特點: Base Class 的存在是為了「經由 Base Class Interface 處置 Drived Class Object」，以下例來說， TimeKeeper 是一個 Polymorphic Base Class，所以持有一個 TimeKeeper Pointer 就可以處理 WaterClock, WristWatch 物件，這就是上面那句話的意思。</description>
+    </item>
+    
+    <item>
+      <title>為異常安全 (Exception-safe) 而努力是值得的</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%82%BA%E7%95%B0%E5%B8%B8%E5%AE%89%E5%85%A8-Exception-safe-%E8%80%8C%E5%8A%AA%E5%8A%9B%E6%98%AF%E5%80%BC%E5%BE%97%E7%9A%84/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%82%BA%E7%95%B0%E5%B8%B8%E5%AE%89%E5%85%A8-Exception-safe-%E8%80%8C%E5%8A%AA%E5%8A%9B%E6%98%AF%E5%80%BC%E5%BE%97%E7%9A%84/</guid>
+      <description>異常安全的條件  不洩漏任何資源 不允許資料敗壞  Bad Case 先看一個很糟糕的例子:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  class PrettyMenu { public: .</description>
+    </item>
+    
+    <item>
       <title>當所函式所有的參數都需要型別轉換，採用 Non-member Function</title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%95%B6%E6%89%80%E5%87%BD%E5%BC%8F%E6%89%80%E6%9C%89%E7%9A%84%E5%8F%83%E6%95%B8%E9%83%BD%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%8E%A1%E7%94%A8-Non-member-Function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -185,6 +364,36 @@
     </item>
     
     <item>
+      <title>盡可能延後變數定義式的出現時間</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%9B%A1%E5%8F%AF%E8%83%BD%E5%BB%B6%E5%BE%8C%E8%AE%8A%E6%95%B8%E5%AE%9A%E7%BE%A9%E5%BC%8F%E7%9A%84%E5%87%BA%E7%8F%BE%E6%99%82%E9%96%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%9B%A1%E5%8F%AF%E8%83%BD%E5%BB%B6%E5%BE%8C%E8%AE%8A%E6%95%B8%E5%AE%9A%E7%BE%A9%E5%BC%8F%E7%9A%84%E5%87%BA%E7%8F%BE%E6%99%82%E9%96%93/</guid>
+      <description>不只延後變數的定義式的出現，甚至該嘗試延後這份定義直到能夠給它初始值引數為止。
+  盡可能延後參數的定義，直到它被使用的前一刻再定義。  過早的定義它，有可能根本沒用到就先 return 了，無謂的承受了該變數的 construct &amp;amp; destruct 成本。   「前一刻」甚至是指: 得到初始值了再一口氣「建構並指定初始值」  1 2 3 4 5 6 7 8 9 10 11 12 13 14  std::string worstCase(const std::string&amp;amp; password) { std::string encrypted; // 過早宣告: 承受建構成本 	if (password.</description>
+    </item>
+    
+    <item>
+      <title>編譯依存-宣告式、定義式與實作細節</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98-%E5%AE%A3%E5%91%8A%E5%BC%8F%E5%AE%9A%E7%BE%A9%E5%BC%8F%E8%88%87%E5%AF%A6%E4%BD%9C%E7%B4%B0%E7%AF%80/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98-%E5%AE%A3%E5%91%8A%E5%BC%8F%E5%AE%9A%E7%BE%A9%E5%BC%8F%E8%88%87%E5%AF%A6%E4%BD%9C%E7%B4%B0%E7%AF%80/</guid>
+      <description>分辨以下三個名詞
+ 宣告式: 僅僅宣告某個類別名稱(?) 定義式: 定義物件的 member data、function，透過定義式可以得知物件的大小 實踐細節: 演算法細節。  1 2 3 4 5 6 7 8 9  class Date; // 宣告式 class Person { public: Person(const std::string&amp;amp; name, const Date&amp;amp; birthday, const Address&amp;amp; addr); private: // ptr to implementation; 	std::tr1::shared_ptr&amp;lt;PersonImpl&amp;gt; pImpl; // see Item 13 for info on };   Compiler 在編譯期間需要知道物件的大小，如下例。Compiler 可以輕鬆知道 built in type int的大小，但 Person 呢?</description>
+    </item>
+    
+    <item>
+      <title>解構式與異常</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%A7%A3%E6%A7%8B%E5%BC%8F%E8%88%87%E7%95%B0%E5%B8%B8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%A7%A3%E6%A7%8B%E5%BC%8F%E8%88%87%E7%95%B0%E5%B8%B8/</guid>
+      <description>情境: 當Destructor 必須執行某項會丟Exception 的程序 舉例，我們有一個資料庫連線的 class DBConnection，這類資源管理的 Class 在 [[Chapter3]] 中會有更詳細的探討。
+1 2 3 4 5 6 7  class DBConnection { public: .</description>
+    </item>
+    
+    <item>
       <title>設計新 Class 的準則</title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%A8%AD%E8%A8%88%E6%96%B0-Class-%E7%9A%84%E6%BA%96%E5%89%87/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -192,16 +401,6 @@
       <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%A8%AD%E8%A8%88%E6%96%B0-Class-%E7%9A%84%E6%BA%96%E5%89%87/</guid>
       <description>在設計 class 之前，思考以下問題
  記憶體如何產生跟銷毀? (參見第八章) 物件初始化與賦值的差別? Constructor &amp;amp; Assignment  [[Effective C++ Outline#條款4 確定物件在使用前已經初始化 |條款4 確定物件在使用前已經初始化]]   Pass by value 對它代表甚麼?</description>
-    </item>
-    
-    <item>
-      <title>讓介面易於被使用</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E6%98%93%E6%96%BC%E8%A2%AB%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E6%98%93%E6%96%BC%E8%A2%AB%E4%BD%BF%E7%94%A8/</guid>
-      <description>Return Const Value 避免回傳值被修改，如此例中，類別 Rational (有理數) 的乘積符號禁止其回傳值被賦予值 (assignment)。
-1 2  class Rational { ... }; const Rational operator*(const Rational&amp;amp; lhs, const Rational&amp;amp; rhs);   聽起來有點怪，但它可以預防 client 端寫出這種 code:</description>
     </item>
     
   </channel>
