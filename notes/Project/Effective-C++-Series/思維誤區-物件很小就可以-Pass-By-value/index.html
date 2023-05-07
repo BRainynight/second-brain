@@ -11,7 +11,7 @@
     content="有三個主因:
  並非「該物件/container」看起來很小，用 Pass by value 就沒有問題。許多 STL Container 在實作上的大小也就一個 Pointer 大一點，但 Copy Container 卻有「複製每一個 Pointer 所指向的物件」的風險在。 視 Compiler 而定，有些 Compiler 對待 Custom class 跟 built-in class 的態度大不相同，即使底層表述(underlying representation) 相同，仍可能以不同的操作對待，導致 Copy 在 Custom Class 就是比較慢。 Type 實作可能發生改變，現在 Copy 的代價不昂貴，不代表以後不會。  Pass By Value 的代價 [[The Copying in Pass by value]]"
   />
-  <meta property="og:title" content="思維誤區-物件很小就可以 Pass By value">
+  <meta property="og:title" content="思維誤區-物件很小就可以 Pass By Value">
   <meta property="og:description" content="有三個主因:
  並非「該物件/container」看起來很小，用 Pass by value 就沒有問題。許多 STL Container 在實作上的大小也就一個 Pointer 大一點，但 Copy Container 卻有「複製每一個 Pointer 所指向的物件」的風險在。 視 Compiler 而定，有些 Compiler 對待 Custom class 跟 built-in class 的態度大不相同，即使底層表述(underlying representation) 相同，仍可能以不同的操作對待，導致 Copy 在 Custom Class 就是比較慢。 Type 實作可能發生改變，現在 Copy 的代價不昂貴，不代表以後不會。  Pass By Value 的代價 [[The Copying in Pass by value]]">
   <meta property="og:type" content="website">
@@ -20,7 +20,7 @@
   <meta property="og:width" content="200">
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="思維誤區-物件很小就可以 Pass By value" />
+  <meta name="twitter:title" content="思維誤區-物件很小就可以 Pass By Value" />
   <meta name="twitter:description" content="有三個主因:
  並非「該物件/container」看起來很小，用 Pass by value 就沒有問題。許多 STL Container 在實作上的大小也就一個 Pointer 大一點，但 Copy Container 卻有「複製每一個 Pointer 所指向的物件」的風險在。 視 Compiler 而定，有些 Compiler 對待 Custom class 跟 built-in class 的態度大不相同，即使底層表述(underlying representation) 相同，仍可能以不同的操作對待，導致 Copy 在 Custom Class 就是比較慢。 Type 實作可能發生改變，現在 Copy 的代價不昂貴，不代表以後不會。  Pass By Value 的代價 [[The Copying in Pass by value]]" />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
@@ -29,7 +29,7 @@
   
 
   <title>
-    思維誤區-物件很小就可以 Pass By value
+    思維誤區-物件很小就可以 Pass By Value
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -139,7 +139,7 @@
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.496262f247629e5459f020bcf6037d2d.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.74f0cec5afb9a79d0d7ea0ec4385661d.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -307,7 +307,7 @@
 
 
     <article>
-      <h1>思維誤區-物件很小就可以 Pass By value</h1>
+      <h1>思維誤區-物件很小就可以 Pass By Value</h1>
       <p class="meta">
         Last updated 
 Unknown

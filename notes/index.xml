@@ -563,7 +563,7 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     </item>
     
     <item>
-      <title>思維誤區-物件很小就可以 Pass By value</title>
+      <title>思維誤區-物件很小就可以 Pass By Value</title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E6%80%9D%E7%B6%AD%E8%AA%A4%E5%8D%80-%E7%89%A9%E4%BB%B6%E5%BE%88%E5%B0%8F%E5%B0%B1%E5%8F%AF%E4%BB%A5-Pass-By-value/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
