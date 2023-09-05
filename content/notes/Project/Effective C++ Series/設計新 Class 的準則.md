@@ -13,13 +13,13 @@ tags:
 	- 在不管是 constructor, assignment, setter function 在設 data 時，都需要進行錯誤檢查。
 	- 這意味著你需要考量函式拋出的意外。
 - 它需要配合某個繼承圖系(inheritance graph) 嗎?
-	- 會受到父輩們的約束，特別是函式是 virtural or non-virtual [[Item34 Differentiate between inheritance of interface and inheritance of implementation]]、[[Item36 Never redefine an inherited non-virtual function]]。
+	- 會受到父輩們的約束，特別是函式是 virtural or non-virtual [[區分介面繼承(interface)和實作繼承(implement)]]、[[Item36 Never redefine an inherited non-virtual function]]。
 	- 如果允許其他類別繼承此 class，請將必要的函式宣告為 virtual，特別是 destructor。
 		- [[Effective C++ Outline#條款7 為多型用途的基礎類別宣告 virtual 解構式|條款7 為多型用途的基礎類別宣告 virtual 解構式]]
 - 需要考量轉換嗎? 隱性轉換與顯性轉換?
 - 甚麼運算子與函式對此新類別式合理的?
 	- [[Non-member && Non-friend Function 的封裝度優於 Member Function]]
-	- [[當所函式所有的參數都需要型別轉換，採用 Non-member Function]]
+	- [[當所有的參數都需要型別轉換，採用 Non-member Function]]
 	- [[盡可能延後變數定義式的出現時間]]
 - 什麼標準宣告式是需要駁回的? 請用 `delete` 明確刪除它。
 - 哪些 member 需要暴露出來? (public/private/protected)

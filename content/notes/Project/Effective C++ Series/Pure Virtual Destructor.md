@@ -7,7 +7,7 @@ tags:
 現在的情境是，如果，你想要有一個抽象類 -- 抽象類的好處是自身無法被實例化。然而，抽象類的定義是，至少有一個 function 是 Pure Virtural Function。該選擇 "誰" 成為 Pure virtural function 呢? 洽巧手上沒有適合的人選! Destructor 會是個好選擇。因為
 1. Abstract Class 總是被當作 Base Class
 2. Base Class 作為多型用途時，應當帶有 virtural destructor
-3. Pure Virtural Function 可使該 Class 形成 Abstract
+3.  [[Pure Virtual Function]] 可使該 Class 形成 Abstract
 三個點串起來--「讓 destructor 變成 Pure Virtural 吧」，這樣不會有不該被 virtural 的 function 遭殃! 
 
 > Abstruct Class 是不能被實例化的 Class，但可以持有 Abstruct Class 的 Pointer 去操控 Child instance。

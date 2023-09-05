@@ -40,7 +40,7 @@ TimeKeeper* ptk = getTimeKeeper();
 delete ptk;
 ```
 
-儘管 [[Smart Pointer|條款13 使用資源管理器]] 和 [[讓介面容易被使用]] 說明了依賴 client 做 `delete` 有潛在的危險跟不確定，這裡要說明的是更嚴重、更根本性的問題。
+儘管 [[Smart Pointer|條款13 使用資源管理器]] 和 [[讓介面易於被使用，不易誤用]] 說明了依賴 client 做 `delete` 有潛在的危險跟不確定，這裡要說明的是更嚴重、更根本性的問題。
 - 我們宣告的是 **Base class pointer**，指向的是 **child class 物件**。
 - Base class 擁有一個 non-virtural 的 destructor
 - C++ 明白的告訴我們，當 child 物件經由擁有 non-virtural destructor 的 Base class pointer 持有，而這個 pointer 被刪除時，屬於 **Undefined behavior**
@@ -51,7 +51,7 @@ delete ptk;
 
 > 一個 Class 若有帶有 `virtural` 的函式，幾乎可以確定**該有**會帶有 `virtural` 的 destructor。如果一個 class 不帶有 `virtural` function，通常代表它不意圖被當作 base class。
 
- (實作都寫完在 base 了，還特意搞繼承 override 幹嘛?)。然而，`virtural` 也不應該亂用: [[Do not Declare Virtural Function in Non-polymorphic Base Class]]。
+ (實作都寫完在 base 了，還特意搞繼承 override 幹嘛?)。然而，`virtural` 也不應該亂用: [[不要為非多型用途的 Base Class 宣告 Virtual Function]]。
 
 ## 企圖以多型設計架構前，檢查 Base Class 的 Destructor 是否為 Virtual
 

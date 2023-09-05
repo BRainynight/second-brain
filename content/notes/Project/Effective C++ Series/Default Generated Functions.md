@@ -30,7 +30,7 @@ e2 = e1;       // copy assignment
 	- Compiler 生成的 destructor 是一個 non-virtural
 	  [[為多型用途的基礎類別宣告 virtual 解構式]]
 	- 只要有宣告 Constructor，編譯器就不會幫我們多掛 default constructor 上去。
-- Copy Constructor & Copy Assignment: 將 source 物件的每一個 non-static member data copy 過去。
+- Copy Constructor & Copy Assignment: 將 source 物件的每一個 non-static member data copy 過去。[[Copying Function]]
 
 ## Default Copy Assignment
 儘管 Copy Assignment `operator=` 也可以自動生成，卻是有條件的自動生成，只有當自動生成的代碼合法時才會生成。

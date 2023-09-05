@@ -9,8 +9,8 @@ tags:
 ![[Itm10_TranscationUML.png]]
 
 在這裡，Transcation 的 Constructor 呼叫的會是 `Transcation::logTranscation`。
-又，該 function 為 Pure virtural function，若它沒被定義，則當編譯器呼叫時會引發錯誤，而若有.... 就會 Link 到該 base class function。
-Related: [[Item34 Differentiate between inheritance of interface and inheritance of implementation]]
+又，該 function 為 Pure virtual function，若它沒被定義，則當編譯器呼叫時會引發錯誤，而若有.... 就會 Link 到該 base class function。
+Related: [[區分介面繼承(interface)和實作繼承(implement)]]
 
 一個不正式的講法: Base Calss 建構期間，所呼叫的 virtual function 不是 virtual function。  
 

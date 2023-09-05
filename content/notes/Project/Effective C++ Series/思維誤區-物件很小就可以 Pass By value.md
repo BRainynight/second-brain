@@ -10,4 +10,4 @@ tags:
 3. Type 實作可能發生改變，現在 Copy 的代價不昂貴，不代表以後不會。
 
 ## Pass By Value 的代價
-[[The Copying in Pass by value]]
+[[Pass by value 當中的 Copy 行為]]

@@ -14,8 +14,8 @@ C++ 融合了多種形式的 programming 手法，物件導向、procedural、ge
 - 對於單純的常數，以 `const` 或 `enum` 取代
 - 對於形似 function 的巨集(macro)，用 `inline` 取代。
 #### Const
-- [[Replace define with const]]
-- [[The definition and declaration of static const]] P14
+- [[以 Const 取代使用 Define]]
+- [[The definition and declaration of static const]]
 #### Enum
 - [[enum hack]]
 #### Inline
@@ -38,8 +38,8 @@ const char* const p = greeting; // const ptr, const data
 ```
 
 當 `const` 在 `*` 前，不管是先寫 const 修飾的類、或是先寫 const 都是一樣的，就是在修飾 `char` 物件具有常數性。
-- [[Const in C++]]
 
+[[Const in C++]]
 
 ### 條款4 確定物件在使用前已經初始化
 不是所有的物件宣告時自帶初始化，它的規則過於複雜，只需要謹記: 宣告時就要初始化!
@@ -165,12 +165,12 @@ processWidget(pw, priority());
 ## Chapter 4 設計與宣告
 ### 條款18 讓介面容易被使用、防範誤用
 
-[[讓介面容易被使用]]
+[[讓介面易於被使用，不易誤用]]
 
 ### 條款19 設計 Class 猶如設計 Type
 設計 Class 請遵守準則想過一遍: [[設計新 Class 的準則]]
 
-### 條款20 以 Pass by const ref 取代 Pass by value 
+### 條款20 以 Pass by Const Ref 取代 Pass by Value 
 
 合理的 Pass by value 幾乎只有下面三種選擇
 1. 內建型態
@@ -191,22 +191,17 @@ processWidget(pw, priority());
 ### 條款22 將成員變數宣告成 Private
 
 - 只提供必要的 Getter 給客戶端，隱藏你的實作有絕佳的好處。
+- [[Protected 與 Public 都是低封裝度的 Access Level]]
 
-思維誤區: Protected 不比 Public 具有更好的封裝性
-- 取消一個 Public Member Data 的成本: 所有使用他的客戶端
-- 取消一個 Protected Member Data 的成本 : 所有繼承他的 Derived Class
-這兩種 Access Level 的封裝性都不佳，仍該盡可能的使用 Private。
 
 ### 條款23 寧以non-member, non-friend替換 member函數
 
-這條是針對 Object-Oriented C++ 的法則，站在 Template C++ 又有其他需要考慮的地方，形成了 [[Item46 需要型別轉換時請為模板定義非成員函式]]
-
-[[Non-member && Non-friend Function 的封裝度優於 Member Function]]
-
+這條是針對 Object-Oriented C++ 的法則，[[Non-member && Non-friend Function 的封裝度優於 Member Function]]。
+站在 Template C++ 又有其他需要考慮的地方，形成了 [[需要型別轉換時請為模板定義非成員函式]]。
 
 
 ### 條款24 如果所有的參數都需要型別轉換，請為此採用 non-member 函式
-[[當所函式所有的參數都需要型別轉換，採用 Non-member Function]]
+[[當所有的參數都需要型別轉換，採用 Non-member Function]]
 
 
 ### 條款25 考慮寫出一個不拋異常的 Swap 函式
@@ -216,12 +211,13 @@ processWidget(pw, priority());
 > 讀到 P111，我懷疑 C++11 之後有不同的做法，先不細看。
 
 
+---
+
 ## Ch5 Implementation
 ### 條款26 盡可能延後變數定義式的出現時間
 盡可能等到已經擁有初始值了，再一口氣定義+賦予初始值。如此不必調用多餘的 constructor ! 
 - [[盡可能延後變數定義式的出現時間]]
 
-----
 
 ### 條款27 少做轉型動作 (Minimize Casting)
 - 如果轉型是必要的，試圖把它隱藏在函式之後，不讓 User 在他們的程式中轉型。
@@ -246,47 +242,78 @@ processWidget(pw, priority());
 ### 條款31 將檔案間的編譯依存降到最低
 [[將檔案的編譯依存關係降到最低]]
 
+
+---
+
 ## Ch6 繼承與物件導向
 
-### 條款32 確定你的 Public 繼承塑出 is-a 關係
+### 條款32 確定 Public 繼承塑造出 is-a 關係
+[[確保 Derived Class 和 Base Class 之間必然保持 Is-a 關係]]
+
+Public inheritance 意味著 Is-A 關係，Private inheritance 的意義則完全不同 [[審慎的使用 Private 繼承]]。
+
+
 
 
 ### 條款33 避免遮掩繼承而來的名稱
+當 Base Class 和 Drived Class 有相同名稱的 function 但不同 signature 時，override 不會發生，而是直接覆蓋掉 Base Class 的 function，等同於 Drived Class 的 function 脫離了 Base Class 的掌控，這就是本條款想強調的: 這個行為遮掩了繼承來的名字。
 
+[[使用關鍵字 using 讓特定 function 在 Scope 內可見]]
+[[override]]
 
 ### 條款34 區分介面繼承與實作繼承
-[[Item34 Differentiate between inheritance of interface and inheritance of implementation]]
+透過 Pure virtual function, Impure virtual, non-virtual function 三種 function 區分 Base Class Designer 的意圖。
+
+[[區分介面繼承(interface)和實作繼承(implement)]]
 
 ### 條款35 考慮 Virtual 函式以外的其他選擇
+除了 Virtual function，我們還有其他手法可以達到「讓 Derived Class 提供相同的介面、不同實作的手法」
+- [[藉由 Non-Virtual Interface 手法實現 Template Method Pattern]]
+- [[藉由 Function Pointer 和 tr1 function 手法實現 Strategy Pattern]]
 
 ### 條款36 絕不重新定義繼承來的 Non-virtual Function
+[[絕不重新定義繼承來的 Non-virtual Function]]
 
 ### 條款37 絕不重新定義繼承來的預設參數值
+[[靜態綁定 (statically bound) 與動態綁定 (dynamically bound)]]
 
-### 條款38 透過複合模塑出 Has-a 或 根據某物實作出
+### 條款38 確定 Composition 塑造的是 Has-A 關係或根據某物實作的關係
+
 Model "has-a" or "is-implemented in terms of " through composition.
+[[確定 Composition 塑造的是 'Has-A'關係 或 '根據某物實作'的關係]]
 
 ### 條款39 明智審慎的使用 Private 繼承
+[[審慎的使用 Private 繼承]]
 
 ### 條款40 明智審慎的使用多重繼承
+[[多重繼承 (Multiple Inheritance, MI)]]
+
 
 ## Ch7 Template and Generic Programming
+[[Template 的用途]]
+
+
 ### 條款41 了解隱式介面和編譯多型
+[[Template 與隱式介面]]
 
 ### 條款42 了解 typename 的雙重意義
+[[關鍵字 typename 在 Template 中的意涵]]
 
 ### 條款43 學習處理模板化基礎類別內的名稱
+know how to access names in templatized base classes.
+[[了解如何在 Template 中指涉 Base Class 成員]]
 
 ### 條款44 將與參數無關的程式碼抽離 Templates
-
+[[Template 帶來的程式碼膨脹]]
 
 ### 條款45 運用成員函式模板接受所有相容型別
+[[運用成員函式模板，接受所有相容的型別]]
 
 
 ### 條款46 需要型別轉換時請為模板定義非成員函式
 
 
-- [[Item46 需要型別轉換時請為模板定義非成員函式]]
+- [[需要型別轉換時請為模板定義非成員函式]]
 
 ### 條款47 請使用 Traits Classes 表現型別資訊
 

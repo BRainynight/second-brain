@@ -28,6 +28,8 @@ tags:
 對於 Private Member data 而言，能存取它的就是所有的 member function。
 Friend function 雖然不是 non-member function，但他和 member function 同樣擁有 access private data 的能力，所以兩者的封裝度是同樣低的。 
 
+同理，前面章節說的 [[Protected 與 Public 都是低封裝度的 Access Level]]。
+
 ## 將有編譯相依的函式放在同一個 Header File
 當我們遵守本頁的守則，拆出許多 Utility Function (工具箱) 之後，該考慮將 Function 依照編譯相依性拆分到不同的 Header file，在不同的 Header file 間共用同一個 namespace 即可。
 

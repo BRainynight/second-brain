@@ -91,7 +91,7 @@ sp_ptr = *winPtrs.begin();
 > 2. 如何保證 type 正確?? container 有測試?
 
 ### Solution2 在 Base Class 撰寫對應的 Virtual Func
-[[Item34 Differentiate between inheritance of interface and inheritance of implementation]]
+[[區分介面繼承(interface)和實作繼承(implement)]]
 
 ```cpp
 class Window {

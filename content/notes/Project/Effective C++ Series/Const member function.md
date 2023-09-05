@@ -38,6 +38,59 @@ TextBlock tb("Hello");
 std::cout << tb[0]; // calls non-const TextBlock::operator[]
 ```
 
+## Experiment
+實驗以下這份 code，
+1. 當 const 與 non-const function 都寫時
+```cpp
+call non-const func A
+call const func B
+```
+2. 當只寫 const 時
+```cpp
+call const func A
+call const func B
+```
+3. 當只寫 non-const 時 (宣告 const object, 但不宣告 `const operator[]` )，Compile 的時候就會出問題 
+```cpp
+Item3.cpp:32:20: error: passing ‘const TextBlock’ as ‘this’ argument discards qualifiers [-fpermissive]
+   32 |     std::cout<<t2[0] <<std::endl;
+      |                    ^
+Item3.cpp:17:15: note:   in call to ‘char& TextBlock::operator[](std::size_t)’
+   17 |         char& operator[](std::size_t position)
+      |               ^~~~~~~~
+```
 
-> [!question] 
-> 如果宣告 Const 但是不定義 const TextBlock 會怎樣?
+程式本體:
+```cpp
+#include <string>
+#include <iostream>
+// g++ -o main Item3.cpp
+class TextBlock
+{
+public:
+    TextBlock(std::string text):m_text(text) { }
+	// operator[] for const objects
+	const char& operator[](std::size_t position) const
+	{ 
+        std::cout<<"call const func ";
+        return m_text[position]; 
+    }
+	
+	// operator[] for non-const objects
+	char& operator[](std::size_t position) 
+	{ 
+        std::cout<<"call non-const func ";
+        return m_text[position]; 
+    }
+
+private:
+	std::string m_text;
+};
+
+int main() {
+    TextBlock t1 = TextBlock("AAAA");
+    const TextBlock t2 = TextBlock("BBB");
+    std::cout<<t1[0] << std::endl; 
+    std::cout<<t2[0] <<std::endl;
+}
+```

@@ -61,7 +61,7 @@ bgImage = new Image(imgSrc);
 	- 這種保證比基本承諾好，Client 不用猜測「合法狀態」是哪一種狀態。
 3. 不拋擲 (nothrow) 保證: 承諾決不拋出異常，內建型別 (int, pointer) 身上的所有操作都屬於此類。
 	- 要注意，Empty exception specification 不是 nothrow 函式，而是如果此函式拋出異常，將是嚴重的錯誤，會有意想不到的函式 (搜尋 C++ 文件 `set_unexpected`) 被喚起。
-	- [[Modern C++ nothrow]]
+	- [[Modern C++ noexcept]]
 ```cpp
 int doSomething() thorw(); // empty exception specification
 ```
