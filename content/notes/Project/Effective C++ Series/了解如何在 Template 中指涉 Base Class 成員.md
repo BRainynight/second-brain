@@ -28,14 +28,11 @@ public:
 問題是，當 Compiler 讀到 `class LoggingMsgSender` 的時候，並不知道它繼承的 `MsgSender<Company>` 具象化起來，是怎麼樣的一個 class，Compiler 沒辦法確保這個未知的 Base class 是否有 `sendClear` function。
 
 ## Template 繼承規則與物件導向繼承規則不同
-這正是條款1所說的，C++ 是一個聯邦。Template C++ 與 Object Oriented C++ 有些概念是不同的。
-
-透過 [[Total Template Specialization]] 可以對特定的類別訂製特定的內容，Template 的繼承規則並不如物件導向繼承規則，在知道 `MsgSender<Company>` 所代表的實體 class 之前，沒辦法確定 `sendClear` 是從哪來的，因為當前的 `LoggingMsgSender` 不存在這樣的 function。
+這正是條款1所說的，C++ 是一個聯邦。Template C++ 與 Object Oriented C++ 有些概念是不同的只能透過 Template Specialization 可以對特定的類別訂製特定的內容，Template 的繼承規則並不如物件導向繼承規則，在知道 `MsgSender<Company>` 所代表的實體 class 之前，沒辦法確定 sendClear 是從哪來的，因為當前的 LoggingMsgSender 不存在這樣的 function。
 
 ## 解決辦法
 以下的作法都是權宜之計，都是假設 Base Class 確實擁有 `sendClear` 的情況，但書中有沒有提更好的解法。
 ### 在 Base Class function 前加上 `this->`
-
 ```c++
 template<typename Company>
 class LoggingMsgSender: public MsgSender<Company> {
@@ -48,8 +45,7 @@ public:
 ```
 
 ### 使用 Using 宣告式
-[[使用關鍵字 using 讓特定 function 在 Scope 內可見]]，使用的方法相同。
-不過在該例中是為了 [[繼承時的名稱遮掩行為]] 問題，本例的肇因卻是 Compiler 不會進入 Base Class Scope 找 function，我們透過 `using` 請 Compiler 這麼做。
+[[使用關鍵字 using 讓特定 function 在 Scope 內可見]]，使用的方法相同。不過在該例中是為了 [[繼承時的名稱遮掩行為]] 問題，本例的肇因卻是 Compiler 不會進入 Base Class Scope 找 function，我們透過 `using` 請 Compiler 這麼做。
 
 ```c++
 template<typename Company>

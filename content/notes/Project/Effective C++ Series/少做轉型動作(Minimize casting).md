@@ -1,5 +1,5 @@
 ---
-title: "Item27  Minimize casting"
+title: "少做轉型 Minimize casting"
 date: 2023-04-23 23:12
 tags:
 - cpp

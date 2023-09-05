@@ -45,7 +45,7 @@ private:
 當 Widget 在 swap 時 Copy Assigment 會發生足足三次! 實際上卻是 -- 只要把 `lhs.pImpl` 和 `rhs.pImpl` 兩個 Pointer 互換即可。
 
 ## 實作 Swap 
-首先，需要用到 [[Total Template Specialization]] 。我們不被允許改變 STD 空間內的東西，但我們被允許用 STD Template 製造特異化版本，當 swap 用於 `Widget` 物件時自動使用特異化版本的 function。
+首先，需要用到 [[Template Specialization]] 。我們不被允許改變 STD 空間內的東西，但我們被允許用 STD Template 製造特異化版本，當 swap 用於 `Widget` 物件時自動使用特異化版本的 function。
 
 ```cpp
 namespace std {
