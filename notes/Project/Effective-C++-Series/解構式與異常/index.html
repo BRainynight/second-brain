@@ -8,12 +8,14 @@
   <meta charset="UTF-8" />
   <meta
     name="description"
-    content="情境: 當Destructor 必須執行某項會丟Exception 的程序 舉例，我們有一個資料庫連線的 class DBConnection，這類資源管理的 Class 在 [[Chapter3]] 中會有更詳細的探討。
-1 2 3 4 5 6 7  class DBConnection { public: ."
+    content="在 C&#43;&#43;11 中，Destructor and delete 被自動宣告為 noexcept。
+ [[Modern C&#43;&#43; noexcept]]
+情境: 當Destructor 必須執行某項會丟Exception 的程序 舉例，我們有一個資料庫連線的 class DBConnection，這類資源管理的 Class 在 [[Chapter3]] 中會有更詳細的探討。"
   />
   <meta property="og:title" content="解構式與異常">
-  <meta property="og:description" content="情境: 當Destructor 必須執行某項會丟Exception 的程序 舉例，我們有一個資料庫連線的 class DBConnection，這類資源管理的 Class 在 [[Chapter3]] 中會有更詳細的探討。
-1 2 3 4 5 6 7  class DBConnection { public: .">
+  <meta property="og:description" content="在 C&#43;&#43;11 中，Destructor and delete 被自動宣告為 noexcept。
+ [[Modern C&#43;&#43; noexcept]]
+情境: 當Destructor 必須執行某項會丟Exception 的程序 舉例，我們有一個資料庫連線的 class DBConnection，這類資源管理的 Class 在 [[Chapter3]] 中會有更詳細的探討。">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
   <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%A7%A3%E6%A7%8B%E5%BC%8F%E8%88%87%E7%95%B0%E5%B8%B8/">
@@ -21,8 +23,9 @@
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="解構式與異常" />
-  <meta name="twitter:description" content="情境: 當Destructor 必須執行某項會丟Exception 的程序 舉例，我們有一個資料庫連線的 class DBConnection，這類資源管理的 Class 在 [[Chapter3]] 中會有更詳細的探討。
-1 2 3 4 5 6 7  class DBConnection { public: ." />
+  <meta name="twitter:description" content="在 C&#43;&#43;11 中，Destructor and delete 被自動宣告為 noexcept。
+ [[Modern C&#43;&#43; noexcept]]
+情境: 當Destructor 必須執行某項會丟Exception 的程序 舉例，我們有一個資料庫連線的 class DBConnection，這類資源管理的 Class 在 [[Chapter3]] 中會有更詳細的探討。" />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
   
     
@@ -133,13 +136,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.8ad2bff19c59fd77fa4157c5267cf223.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.74f0cec5afb9a79d0d7ea0ec4385661d.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ad2321dc46fa32dc370e8f30cbfc904.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -376,6 +379,69 @@ Unknown
   
     
   
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
   
 
@@ -438,6 +504,10 @@ Unknown
   
     
   
+    
+  
+    
+  
 
   
 
@@ -492,15 +562,26 @@ Unknown
   
   
   
+    
+    
+      
+      
+    
+    
   
   
   
+  
 
 
 
 
 
 
+<blockquote>
+<p>在 C++11 中，Destructor and <code>delete</code> 被自動宣告為  <code>noexcept</code>。</p>
+</blockquote>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/Modern-C++-noexcept" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Modern-C++-noexcept">Modern C++ noexcept</a></p>
 <a href="#情境-當destructor-必須執行某項會丟exception-的程序"><h2 id="情境-當destructor-必須執行某項會丟exception-的程序"><span class="hanchor" ariaLabel="Anchor"># </span>情境: 當Destructor 必須執行某項會丟Exception 的程序</h2></a>
 <p>舉例，我們有一個資料庫連線的 class <code>DBConnection</code>，這類資源管理的 Class 在 <a class="internal-link broken">Chapter3</a> 中會有更詳細的探討。</p>
 <div class="highlight"><div class="chroma">
@@ -557,7 +638,7 @@ catch (&hellip;) {
 <a href="#質疑"><h2 id="質疑"><span class="hanchor" ariaLabel="Anchor"># </span>質疑</h2></a>
 <ul>
 <li>轉移責任到 Client 身上的嫌疑? 並沒有，因為 destructor 中也是有一道 Check。</li>
-<li>違反<a href="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8">讓介面容易被使用</a>?</li>
+<li>違反<a href="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E6%98%93%E6%96%BC%E8%A2%AB%E4%BD%BF%E7%94%A8%E4%B8%8D%E6%98%93%E8%AA%A4%E7%94%A8" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E6%98%93%E6%96%BC%E8%A2%AB%E4%BD%BF%E7%94%A8%E4%B8%8D%E6%98%93%E8%AA%A4%E7%94%A8">讓介面易於被使用，不易誤用</a>?</li>
 </ul>
 <p>如果某個操作有 raise exception 的風險，又必須處理該 exception，這個異常必須來自 destructor 之外的某個 function (此例: 來自 <code>close</code>)，而這有讓 client 端接手的必要性，將它轉移出 destructor 能避免 undefined behavior 的發生有更大的價值。</p>
 

@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.8ad2bff19c59fd77fa4157c5267cf223.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.74f0cec5afb9a79d0d7ea0ec4385661d.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ad2321dc46fa32dc370e8f30cbfc904.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -310,7 +310,7 @@
       <h1>Smart Pointer</h1>
       <p class="meta">
         Last updated 
-May 7, 2023
+Sep 5, 2023
 
  
           
@@ -496,7 +496,7 @@ May 7, 2023
 <a href="#顯式隱式轉換介面"><h2 id="顯式隱式轉換介面"><span class="hanchor" ariaLabel="Anchor"># </span>顯式/隱式轉換介面</h2></a>
 <p>如上述， <code>get</code> function 是一種顯式轉換 (explicit)，它的優點是使用時意圖清楚，缺點是很醜。
 其實，亦可以提供個隱式轉換的介面，如此當這個物件被放到 base resource 的類別時，就不用特別透過 <code>get</code> 提取 base resource，缺點是會提升發生錯誤的風險。</p>
-<p>選擇何種，取決於使用情境，記住 <a href="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8">讓介面容易被使用</a>，不要讓你的介面容易被誤用，即可。</p>
+<p>選擇何種，取決於使用情境，記住 <a href="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E6%98%93%E6%96%BC%E8%A2%AB%E4%BD%BF%E7%94%A8%E4%B8%8D%E6%98%93%E8%AA%A4%E7%94%A8" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E6%98%93%E6%96%BC%E8%A2%AB%E4%BD%BF%E7%94%A8%E4%B8%8D%E6%98%93%E8%AA%A4%E7%94%A8">讓介面易於被使用，不易誤用</a>，不要讓你的介面容易被誤用，即可。</p>
 
 
     </article>

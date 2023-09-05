@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.8ad2bff19c59fd77fa4157c5267cf223.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.74f0cec5afb9a79d0d7ea0ec4385661d.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ad2321dc46fa32dc370e8f30cbfc904.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -407,6 +407,55 @@ Unknown
 
   
 
+  
+  
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
 
 
 
@@ -472,6 +521,7 @@ Unknown
 </blockquote>
 <p>對於 Private Member data 而言，能存取它的就是所有的 member function。
 Friend function 雖然不是 non-member function，但他和 member function 同樣擁有 access private data 的能力，所以兩者的封裝度是同樣低的。</p>
+<p>同理，前面章節說的 <a href="/second-brain/notes/Project/Effective-C++-Series/Protected-%E8%88%87-Public-%E9%83%BD%E6%98%AF%E4%BD%8E%E5%B0%81%E8%A3%9D%E5%BA%A6%E7%9A%84-Access-Level" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Protected-%E8%88%87-Public-%E9%83%BD%E6%98%AF%E4%BD%8E%E5%B0%81%E8%A3%9D%E5%BA%A6%E7%9A%84-Access-Level">Protected 與 Public 都是低封裝度的 Access Level</a>。</p>
 <a href="#將有編譯相依的函式放在同一個-header-file"><h2 id="將有編譯相依的函式放在同一個-header-file"><span class="hanchor" ariaLabel="Anchor"># </span>將有編譯相依的函式放在同一個 Header File</h2></a>
 <p>當我們遵守本頁的守則，拆出許多 Utility Function (工具箱) 之後，該考慮將 Function 依照編譯相依性拆分到不同的 Header file，在不同的 Header file 間共用同一個 namespace 即可。</p>
 <p>書中以 <code>WebBrowser</code> 舉例，Utility Function 可能有 cookie, bookmark, core funcion (幾乎每個客戶都要的 non-member function)，cookie functions 之間有編譯相依性，放在一塊以此類推。</p>
@@ -550,6 +600,10 @@ Friend function 雖然不是 non-member function，但他和 member function 同
     
       
       
+      
+    
+      
+      
       <li>
         <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%A8%AD%E8%A8%88%E6%96%B0-Class-%E7%9A%84%E6%BA%96%E5%89%87/" data-ctx="Non-member &amp;&amp; Non-friend Function 的封裝度優於 Member Function" data-src="/notes/Project/Effective-C&#43;&#43;-Series/%E8%A8%AD%E8%A8%88%E6%96%B0-Class-%E7%9A%84%E6%BA%96%E5%89%87" class="internal-link">設計新 Class 的準則</a>
       </li>
@@ -558,6 +612,12 @@ Friend function 雖然不是 non-member function，但他和 member function 同
       
       <li>
         <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Effective-C&#43;&#43;-Outline/" data-ctx="Non-member &amp;&amp; Non-friend Function 的封裝度優於 Member Function" data-src="/notes/Project/Effective-C&#43;&#43;-Series/Effective-C&#43;&#43;-Outline" class="internal-link">Effective C&#43;&#43; Outline</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/non-member-non-friend-function/" data-ctx="Non-member &amp;&amp; Non-friend Function 的封裝度優於 Member Function" data-src="/notes/Project/Effective-C&#43;&#43;-Series/non-member-non-friend-function" class="internal-link">non-member &amp;&amp; non-friend function</a>
       </li>
       
       

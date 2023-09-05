@@ -8,10 +8,12 @@
   <meta charset="UTF-8" />
   <meta
     name="description"
-    content=""
+    content="Template 可以針對特定的 Type 特化，寫法如下
+ template&lt;&gt; 裡面不放任何參數，表示這不是 template 也不是標準的 class，是一個特化的 MsgSender。 class MsgSender&lt;CompanyZ&gt; 表示 template MsgSender 在遇到 input type 是 CompanyZ 的時候，要用以下定義的內容。 以下這段範例就是 MsgSender 針對 CompanyZ 特別訂製的內容，這就是模板全特化 (Total Template Specialization)。  1 2 3 4 5 6  template&lt;&gt; // a total specialization of class MsgSender&lt;CompanyZ&gt; { // MsgSender; the same as the public: // general template, except sendClear is omitted void sendSecret(const MsgInfo&amp; info) { ."
   />
   <meta property="og:title" content="Total Template Specialization">
-  <meta property="og:description" content="">
+  <meta property="og:description" content="Template 可以針對特定的 Type 特化，寫法如下
+ template&lt;&gt; 裡面不放任何參數，表示這不是 template 也不是標準的 class，是一個特化的 MsgSender。 class MsgSender&lt;CompanyZ&gt; 表示 template MsgSender 在遇到 input type 是 CompanyZ 的時候，要用以下定義的內容。 以下這段範例就是 MsgSender 針對 CompanyZ 特別訂製的內容，這就是模板全特化 (Total Template Specialization)。  1 2 3 4 5 6  template&lt;&gt; // a total specialization of class MsgSender&lt;CompanyZ&gt; { // MsgSender; the same as the public: // general template, except sendClear is omitted void sendSecret(const MsgInfo&amp; info) { .">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
   <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Total-Template-Specialization/">
@@ -19,7 +21,8 @@
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Total Template Specialization" />
-  <meta name="twitter:description" content="" />
+  <meta name="twitter:description" content="Template 可以針對特定的 Type 特化，寫法如下
+ template&lt;&gt; 裡面不放任何參數，表示這不是 template 也不是標準的 class，是一個特化的 MsgSender。 class MsgSender&lt;CompanyZ&gt; 表示 template MsgSender 在遇到 input type 是 CompanyZ 的時候，要用以下定義的內容。 以下這段範例就是 MsgSender 針對 CompanyZ 特別訂製的內容，這就是模板全特化 (Total Template Specialization)。  1 2 3 4 5 6  template&lt;&gt; // a total specialization of class MsgSender&lt;CompanyZ&gt; { // MsgSender; the same as the public: // general template, except sendClear is omitted void sendSecret(const MsgInfo&amp; info) { ." />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
   
     
@@ -130,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.8ad2bff19c59fd77fa4157c5267cf223.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.74f0cec5afb9a79d0d7ea0ec4385661d.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ad2321dc46fa32dc370e8f30cbfc904.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -307,7 +310,7 @@
       <h1>Total Template Specialization</h1>
       <p class="meta">
         Last updated 
-Apr 24, 2023
+Sep 5, 2023
 
  
           
@@ -315,9 +318,9 @@ Apr 24, 2023
       </p>
       <ul class="tags">
           
-          <li><a href="https://brainynight.github.io/second-brain/tags/empty/">
+          <li><a href="https://brainynight.github.io/second-brain/tags/cpp/">
           
-            Empty
+            Cpp
           
             </a>
            </li>
@@ -341,6 +344,63 @@ Apr 24, 2023
 
 
 
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
 
 
 
@@ -364,6 +424,31 @@ Apr 24, 2023
 
 
 
+<p>Template 可以針對特定的 Type 特化，寫法如下</p>
+<ol>
+<li><code>template&lt;&gt;</code> 裡面不放任何參數，表示這不是 template 也不是標準的 class，是一個特化的 MsgSender。</li>
+<li><code>class MsgSender&lt;CompanyZ&gt;</code> 表示  template MsgSender 在遇到 input type 是 <code>CompanyZ</code> 的時候，要用以下定義的內容。
+以下這段範例就是 MsgSender 針對 CompanyZ 特別訂製的內容，這就是模板全特化 (Total Template Specialization)。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">template</span><span class="o">&lt;&gt;</span> <span class="c1">// a total specialization of
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">MsgSender</span><span class="o">&lt;</span><span class="n">CompanyZ</span><span class="o">&gt;</span> <span class="p">{</span> <span class="c1">// MsgSender; the same as the
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">public</span><span class="o">:</span> <span class="c1">// general template, except sendClear is omitted
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="n">sendSecret</span><span class="p">(</span><span class="k">const</span> <span class="n">MsgInfo</span><span class="o">&amp;</span> <span class="n">info</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此例呼應 <a href="/second-brain/notes/Project/Effective-C++-Series/%E4%BA%86%E8%A7%A3%E5%A6%82%E4%BD%95%E5%9C%A8-Template-%E4%B8%AD%E6%8C%87%E6%B6%89-Base-Class-%E6%88%90%E5%93%A1" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E4%BA%86%E8%A7%A3%E5%A6%82%E4%BD%95%E5%9C%A8-Template-%E4%B8%AD%E6%8C%87%E6%B6%89-Base-Class-%E6%88%90%E5%93%A1">了解如何在 Template 中指涉 Base Class 成員</a> 的範例，<code>MsgSender</code> 對於一般輸入類別都有 <code>sendSecret</code> 跟 <code>sendClear</code> 兩個 function。但在這裡，<code>CompanyZ</code> 的特化版將不存在 <code>sendClear</code>!</p>
 
 
     </article>
@@ -389,6 +474,16 @@ Apr 24, 2023
       
       
     
+      
+      
+      
+    
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E4%BA%86%E8%A7%A3%E5%A6%82%E4%BD%95%E5%9C%A8-Template-%E4%B8%AD%E6%8C%87%E6%B6%89-Base-Class-%E6%88%90%E5%93%A1/" data-ctx="Total Template Specialization" data-src="/notes/Project/Effective-C&#43;&#43;-Series/%E4%BA%86%E8%A7%A3%E5%A6%82%E4%BD%95%E5%9C%A8-Template-%E4%B8%AD%E6%8C%87%E6%B6%89-Base-Class-%E6%88%90%E5%93%A1" class="internal-link">了解如何在 Template 中指涉 Base Class 成員</a>
+      </li>
+      
       
       
       <li>

@@ -7,6 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://brainynight.github.io/second-brain/tags/empty/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>C&#43;&#43;11 std function</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/C&#43;&#43;11-std-function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/C&#43;&#43;11-std-function/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EBO (Empty Base Optimization)</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/EBO-Empty-Base-Optimization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/EBO-Empty-Base-Optimization/</guid>
+      <description>空白基本類別最佳化 effective c++ 191</description>
+    </item>
+    
+    <item>
       <title>enum hack</title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/enum-hack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -16,20 +34,11 @@
     </item>
     
     <item>
-      <title>Item34 Differentiate between inheritance of interface and inheritance of implementation</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item34-Differentiate-between-inheritance-of-interface-and-inheritance-of-implementation/</link>
+      <title>Item15 constexpr</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item15-constexpr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item34-Differentiate-between-inheritance-of-interface-and-inheritance-of-implementation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Item46 需要型別轉換時請為模板定義非成員函式</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item46-%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item46-%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item15-constexpr/</guid>
       <description></description>
     </item>
     
@@ -61,12 +70,32 @@
     </item>
     
     <item>
-      <title>Modern C&#43;&#43; nothrow</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Modern-C&#43;&#43;-nothrow/</link>
+      <title>operator overloading</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/operator-overloading/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Modern-C&#43;&#43;-nothrow/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/operator-overloading/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>override</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/override/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/override/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pure Virtual Function</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Pure-Virtual-Function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Pure-Virtual-Function/</guid>
+      <description>只繼承 Interface 需自行實做
+ 相當於告訴 Client: 你需要提供一個這樣的函式，但我不干涉你怎麼做它。
+1 2 3 4  class Shape { public: virtual void draw() const = 0; };   不過，我們其實可以為 Pure Virtual Function 提供一份實作碼，只是需要通過 Class Name 呼叫 (以 Shape::draw 而非 shape.</description>
     </item>
     
     <item>
@@ -79,21 +108,42 @@
     </item>
     
     <item>
+      <title>Template Method</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-Method/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-Method/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>The definition and declaration of static const</title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/The-definition-and-declaration-of-static-const/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/The-definition-and-declaration-of-static-const/</guid>
+      <description> [!todo] P14
+ </description>
+    </item>
+    
+    <item>
+      <title>typedef and using</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/typedef-and-using/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/typedef-and-using/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Total Template Specialization</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Total-Template-Specialization/</link>
+      <title>需要型別轉換時請為模板定義非成員函式</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Total-Template-Specialization/</guid>
-      <description></description>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F/</guid>
+      <description>文章 [[當所有的參數都需要型別轉換，採用 Non-member Function]] 中提到，能被隱式轉換的只有位於參數列的對象，因此針對 operator* 採用了 Non-member function。
+現在，將這個 operator* 改成 Template function。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14  template&amp;lt;typename T&amp;gt; class Rational { public: Rational(const T&amp;amp; numerator = 0, // see Item 20 for why params 	const T&amp;amp; denominator = 1); // are now passed by reference 	const T numerator() const; // see Item 28 for why return 	const T denominator() const; // values are still passed by value, }; template&amp;lt;typename T&amp;gt; const Rational&amp;lt;T&amp;gt; operator*(const Rational&amp;lt;T&amp;gt;&amp;amp; lhs, const Rational&amp;lt;T&amp;gt;&amp;amp; rhs) { }   </description>
     </item>
     
   </channel>

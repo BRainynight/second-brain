@@ -9,13 +9,13 @@
   <meta
     name="description"
     content="將物件的實作細目隱藏在一個指標背後
- 此手法會把一個類別分成兩個 Class:
- 一個是暴露給客戶端的接口 Handle Class (ex. Person)，它只會擁有一個 pointer 指向實作 class 一個是實作類別 Implementation Class (ex. Personimpl) ，所有真正要存的資料都在這裡面。  由於接口 Person 只 own 一個 smart pointer ，它不需要知道 PersonImpl 有多大，因此可以用 forward declare 解決。它還提供了一些 getter，但提供 getter 也都可以透過 forward declare 解決一切。"
+ 第一種手法: Handle Class 此手法會把一個類別分成兩個 Class:
+ 一個是暴露給客戶端的接口 Handle Class (ex. Person)，它只會擁有一個 pointer 指向實作 class 一個是實作類別 Implementation Class (ex."
   />
   <meta property="og:title" content="pimpl idiom (pointer to implementation)">
   <meta property="og:description" content="將物件的實作細目隱藏在一個指標背後
- 此手法會把一個類別分成兩個 Class:
- 一個是暴露給客戶端的接口 Handle Class (ex. Person)，它只會擁有一個 pointer 指向實作 class 一個是實作類別 Implementation Class (ex. Personimpl) ，所有真正要存的資料都在這裡面。  由於接口 Person 只 own 一個 smart pointer ，它不需要知道 PersonImpl 有多大，因此可以用 forward declare 解決。它還提供了一些 getter，但提供 getter 也都可以透過 forward declare 解決一切。">
+ 第一種手法: Handle Class 此手法會把一個類別分成兩個 Class:
+ 一個是暴露給客戶端的接口 Handle Class (ex. Person)，它只會擁有一個 pointer 指向實作 class 一個是實作類別 Implementation Class (ex.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
   <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/pimpl-idiom-pointer-to-implementation/">
@@ -24,8 +24,8 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="pimpl idiom (pointer to implementation)" />
   <meta name="twitter:description" content="將物件的實作細目隱藏在一個指標背後
- 此手法會把一個類別分成兩個 Class:
- 一個是暴露給客戶端的接口 Handle Class (ex. Person)，它只會擁有一個 pointer 指向實作 class 一個是實作類別 Implementation Class (ex. Personimpl) ，所有真正要存的資料都在這裡面。  由於接口 Person 只 own 一個 smart pointer ，它不需要知道 PersonImpl 有多大，因此可以用 forward declare 解決。它還提供了一些 getter，但提供 getter 也都可以透過 forward declare 解決一切。" />
+ 第一種手法: Handle Class 此手法會把一個類別分成兩個 Class:
+ 一個是暴露給客戶端的接口 Handle Class (ex. Person)，它只會擁有一個 pointer 指向實作 class 一個是實作類別 Implementation Class (ex." />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
   
     
@@ -136,13 +136,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.8ad2bff19c59fd77fa4157c5267cf223.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.74f0cec5afb9a79d0d7ea0ec4385661d.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ad2321dc46fa32dc370e8f30cbfc904.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -313,7 +313,7 @@
       <h1>pimpl idiom (pointer to implementation)</h1>
       <p class="meta">
         Last updated 
-May 7, 2023
+Sep 5, 2023
 
  
           
@@ -336,16 +336,25 @@ May 7, 2023
         <summary>Table of Contents</summary>
         <nav id="TableOfContents">
   <ol>
-    <li><a href="#handle-class-的實作檔案-cpp">Handle Class 的實作檔案 (CPP)</a></li>
-    <li><a href="#實作-pimpl-pattern-的方法有兩種">實作 pimpl pattern 的方法有兩種</a></li>
-    <li><a href="#interface-class-的設計方式">Interface Class 的設計方式</a></li>
-    <li><a href="#成本">成本</a>
+    <li><a href="#第一種手法-handle-class">第一種手法: Handle Class</a>
+      <ol>
+        <li><a href="#實作檔案-cpp">實作檔案 (CPP)</a></li>
+      </ol>
+    </li>
+    <li><a href="#第二種手法-interface-class-的設計方式">第二種手法: Interface Class 的設計方式</a>
+      <ol>
+        <li><a href="#interface-class-暴露給-client-的接口">Interface Class: 暴露給 Client 的接口</a></li>
+        <li><a href="#concrete-class-相對於-interface-class-的對應實作">Concrete Class: 相對於 Interface Class 的對應實作</a></li>
+      </ol>
+    </li>
+    <li><a href="#pimpl-手法的成本">pimpl 手法的成本</a>
       <ol>
         <li><a href="#handle-class-的成本">Handle Class 的成本</a></li>
         <li><a href="#interface-class-的成本">Interface Class 的成本</a></li>
+        <li><a href="#提醒">提醒</a></li>
       </ol>
     </li>
-    <li><a href="#結論">結論</a></li>
+    <li><a href="#該使用-pimpl-嗎">該使用 pimpl 嗎?</a></li>
   </ol>
 </nav>
     </details>
@@ -366,6 +375,85 @@ May 7, 2023
 
 
 
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
 
   
   
@@ -874,6 +962,7 @@ May 7, 2023
 <blockquote>
 <p>將物件的實作細目隱藏在一個指標背後</p>
 </blockquote>
+<a href="#第一種手法-handle-class"><h2 id="第一種手法-handle-class"><span class="hanchor" ariaLabel="Anchor"># </span>第一種手法: Handle Class</h2></a>
 <p>此手法會把一個類別分成兩個 Class:</p>
 <ul>
 <li>一個是暴露給客戶端的接口 Handle Class (ex. <code>Person</code>)，它只會擁有一個 pointer 指向實作 class</li>
@@ -920,7 +1009,7 @@ May 7, 2023
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p><a href="/second-brain/notes/Project/Effective-C++-Series/%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98-%E5%AE%A3%E5%91%8A%E5%BC%8F%E5%AE%9A%E7%BE%A9%E5%BC%8F%E8%88%87%E5%AF%A6%E4%BD%9C%E7%B4%B0%E7%AF%80" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98-%E5%AE%A3%E5%91%8A%E5%BC%8F%E5%AE%9A%E7%BE%A9%E5%BC%8F%E8%88%87%E5%AF%A6%E4%BD%9C%E7%B4%B0%E7%AF%80">編譯依存-宣告式、定義式與實作細節</a></p>
-<a href="#handle-class-的實作檔案-cpp"><h2 id="handle-class-的實作檔案-cpp"><span class="hanchor" ariaLabel="Anchor"># </span>Handle Class 的實作檔案 (CPP)</h2></a>
+<a href="#實作檔案-cpp"><h3 id="實作檔案-cpp"><span class="hanchor" ariaLabel="Anchor"># </span>實作檔案 (CPP)</h3></a>
 <p>實作檔案需要同時 include <code>Person.hpp</code> 和 <code>PersonImpl.hpp</code></p>
 <ul>
 <li><code>Person.hpp</code> : 為了實作 <code>Person</code>的 function</li>
@@ -952,14 +1041,10 @@ May 7, 2023
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><a href="#實作-pimpl-pattern-的方法有兩種"><h2 id="實作-pimpl-pattern-的方法有兩種"><span class="hanchor" ariaLabel="Anchor"># </span>實作 pimpl pattern 的方法有兩種</h2></a>
-<ol>
-<li>Handle Class: 前面使用的方法，handle class 擁有一個指向 impl class 的 pointer。</li>
-<li>Interface Class</li>
-</ol>
-<a href="#interface-class-的設計方式"><h2 id="interface-class-的設計方式"><span class="hanchor" ariaLabel="Anchor"># </span>Interface Class 的設計方式</h2></a>
-<p>暴露給客戶的是 Interface Class，這個類別本身會設計成一個 abstract base class (interface class)。<a href="/second-brain/notes/Project/Effective-C++-Series/Item34-Differentiate-between-inheritance-of-interface-and-inheritance-of-implementation" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item34-Differentiate-between-inheritance-of-interface-and-inheritance-of-implementation">Item34 Differentiate between inheritance of interface and inheritance of implementation</a></p>
-<p>Interface class 的用途是僅有敘述 drived class 的介面，它沒有 member data、也沒有 constructor，只有一個 virtual destructor，跟一堆 pure virtual function 來敘述介面。而 drived class 就是它的實作 (相當於前面 implement class 的腳色)</p>
+</div><a href="#第二種手法-interface-class-的設計方式"><h2 id="第二種手法-interface-class-的設計方式"><span class="hanchor" ariaLabel="Anchor"># </span>第二種手法: Interface Class 的設計方式</h2></a>
+<p>暴露給客戶的是 Interface Class，這個類別本身會設計成一個 abstract base class (interface class)。<a href="/second-brain/notes/Project/Effective-C++-Series/%E5%8D%80%E5%88%86%E4%BB%8B%E9%9D%A2%E7%B9%BC%E6%89%BFinterface%E5%92%8C%E5%AF%A6%E4%BD%9C%E7%B9%BC%E6%89%BFimplement" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E5%8D%80%E5%88%86%E4%BB%8B%E9%9D%A2%E7%B9%BC%E6%89%BFinterface%E5%92%8C%E5%AF%A6%E4%BD%9C%E7%B9%BC%E6%89%BFimplement">區分介面繼承(interface)和實作繼承(implement)</a></p>
+<a href="#interface-class-暴露給-client-的接口"><h3 id="interface-class-暴露給-client-的接口"><span class="hanchor" ariaLabel="Anchor"># </span>Interface Class: 暴露給 Client 的接口</h3></a>
+<p>Interface class 的用途是僅有敘述 drived class 的介面，它沒有 member data、也沒有 constructor，只有一個 virtual destructor，跟一堆 <a href="/second-brain/notes/Project/Effective-C++-Series/Pure-Virtual-Function" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Pure-Virtual-Function">Pure Virtual Function</a> 來敘述介面。而 drived class 就是它的實作 (相當於前面 implement class 的腳色)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1006,7 +1091,8 @@ May 7, 2023
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>Interface Class 所對應的實作類別會是一個具象類 (concrete class)，它必須擁有真正的 constructor。假設這個實作類別是 <code>RealPerson</code>:</p>
+</div><a href="#concrete-class-相對於-interface-class-的對應實作"><h3 id="concrete-class-相對於-interface-class-的對應實作"><span class="hanchor" ariaLabel="Anchor"># </span>Concrete Class: 相對於 Interface Class 的對應實作</h3></a>
+<p>Interface Class 所對應的實作類別會是一個具象類 (concrete class)，它必須擁有真正的 constructor。假設這個實作類別是 <code>RealPerson</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1043,7 +1129,7 @@ May 7, 2023
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>現在知道 <code>RealPerson</code> 的 constructor 長相，<code>Person::create</code> 的實作也是輕而易舉:</p>
+</div><p>現在知道 <code>RealPerson</code> 的 constructor 長相，回頭 <code>Person::create</code> 的實作也是輕而易舉:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1062,7 +1148,7 @@ May 7, 2023
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><a href="#成本"><h2 id="成本"><span class="hanchor" ariaLabel="Anchor"># </span>成本</h2></a>
+</div><a href="#pimpl-手法的成本"><h2 id="pimpl-手法的成本"><span class="hanchor" ariaLabel="Anchor"># </span>pimpl 手法的成本</h2></a>
 <p>以上說明了兩種花俏的手法，它能降低耦合，減少編譯時間。成本呢?</p>
 <a href="#handle-class-的成本"><h3 id="handle-class-的成本"><span class="hanchor" ariaLabel="Anchor"># </span>Handle Class 的成本</h3></a>
 <ol>
@@ -1073,10 +1159,14 @@ May 7, 2023
 <a href="#interface-class-的成本"><h3 id="interface-class-的成本"><span class="hanchor" ariaLabel="Anchor"># </span>Interface Class 的成本</h3></a>
 <ol>
 <li>Interface Class 每個函式都是 virtual function，每次的函式呼叫都要付出間接跳躍 (indirect jump) 的成本。見: <a href="/second-brain/notes/Project/Effective-C++-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F">為多型用途的基礎類別宣告 virtual 解構式</a></li>
-<li>只要有 virtual function，就會有 vptr (virtual table pointer)，其成本參見:  <a href="/second-brain/notes/Project/Effective-C++-Series/Do-not-Declare-Virtural-Function-in-Non-polymorphic-Base-Class" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Do-not-Declare-Virtural-Function-in-Non-polymorphic-Base-Class">Do not Declare Virtural Function in Non-polymorphic Base Class</a></li>
+<li>只要有 virtual function，就會有 vptr (virtual table pointer)，其成本參見:  <a href="/second-brain/notes/Project/Effective-C++-Series/%E4%B8%8D%E8%A6%81%E7%82%BA%E9%9D%9E%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84-Base-Class-%E5%AE%A3%E5%91%8A-Virtual-Function" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E4%B8%8D%E8%A6%81%E7%82%BA%E9%9D%9E%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84-Base-Class-%E5%AE%A3%E5%91%8A-Virtual-Function">不要為非多型用途的 Base Class 宣告 Virtual Function</a></li>
 </ol>
-<a href="#結論"><h2 id="結論"><span class="hanchor" ariaLabel="Anchor"># </span>結論</h2></a>
+<a href="#提醒"><h3 id="提醒"><span class="hanchor" ariaLabel="Anchor"># </span>提醒</h3></a>
 <p>不論 handle class 或 interface class，一旦脫離 inline 函式都無法有太大的作為(why? 不過就是都要在 class 定義式中直接把實作寫完的意思)。因為這類 class 是為了隱藏實作細節或函式本體的!! <a href="/second-brain/notes/Project/Effective-C++-Series/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96#%e5%90%91-compiler-%e7%99%bc%e5%87%ba%e7%94%b3%e8%ab%8b" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96">了解 Inline 的裡裡外外</a></p>
+<a href="#該使用-pimpl-嗎"><h2 id="該使用-pimpl-嗎"><span class="hanchor" ariaLabel="Anchor"># </span>該使用 pimpl 嗎?</h2></a>
+<ul>
+<li>當以上提及的速度成本或大小問題，使得類別的耦合問題相形之下不怎麼嚴重時，就應該直接用具象類別 (concrete class) 取代 pimpl 手法。</li>
+</ul>
 
 
     </article>

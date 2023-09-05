@@ -9,11 +9,11 @@
   <meta
     name="description"
     content="現在的情境是，如果，你想要有一個抽象類 &ndash; 抽象類的好處是自身無法被實例化。然而，抽象類的定義是，至少有一個 function 是 Pure Virtural Function。該選擇 &ldquo;誰&rdquo; 成為 Pure virtural function 呢? 洽巧手上沒有適合的人選! Destructor 會是個好選擇。因為
- Abstract Class 總是被當作 Base Class Base Class 作為多型用途時，應當帶有 virtural destructor Pure Virtural Function 可使該 Class 形成 Abstract 三個點串起來&ndash;「讓 destructor 變成 Pure Virtural 吧」，這樣不會有不該被 virtural 的 function 遭殃!"
+ Abstract Class 總是被當作 Base Class Base Class 作為多型用途時，應當帶有 virtural destructor [[Pure Virtual Function]] 可使該 Class 形成 Abstract 三個點串起來&ndash;「讓 destructor 變成 Pure Virtural 吧」，這樣不會有不該被 virtural 的 function 遭殃!"
   />
   <meta property="og:title" content="Pure Virtual Destructor">
   <meta property="og:description" content="現在的情境是，如果，你想要有一個抽象類 &ndash; 抽象類的好處是自身無法被實例化。然而，抽象類的定義是，至少有一個 function 是 Pure Virtural Function。該選擇 &ldquo;誰&rdquo; 成為 Pure virtural function 呢? 洽巧手上沒有適合的人選! Destructor 會是個好選擇。因為
- Abstract Class 總是被當作 Base Class Base Class 作為多型用途時，應當帶有 virtural destructor Pure Virtural Function 可使該 Class 形成 Abstract 三個點串起來&ndash;「讓 destructor 變成 Pure Virtural 吧」，這樣不會有不該被 virtural 的 function 遭殃!">
+ Abstract Class 總是被當作 Base Class Base Class 作為多型用途時，應當帶有 virtural destructor [[Pure Virtual Function]] 可使該 Class 形成 Abstract 三個點串起來&ndash;「讓 destructor 變成 Pure Virtural 吧」，這樣不會有不該被 virtural 的 function 遭殃!">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
   <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Pure-Virtual-Destructor/">
@@ -22,7 +22,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Pure Virtual Destructor" />
   <meta name="twitter:description" content="現在的情境是，如果，你想要有一個抽象類 &ndash; 抽象類的好處是自身無法被實例化。然而，抽象類的定義是，至少有一個 function 是 Pure Virtural Function。該選擇 &ldquo;誰&rdquo; 成為 Pure virtural function 呢? 洽巧手上沒有適合的人選! Destructor 會是個好選擇。因為
- Abstract Class 總是被當作 Base Class Base Class 作為多型用途時，應當帶有 virtural destructor Pure Virtural Function 可使該 Class 形成 Abstract 三個點串起來&ndash;「讓 destructor 變成 Pure Virtural 吧」，這樣不會有不該被 virtural 的 function 遭殃!" />
+ Abstract Class 總是被當作 Base Class Base Class 作為多型用途時，應當帶有 virtural destructor [[Pure Virtual Function]] 可使該 Class 形成 Abstract 三個點串起來&ndash;「讓 destructor 變成 Pure Virtural 吧」，這樣不會有不該被 virtural 的 function 遭殃!" />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
   
     
@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.8ad2bff19c59fd77fa4157c5267cf223.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.74f0cec5afb9a79d0d7ea0ec4385661d.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ad2321dc46fa32dc370e8f30cbfc904.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -310,7 +310,7 @@
       <h1>Pure Virtual Destructor</h1>
       <p class="meta">
         Last updated 
-Apr 17, 2023
+Sep 5, 2023
 
  
           
@@ -343,6 +343,53 @@ Apr 17, 2023
 
 
 
+
+  
+  
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
 
 
 
@@ -378,7 +425,7 @@ Apr 17, 2023
 <ol>
 <li>Abstract Class 總是被當作 Base Class</li>
 <li>Base Class 作為多型用途時，應當帶有 virtural destructor</li>
-<li>Pure Virtural Function 可使該 Class 形成 Abstract
+<li><a href="/second-brain/notes/Project/Effective-C++-Series/Pure-Virtual-Function" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Pure-Virtual-Function">Pure Virtual Function</a> 可使該 Class 形成 Abstract
 三個點串起來&ndash;「讓 destructor 變成 Pure Virtural 吧」，這樣不會有不該被 virtural 的 function 遭殃!</li>
 </ol>
 <blockquote>

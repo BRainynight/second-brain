@@ -12,7 +12,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://brainynight.github.io/second-brain/notes/Resource/MOCs/C&#43;&#43;-Resources/</guid>
-      <description>Books  [[../../Project/Effective C++ Series/Effective C++ Outline |Effective C++ Outline]]  Webs   CppCoreGuidelines  CppDeveloperRoadmap  </description>
+      <description>Notes  [[../../Project/Effective C++ Series/Effective C++ Outline |Effective C++ Outline]] [[../../Project/Effective C++ Series/Effective modern C++ Outline|Effective modern C++ Outline]]  Webs   CppCoreGuidelines  CppDeveloperRoadmap [整理了一份C++学习路线图](- https://mp.</description>
+    </item>
+    
+    <item>
+      <title>Design Pattern</title>
+      <link>https://brainynight.github.io/second-brain/notes/Resource/MOCs/Design-Pattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Resource/MOCs/Design-Pattern/</guid>
+      <description>[[../../Project/Effective C++ Series/Template Method|Template Method]] [[../../Project/Effective C++ Series/Classic Strategy Pattern|Classic Strategy Pattern]]</description>
     </item>
     
   </channel>

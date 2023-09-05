@@ -130,13 +130,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.8ad2bff19c59fd77fa4157c5267cf223.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.74f0cec5afb9a79d0d7ea0ec4385661d.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ad2321dc46fa32dc370e8f30cbfc904.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -961,7 +961,7 @@ Unknown
 </span></span><span class="line"><span class="cl"><span class="k">delete</span> <span class="n">ptk</span><span class="p">;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>儘管 <a href="/second-brain/notes/Project/Effective-C++-Series/Smart-Pointer" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Smart-Pointer">條款13 使用資源管理器</a> 和 <a href="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E5%AE%B9%E6%98%93%E8%A2%AB%E4%BD%BF%E7%94%A8">讓介面容易被使用</a> 說明了依賴 client 做 <code>delete</code> 有潛在的危險跟不確定，這裡要說明的是更嚴重、更根本性的問題。</p>
+</div><p>儘管 <a href="/second-brain/notes/Project/Effective-C++-Series/Smart-Pointer" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Smart-Pointer">條款13 使用資源管理器</a> 和 <a href="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E6%98%93%E6%96%BC%E8%A2%AB%E4%BD%BF%E7%94%A8%E4%B8%8D%E6%98%93%E8%AA%A4%E7%94%A8" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E6%98%93%E6%96%BC%E8%A2%AB%E4%BD%BF%E7%94%A8%E4%B8%8D%E6%98%93%E8%AA%A4%E7%94%A8">讓介面易於被使用，不易誤用</a> 說明了依賴 client 做 <code>delete</code> 有潛在的危險跟不確定，這裡要說明的是更嚴重、更根本性的問題。</p>
 <ul>
 <li>我們宣告的是 <strong>Base class pointer</strong>，指向的是 <strong>child class 物件</strong>。</li>
 <li>Base class 擁有一個 non-virtural 的 destructor</li>
@@ -972,7 +972,7 @@ Unknown
 <blockquote>
 <p>一個 Class 若有帶有 <code>virtural</code> 的函式，幾乎可以確定<strong>該有</strong>會帶有 <code>virtural</code> 的 destructor。如果一個 class 不帶有 <code>virtural</code> function，通常代表它不意圖被當作 base class。</p>
 </blockquote>
-<p>(實作都寫完在 base 了，還特意搞繼承 override 幹嘛?)。然而，<code>virtural</code> 也不應該亂用: <a href="/second-brain/notes/Project/Effective-C++-Series/Do-not-Declare-Virtural-Function-in-Non-polymorphic-Base-Class" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Do-not-Declare-Virtural-Function-in-Non-polymorphic-Base-Class">Do not Declare Virtural Function in Non-polymorphic Base Class</a>。</p>
+<p>(實作都寫完在 base 了，還特意搞繼承 override 幹嘛?)。然而，<code>virtural</code> 也不應該亂用: <a href="/second-brain/notes/Project/Effective-C++-Series/%E4%B8%8D%E8%A6%81%E7%82%BA%E9%9D%9E%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84-Base-Class-%E5%AE%A3%E5%91%8A-Virtual-Function" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E4%B8%8D%E8%A6%81%E7%82%BA%E9%9D%9E%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84-Base-Class-%E5%AE%A3%E5%91%8A-Virtual-Function">不要為非多型用途的 Base Class 宣告 Virtual Function</a>。</p>
 <a href="#企圖以多型設計架構前檢查-base-class-的-destructor-是否為-virtual"><h2 id="企圖以多型設計架構前檢查-base-class-的-destructor-是否為-virtual"><span class="hanchor" ariaLabel="Anchor"># </span>企圖以多型設計架構前，檢查 Base Class 的 Destructor 是否為 Virtual</h2></a>
 <p>如果不是 virtural destructor，請想別的辦法!!
 接續前面章節，<strong>並非</strong> class 中沒有 <code>virtural</code> function，<strong>就不需要</strong> 考慮 non-virtural destructor 的問題。</p>
@@ -1033,6 +1033,16 @@ Unknown
       
       
     
+      
+      
+      
+    
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%8D%80%E5%88%86%E4%BB%8B%E9%9D%A2%E7%B9%BC%E6%89%BFinterface%E5%92%8C%E5%AF%A6%E4%BD%9C%E7%B9%BC%E6%89%BFimplement/" data-ctx="為多型用途的基礎類別宣告 virtual 解構式" data-src="/notes/Project/Effective-C&#43;&#43;-Series/%E5%8D%80%E5%88%86%E4%BB%8B%E9%9D%A2%E7%B9%BC%E6%89%BFinterface%E5%92%8C%E5%AF%A6%E4%BD%9C%E7%B9%BC%E6%89%BFimplement" class="internal-link">區分介面繼承(interface)和實作繼承(implement)</a>
+      </li>
+      
       
       
       <li>

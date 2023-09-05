@@ -9,11 +9,11 @@
   <meta
     name="description"
     content="有三個主因:
- 並非「該物件/container」看起來很小，用 Pass by value 就沒有問題。許多 STL Container 在實作上的大小也就一個 Pointer 大一點，但 Copy Container 卻有「複製每一個 Pointer 所指向的物件」的風險在。 視 Compiler 而定，有些 Compiler 對待 Custom class 跟 built-in class 的態度大不相同，即使底層表述(underlying representation) 相同，仍可能以不同的操作對待，導致 Copy 在 Custom Class 就是比較慢。 Type 實作可能發生改變，現在 Copy 的代價不昂貴，不代表以後不會。  Pass By Value 的代價 [[The Copying in Pass by value]]"
+ 並非「該物件/container」看起來很小，用 Pass by value 就沒有問題。許多 STL Container 在實作上的大小也就一個 Pointer 大一點，但 Copy Container 卻有「複製每一個 Pointer 所指向的物件」的風險在。 視 Compiler 而定，有些 Compiler 對待 Custom class 跟 built-in class 的態度大不相同，即使底層表述(underlying representation) 相同，仍可能以不同的操作對待，導致 Copy 在 Custom Class 就是比較慢。 Type 實作可能發生改變，現在 Copy 的代價不昂貴，不代表以後不會。  Pass By Value 的代價 [[Pass by value 當中的 Copy 行為]]"
   />
   <meta property="og:title" content="思維誤區-物件很小就可以 Pass By Value">
   <meta property="og:description" content="有三個主因:
- 並非「該物件/container」看起來很小，用 Pass by value 就沒有問題。許多 STL Container 在實作上的大小也就一個 Pointer 大一點，但 Copy Container 卻有「複製每一個 Pointer 所指向的物件」的風險在。 視 Compiler 而定，有些 Compiler 對待 Custom class 跟 built-in class 的態度大不相同，即使底層表述(underlying representation) 相同，仍可能以不同的操作對待，導致 Copy 在 Custom Class 就是比較慢。 Type 實作可能發生改變，現在 Copy 的代價不昂貴，不代表以後不會。  Pass By Value 的代價 [[The Copying in Pass by value]]">
+ 並非「該物件/container」看起來很小，用 Pass by value 就沒有問題。許多 STL Container 在實作上的大小也就一個 Pointer 大一點，但 Copy Container 卻有「複製每一個 Pointer 所指向的物件」的風險在。 視 Compiler 而定，有些 Compiler 對待 Custom class 跟 built-in class 的態度大不相同，即使底層表述(underlying representation) 相同，仍可能以不同的操作對待，導致 Copy 在 Custom Class 就是比較慢。 Type 實作可能發生改變，現在 Copy 的代價不昂貴，不代表以後不會。  Pass By Value 的代價 [[Pass by value 當中的 Copy 行為]]">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
   <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E6%80%9D%E7%B6%AD%E8%AA%A4%E5%8D%80-%E7%89%A9%E4%BB%B6%E5%BE%88%E5%B0%8F%E5%B0%B1%E5%8F%AF%E4%BB%A5-Pass-By-value/">
@@ -22,7 +22,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="思維誤區-物件很小就可以 Pass By Value" />
   <meta name="twitter:description" content="有三個主因:
- 並非「該物件/container」看起來很小，用 Pass by value 就沒有問題。許多 STL Container 在實作上的大小也就一個 Pointer 大一點，但 Copy Container 卻有「複製每一個 Pointer 所指向的物件」的風險在。 視 Compiler 而定，有些 Compiler 對待 Custom class 跟 built-in class 的態度大不相同，即使底層表述(underlying representation) 相同，仍可能以不同的操作對待，導致 Copy 在 Custom Class 就是比較慢。 Type 實作可能發生改變，現在 Copy 的代價不昂貴，不代表以後不會。  Pass By Value 的代價 [[The Copying in Pass by value]]" />
+ 並非「該物件/container」看起來很小，用 Pass by value 就沒有問題。許多 STL Container 在實作上的大小也就一個 Pointer 大一點，但 Copy Container 卻有「複製每一個 Pointer 所指向的物件」的風險在。 視 Compiler 而定，有些 Compiler 對待 Custom class 跟 built-in class 的態度大不相同，即使底層表述(underlying representation) 相同，仍可能以不同的操作對待，導致 Copy 在 Custom Class 就是比較慢。 Type 實作可能發生改變，現在 Copy 的代價不昂貴，不代表以後不會。  Pass By Value 的代價 [[Pass by value 當中的 Copy 行為]]" />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
   
     
@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.8ad2bff19c59fd77fa4157c5267cf223.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.74f0cec5afb9a79d0d7ea0ec4385661d.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ad2321dc46fa32dc370e8f30cbfc904.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -428,7 +428,7 @@ Unknown
 <li>Type 實作可能發生改變，現在 Copy 的代價不昂貴，不代表以後不會。</li>
 </ol>
 <a href="#pass-by-value-的代價"><h2 id="pass-by-value-的代價"><span class="hanchor" ariaLabel="Anchor"># </span>Pass By Value 的代價</h2></a>
-<p><a href="/second-brain/notes/Project/Effective-C++-Series/The-Copying-in-Pass-by-value" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/The-Copying-in-Pass-by-value">The Copying in Pass by value</a></p>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/Pass-by-value-%E7%95%B6%E4%B8%AD%E7%9A%84-Copy-%E8%A1%8C%E7%82%BA" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Pass-by-value-%E7%95%B6%E4%B8%AD%E7%9A%84-Copy-%E8%A1%8C%E7%82%BA">Pass by value 當中的 Copy 行為</a></p>
 
 
     </article>

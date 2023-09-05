@@ -9,11 +9,11 @@
   <meta
     name="description"
     content="在 Ctor / Dtor 呼叫 virtual function ![[Itm10_TranscationUML.png]]
-在這裡，Transcation 的 Constructor 呼叫的會是 Transcation::logTranscation。 又，該 function 為 Pure virtural function，若它沒被定義，則當編譯器呼叫時會引發錯誤，而若有&hellip;. 就會 Link 到該 base class function。 Related: [[Item34 Differentiate between inheritance of interface and inheritance of implementation]]"
+在這裡，Transcation 的 Constructor 呼叫的會是 Transcation::logTranscation。 又，該 function 為 Pure virtual function，若它沒被定義，則當編譯器呼叫時會引發錯誤，而若有&hellip;. 就會 Link 到該 base class function。 Related: [[區分介面繼承(interface)和實作繼承(implement)]]"
   />
   <meta property="og:title" content="Virtual Function">
   <meta property="og:description" content="在 Ctor / Dtor 呼叫 virtual function ![[Itm10_TranscationUML.png]]
-在這裡，Transcation 的 Constructor 呼叫的會是 Transcation::logTranscation。 又，該 function 為 Pure virtural function，若它沒被定義，則當編譯器呼叫時會引發錯誤，而若有&hellip;. 就會 Link 到該 base class function。 Related: [[Item34 Differentiate between inheritance of interface and inheritance of implementation]]">
+在這裡，Transcation 的 Constructor 呼叫的會是 Transcation::logTranscation。 又，該 function 為 Pure virtual function，若它沒被定義，則當編譯器呼叫時會引發錯誤，而若有&hellip;. 就會 Link 到該 base class function。 Related: [[區分介面繼承(interface)和實作繼承(implement)]]">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
   <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Virtual-Function/">
@@ -22,7 +22,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Virtual Function" />
   <meta name="twitter:description" content="在 Ctor / Dtor 呼叫 virtual function ![[Itm10_TranscationUML.png]]
-在這裡，Transcation 的 Constructor 呼叫的會是 Transcation::logTranscation。 又，該 function 為 Pure virtural function，若它沒被定義，則當編譯器呼叫時會引發錯誤，而若有&hellip;. 就會 Link 到該 base class function。 Related: [[Item34 Differentiate between inheritance of interface and inheritance of implementation]]" />
+在這裡，Transcation 的 Constructor 呼叫的會是 Transcation::logTranscation。 又，該 function 為 Pure virtual function，若它沒被定義，則當編譯器呼叫時會引發錯誤，而若有&hellip;. 就會 Link 到該 base class function。 Related: [[區分介面繼承(interface)和實作繼承(implement)]]" />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
   
     
@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.8ad2bff19c59fd77fa4157c5267cf223.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.74f0cec5afb9a79d0d7ea0ec4385661d.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ad2321dc46fa32dc370e8f30cbfc904.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -310,7 +310,7 @@
       <h1>Virtual Function</h1>
       <p class="meta">
         Last updated 
-May 7, 2023
+Sep 5, 2023
 
  
           
@@ -542,8 +542,8 @@ May 7, 2023
 <a href="#在-ctor--dtor-呼叫-virtual-function"><h2 id="在-ctor--dtor-呼叫-virtual-function"><span class="hanchor" ariaLabel="Anchor"># </span>在 Ctor / Dtor 呼叫 virtual function</h2></a>
 <p><a class="internal-link broken">Itm10_TranscationUML.png</a></p>
 <p>在這裡，Transcation 的 Constructor 呼叫的會是 <code>Transcation::logTranscation</code>。
-又，該 function 為 Pure virtural function，若它沒被定義，則當編譯器呼叫時會引發錯誤，而若有&hellip;. 就會 Link 到該 base class function。
-Related: <a href="/second-brain/notes/Project/Effective-C++-Series/Item34-Differentiate-between-inheritance-of-interface-and-inheritance-of-implementation" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item34-Differentiate-between-inheritance-of-interface-and-inheritance-of-implementation">Item34 Differentiate between inheritance of interface and inheritance of implementation</a></p>
+又，該 function 為 Pure virtual function，若它沒被定義，則當編譯器呼叫時會引發錯誤，而若有&hellip;. 就會 Link 到該 base class function。
+Related: <a href="/second-brain/notes/Project/Effective-C++-Series/%E5%8D%80%E5%88%86%E4%BB%8B%E9%9D%A2%E7%B9%BC%E6%89%BFinterface%E5%92%8C%E5%AF%A6%E4%BD%9C%E7%B9%BC%E6%89%BFimplement" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E5%8D%80%E5%88%86%E4%BB%8B%E9%9D%A2%E7%B9%BC%E6%89%BFinterface%E5%92%8C%E5%AF%A6%E4%BD%9C%E7%B9%BC%E6%89%BFimplement">區分介面繼承(interface)和實作繼承(implement)</a></p>
 <p>一個不正式的講法: Base Calss 建構期間，所呼叫的 virtual function 不是 virtual function。</p>
 <blockquote class="important-callout">
 <p>

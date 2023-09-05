@@ -136,13 +136,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.8ad2bff19c59fd77fa4157c5267cf223.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.74f0cec5afb9a79d0d7ea0ec4385661d.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ad2321dc46fa32dc370e8f30cbfc904.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -343,6 +343,7 @@ Unknown
     <li><a href="#guidline">Guidline</a></li>
     <li><a href="#library-provider-必須謹慎評估是否宣告函式為-inline">Library Provider 必須謹慎評估是否宣告函式為 Inline</a></li>
     <li><a href="#template-and-inline">Template and Inline</a></li>
+    <li><a href="#如何決定是否要-inline">如何決定是否要 Inline?</a></li>
   </ol>
 </nav>
     </details>
@@ -363,6 +364,55 @@ Unknown
 
 
 
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
 
   
   
@@ -528,7 +578,7 @@ Unknown
 </ol>
 <a href="#guidline"><h2 id="guidline"><span class="hanchor" ariaLabel="Anchor"># </span>Guidline</h2></a>
 <ul>
-<li>限制 Inline 使用的時機: 它有絕對的理由必須是 inline (template 規定?) <a href="/second-brain/notes/Project/Effective-C++-Series/Item46-%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Item46-%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F">Item46 需要型別轉換時請為模板定義非成員函式</a></li>
+<li>限制 Inline 使用的時機: 它有絕對的理由必須是 inline (template 規定?) <a href="/second-brain/notes/Project/Effective-C++-Series/%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F">需要型別轉換時請為模板定義非成員函式</a></li>
 <li>十分平淡無奇，像是 <code>return m_size</code> 這般無聊。</li>
 </ul>
 <a href="#library-provider-必須謹慎評估是否宣告函式為-inline"><h2 id="library-provider-必須謹慎評估是否宣告函式為-inline"><span class="hanchor" ariaLabel="Anchor"># </span>Library Provider 必須謹慎評估是否宣告函式為 Inline</h2></a>
@@ -539,6 +589,8 @@ Unknown
 <p>inline function 通常一定放在 header file 裡面，因為大多數的建置環境會在編譯中做 inlining，為了把 function call 換成「被呼叫函式」本體，必須知道被呼叫函式的內容。</p>
 <p>Template 也通常放在 header file，因為一旦使用，Compiler 為了具現化，同樣需要知道其內容。</p>
 <p>但 inline 具現化與 template 具現化無關，不過，如果 template 的作者<strong>希望</strong> function 為 inline，應該明確以關鍵字 <code>inline</code> 宣告。</p>
+<a href="#如何決定是否要-inline"><h2 id="如何決定是否要-inline"><span class="hanchor" ariaLabel="Anchor"># </span>如何決定是否要 Inline?</h2></a>
+<p>善用 <a href="/second-brain/notes/Project/Effective-C++-Series/80-20-Rule" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/80-20-Rule">80-20 Rule</a> 找出最關鍵、最常被 Call 的程式碼去判斷是否該用 Inline 優化它!</p>
 
 
     </article>
@@ -574,6 +626,20 @@ Unknown
     
       
       
+      
+    
+      
+      
+      
+    
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%A2%BA%E5%AE%9A-Composition-%E5%A1%91%E9%80%A0%E7%9A%84%E6%98%AF-Has-A%E9%97%9C%E4%BF%82-%E6%88%96-%E6%A0%B9%E6%93%9A%E6%9F%90%E7%89%A9%E5%AF%A6%E4%BD%9C%E7%9A%84%E9%97%9C%E4%BF%82/" data-ctx="了解 Inline 的裡裡外外" data-src="/notes/Project/Effective-C&#43;&#43;-Series/%E7%A2%BA%E5%AE%9A-Composition-%E5%A1%91%E9%80%A0%E7%9A%84%E6%98%AF-Has-A%E9%97%9C%E4%BF%82-%E6%88%96-%E6%A0%B9%E6%93%9A%E6%9F%90%E7%89%A9%E5%AF%A6%E4%BD%9C%E7%9A%84%E9%97%9C%E4%BF%82" class="internal-link">確定 Composition 塑造的是 &#39;Has-A&#39;關係 或 &#39;根據某物實作&#39;的關係</a>
+      </li>
+      
+      
+      
       <li>
         <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Effective-C&#43;&#43;-Outline/" data-ctx="了解 Inline 的裡裡外外" data-src="/notes/Project/Effective-C&#43;&#43;-Series/Effective-C&#43;&#43;-Outline" class="internal-link">Effective C&#43;&#43; Outline</a>
       </li>
@@ -582,6 +648,12 @@ Unknown
       
       <li>
         <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Static-Object/" data-ctx="了解 Inline 的裡裡外外" data-src="/notes/Project/Effective-C&#43;&#43;-Series/Static-Object" class="internal-link">Static Object</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-%E5%B8%B6%E4%BE%86%E7%9A%84%E7%A8%8B%E5%BC%8F%E7%A2%BC%E8%86%A8%E8%84%B9/" data-ctx="了解 Inline 的裡裡外外" data-src="/notes/Project/Effective-C&#43;&#43;-Series/Template-%E5%B8%B6%E4%BE%86%E7%9A%84%E7%A8%8B%E5%BC%8F%E7%A2%BC%E8%86%A8%E8%84%B9" class="internal-link">Template 帶來的程式碼膨脹</a>
       </li>
       
       

@@ -130,13 +130,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.49684051e4dab67cc93285e62721deb0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.8ad2bff19c59fd77fa4157c5267cf223.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.74f0cec5afb9a79d0d7ea0ec4385661d.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ad2321dc46fa32dc370e8f30cbfc904.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -325,6 +325,17 @@ Apr 10, 2023
       </ul>
       
 
+<aside class="mainTOC">
+    <details open >
+        <summary>Table of Contents</summary>
+        <nav id="TableOfContents">
+  <ol>
+    <li><a href="#experiment">Experiment</a></li>
+  </ol>
+</nav>
+    </details>
+</aside>
+
 
       
 
@@ -357,18 +368,6 @@ Apr 10, 2023
   
     
     
-      
-      
-    
-    
-  
-    
-    
-      
-      
-        
-      
-      
       
       
     
@@ -441,11 +440,125 @@ Apr 10, 2023
 </span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">tb</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// calls non-const TextBlock::operator[]
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><blockquote class="question-callout">
-<p>
-如果宣告 Const 但是不定義 const TextBlock 會怎樣?</p>
-</blockquote>
-
+</div><a href="#experiment"><h2 id="experiment"><span class="hanchor" ariaLabel="Anchor"># </span>Experiment</h2></a>
+<p>實驗以下這份 code，</p>
+<ol>
+<li>當 const 與 non-const function 都寫時</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">call</span> <span class="n">non</span><span class="o">-</span><span class="k">const</span> <span class="n">func</span> <span class="n">A</span>
+</span></span><span class="line"><span class="cl"><span class="n">call</span> <span class="k">const</span> <span class="n">func</span> <span class="n">B</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>當只寫 const 時</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">call</span> <span class="k">const</span> <span class="n">func</span> <span class="n">A</span>
+</span></span><span class="line"><span class="cl"><span class="n">call</span> <span class="k">const</span> <span class="n">func</span> <span class="n">B</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>當只寫 non-const 時 (宣告 const object, 但不宣告 <code>const operator[]</code> )，Compile 的時候就會出問題</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Item3</span><span class="p">.</span><span class="nl">cpp</span><span class="p">:</span><span class="mi">32</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span> <span class="nl">error</span><span class="p">:</span> <span class="n">passing</span> <span class="err">‘</span><span class="k">const</span> <span class="n">TextBlock</span><span class="err">’</span> <span class="n">as</span> <span class="err">‘</span><span class="k">this</span><span class="err">’</span> <span class="n">argument</span> <span class="n">discards</span> <span class="n">qualifiers</span> <span class="p">[</span><span class="o">-</span><span class="n">fpermissive</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">   <span class="mi">32</span> <span class="o">|</span>     <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">t2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">|</span>                    <span class="o">^</span>
+</span></span><span class="line"><span class="cl"><span class="n">Item3</span><span class="p">.</span><span class="nl">cpp</span><span class="p">:</span><span class="mi">17</span><span class="o">:</span><span class="mi">15</span><span class="o">:</span> <span class="nl">note</span><span class="p">:</span>   <span class="n">in</span> <span class="n">call</span> <span class="n">to</span> <span class="err">‘</span><span class="kt">char</span><span class="o">&amp;</span> <span class="n">TextBlock</span><span class="o">::</span><span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="n">size_t</span><span class="p">)</span><span class="err">’</span>
+</span></span><span class="line"><span class="cl">   <span class="mi">17</span> <span class="o">|</span>         <span class="kt">char</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="n">size_t</span> <span class="n">position</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="o">|</span>               <span class="o">^~~~~~~~</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>程式本體:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">// g++ -o main Item3.cpp
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">TextBlock</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">TextBlock</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">text</span><span class="p">)</span><span class="o">:</span><span class="n">m_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// operator[] for const objects
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">const</span> <span class="kt">char</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="n">size_t</span> <span class="n">position</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;call const func &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">m_text</span><span class="p">[</span><span class="n">position</span><span class="p">];</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="c1">// operator[] for non-const objects
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">char</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="n">size_t</span> <span class="n">position</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">	<span class="p">{</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;call non-const func &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">m_text</span><span class="p">[</span><span class="n">position</span><span class="p">];</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">m_text</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">TextBlock</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">TextBlock</span><span class="p">(</span><span class="s">&#34;AAAA&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">TextBlock</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">TextBlock</span><span class="p">(</span><span class="s">&#34;BBB&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">t1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">t2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 
     </article>
     
