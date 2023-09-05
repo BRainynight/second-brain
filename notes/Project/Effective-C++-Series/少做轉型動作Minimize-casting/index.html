@@ -10,7 +10,7 @@
     name="description"
     content="常見的轉型語法 1 2 3 4 5 6 7 8 9  // 舊式轉型 (T) expr; // C-style T(expr); // func style  // New-style/ C&#43;&#43; Style casting const_cast&lt;T&gt;(expr); static_cast&lt;T&gt;(expr); reinterpret_cast&lt;T&gt;(expr); dynamic_cast&lt;T&gt;(expr);    dynamic_cast: 安全向下轉型 (safe downcasting)，是一個可能耗費重大執行成本的轉型動作 static_cast: 強迫隱式轉換，像是 non-const to const, int to double&hellip;，但不能做 const to non-const."
   />
-  <meta property="og:title" content="Item27  Minimize casting">
+  <meta property="og:title" content="少做轉型 Minimize casting">
   <meta property="og:description" content="常見的轉型語法 1 2 3 4 5 6 7 8 9  // 舊式轉型 (T) expr; // C-style T(expr); // func style  // New-style/ C&#43;&#43; Style casting const_cast&lt;T&gt;(expr); static_cast&lt;T&gt;(expr); reinterpret_cast&lt;T&gt;(expr); dynamic_cast&lt;T&gt;(expr);    dynamic_cast: 安全向下轉型 (safe downcasting)，是一個可能耗費重大執行成本的轉型動作 static_cast: 強迫隱式轉換，像是 non-const to const, int to double&hellip;，但不能做 const to non-const.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
@@ -18,7 +18,7 @@
   <meta property="og:width" content="200">
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Item27  Minimize casting" />
+  <meta name="twitter:title" content="少做轉型 Minimize casting" />
   <meta name="twitter:description" content="常見的轉型語法 1 2 3 4 5 6 7 8 9  // 舊式轉型 (T) expr; // C-style T(expr); // func style  // New-style/ C&#43;&#43; Style casting const_cast&lt;T&gt;(expr); static_cast&lt;T&gt;(expr); reinterpret_cast&lt;T&gt;(expr); dynamic_cast&lt;T&gt;(expr);    dynamic_cast: 安全向下轉型 (safe downcasting)，是一個可能耗費重大執行成本的轉型動作 static_cast: 強迫隱式轉換，像是 non-const to const, int to double&hellip;，但不能做 const to non-const." />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
   
@@ -26,7 +26,7 @@
   
 
   <title>
-    Item27  Minimize casting
+    少做轉型 Minimize casting
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -130,13 +130,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.8ad2bff19c59fd77fa4157c5267cf223.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.7ce853a31b3dec40434f3363e9edf23b.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ad2321dc46fa32dc370e8f30cbfc904.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.87d01c58f8525118a7c8dff809436f6f.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -304,7 +304,7 @@
 
 
     <article>
-      <h1>Item27  Minimize casting</h1>
+      <h1>少做轉型 Minimize casting</h1>
       <p class="meta">
         Last updated 
 Unknown

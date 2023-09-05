@@ -130,13 +130,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.8ad2bff19c59fd77fa4157c5267cf223.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.7ce853a31b3dec40434f3363e9edf23b.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ad2321dc46fa32dc370e8f30cbfc904.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.87d01c58f8525118a7c8dff809436f6f.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -732,79 +732,6 @@ Unknown
 
   
 
-  
-  
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-  
-
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-      
-      
-      
-      
-      
-    
-    
-
-  
-
 
 
 
@@ -864,8 +791,7 @@ Unknown
 </div>
 </div><p>問題是，當 Compiler 讀到 <code>class LoggingMsgSender</code> 的時候，並不知道它繼承的 <code>MsgSender&lt;Company&gt;</code> 具象化起來，是怎麼樣的一個 class，Compiler 沒辦法確保這個未知的 Base class 是否有 <code>sendClear</code> function。</p>
 <a href="#template-繼承規則與物件導向繼承規則不同"><h2 id="template-繼承規則與物件導向繼承規則不同"><span class="hanchor" ariaLabel="Anchor"># </span>Template 繼承規則與物件導向繼承規則不同</h2></a>
-<p>這正是條款1所說的，C++ 是一個聯邦。Template C++ 與 Object Oriented C++ 有些概念是不同的。</p>
-<p>透過 <a href="/second-brain/notes/Project/Effective-C++-Series/Total-Template-Specialization" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Total-Template-Specialization">Total Template Specialization</a> 可以對特定的類別訂製特定的內容，Template 的繼承規則並不如物件導向繼承規則，在知道 <code>MsgSender&lt;Company&gt;</code> 所代表的實體 class 之前，沒辦法確定 <code>sendClear</code> 是從哪來的，因為當前的 <code>LoggingMsgSender</code> 不存在這樣的 function。</p>
+<p>這正是條款1所說的，C++ 是一個聯邦。Template C++ 與 Object Oriented C++ 有些概念是不同的只能透過 Template Specialization 可以對特定的類別訂製特定的內容，Template 的繼承規則並不如物件導向繼承規則，在知道 <code>MsgSender&lt;Company&gt;</code> 所代表的實體 class 之前，沒辦法確定 sendClear 是從哪來的，因為當前的 LoggingMsgSender 不存在這樣的 function。</p>
 <a href="#解決辦法"><h2 id="解決辦法"><span class="hanchor" ariaLabel="Anchor"># </span>解決辦法</h2></a>
 <p>以下的作法都是權宜之計，都是假設 Base Class 確實擁有 <code>sendClear</code> 的情況，但書中有沒有提更好的解法。</p>
 <a href="#在-base-class-function-前加上-this-"><h3 id="在-base-class-function-前加上-this-"><span class="hanchor" ariaLabel="Anchor"># </span>在 Base Class function 前加上 <code>this-&gt;</code></h3></a>
@@ -892,8 +818,7 @@ Unknown
 </span></span></code></pre></td></tr></table>
 </div>
 </div><a href="#使用-using-宣告式"><h3 id="使用-using-宣告式"><span class="hanchor" ariaLabel="Anchor"># </span>使用 Using 宣告式</h3></a>
-<p><a href="/second-brain/notes/Project/Effective-C++-Series/%E4%BD%BF%E7%94%A8%E9%97%9C%E9%8D%B5%E5%AD%97-using-%E8%AE%93%E7%89%B9%E5%AE%9A-function-%E5%9C%A8-Scope-%E5%85%A7%E5%8F%AF%E8%A6%8B" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E4%BD%BF%E7%94%A8%E9%97%9C%E9%8D%B5%E5%AD%97-using-%E8%AE%93%E7%89%B9%E5%AE%9A-function-%E5%9C%A8-Scope-%E5%85%A7%E5%8F%AF%E8%A6%8B">使用關鍵字 using 讓特定 function 在 Scope 內可見</a>，使用的方法相同。
-不過在該例中是為了 <a href="/second-brain/notes/Project/Effective-C++-Series/%E7%B9%BC%E6%89%BF%E6%99%82%E7%9A%84%E5%90%8D%E7%A8%B1%E9%81%AE%E6%8E%A9%E8%A1%8C%E7%82%BA" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E7%B9%BC%E6%89%BF%E6%99%82%E7%9A%84%E5%90%8D%E7%A8%B1%E9%81%AE%E6%8E%A9%E8%A1%8C%E7%82%BA">繼承時的名稱遮掩行為</a> 問題，本例的肇因卻是 Compiler 不會進入 Base Class Scope 找 function，我們透過 <code>using</code> 請 Compiler 這麼做。</p>
+<p><a href="/second-brain/notes/Project/Effective-C++-Series/%E4%BD%BF%E7%94%A8%E9%97%9C%E9%8D%B5%E5%AD%97-using-%E8%AE%93%E7%89%B9%E5%AE%9A-function-%E5%9C%A8-Scope-%E5%85%A7%E5%8F%AF%E8%A6%8B" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E4%BD%BF%E7%94%A8%E9%97%9C%E9%8D%B5%E5%AD%97-using-%E8%AE%93%E7%89%B9%E5%AE%9A-function-%E5%9C%A8-Scope-%E5%85%A7%E5%8F%AF%E8%A6%8B">使用關鍵字 using 讓特定 function 在 Scope 內可見</a>，使用的方法相同。不過在該例中是為了 <a href="/second-brain/notes/Project/Effective-C++-Series/%E7%B9%BC%E6%89%BF%E6%99%82%E7%9A%84%E5%90%8D%E7%A8%B1%E9%81%AE%E6%8E%A9%E8%A1%8C%E7%82%BA" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/%E7%B9%BC%E6%89%BF%E6%99%82%E7%9A%84%E5%90%8D%E7%A8%B1%E9%81%AE%E6%8E%A9%E8%A1%8C%E7%82%BA">繼承時的名稱遮掩行為</a> 問題，本例的肇因卻是 Compiler 不會進入 Base Class Scope 找 function，我們透過 <code>using</code> 請 Compiler 這麼做。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1008,7 +933,7 @@ Unknown
       
       
       <li>
-        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Total-Template-Specialization/" data-ctx="了解如何在 Template 中指涉 Base Class 成員" data-src="/notes/Project/Effective-C&#43;&#43;-Series/Total-Template-Specialization" class="internal-link">Total Template Specialization</a>
+        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-Specialization/" data-ctx="了解如何在 Template 中指涉 Base Class 成員" data-src="/notes/Project/Effective-C&#43;&#43;-Series/Template-Specialization" class="internal-link">Template Specialization</a>
       </li>
       
       

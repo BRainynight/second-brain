@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.8ad2bff19c59fd77fa4157c5267cf223.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.7ce853a31b3dec40434f3363e9edf23b.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ad2321dc46fa32dc370e8f30cbfc904.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.87d01c58f8525118a7c8dff809436f6f.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -310,7 +310,7 @@
       <h1>Swap and pimpl</h1>
       <p class="meta">
         Last updated 
-May 7, 2023
+Sep 5, 2023
 
  
           
@@ -589,7 +589,7 @@ May 7, 2023
 </div>
 </div><p>當 Widget 在 swap 時 Copy Assigment 會發生足足三次! 實際上卻是 &ndash; 只要把 <code>lhs.pImpl</code> 和 <code>rhs.pImpl</code> 兩個 Pointer 互換即可。</p>
 <a href="#實作-swap"><h2 id="實作-swap"><span class="hanchor" ariaLabel="Anchor"># </span>實作 Swap</h2></a>
-<p>首先，需要用到 <a href="/second-brain/notes/Project/Effective-C++-Series/Total-Template-Specialization" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Total-Template-Specialization">Total Template Specialization</a> 。我們不被允許改變 STD 空間內的東西，但我們被允許用 STD Template 製造特異化版本，當 swap 用於 <code>Widget</code> 物件時自動使用特異化版本的 function。</p>
+<p>首先，需要用到 <a href="/second-brain/notes/Project/Effective-C++-Series/Template-Specialization" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Template-Specialization">Template Specialization</a> 。我們不被允許改變 STD 空間內的東西，但我們被允許用 STD Template 製造特異化版本，當 swap 用於 <code>Widget</code> 物件時自動使用特異化版本的 function。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1

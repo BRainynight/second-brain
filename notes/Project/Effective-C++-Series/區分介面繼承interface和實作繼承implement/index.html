@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.8ad2bff19c59fd77fa4157c5267cf223.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.7ce853a31b3dec40434f3363e9edf23b.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ad2321dc46fa32dc370e8f30cbfc904.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.87d01c58f8525118a7c8dff809436f6f.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -666,7 +666,7 @@ Unknown
       
       
       <li>
-        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting/" data-ctx="區分介面繼承(interface)和實作繼承(implement)" data-src="/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting" class="internal-link">Item27  Minimize casting</a>
+        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting/" data-ctx="區分介面繼承(interface)和實作繼承(implement)" data-src="/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting" class="internal-link">少做轉型 Minimize casting</a>
       </li>
       
       

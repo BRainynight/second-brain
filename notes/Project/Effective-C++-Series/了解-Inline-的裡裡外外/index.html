@@ -136,13 +136,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.8ad2bff19c59fd77fa4157c5267cf223.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.7ce853a31b3dec40434f3363e9edf23b.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ad2321dc46fa32dc370e8f30cbfc904.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.87d01c58f8525118a7c8dff809436f6f.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -634,6 +634,14 @@ Unknown
     
       
       
+      
+    
+      
+      
+      
+    
+      
+      
       <li>
         <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%A2%BA%E5%AE%9A-Composition-%E5%A1%91%E9%80%A0%E7%9A%84%E6%98%AF-Has-A%E9%97%9C%E4%BF%82-%E6%88%96-%E6%A0%B9%E6%93%9A%E6%9F%90%E7%89%A9%E5%AF%A6%E4%BD%9C%E7%9A%84%E9%97%9C%E4%BF%82/" data-ctx="了解 Inline 的裡裡外外" data-src="/notes/Project/Effective-C&#43;&#43;-Series/%E7%A2%BA%E5%AE%9A-Composition-%E5%A1%91%E9%80%A0%E7%9A%84%E6%98%AF-Has-A%E9%97%9C%E4%BF%82-%E6%88%96-%E6%A0%B9%E6%93%9A%E6%9F%90%E7%89%A9%E5%AF%A6%E4%BD%9C%E7%9A%84%E9%97%9C%E4%BF%82" class="internal-link">確定 Composition 塑造的是 &#39;Has-A&#39;關係 或 &#39;根據某物實作&#39;的關係</a>
       </li>
@@ -654,6 +662,12 @@ Unknown
       
       <li>
         <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-%E5%B8%B6%E4%BE%86%E7%9A%84%E7%A8%8B%E5%BC%8F%E7%A2%BC%E8%86%A8%E8%84%B9/" data-ctx="了解 Inline 的裡裡外外" data-src="/notes/Project/Effective-C&#43;&#43;-Series/Template-%E5%B8%B6%E4%BE%86%E7%9A%84%E7%A8%8B%E5%BC%8F%E7%A2%BC%E8%86%A8%E8%84%B9" class="internal-link">Template 帶來的程式碼膨脹</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-Specialization/" data-ctx="了解 Inline 的裡裡外外" data-src="/notes/Project/Effective-C&#43;&#43;-Series/Template-Specialization" class="internal-link">Template Specialization</a>
       </li>
       
       

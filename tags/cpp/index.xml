@@ -166,25 +166,6 @@
     </item>
     
     <item>
-      <title>Item14</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Mutex/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Mutex/</guid>
-      <description>假設我們用 C API 處理 Mutex 物件
-1 2  void lock(Mutex *pm); // lock mutex pointed to by pm void unlock(Mutex *pm); // unlock the mutex   使用者需要自己手動分別呼叫 lock 與 unlock。為了確保不會忘記幫 Mutex 解鎖，可以建立一個由 RAII 守則支配的 Class &amp;ndash;資源在建構期間獲得(lock)，在解構期間釋放(unlock)&amp;ndash;來管理資源「Mutex 物件」。</description>
-    </item>
-    
-    <item>
-      <title>Item27  Minimize casting</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting/</guid>
-      <description>常見的轉型語法 1 2 3 4 5 6 7 8 9  // 舊式轉型 (T) expr; // C-style T(expr); // func style  // New-style/ C++ Style casting const_cast&amp;lt;T&amp;gt;(expr); static_cast&amp;lt;T&amp;gt;(expr); reinterpret_cast&amp;lt;T&amp;gt;(expr); dynamic_cast&amp;lt;T&amp;gt;(expr);    dynamic_cast: 安全向下轉型 (safe downcasting)，是一個可能耗費重大執行成本的轉型動作 static_cast: 強迫隱式轉換，像是 non-const to const, int to double&amp;hellip;，但不能做 const to non-const.</description>
-    </item>
-    
-    <item>
       <title>Member Function Template</title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Member-Function-Template/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -216,6 +197,16 @@
     </item>
     
     <item>
+      <title>Mutex</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Mutex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Mutex/</guid>
+      <description>假設我們用 C API 處理 Mutex 物件
+1 2  void lock(Mutex *pm); // lock mutex pointed to by pm void unlock(Mutex *pm); // unlock the mutex   使用者需要自己手動分別呼叫 lock 與 unlock。為了確保不會忘記幫 Mutex 解鎖，可以建立一個由 RAII 守則支配的 Class &amp;ndash;資源在建構期間獲得(lock)，在解構期間釋放(unlock)&amp;ndash;來管理資源「Mutex 物件」。</description>
+    </item>
+    
+    <item>
       <title>non-member &amp;&amp; non-friend function</title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/non-member-non-friend-function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -232,6 +223,26 @@
       <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Non-member-Non-friend-Function-%E7%9A%84%E5%B0%81%E8%A3%9D%E5%BA%A6%E5%84%AA%E6%96%BC-Member-Function/</guid>
       <description>Non-member function 帶來更佳的封裝度、與 Packaging 彈性。
  這邊說的是 Non-member 且(AND) Non-friend function (Pure function) vs. Member Function。(關於 [[Friend Function]] )</description>
+    </item>
+    
+    <item>
+      <title>ODR use</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/ODR-use/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/ODR-use/</guid>
+      <description> https://en.cppreference.com/w/cpp/language/definition#ODR-use
+ 當一個物件被稱為 odr use: 物件被讀取 (例外: compile time constant) 或寫入、它的 address 被取用，或有 reference 綁到他身上 當一個 reference 被稱為 odr use: 當它所 reference 到的物件在 compile 期間是未知的 一個 function 被稱為 odr use: 有產生對它的 function call，或它的 address 被取用 總結: 當一個物件、reference 或 function 被稱為 odr use，表示它的定義必定 exist 於 program 的某處，違反這一點會導致 Link time error。  </description>
+    </item>
+    
+    <item>
+      <title>One Definition Rule</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/One-Definition-Rule/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/One-Definition-Rule/</guid>
+      <description>Source: https://en.cppreference.com/w/cpp/language/definition Source: https://en.wikipedia.org/wiki/One_Definition_Rule
+ 在一個 translation unit 當中，template, type, function, object 只能一份 definition (一份實作)。 在整個 program 當中，一個 object 或 non-inline function 不能有多於一個 definition Some things, like types, templates, and extern inline functions, can be defined in more than one translation unit.</description>
     </item>
     
     <item>
@@ -355,6 +366,16 @@
     </item>
     
     <item>
+      <title>Template Specialization</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-Specialization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-Specialization/</guid>
+      <description>Template 可以針對特定的 Type 特化，寫法如下
+ template&amp;lt;&amp;gt; 裡面不放任何參數，表示這不是 template 也不是標準的 class，是一個特化的 MsgSender。 class MsgSender&amp;lt;CompanyZ&amp;gt; 表示 template MsgSender 在遇到 input type 是 CompanyZ 的時候，要用以下定義的內容。 以下這段範例就是 MsgSender 針對 CompanyZ 特別訂製的內容，這就是模板全特化 (Total Template Specialization)。  1 2 3 4 5 6  template&amp;lt;&amp;gt; // a total specialization of class MsgSender&amp;lt;CompanyZ&amp;gt; { // MsgSender; the same as the public: // general template, except sendClear is omitted void sendSecret(const MsgInfo&amp;amp; info) { .</description>
+    </item>
+    
+    <item>
       <title>Template 帶來的程式碼膨脹</title>
       <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-%E5%B8%B6%E4%BE%86%E7%9A%84%E7%A8%8B%E5%BC%8F%E7%A2%BC%E8%86%A8%E8%84%B9/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -381,16 +402,6 @@
       
       <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-%E8%88%87%E9%9A%B1%E5%BC%8F%E4%BB%8B%E9%9D%A2/</guid>
       <description>物件導向以顯式介面 (explicit interface) 和執行期多型 (runtime polymorphism) 解決問題。 Template 與 Generic Programming 而言，隱式介面 (implicit interface) 與編譯期多型 (compile-time) 更重要。  多型     物件導向 Generic Programming     多型 執行期多型 (runtime polymorphism) 編譯期多型 (compile-time)   概念(打比方) 執行期間決定哪一個 virtual function 要被呼叫 編譯期間做 template 具象化、與函式重載決議 (function overloading resolving)    介面     物件導向 Generic Programming     介面 顯式介面 (explicit interface) 隱式介面 (implicit interface)   說明 Signature 由函式名稱、參數型別、反回型態構成，class 明確定義有哪些 function 沒有定義明確的 signature，只要有對應的 overloading function 被呼叫即可。    顯式介面  Function Signature 由函式名稱、參數型別、反回型態構成。  對 overloading 而言，函式名稱相同、參數型別相同、return type 不同，無法成功 overload。他們會被視為 duplicate。 但對一個 function 而言，function name, parameter type, return type 是必須的，而 effective C++ 的作者習慣將這三組一起稱為 signature。   Class 會明確的定義有哪些 function，下例 Widget 就有 constructor, destructor, size, normalize, swap。並且 Widget 具有 virtual function，表示它有可能有 Derived class 而得以做 runtime polymorphism。  1 2 3 4 5 6 7 8  class Widget { public: Widget(); virtual ~Widget(); virtual std::size_t size() const; virtual void normalize(); void swap(Widget&amp;amp; other); };   隱式介面 再看下例的 Template function:</description>
-    </item>
-    
-    <item>
-      <title>Total Template Specialization</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Total-Template-Specialization/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Total-Template-Specialization/</guid>
-      <description>Template 可以針對特定的 Type 特化，寫法如下
- template&amp;lt;&amp;gt; 裡面不放任何參數，表示這不是 template 也不是標準的 class，是一個特化的 MsgSender。 class MsgSender&amp;lt;CompanyZ&amp;gt; 表示 template MsgSender 在遇到 input type 是 CompanyZ 的時候，要用以下定義的內容。 以下這段範例就是 MsgSender 針對 CompanyZ 特別訂製的內容，這就是模板全特化 (Total Template Specialization)。  1 2 3 4 5 6  template&amp;lt;&amp;gt; // a total specialization of class MsgSender&amp;lt;CompanyZ&amp;gt; { // MsgSender; the same as the public: // general template, except sendClear is omitted void sendSecret(const MsgInfo&amp;amp; info) { .</description>
     </item>
     
     <item>
@@ -508,6 +519,15 @@
       <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%87%E6%AA%94%E6%A1%88%E7%9A%84%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98%E9%97%9C%E4%BF%82%E9%99%8D%E5%88%B0%E6%9C%80%E4%BD%8E/</guid>
       <description>首先清楚此內容: [[編譯依存-宣告式、定義式與實作細節]]。 接著，需要分清楚「被 include 的對象」與「被前置宣告的對象」。
 被 include 的對象  當需要創建某類別的物件，例如 : 要創建 member data m_date，則需要 include Date.hpp。 有用到 STL 物件，則直接 include STL 函式庫。  對於 STL 函式庫，應該用 #include，而不是使用前置宣告。include 標準函式庫的 header file 幾乎不會造成編譯瓶頸。</description>
+    </item>
+    
+    <item>
+      <title>少做轉型 Minimize casting</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting/</guid>
+      <description>常見的轉型語法 1 2 3 4 5 6 7 8 9  // 舊式轉型 (T) expr; // C-style T(expr); // func style  // New-style/ C++ Style casting const_cast&amp;lt;T&amp;gt;(expr); static_cast&amp;lt;T&amp;gt;(expr); reinterpret_cast&amp;lt;T&amp;gt;(expr); dynamic_cast&amp;lt;T&amp;gt;(expr);    dynamic_cast: 安全向下轉型 (safe downcasting)，是一個可能耗費重大執行成本的轉型動作 static_cast: 強迫隱式轉換，像是 non-const to const, int to double&amp;hellip;，但不能做 const to non-const.</description>
     </item>
     
     <item>

@@ -11,7 +11,7 @@
     content="假設我們用 C API 處理 Mutex 物件
 1 2  void lock(Mutex *pm); // lock mutex pointed to by pm void unlock(Mutex *pm); // unlock the mutex   使用者需要自己手動分別呼叫 lock 與 unlock。為了確保不會忘記幫 Mutex 解鎖，可以建立一個由 RAII 守則支配的 Class &ndash;資源在建構期間獲得(lock)，在解構期間釋放(unlock)&ndash;來管理資源「Mutex 物件」。"
   />
-  <meta property="og:title" content="Item14">
+  <meta property="og:title" content="Mutex">
   <meta property="og:description" content="假設我們用 C API 處理 Mutex 物件
 1 2  void lock(Mutex *pm); // lock mutex pointed to by pm void unlock(Mutex *pm); // unlock the mutex   使用者需要自己手動分別呼叫 lock 與 unlock。為了確保不會忘記幫 Mutex 解鎖，可以建立一個由 RAII 守則支配的 Class &ndash;資源在建構期間獲得(lock)，在解構期間釋放(unlock)&ndash;來管理資源「Mutex 物件」。">
   <meta property="og:type" content="website">
@@ -20,7 +20,7 @@
   <meta property="og:width" content="200">
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Item14" />
+  <meta name="twitter:title" content="Mutex" />
   <meta name="twitter:description" content="假設我們用 C API 處理 Mutex 物件
 1 2  void lock(Mutex *pm); // lock mutex pointed to by pm void unlock(Mutex *pm); // unlock the mutex   使用者需要自己手動分別呼叫 lock 與 unlock。為了確保不會忘記幫 Mutex 解鎖，可以建立一個由 RAII 守則支配的 Class &ndash;資源在建構期間獲得(lock)，在解構期間釋放(unlock)&ndash;來管理資源「Mutex 物件」。" />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
@@ -29,7 +29,7 @@
   
 
   <title>
-    Item14
+    Mutex
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.8ad2bff19c59fd77fa4157c5267cf223.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.7ce853a31b3dec40434f3363e9edf23b.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.9ad2321dc46fa32dc370e8f30cbfc904.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.87d01c58f8525118a7c8dff809436f6f.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -307,10 +307,10 @@
 
 
     <article>
-      <h1>Item14</h1>
+      <h1>Mutex</h1>
       <p class="meta">
         Last updated 
-May 7, 2023
+Sep 5, 2023
 
  
           
