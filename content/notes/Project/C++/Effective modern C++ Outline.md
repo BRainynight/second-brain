@@ -26,7 +26,7 @@ Item 6: Use the explicitly typed initializer idiom when auto deduces
 undesired types
 
 ## Moving to Modern C++
-Item 7: Distinguish between () and {} when creating objects
+Item 7: Distinguish between () and {} when creating objects: [[Initializer List]]
 Item 8: Prefer nullptr to 0 and NULL
 ### Item 9: Prefer alias declarations to typedefs
 [[typedef and using]]
@@ -95,7 +95,9 @@ Item 42: Consider emplacement instead of insertion
 
 ## 遷移到現代C++
 
-項目7：在創建對象時區分()和{} 項目8：優先使用nullptr而非0和NULL 項目9：優先使用別名宣告而非typedef 項目10：優先使用有作用域的枚舉而非無作用域的枚舉 項目11：優先使用已刪除的函數而非私有的未定義函數 項目12：聲明覆蓋的函數使用override 項目13：優先使用const_iterators而非iterators 項目14：如果函數不會引發異常，聲明函數為noexcept 項目15：盡可能使用constexpr 項目16：使const成員函數線程安全 項目17：理解特殊成員函數的生成
+項目7：在創建對象時區分()和{} 
+項目8：優先使用nullptr而非0和NULL 
+項目9：優先使用別名宣告而非typedef 項目10：優先使用有作用域的枚舉而非無作用域的枚舉 項目11：優先使用已刪除的函數而非私有的未定義函數 項目12：聲明覆蓋的函數使用override 項目13：優先使用const_iterators而非iterators 項目14：如果函數不會引發異常，聲明函數為noexcept 項目15：盡可能使用constexpr 項目16：使const成員函數線程安全 項目17：理解特殊成員函數的生成
 
 ## 智能指針
 

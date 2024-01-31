@@ -41,6 +41,22 @@ temp.cpp
 template<> void func<int>(int& ) {}
 ```
 
+
+
+## 應該選擇分離 Definition 還是宣告 inline?
+
+Like the other Q&A mentions, the specialization is its own entity. If you do as you did, declare the specialization in a header, and then define them in another (single) TU, that is well-formed. Any TU that includes that header will see that the specialization for `int` and `float` are only declarations. 
+As such, their definition may be placed elsewhere, just like a non-template function.
+
+If you want a header only library, where the specialized functions are defined inline, then you must use the `inline` specifier, as the ODR requires.
+
+Neither way is "the correct" way in the sense you seem to be asking about. Each has its own advantages and disadvantages. Defining the functions inline helps make libraries be header only. But if the functions are complex, then all of their dependencies are pulled into every TU that includes the header. 
+
+Also, changing the specializations will cause all of those TU's to be re-compiled. So there's merit for tucking the implementation away too at times. You'll need to judge on a case by case basis.
+
+https://stackoverflow.com/questions/63867758/c-inline-or-not-inline-declarations-of-template-class-specializations
+
+
 ### 對 Template Specialiaztion 的實作宣告 inline 
 
 這其實相當有趣，因為 function 是否 inline 取決於 compiler，即使宣告 inline 也不一定代表 compiler 會真的對 function inline  ([[了解 Inline 的裡裡外外]])。
@@ -50,8 +66,6 @@ template<> void func<int>(int& ) {}
 > (1) Every program shall contain exactly one definition of every non-inline function or variable that is odr-used in that program; no diagnostic required. The definition can appear explicitly in the program, it can be found in the standard or a user-defined library, or (when appropriate) it is implicitly defined (see 12.1, 12.4 and 12.8). 
 > (2) An inline function shall be defined in every translation unit in which it is [[ODR use]].
 
-
-
 當 Specialiaztion 不是 inline 的時候，它被當作 non inline function 對待，而對於 non inline function/variable，在 program 中只應該擁有一份 definition。因此兩次 include 同一份 header 造成了問題: 多個 definition (include 的本質就是把 hpp 貼到 cpp 裡面)。
 
 當 Specialiaztion 是 inline 的時候，Specialiaztion 滿足了條目的第二部分: inline function 必須被定義於每一個使用到的 translation unit，也就是該則回答裡面提到的 : 
@@ -60,14 +74,6 @@ template<> void func<int>(int& ) {}
 
 這或許也可以反向說明，在 [[了解 Inline 的裡裡外外]] 環節中提到的，只有 hpp 中含有實作的 function 可以有隱性 inline 申請，因為想要 inline 一個 function，在編譯期間，每一個使用到這個 function 的 translate unit 都需要有這個 function。當實作抽離，這個條件就沒辦法達成。
 
-
- There can be more than one definition of a template specialization for which *some template parameters are not specified (14.7, 14.5.5) in a program* provided that each definition appears in a different translation unit
-
-When the parameterized function is not specialized it is covered by clause 3.2:6:
-
-> There can be more than one definition of a class type (Clause 9), enumeration type (7.2), inline function with external linkage (7.1.2), class template (Clause 14), non-static function template (14.5.6), static data member of a class template (14.5.1.3), member function of a class template (14.5.1.1), or template specialization for which some template parameters are not specified (14.7, 14.5.5) in a program provided that each definition appears in a different translation unit
-
-This clause states that it is OK for multiple definitions of the same template function as long as at least one of the template parameters is not specified in the code. This is to allow the decision on whether the parameterized function should be instantiated in a module to be made on local information only.
-
-[Example ORD](https://wiki.sei.cmu.edu/confluence/display/cplusplus/DCL60-CPP.+Obey+the+one-definition+rule)
-https://en.cppreference.com/w/cpp/language/definition
+## Resources
+- [Examples for ORD](https://wiki.sei.cmu.edu/confluence/display/cplusplus/DCL60-CPP.+Obey+the+one-definition+rule)
+- 

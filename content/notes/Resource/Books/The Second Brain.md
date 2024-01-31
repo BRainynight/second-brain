@@ -66,18 +66,20 @@ My current thinking:
 P (Project): 短期任務
 - Working project
 - Personal project (ex. blog), side project, 減重... 
-
+- 
 
 A (Area): 長期任務，長期想掌握的目標
 - 健康，不同於 project 中的「減重」是明確目標、是達成健康的手段，健康是長期目標。
 
 R (Resource): 未來有用處的
+- 隨處瀏覽下覺得有用的東西
+	- 剛好看到有人推薦 C++ 書推薦
 - 有興趣的東西、嗜好: 精油、咖啡
-- 研究的可提: effective
 - 有用的參考: travel plan
 
 A (Archive): 備而不用
 - 不再有興趣的
+- 已經完成的旅行、專案素材
 
 
 

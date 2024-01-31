@@ -120,7 +120,7 @@ Widget& Widget::operator=(const Widget& rhs)
 
 ### 條款12 複製物件時記得每一個部分
 
-當 Programmer 自己定義 [[Copying function]] 時，Compiler 不會警告你出錯! 你需要自己注意!!
+當 Programmer 自己定義 [[Copying Function]] 時，Compiler 不會警告你出錯! 你需要自己注意!!
 
 ## Chapter3 資源管理
 

@@ -16,6 +16,7 @@ enableToc: false
 
 - [[notes]]
 - [[tags]]
-- [[notes/Project/Effective C++ Series/Effective C++ Outline]]
-
+- [[notes/Project/C++/Effective C++ Outline]]
+- [[notes/Project/C++/C++ Core Guidelines]]
+- [[notes/Project/C++/The C++ STL Outline]]
 
