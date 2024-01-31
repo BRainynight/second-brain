@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.7ce853a31b3dec40434f3363e9edf23b.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.bc3b7e71c66f798adba93ec7661aff7c.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.87d01c58f8525118a7c8dff809436f6f.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.567d2a37f4cddc208eb0fd325470f6f7.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -310,7 +310,7 @@
       <h1>打造第二大腦</h1>
       <p class="meta">
         Last updated 
-Apr 9, 2023
+Feb 1, 2024
 
  
           
@@ -542,6 +542,7 @@ Apr 9, 2023
 <ul>
 <li>Working project</li>
 <li>Personal project (ex. blog), side project, 減重&hellip;</li>
+<li></li>
 </ul>
 <p>A (Area): 長期任務，長期想掌握的目標</p>
 <ul>
@@ -549,13 +550,18 @@ Apr 9, 2023
 </ul>
 <p>R (Resource): 未來有用處的</p>
 <ul>
+<li>隨處瀏覽下覺得有用的東西
+<ul>
+<li>剛好看到有人推薦 C++ 書推薦</li>
+</ul>
+</li>
 <li>有興趣的東西、嗜好: 精油、咖啡</li>
-<li>研究的可提: effective</li>
 <li>有用的參考: travel plan</li>
 </ul>
 <p>A (Archive): 備而不用</p>
 <ul>
 <li>不再有興趣的</li>
+<li>已經完成的旅行、專案素材</li>
 </ul>
 <a href="#distill-萃取"><h2 id="distill-萃取"><span class="hanchor" ariaLabel="Anchor"># </span>Distill 萃取</h2></a>
 <ul>
@@ -679,7 +685,7 @@ Apr 9, 2023
     <footer>
         
         
-        <p>Made by Judy using <a href="https://github.com/jackyzha0/quartz">Quartz</a>, © 2023</p>
+        <p>Made by Judy using <a href="https://github.com/jackyzha0/quartz">Quartz</a>, © 2024</p>
         <ul>
             
             <li><a href="https://brainynight.github.io/second-brain/">Home</a></li>

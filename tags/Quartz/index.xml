@@ -8,10 +8,10 @@
     <language>en-us</language><atom:link href="https://brainynight.github.io/second-brain/tags/Quartz/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>將 Quartz 發佈到 Github Page</title>
-      <link>https://brainynight.github.io/second-brain/notes/Area/Quartz/Publish-Quartz-to-Github-Page/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Archive/Quartz/Publish-Quartz-to-Github-Page/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Area/Quartz/Publish-Quartz-to-Github-Page/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Archive/Quartz/Publish-Quartz-to-Github-Page/</guid>
       <description>由於我對 github action 不熟悉，在設置到 github page 的時候遇到了一點困難&amp;hellip;。
 首先，如果專案是從 templage fork 過來的，它應該分成 hugo 跟 master 兩個 branch。其中
  hugo: 存放 config, markdown files (content 底下) 的地方 master: 利用 github action 把專案內容轉成靜態網頁  我因為是 clone 下來再 push 到自己的專案，沒有遵守這兩個命名方式而遇到了一點困難。在我的專案中，main 對應的是存放 markdown files (轉換前) 的 page，publish 才是 github page 再生成時所根據的 branch。</description>

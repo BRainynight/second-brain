@@ -8,91 +8,111 @@
     <language>en-us</language><atom:link href="https://brainynight.github.io/second-brain/tags/empty/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C&#43;&#43;11 std function</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/C&#43;&#43;11-std-function/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/C&#43;&#43;11-std-function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/C&#43;&#43;11-std-function/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/C&#43;&#43;11-std-function/</guid>
       <description></description>
     </item>
     
     <item>
       <title>EBO (Empty Base Optimization)</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/EBO-Empty-Base-Optimization/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/EBO-Empty-Base-Optimization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/EBO-Empty-Base-Optimization/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/EBO-Empty-Base-Optimization/</guid>
       <description>空白基本類別最佳化 effective c++ 191</description>
     </item>
     
     <item>
       <title>enum hack</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/enum-hack/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/enum-hack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/enum-hack/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/enum-hack/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Item15 constexpr</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item15-constexpr/</link>
+      <title>Implementation defined</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Implementation-defined/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item15-constexpr/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Implementation-defined/</guid>
+      <description>行為取決於(Compiler?) 如何實作，但是實作們必須明確的撰寫 (document) 行為應當如何，並遵守他們定義的行為。
+ This term means that the implementation is free to do what it likes, but must document its choice and stick to it.</description>
+    </item>
+    
+    <item>
+      <title>Internal and External Linkage</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Internal-and-External-Linkage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Internal-and-External-Linkage/</guid>
+      <description>https://learn.microsoft.com/en-us/cpp/cpp/program-and-linkage-cpp?view=msvc-170
+External vs. internal linkage A free function is a function that is defined at global or namespace scope. Non-const global variables and free functions by default have external linkage; they&amp;rsquo;re visible from any translation unit in the program.</description>
+    </item>
+    
+    <item>
+      <title>Item15 constexpr</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Item15-constexpr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Item15-constexpr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Item47 Use traits classes for information about types</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item47-Use-traits-classes-for-information-about-types/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Item47-Use-traits-classes-for-information-about-types/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item47-Use-traits-classes-for-information-about-types/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Item47-Use-traits-classes-for-information-about-types/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Item54 Familiarize yourself with the standard library including TR1</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item54-Familiarize-yourself-with-the-standard-library-including-TR1/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Item54-Familiarize-yourself-with-the-standard-library-including-TR1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item54-Familiarize-yourself-with-the-standard-library-including-TR1/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Item54-Familiarize-yourself-with-the-standard-library-including-TR1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Item55 Familiarize yourself with Boost</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item55-Familiarize-yourself-with-Boost/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Item55-Familiarize-yourself-with-Boost/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item55-Familiarize-yourself-with-Boost/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Item55-Familiarize-yourself-with-Boost/</guid>
       <description></description>
     </item>
     
     <item>
       <title>operator overloading</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/operator-overloading/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/operator-overloading/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/operator-overloading/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/operator-overloading/</guid>
       <description></description>
     </item>
     
     <item>
       <title>override</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/override/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/override/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/override/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/override/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pure Virtual Function</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Pure-Virtual-Function/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Pure-Virtual-Function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Pure-Virtual-Function/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Pure-Virtual-Function/</guid>
       <description>只繼承 Interface 需自行實做
  相當於告訴 Client: 你需要提供一個這樣的函式，但我不干涉你怎麼做它。
 1 2 3 4  class Shape { public: virtual void draw() const = 0; };   不過，我們其實可以為 Pure Virtual Function 提供一份實作碼，只是需要通過 Class Name 呼叫 (以 Shape::draw 而非 shape.</description>
@@ -100,47 +120,93 @@
     
     <item>
       <title>Singleton</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Singleton/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Singleton/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Singleton/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Singleton/</guid>
+      <description>Drawback of Singleton  誰負責銷毀它? 這個 singleton 應該可以被繼承嗎? 怎麼實作 singleton 使它 thread-safe 如果 singleton 之間有相依性，而且在不同的 translation unit，順序應該是?   What’s the “static initialization order ‘fiasco’ (problem)”?</description>
+    </item>
+    
+    <item>
+      <title>STL alogirthm</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/STL-alogirthm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/STL-alogirthm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Template Method</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-Method/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Template-Method/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-Method/</guid>
-      <description></description>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Template-Method/</guid>
+      <description>#DesignPattern</description>
     </item>
     
     <item>
       <title>The definition and declaration of static const</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/The-definition-and-declaration-of-static-const/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/The-definition-and-declaration-of-static-const/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/The-definition-and-declaration-of-static-const/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/The-definition-and-declaration-of-static-const/</guid>
       <description> [!todo] P14
  </description>
     </item>
     
     <item>
       <title>typedef and using</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/typedef-and-using/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/typedef-and-using/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/typedef-and-using/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/typedef-and-using/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>需要型別轉換時請為模板定義非成員函式</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F/</link>
+      <title>格蘭傑-單一麥芽威士忌</title>
+      <link>https://brainynight.github.io/second-brain/notes/Resource/Whisky/%E6%A0%BC%E8%98%AD%E5%82%91-%E5%96%AE%E4%B8%80%E9%BA%A5%E8%8A%BD%E5%A8%81%E5%A3%AB%E5%BF%8C/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Resource/Whisky/%E6%A0%BC%E8%98%AD%E5%82%91-%E5%96%AE%E4%B8%80%E9%BA%A5%E8%8A%BD%E5%A8%81%E5%A3%AB%E5%BF%8C/</guid>
+      <description>Glenmorangie X Single Malt Scotch Whisky
+ 買於好事多，跟 &amp;ldquo;知多&amp;rdquo; 喝起來差不多，CP 值極佳!! 理想價格: 600-650  </description>
+    </item>
+    
+    <item>
+      <title>汀士頓-處女桶單一純麥威士忌 (波本)</title>
+      <link>https://brainynight.github.io/second-brain/notes/Resource/Whisky/%E6%B1%80%E5%A3%AB%E9%A0%93-%E8%99%95%E5%A5%B3%E6%A1%B6%E5%96%AE%E4%B8%80%E7%B4%94%E9%BA%A5%E5%A8%81%E5%A3%AB%E5%BF%8C-%E6%B3%A2%E6%9C%AC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Resource/Whisky/%E6%B1%80%E5%A3%AB%E9%A0%93-%E8%99%95%E5%A5%B3%E6%A1%B6%E5%96%AE%E4%B8%80%E7%B4%94%E9%BA%A5%E5%A8%81%E5%A3%AB%E5%BF%8C-%E6%B3%A2%E6%9C%AC/</guid>
+      <description> 價格: 799 色澤:金黃色  酒條通介紹 香氣:風頭正勁的初次橡木香氣和檸檬皮和甜麥芽糖與蘋果和肉荳蔻美味的迴盪。
+口感:愉悅的甜味喚起果脯和香草太妃糖與石楠蜂蜜平衡的層次。
+尾韻:一個令人滿意的新鮮香料與蜂蜜麥芽和甜美的橡木味再帶出更多驚奇的滋味。
+個人感覺  辣度比雪莉桶強烈且持久  </description>
+    </item>
+    
+    <item>
+      <title>艾倫-陳釀單一純麥威士忌700ml (波本)</title>
+      <link>https://brainynight.github.io/second-brain/notes/Resource/Whisky/%E8%89%BE%E5%80%AB-%E9%99%B3%E9%87%80%E5%96%AE%E4%B8%80%E7%B4%94%E9%BA%A5%E5%A8%81%E5%A3%AB%E5%BF%8C700ml-%E6%B3%A2%E6%9C%AC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Resource/Whisky/%E8%89%BE%E5%80%AB-%E9%99%B3%E9%87%80%E5%96%AE%E4%B8%80%E7%B4%94%E9%BA%A5%E5%A8%81%E5%A3%AB%E5%BF%8C700ml-%E6%B3%A2%E6%9C%AC/</guid>
+      <description>價錢 899  https://www.609.com.tw/Product/113312  介紹 艾倫酒廠位於蘇格蘭最美及最有名的島嶼之一：艾倫島。
+酒廠坐落於島上的Lochranza，擁有蘇格蘭最純淨的水源Loch na Davie。
+堅持不添加人工色素，波本桶熟成。
+香氣:柑橘和香草的香氣混合著活潑的蘋果和精緻的海風氣息。
+口感:散發出甜美水果、溫暖香料、柑橘、奶油香草和燒焦橡木的香氣。
+感想 顏色是麥穗田般淺淺的金黃色，店員介紹說有種口腔被油脂包覆的感覺。
+入口並不嗆辣，鼻腔能感受到橡木的尾韻，</description>
+    </item>
+    
+    <item>
+      <title>需要型別轉換時請為模板定義非成員函式</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F/</guid>
       <description>文章 [[當所有的參數都需要型別轉換，採用 Non-member Function]] 中提到，能被隱式轉換的只有位於參數列的對象，因此針對 operator* 採用了 Non-member function。
 現在，將這個 operator* 改成 Template function。
 1 2 3 4 5 6 7 8 9 10 11 12 13 14  template&amp;lt;typename T&amp;gt; class Rational { public: Rational(const T&amp;amp; numerator = 0, // see Item 20 for why params 	const T&amp;amp; denominator = 1); // are now passed by reference 	const T numerator() const; // see Item 28 for why return 	const T denominator() const; // values are still passed by value, }; template&amp;lt;typename T&amp;gt; const Rational&amp;lt;T&amp;gt; operator*(const Rational&amp;lt;T&amp;gt;&amp;amp; lhs, const Rational&amp;lt;T&amp;gt;&amp;amp; rhs) { }   </description>

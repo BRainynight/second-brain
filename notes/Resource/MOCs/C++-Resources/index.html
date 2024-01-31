@@ -8,10 +8,10 @@
   <meta charset="UTF-8" />
   <meta
     name="description"
-    content="Notes  [[../../Project/Effective C&#43;&#43; Series/Effective C&#43;&#43; Outline |Effective C&#43;&#43; Outline]] [[../../Project/Effective C&#43;&#43; Series/Effective modern C&#43;&#43; Outline|Effective modern C&#43;&#43; Outline]]  Webs   CppCoreGuidelines  CppDeveloperRoadmap [整理了一份C&#43;&#43;学习路线图](- https://mp."
+    content="Notes  [[../../Project/C&#43;&#43;/Effective C&#43;&#43; Outline|Effective C&#43;&#43; Outline]] [[../../Project/C&#43;&#43;/Effective modern C&#43;&#43; Outline|Effective modern C&#43;&#43; Outline]] [[../../Project/C&#43;&#43;/The C&#43;&#43; STL Outline]]  Webs   CppCoreGuidelines  CppDeveloperRoadmap [整理了一份C&#43;&#43;学习路线图](- https://mp."
   />
   <meta property="og:title" content="C&#43;&#43; Resources">
-  <meta property="og:description" content="Notes  [[../../Project/Effective C&#43;&#43; Series/Effective C&#43;&#43; Outline |Effective C&#43;&#43; Outline]] [[../../Project/Effective C&#43;&#43; Series/Effective modern C&#43;&#43; Outline|Effective modern C&#43;&#43; Outline]]  Webs   CppCoreGuidelines  CppDeveloperRoadmap [整理了一份C&#43;&#43;学习路线图](- https://mp.">
+  <meta property="og:description" content="Notes  [[../../Project/C&#43;&#43;/Effective C&#43;&#43; Outline|Effective C&#43;&#43; Outline]] [[../../Project/C&#43;&#43;/Effective modern C&#43;&#43; Outline|Effective modern C&#43;&#43; Outline]] [[../../Project/C&#43;&#43;/The C&#43;&#43; STL Outline]]  Webs   CppCoreGuidelines  CppDeveloperRoadmap [整理了一份C&#43;&#43;学习路线图](- https://mp.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
   <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Resource/MOCs/C&#43;&#43;-Resources/">
@@ -19,7 +19,7 @@
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="C&#43;&#43; Resources" />
-  <meta name="twitter:description" content="Notes  [[../../Project/Effective C&#43;&#43; Series/Effective C&#43;&#43; Outline |Effective C&#43;&#43; Outline]] [[../../Project/Effective C&#43;&#43; Series/Effective modern C&#43;&#43; Outline|Effective modern C&#43;&#43; Outline]]  Webs   CppCoreGuidelines  CppDeveloperRoadmap [整理了一份C&#43;&#43;学习路线图](- https://mp." />
+  <meta name="twitter:description" content="Notes  [[../../Project/C&#43;&#43;/Effective C&#43;&#43; Outline|Effective C&#43;&#43; Outline]] [[../../Project/C&#43;&#43;/Effective modern C&#43;&#43; Outline|Effective modern C&#43;&#43; Outline]] [[../../Project/C&#43;&#43;/The C&#43;&#43; STL Outline]]  Webs   CppCoreGuidelines  CppDeveloperRoadmap [整理了一份C&#43;&#43;学习路线图](- https://mp." />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
   
     
@@ -130,13 +130,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.7ce853a31b3dec40434f3363e9edf23b.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.bc3b7e71c66f798adba93ec7661aff7c.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.87d01c58f8525118a7c8dff809436f6f.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.567d2a37f4cddc208eb0fd325470f6f7.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -307,7 +307,7 @@
       <h1>C&#43;&#43; Resources</h1>
       <p class="meta">
         Last updated 
-Sep 5, 2023
+Feb 1, 2024
 
  
           
@@ -339,7 +339,7 @@ Sep 5, 2023
   <ol>
     <li><a href="#notes">Notes</a></li>
     <li><a href="#webs">Webs</a></li>
-    <li><a href="#books">Books</a></li>
+    <li><a href="#stl">STL</a></li>
     <li><a href="#online-resource">Online Resource</a></li>
   </ol>
 </nav>
@@ -361,6 +361,49 @@ Sep 5, 2023
 
 
 
+
+  
+  
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
 
   
   
@@ -473,8 +516,9 @@ Sep 5, 2023
 
 <a href="#notes"><h2 id="notes"><span class="hanchor" ariaLabel="Anchor"># </span>Notes</h2></a>
 <ul>
-<li><a href="/second-brain/notes/Project/Effective-C++-Series/Effective-C++-Outline" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Effective-C++-Outline">Effective C++ Outline</a></li>
-<li><a href="/second-brain/notes/Project/Effective-C++-Series/Effective-modern-C++-Outline" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/Effective-C++-Series/Effective-modern-C++-Outline">Effective modern C++ Outline</a></li>
+<li><a href="/second-brain/notes/Project/C++/Effective-C++-Outline" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/C++/Effective-C++-Outline">Effective C++ Outline</a></li>
+<li><a href="/second-brain/notes/Project/C++/Effective-modern-C++-Outline" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/C++/Effective-modern-C++-Outline">Effective modern C++ Outline</a></li>
+<li><a href="/second-brain/notes/Project/C++/The-C++-STL-Outline" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/C++/The-C++-STL-Outline">The C++ STL Outline</a></li>
 </ul>
 <a href="#webs"><h2 id="webs"><span class="hanchor" ariaLabel="Anchor"># </span>Webs</h2></a>
 <ul>
@@ -486,16 +530,36 @@ Sep 5, 2023
 <a href="https://mp.weixin.qq.com/s/poq9aDdEL5kLM5sjSqJ72A" rel="noopener">https://mp.weixin.qq.com/s/poq9aDdEL5kLM5sjSqJ72A</a>)</li>
 <li></li>
 </ul>
-<a href="#books"><h2 id="books"><span class="hanchor" ariaLabel="Anchor"># </span>Books</h2></a>
-<ul>
+<a href="#stl"><h2 id="stl"><span class="hanchor" ariaLabel="Anchor"># </span>STL</h2></a>
+<ol>
 <li>C++標準庫：學習教本與參考工具（第二版） 作者： Nicolai M. Josuttis 譯者： 侯捷
 <ul>
-<li>內容涵蓋 C++11 的 STL Lib.</li>
+<li>內容涵蓋 C++11 的 STL .</li>
 <li>
 <a href="https://www.books.com.tw/products/0010658042?sloc=main" rel="noopener">https://www.books.com.tw/products/0010658042?sloc=main</a></li>
 </ul>
 </li>
-</ul>
+<li>The C++ Standard Library  (Rainer Grimm)
+<ol>
+<li>擔心  C++17 以上的 STL 有難度，還是從侯捷的讀起比較好</li>
+<li>
+<a href="https://leanpub.com/cpplibrary" rel="noopener">https://leanpub.com/cpplibrary</a></li>
+<li>
+<a href="https://leanpub.com/cpplibrary" rel="noopener">https://leanpub.com/cpplibrary</a></li>
+</ol>
+</li>
+<li>
+<a href="https://www.youtube.com/watch?v=jHfbmCmsmFc&amp;list=PLTcwR9j5y6W2Bf4S-qi0HBQlHXQVFoJrP&amp;index=3" rel="noopener">侯捷 STL Youtube</a></li>
+<li></li>
+</ol>
+<p>
+<a href="https://github.com/isocpp/CppCoreGuidelines" rel="noopener">C++ Core Guidelines</a> 其實對於從未閱讀過 Effective 系列書籍的現代新入門者而言還是很重要的，如果可能的話，我會推薦先讀過 Effective 系列的書再去看它。但 Effective 系列的書有不少內容已經過時，一個折衷的方法就是從摘要 C++ Core Guidelines 的書來當作切入點。這邊可以推薦兩本：<br>
+
+<a href="https://www.tenlong.com.tw/products/9780137647842" rel="noopener">Beautiful C++: 30 Core Guidelines for Writing Clean, Safe, and Fast Code</a> (
+<a href="https://www.informit.com/store/beautiful-c-plus-plus-30-core-guidelines-for-writing-9780137647842" rel="noopener">電子版</a>)<br>
+
+<a href="https://www.tenlong.com.tw/products/9780136875673" rel="noopener">C++ Core Guidelines Explained: Best Practices for Modern C++</a> (
+<a href="https://www.informit.com/store/c-plus-plus-core-guidelines-explained-best-practices-9780136875673" rel="noopener">電子版</a>)</p>
 <a href="#online-resource"><h2 id="online-resource"><span class="hanchor" ariaLabel="Anchor"># </span>Online Resource</h2></a>
 <ul>
 <li>
@@ -563,7 +627,7 @@ Sep 5, 2023
     <footer>
         
         
-        <p>Made by Judy using <a href="https://github.com/jackyzha0/quartz">Quartz</a>, © 2023</p>
+        <p>Made by Judy using <a href="https://github.com/jackyzha0/quartz">Quartz</a>, © 2024</p>
         <ul>
             
             <li><a href="https://brainynight.github.io/second-brain/">Home</a></li>

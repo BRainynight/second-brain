@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.7ce853a31b3dec40434f3363e9edf23b.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.bc3b7e71c66f798adba93ec7661aff7c.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.87d01c58f8525118a7c8dff809436f6f.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.567d2a37f4cddc208eb0fd325470f6f7.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -318,6 +318,13 @@ Unknown
       </p>
       <ul class="tags">
           
+          <li><a href="https://brainynight.github.io/second-brain/tags/empty/">
+          
+            Empty
+          
+            </a>
+           </li>
+          
       </ul>
       
 
@@ -423,7 +430,7 @@ Unknown
     <footer>
         
         
-        <p>Made by Judy using <a href="https://github.com/jackyzha0/quartz">Quartz</a>, © 2023</p>
+        <p>Made by Judy using <a href="https://github.com/jackyzha0/quartz">Quartz</a>, © 2024</p>
         <ul>
             
             <li><a href="https://brainynight.github.io/second-brain/">Home</a></li>

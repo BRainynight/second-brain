@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta
+    name="description"
+    content="Has A 關係 &ldquo;Has-A&rdquo; 指的是擁有一個 應用域 (application domain) 的物件，像是
+ Person &lsquo;has a&rsquo; name. Person &lsquo;has a&rsquo; address &hellip; 這沒什麼爭議。  根據某物實作出的關係 這是指 實作域 (implementation domain)，表示 is-implemented-in-terms-of 關係。像是"
+  />
+  <meta property="og:title" content="確定 Composition 塑造的是 &#39;Has-A&#39;關係 或 &#39;根據某物實作&#39;的關係">
+  <meta property="og:description" content="Has A 關係 &ldquo;Has-A&rdquo; 指的是擁有一個 應用域 (application domain) 的物件，像是
+ Person &lsquo;has a&rsquo; name. Person &lsquo;has a&rsquo; address &hellip; 這沒什麼爭議。  根據某物實作出的關係 這是指 實作域 (implementation domain)，表示 is-implemented-in-terms-of 關係。像是">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
+  <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%A2%BA%E5%AE%9A-Composition-%E5%A1%91%E9%80%A0%E7%9A%84%E6%98%AF-Has-A%E9%97%9C%E4%BF%82-%E6%88%96-%E6%A0%B9%E6%93%9A%E6%9F%90%E7%89%A9%E5%AF%A6%E4%BD%9C%E7%9A%84%E9%97%9C%E4%BF%82/">
+  <meta property="og:width" content="200">
+  <meta property="og:height" content="200">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="確定 Composition 塑造的是 &#39;Has-A&#39;關係 或 &#39;根據某物實作&#39;的關係" />
+  <meta name="twitter:description" content="Has A 關係 &ldquo;Has-A&rdquo; 指的是擁有一個 應用域 (application domain) 的物件，像是
+ Person &lsquo;has a&rsquo; name. Person &lsquo;has a&rsquo; address &hellip; 這沒什麼爭議。  根據某物實作出的關係 這是指 實作域 (implementation domain)，表示 is-implemented-in-terms-of 關係。像是" />
+  <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
+  
+    
+  
+
+  <title>
+    確定 Composition 塑造的是 &#39;Has-A&#39;關係 或 &#39;根據某物實作&#39;的關係
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+  
+  
+  
+  
+  <link rel="shortcut icon" type="image/png"  href="https://brainynight.github.io/second-brain//icon.png" />
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <link href="https://brainynight.github.io/second-brain/styles.7d481813bbe4f502154ba7bb5eb73d2d.min.css" rel="stylesheet" />
+
+  
+  <link href="https://brainynight.github.io/second-brain/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css" rel="stylesheet" id="theme-link">
+
+   
+  
+  
+  
+  
+  <script src="https://brainynight.github.io/second-brain/js/darkmode.ad5fa1629664e806f9e2c4589974fc3d.min.js"></script>
+  
+  
+  
+  <script src="https://brainynight.github.io/second-brain/js/util.00639692264b21bc3ee219733d38a8be.min.js"></script>
+  
+  
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"
+        integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx"
+        crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js"
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+        crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js"
+        integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A"
+        crossorigin="anonymous"></script>
+
+
+  
+  
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.2.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.2.1"></script>
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/popover.aa9bc99c7c38d3ae9538f218f1416adb.min.js"></script>
+
+  
+  
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js"></script>
+  
+
+  
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js"></script>
+  
+
+  
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js"></script>
+  
+
+  
+   
+  <script>
+    const SEARCH_ENABLED =  false 
+    const LATEX_ENABLED =  true 
+    const PRODUCTION =  true 
+    const BASE_URL = "https://brainynight.github.io/second-brain/"
+    const fetchData = Promise.all([
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.bc3b7e71c66f798adba93ec7661aff7c.min.json")
+            .then(data => data.json())
+            .then(data => ({
+              index: data.index,
+              links: data.links,
+            })),
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.567d2a37f4cddc208eb0fd325470f6f7.min.json")
+            .then(data => data.json()),
+        ])
+        .then(([{index, links}, content]) => ({
+          index,
+          links,
+          content,
+        }))
+
+      const render = () => {
+      
+
+      const siteBaseURL = new URL(BASE_URL);
+      const pathBase = siteBaseURL.pathname;
+      const pathWindow = window.location.pathname;
+      const isHome = pathBase == pathWindow;
+
+      addCopyButtons();
+      
+
+      addTitleToCodeBlocks();
+      
+
+      addCollapsibleCallouts();
+      
+
+      
+      initPopover(
+        "https://brainynight.github.io/second-brain",
+         true 
+      )
+      
+
+      
+      const footer = document.getElementById("footer")
+      if (footer) {
+        const container = document.getElementById("graph-container")
+        
+        if (!container) return requestAnimationFrame(render)
+        
+        container.textContent = ""
+
+        const drawGlobal = isHome &&  false ;
+        drawGraph(
+            "https://brainynight.github.io/second-brain",
+            drawGlobal,
+            [{"/notes/Project/Effective-C++-Series/Effective-C++-Outline":"#4388cc"}],
+            drawGlobal ? {"centerForce":1,"depth":-1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.5,"linkDistance":1,"opacityScale":3,"repelForce":1,"scale":1.4} : {"centerForce":1,"depth":1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.6,"linkDistance":1,"opacityScale":3,"repelForce":2,"scale":1.2}
+          );
+
+        }
+      
+
+      
+        var els = document.getElementsByClassName("mermaid");
+        if (els.length > 0) {
+          import('https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs').then(
+            (obj) => {
+              
+              
+              obj.default.init();
+            }
+          )
+        }
+      
+      
+      
+      function clickHandler(evt) {
+        const target = evt.target 
+        const classNames = target.className.split(" ")
+        const broken = classNames.includes("broken")
+        const internal = classNames.includes("internal-link")
+        plausible("Link Click", {
+          props: {
+            href: target.href,
+            broken,
+            internal,
+            graph: false,
+          }
+        })
+      }
+
+      const links = document.querySelectorAll("a")
+      for (link of links) {
+        if (link.className.includes("root-title")) {
+          link.addEventListener('click', clickHandler, {once: true})
+        }
+      }
+    }
+
+    const init = (doc = document) => {
+      
+      addCopyButtons();
+      
+
+      addTitleToCodeBlocks();
+      renderMathInElement(doc.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+        ],
+        macros: {
+          '’': "'"
+        },
+        throwOnError : false
+      });
+      
+    };
+  </script>
+  
+  
+  <script type="module">
+    import { attachSPARouting } from "https:\/\/brainynight.github.io\/second-brain\/js\/router.d6fe6bd821db9ea97f9aeefae814d8e7.min.js"
+    attachSPARouting(init, render)
+  </script>
+  
+  
+  <script defer data-domain="brainynight.github.io/second-brain" src="https://plausible.io/js/script.js"></script>
+  <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+</head>
+
+
+<body>
+<div id="search-container">
+  <div id="search-space">
+    <input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search"
+      placeholder="Search for something..." dir="">
+    <div id="results-container">
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"
+  integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin="anonymous" defer></script>
+
+<script defer src="https://brainynight.github.io/second-brain/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js"></script>
+
+
+
+<div class="singlePage">
+    
+    <header>
+    
+    <h1 id="page-title"><a class="root-title" href="https://brainynight.github.io/second-brain/">🪴 Digital Note</a></h1>
+    <div class="spacer"></div>
+    <div id="search-icon">
+      <p>Search</p>
+      <svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg>
+    </div>
+    <div class='darkmode'>
+    <input class='toggle' id='darkmode-toggle' type='checkbox' tabindex="-1">
+    <label id="toggle-label-light" for='darkmode-toggle' tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35;" xml:space="preserve">
+            <title>Light Mode</title>
+            <path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z" />
+        </svg>
+    </label>
+    <label id="toggle-label-dark" for='darkmode-toggle' tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'" xml:space="preserve">
+            <title>Dark Mode</title>
+            <path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z" />
+        </svg>
+    </label>
+</div>
+</header>
+
+
+    <article>
+      <h1>確定 Composition 塑造的是 &#39;Has-A&#39;關係 或 &#39;根據某物實作&#39;的關係</h1>
+      <p class="meta">
+        Last updated 
+Unknown
+
+ 
+          
+
+      </p>
+      <ul class="tags">
+          
+          <li><a href="https://brainynight.github.io/second-brain/tags/cpp/">
+          
+            Cpp
+          
+            </a>
+           </li>
+          
+      </ul>
+      
+
+<aside class="mainTOC">
+    <details open >
+        <summary>Table of Contents</summary>
+        <nav id="TableOfContents">
+  <ol>
+    <li><a href="#has-a-關係">Has A 關係</a></li>
+    <li><a href="#根據某物實作出的關係">根據某物實作出的關係</a>
+      <ol>
+        <li><a href="#以一個-private-member-data-擁有-has-a-一個-stdlist-container">以一個 Private member data 擁有 (has a) 一個 std::list container</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+    </details>
+</aside>
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+<a href="#has-a-關係"><h2 id="has-a-關係"><span class="hanchor" ariaLabel="Anchor"># </span>Has A 關係</h2></a>
+<p>&ldquo;Has-A&rdquo; 指的是擁有一個 應用域 (application domain) 的物件，像是</p>
+<ul>
+<li>Person &lsquo;has a&rsquo; name.</li>
+<li>Person &lsquo;has a&rsquo; address</li>
+<li>&hellip;
+這沒什麼爭議。</li>
+</ul>
+<a href="#根據某物實作出的關係"><h2 id="根據某物實作出的關係"><span class="hanchor" ariaLabel="Anchor"># </span>根據某物實作出的關係</h2></a>
+<p>這是指 實作域 (implementation domain)，表示 is-implemented-in-terms-of 關係。像是</p>
+<ul>
+<li>buffer</li>
+<li>mutex</li>
+<li>search tree</li>
+</ul>
+<p>這麼說還是很抽象，舉例:
+std::set 是一個以平衡樹實作的資料結構，每一個元素需要耗費三個 pointer，它重視速度大於空間用量。若我們有一個「空間用量比速度更重要」的需求，則無法使用 std::set，有需求自己撰寫 Template。
+現在，我們經歷了這一串掙扎:</p>
+<ol>
+<li>實作 set 有很多種方法，想採用 linked list 的作法。</li>
+<li>想到了 std::list 就是這樣的資料結構，我該繼承它嗎?</li>
+<li>一旦繼承就代表 IS-A 關係，適用於 std::list 的每件事，這個新的 set 都可以接受</li>
+<li>但是 std::list 允許重複的元素出現在容器中，set 不允許，在插入新元素 (insert) 時會做處置。這違反了 IS-A 規則。</li>
+<li>不適合使用繼承。</li>
+</ol>
+<a href="#以一個-private-member-data-擁有-has-a-一個-stdlist-container"><h3 id="以一個-private-member-data-擁有-has-a-一個-stdlist-container"><span class="hanchor" ariaLabel="Anchor"># </span>以一個 Private member data 擁有 (has a) 一個 std::list container</h3></a>
+<p>正確的做法是，讓 Set 物件是根據一個 std::list 物件實作出來。我們會以一個 private member data 去 own (has a) 一個 std::list 物件，藉此達到 reuse linked list 的需求。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="c1">// the right way to use list for Set
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">Set</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">member</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">item</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">insert</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">item</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">remove</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">item</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">std</span><span class="o">::</span><span class="n">size_t</span> <span class="n">size</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">rep</span><span class="p">;</span> <span class="c1">// representation for Set data 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 取一個函式實作舉例
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">size_t</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">size</span><span class="p">()</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">rep</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>對於每個 member function 的實作，在 own 了一個 <code>std::list</code> container 之後，可以很輕易的呼叫 std::list API 達到我們的需求，達到 reuse 的目的。甚至相當適合把這些 function 寫成 inline function!</p>
+<p>不過在做 inline 之前，先檢視 <a href="/second-brain/notes/Project/C++/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/C++/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96">了解 Inline 的裡裡外外</a>。</p>
+
+
+    </article>
+    
+
+<hr/>
+
+
+<div class="page-end" id="footer">
+    <div class="backlinks-container">
+        <h3>Backlinks</h3>
+<ul class="backlinks">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/C&#43;&#43;/%E5%AF%A9%E6%85%8E%E7%9A%84%E4%BD%BF%E7%94%A8-Private-%E7%B9%BC%E6%89%BF/" data-ctx="確定 Composition 塑造的是 &#39;Has-A&#39;關係 或 &#39;根據某物實作&#39;的關係" data-src="/notes/Project/C&#43;&#43;/%E5%AF%A9%E6%85%8E%E7%9A%84%E4%BD%BF%E7%94%A8-Private-%E7%B9%BC%E6%89%BF" class="internal-link">審慎的使用 Private 繼承</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/C&#43;&#43;/%E7%A2%BA%E4%BF%9D-Derived-Class-%E5%92%8C-Base-Class-%E4%B9%8B%E9%96%93%E5%BF%85%E7%84%B6%E4%BF%9D%E6%8C%81-Is-a-%E9%97%9C%E4%BF%82/" data-ctx="確定 Composition 塑造的是 &#39;Has-A&#39;關係 或 &#39;根據某物實作&#39;的關係" data-src="/notes/Project/C&#43;&#43;/%E7%A2%BA%E4%BF%9D-Derived-Class-%E5%92%8C-Base-Class-%E4%B9%8B%E9%96%93%E5%BF%85%E7%84%B6%E4%BF%9D%E6%8C%81-Is-a-%E9%97%9C%E4%BF%82" class="internal-link">確保 Derived Class 和 Base Class 之間必然保持 Is-a 關係</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/C&#43;&#43;/Effective-C&#43;&#43;-Outline/" data-ctx="確定 Composition 塑造的是 &#39;Has-A&#39;關係 或 &#39;根據某物實作&#39;的關係" data-src="/notes/Project/C&#43;&#43;/Effective-C&#43;&#43;-Outline" class="internal-link">Effective C&#43;&#43; Outline</a>
+      </li>
+      
+      
+      
+</ul>
+
+    </div>
+    <div>
+        <script
+  src="https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js"
+  integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI="
+  crossorigin="anonymous"
+></script>
+<h3>Interactive Graph</h3>
+<div id="graph-container"></div>
+<style>
+  :root {
+    --g-node: var(--secondary);
+    --g-node-active: var(--primary);
+    --g-node-inactive: var(--visited);
+    --g-link: var(--outlinegray);
+    --g-link-active: #5a7282;
+  }
+</style>
+
+<script src="https://brainynight.github.io/second-brain/js/graph.6579af7b10c818dbd2ca038702db0224.js"></script>
+
+    </div>
+</div>
+
+
+
+
+
+
+<div id="contact_buttons">
+    <footer>
+        
+        
+        <p>Made by Judy using <a href="https://github.com/jackyzha0/quartz">Quartz</a>, © 2024</p>
+        <ul>
+            
+            <li><a href="https://brainynight.github.io/second-brain/">Home</a></li>
+            <li><a href="https://github.com/BRainynight">GitHub</a></li></ul>
+    </footer>
+</div>
+
+
+</div>
+</body>
+</html>

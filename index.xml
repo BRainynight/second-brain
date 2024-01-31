@@ -8,49 +8,49 @@
     <language>en-us</language><atom:link href="https://brainynight.github.io/second-brain/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>避免傳回 Handles 指向物件的 Private &amp; Protected Member Data</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E7%9A%84-Private-Protected-Member-Data/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E7%9A%84-Private-Protected-Member-Data/</link>
       <pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E7%9A%84-Private-Protected-Member-Data/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E9%81%BF%E5%85%8D%E5%82%B3%E5%9B%9E-Handles-%E6%8C%87%E5%90%91%E7%89%A9%E4%BB%B6%E7%9A%84-Private-Protected-Member-Data/</guid>
       <description>消滅 handles 的暴露可能
  大忌: 回傳一個 Non-Const handles 在 [[打破 Constness 限制#Physical Constness]] 當中，我們探討過 Physical (bitwise) Constness 的問題。 讓 Getter 回傳一個 non-const reference 指向 member data，會出現讓 private data 暴露在外 (等同於 public) 的詭異現象。 此問題不限於 ref，pointer、iterator 這些 handles (用以取得某個物件)，都有相同的風險。</description>
     </item>
     
     <item>
       <title>Const in C&#43;&#43;</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Const-in-C&#43;&#43;/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Const-in-C&#43;&#43;/</link>
       <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Const-in-C&#43;&#43;/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Const-in-C&#43;&#43;/</guid>
       <description>Const Iterator 同理上述，宣告一個 iterator 為 const 表示這個 iterator 不能改變指向的對象，但是指向的對象之內容本身可以變。
 1  const std::vector&amp;lt;int&amp;gt;::iterator iter = vec.bgein();   如果想要指向一個不可被改變內容的物件，需要使用 const_iterator</description>
     </item>
     
     <item>
       <title>Const member function</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Const-member-function/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Const-member-function/</link>
       <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Const-member-function/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Const-member-function/</guid>
       <description>The purpose of const on member functions is to identify which member functions may be invoked on const object.</description>
     </item>
     
     <item>
       <title>Effective C&#43;&#43; Outline</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Effective-C&#43;&#43;-Outline/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Effective-C&#43;&#43;-Outline/</link>
       <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Effective-C&#43;&#43;-Outline/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Effective-C&#43;&#43;-Outline/</guid>
       <description>Chapter 1 條款1 C++ 是一個語言聯邦 C++ 融合了多種形式的 programming 手法，物件導向、procedural、generic、metaprogramming、functional&amp;hellip;。
 條款2 盡量以 const , enum, inline 取代 #define  以 const, enum, inline 取代 #define， 寧可以編譯器 (compiler) 取代前處理器 (pre-processor)。 對於單純的常數，以 const 或 enum 取代 對於形似 function 的巨集(macro)，用 inline 取代。  Const  [[以 Const 取代使用 Define]] [[The definition and declaration of static const]]  Enum  [[enum hack]]  Inline 條款3 盡可能使用 const 盡可能的使用 const，它可以確保物件不被改變。特別是 custom class designer 更加需要注意 operator 的 constness。</description>
     </item>
     
     <item>
       <title>Hugo 可使用的metadata</title>
-      <link>https://brainynight.github.io/second-brain/notes/Area/Hugo/usable-meta-data/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Archive/Hugo/usable-meta-data/</link>
       <pubDate>Sun, 09 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Area/Hugo/usable-meta-data/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Archive/Hugo/usable-meta-data/</guid>
       <description>Source: https://gohugo.io/content-management/front-matter/
 舉例:
 1 2 3 4 5 6 7 8 9 10 11 12 13  categories:- Development- VIMdate:&amp;#34;2012-04-06&amp;#34;description:spf13-vim is a cross platform distribution of vim plugins and resourcesfor Vim.</description>
@@ -58,15 +58,22 @@
     
     <item>
       <title>以 Hugo 發佈簡單的頁面</title>
-      <link>https://brainynight.github.io/second-brain/notes/Area/Hugo/Hugo-Publish-Simple-Page/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Archive/Hugo/Hugo-Publish-Simple-Page/</link>
       <pubDate>Sun, 09 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Area/Hugo/Hugo-Publish-Simple-Page/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Archive/Hugo/Hugo-Publish-Simple-Page/</guid>
       <description>Hugo 建立部落格的範例 直接用 Hugo 建立部落格，不使用 Quartz 的範例:
-Start hugo new site quickstart
-cd quickstart
-git init
-git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke</description>
+Start 1 2 3 4 5 6  hugo new site quickstart cd quickstart git init git submodule add https://github.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Archive/Golang/Golang/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Archive/Golang/Golang/</guid>
+      <description>Golang go: go.mod file not found in current directory or any parent directory 在嘗試安裝模組時出現問題，需要先 init module 再下 mod get
+1  go mod init &amp;lt;current-dir-name&amp;gt;    https://www.</description>
     </item>
     
     <item>
@@ -75,10 +82,7 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://brainynight.github.io/second-brain/notes/Area/Arom/DIY/</guid>
-      <description>DIY 護唇膏   油、脂、蜂蠟，3:1:2。
-  油、蜂蠟，3:1。
-  實驗: 液體量 40g，油 32 g、蜂蠟 8 g。
-  </description>
+      <description>護唇膏  油、脂、蜂蠟，3:1:2。 油、蜂蠟，3:1。 實驗: 液體量 40g，油 32 g、蜂蠟 8 g。  </description>
     </item>
     
     <item>
@@ -87,7 +91,66 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://brainynight.github.io/second-brain/notes/Area/Arom/%E7%B2%BE%E6%B2%B9%E6%93%B4%E9%A6%99/</guid>
-      <description>精油擴香配方 驅蚊 沉香籽＋檸檬香茅 or 香茅 or 山雞椒＋甜橙（其他柑橘類也適）比例很隨心所欲，可能的比例 沉香籽 1：柑橘 2：檸檬香茅 0.5。另外再加青檸葉。</description>
+      <description>驅蚊 沉香籽＋檸檬香茅 or 香茅 or 山雞椒＋甜橙（其他柑橘類也適）比例很隨心所欲，可能的比例 沉香籽 1：柑橘 2：檸檬香茅 0.5。另外再加青檸葉。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Area/Arom/%E8%8A%B3%E7%99%82%E9%85%8D%E6%96%B9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Area/Arom/%E8%8A%B3%E7%99%82%E9%85%8D%E6%96%B9/</guid>
+      <description> https://www.instagram.com/p/CxpoB_0PsqX/
+岩蘭草 是萃取自盤根錯節的根部 ，在五行中屬於土元素，而土生金。所以說到要招財、生財時，岩蘭草往往都會被點到名。
+但它沉靜、穩固的特質，也很適合用在：
+ 失眠：以10滴精油＋10ml植物油的比例調和，睡前塗抹在手腕內側並且嗅吸。建議視個人情況、香氣喜好，搭配真正薰衣草、苦橙葉等其他精油 過度疲勞，忘了休息：以10滴精油＋10ml植物油的比例調和，每天早晚塗抹在太陽神經叢（肋骨以下、肚臍以上）。持續21天 皮膚發炎/敏感：以2滴精油＋10ml玫瑰果油的比例調和。每天早晚塗抹在乾淨的皮膚上，並輕輕按摩至吸收  失眠精油 ⁣
+有振奮成分的精油  羅文莎葉: 雖然是以強效抗病毒、呼吸道保養而出名⁣，但也有抗抑鬱、抗焦慮作用⁣，可以平衡因為過於低落、萎靡而讓神經失衡的狀態⁣。 岩玫瑰: 也可以促進神經傳導和調節副交感神經⁣，幫助大腦休息 ⁣ 山雞椒、檸檬馬鞭草: 能放鬆神經系統，適合用在因為神經過於高亢、緊繃而出現的提早醒的狀況⁣   </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Area/Cooking/%E5%A3%93%E5%8A%9B%E9%8D%8B%E7%85%AE%E5%84%AA%E6%A0%BC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Area/Cooking/%E5%A3%93%E5%8A%9B%E9%8D%8B%E7%85%AE%E5%84%AA%E6%A0%BC/</guid>
+      <description>1，先將裝優格容器用熱水煮過，擦乾這個步驟很重要喔！ - 食材 AB優酪乳跟六甲莊鮮奶 - 可用你喜歡的鮮奶，我也看過有人用豆漿 2，優酪乳1:3鮮奶 3，倒入容器裡攪拌均勻 4，放入萬用鍋，按保溫狀態6~9小時 所以我都是睡前做，早上起床都有溫溫的優格可以吃 這邊要提醒一下，天氣也會影響做優格的時間，冬天時間會比較長一點，我不知道每個人萬用鍋型號會不會有差異，做優格的溫度40-60度，你們可以去試看看，我這次嚐試在萬用鍋裡放點水跟蒸架，有留點細縫，沒有完全蓋上，（發現有縮短做優格的時間）如果全蓋上溫度好像比較高，如果要更精準一點可以用溫度計量一下
+5，剛做好的優格是溫溫的很像豆花，放涼我才進冰箱冷藏，定型過的優格
+優格上層會有一層水是正常的，那是乳清蛋白，不要到掉，我會加點水果跟優格或是巧克力粉……之類的打一打淋在沙拉，布丁，優格上面。優格我沒有加糖，盡量在3天內吃完
+  https://www.menustudy.com/blogs/daily-menu/107840 菜單研究室
+  金小萬做優格</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Area/Cooking/%E5%A4%A7%E9%A4%90%E6%96%99%E7%90%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Area/Cooking/%E5%A4%A7%E9%A4%90%E6%96%99%E7%90%86/</guid>
+      <description>BBQ 汁手撕豬肉  https://www.christinesrecipes.com/2016/07/bbq-pulled-pork.html
+ 自家煮的 BBQ 汁，非常好用。用這個汁煮 BBQ手撕豬肉，味道很讚。如果有壓力煲，就非常方便，45分鐘搞定。或用慢煮煲高火 6小時。煮好的豬肉撕開時，透出清香，非常惹味。一次煮多一些，以備不時之需。把煮好的手撕豬肉和汁，分開用盒子放在冷凍室（freezer）中，可存放3個多星期。隨時需要，就拿出適當分量加熱。早餐，午餐或下午茶作三文治，非常方便呢。
+食譜 預備時間: 10 分鐘
+烹調時間: 50 分鐘
+分量: 6 至 8人</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Area/Cooking/%E7%B6%B2%E5%8F%8B%E5%A3%93%E5%8A%9B%E9%8D%8B%E7%94%A8%E6%99%82%E7%B6%93%E9%A9%97/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Area/Cooking/%E7%B6%B2%E5%8F%8B%E5%A3%93%E5%8A%9B%E9%8D%8B%E7%94%A8%E6%99%82%E7%B6%93%E9%A9%97/</guid>
+      <description>蒸東西: 開蓋蒸就像一般電鍋，用壓力蒸可以少一半的水。
+蒸早餐  用不銹鋼內鍋，內鍋放半杯水 無水料理、焗烤時蔬3分鐘 3分鐘立馬拿出來，蛋是溏心蛋，如果想要熟一點可以悶一下再拿，或用4分鐘 蓋上一般鍋蓋，不必蓋上蓋。時間到就可以了  烤三層肉 看起來普普，但很下飯，搭配檸檬汁沾著吃也比較去油解膩。 作法：
+ 三層肉刷上醬油 (我用薄鹽醬油) 整塊放入內鍋(因為我用安康內鍋所以有鋪烤焙紙)。 用無水烹調烤排骨模式，剩13分鐘時候開鍋翻面灑孜然粉，剩3分鐘的時候再開鍋將另一面也灑孜然粉，繼續烤到結束。 沾醬是檸檬汁(有加一點點水)+迷迭香  健康版本鹹酥雞  醃料：蒜頭，醬油，五香粉，味霖，黑胡椒 把里肌雞條放進去捏一捏，冰進冰箱。晚上，雞里肌切小塊，沾地瓜粉，等回潮。  回潮：肉沾完地瓜粉白白的，靜置在盤裏讓白白的粉變得濕濕的，變成咖啡色的感   無水料理，烤雞模式 18 分鐘。(也有說法可以兩段九分鐘，中途翻肉)。 反省：粉最後有點沾黏，濕濕的，下次再試試其他方法或是粉～突發其想，用蕃茄醬感覺會變估佬肉或是韓式炸雞的效果   https://www.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Area/Cooking/%E8%90%AC%E7%94%A8%E9%8D%8B%E4%BD%BF%E7%94%A8%E7%B6%93%E9%A9%97/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Area/Cooking/%E8%90%AC%E7%94%A8%E9%8D%8B%E4%BD%BF%E7%94%A8%E7%B6%93%E9%A9%97/</guid>
+      <description>手撕豬 材料  約 1kg 的五花肉 醬料: 黃芥末醬、A1 牛排醬、米酒 &amp;hellip;.  步驟  肉四面拍鹽巴、黑白胡椒粉，煎的金黃 把肉浸在調好的醬料醃漬至少 30分鐘 壓力鍋「豆類模式」: 先設保壓 1hr，翻面再 30 分鐘。   </description>
     </item>
     
     <item>
@@ -112,19 +175,175 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     
     <item>
       <title></title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Impure-Virtual-Function/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Area/VimSeries/%E6%92%B0%E5%AF%AB-Nvim-Plugin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Impure-Virtual-Function/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Area/VimSeries/%E6%92%B0%E5%AF%AB-Nvim-Plugin/</guid>
+      <description>Nvim 有建 Python interface，需要下載模組 pynvim。可以下指令 :h remote-plugin 看官方給的教學，:h python 也有其他資訊。
+如何確定當前的 Nvim 有支援 Python Nvim 可以使用 checkhealth 得知
+1  :checkhealth   如何確定當前的 Vim 有支援 Python 用 :echo has(&amp;quot;python&amp;quot;), :echo has(&amp;quot;python3&amp;quot;) 來看是否支援 Python, Python3。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/C&#43;&#43;-Core-Guidelines/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/C&#43;&#43;-Core-Guidelines/</guid>
+      <description>This is a quick note
+ Ch2 Philosophy 幾乎沒有理由應該遵守的 P.1 Express ideas directly in code
+P.2 Write in ISO Standard C++</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Experiment-Compile-stage-by-stage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Experiment-Compile-stage-by-stage/</guid>
+      <description>https://www.cs.nmsu.edu/~jcook/posts/c-compiling-linking/
+Generate object file only
+1  g++ -c *.cpp   Generate binary by object file
+1  g++ -o prog *.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/External-Linkage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/External-Linkage/</guid>
+      <description> https://en.cppreference.com/w/cpp/language/storage_duration#external_linkage
+ The name can be referred to from the scopes in the other translation units
+ </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Impure-Virtual-Function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Impure-Virtual-Function/</guid>
       <description>1 2 3 4 5 6 7 8 9 10 11 12  class Airport { ... }; // represents airports class Airplane { public: virtual void fly(const Airport&amp;amp; destination); .</description>
     </item>
     
     <item>
-      <title>80-20 Rule</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/80-20-Rule/</link>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Inline-and-Translation-Unit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/80-20-Rule/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Inline-and-Translation-Unit/</guid>
+      <description>CPP Ref  https://en.cppreference.com/w/cpp/language/inline
+Explanation 當 function or variable (C++17) 被宣告為 inline，代表它擁有以下特性 (以下簡稱 inline object)
+ 在每一個 TU (translation unit) 當中，inline object 的定義必須是可存取的 (definition should be reachable -&amp;gt; definition should in hpp)。 如果一個 inline object 被宣告於 hpp，並且此 hpp 被多個 cpp inlcude，表示  此 inline obejct 擁有 [[External Linkage]] (它的名稱在其他 TU 被引用且沒有被宣告 static) 它在多個 TU 之間可能擁有多個定義，但在每一個 TU 的定義都是相同的。    儘管具有這些特性，最終是否予以 inline subsititution 卻仍由 compiler 決定。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/nm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/nm/</guid>
+      <description>man nm 的中文摘錄
+1 2 3  00000000000012d8 t _GLOBAL__sub_I__ZN8test_cls2f3Ev 00000000000012f2 W _ZN8test_cls2f1Ev 00000000000011ca T _ZN8test_cls2f3Ev   大寫: Global Symbol，小寫: local symbol。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E5%A6%82%E4%BD%95%E6%AA%A2%E9%A9%97%E7%B7%A8%E8%AD%AF%E5%BE%8C%E7%9A%84-Function-%E6%98%AF%E5%90%A6%E7%82%BA-inlined-function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E5%A6%82%E4%BD%95%E6%AA%A2%E9%A9%97%E7%B7%A8%E8%AD%AF%E5%BE%8C%E7%9A%84-Function-%E6%98%AF%E5%90%A6%E7%82%BA-inlined-function/</guid>
+      <description>理論上，programmer 不需要知道，這些交給 compiler 決定就好。我根據 Stackoverflow 的討論串做了些研究。
+但為了釐清某些觀念，我希望知道 function 是否隱性的被 inline、亦或是顯性 inline 是否有被接受。
+Winline 對於那些被標示為 inline，編譯結果卻沒有被 inlined 的 function 而言，在 gcc compile 的命令加上 -Winline 即可，這些 function 會以 warning 的形式記錄在 compile log 當中。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E6%B8%85%E9%85%92%E5%A4%A7%E9%9B%86%E5%90%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E6%B8%85%E9%85%92%E5%A4%A7%E9%9B%86%E5%90%88/</guid>
+      <description>京姬 純米大吟釀 匠 味道：入口有香甜果香，帶有微辛口的餘韻(建議凍飲)
+配搭：海鮮、刺身、壽司
+酒造採用山田錦，精米步合精磨至45%釀造，酒款散發出優雅的吟釀香氣，入口後會有感覺舒適的餘韻。雖然此 清酒採用了酒米之王山田錦來釀造，但價格卻非常親民，絕對是入門級的純米大吟釀！
+京姬 大吟釀 匠 北秋田大吟釀 酒精度：15 ~ 16%
+口　感：甜味和清爽之間的完美平衡。
+味道　：精彩而豐富的口感
+酸　度：1.3</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Resource/Travel/%E4%BA%AC%E9%83%BD%E6%95%A3%E7%AD%96/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Resource/Travel/%E4%BA%AC%E9%83%BD%E6%95%A3%E7%AD%96/</guid>
+      <description>飯店   櫻花台畫廊酒店   https://www.youtube.com/watch?v=h6oUyvCPZuw  https://immay.tw/post-222160129/ 京都的八条口附近也算是住宿很方便的地方，從關西空港來的話，有直達的機場巴士，下車後走到飯店也不到五分鐘就能抵達    賞楓   https://osaka.letsgojp.com/archives/55899/  主行程   嵐山一日遊 貴船神社 鴨川散步 和服(清水寺)  候補行程  山崎釀酒廠: https://unclecoffee.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Resource/Travel/%E4%BA%AC%E9%83%BD%E8%BF%91%E9%83%8A%E4%B9%8B%E6%97%85/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Resource/Travel/%E4%BA%AC%E9%83%BD%E8%BF%91%E9%83%8A%E4%B9%8B%E6%97%85/</guid>
+      <description>飛機  8:10 ~ 11:35 台北 - 關西，預計13:35 出關西機場 12:45 ~ 14:55 關西 - 台北，預計 9:45 前需抵達關西機場。  行程 Day1 (日) 機場 &amp;gt; 京都，晚上京都車站周圍採買。 Day2 (一) 京都 &amp;gt; 天橋立 &amp;gt; 伊根 (15:00 起 check in) Day3 (二) 伊根 &amp;gt; 京都 (18:00) Day4 (三) 貴船 Day5 (四) 清水寺 Day6 (五) 宇治，15:00 前往大阪 Day7 (六) 返程</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Resource/Travel/%E4%BA%AC%E9%98%AA%E8%87%AA%E7%94%B1%E8%A1%8C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Resource/Travel/%E4%BA%AC%E9%98%AA%E8%87%AA%E7%94%B1%E8%A1%8C/</guid>
+      <description>https://www.google.com/maps/d/u/0/edit?hl=zh-TW&amp;mid=158vpdkObAFS45TZNWz6fMtHHnIdmz5Q
+資料   HotelsCombined  https://resv.kyototeikikanko.gr.jp/Teikan/Web/Default.aspx  機場交通 ![[關西機場交通.png]]
+ https://www.youtube.com/watch?v=GoxGEMl35HI 可以在 kkday 購票，有外國人特價。
+ 可以考慮購買 ICOCA (類似台灣的悠遊卡) 留意何處&amp;amp;如何取票  素食  Tully&amp;rsquo;s (連鎖咖啡店) 有素食餐點可選 都野菜賀茂: 青菜吃到飽，有早餐時段。注意營業時間: https://yukigo.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Resource/Travel/%E4%BC%B4%E6%89%8B%E7%A6%AE%E7%A0%94%E7%A9%B6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Resource/Travel/%E4%BC%B4%E6%89%8B%E7%A6%AE%E7%A0%94%E7%A9%B6/</guid>
+      <description>原了郭 黑七味  『原了郭』是京都知名的七味粉專賣店。創業於元祿16年（西元1703年），已有超過300歷史。 招牌產品是手工製的『黑七味』，有別於一般的七味粉，使用黑芝麻、白芝麻、山椒、大麻籽、罌粟籽、海苔、唐辛子。據說是百年來代代相傳的配方，加上手工研製，因此只要稍微撒一些就香氣四溢，並能增加料理的風味。
+長文屋七味粉   https://winnie-cucina.com/20200106/  京都で最高の七味を手に入れた！美味しくて唸る名店紹介「長文屋」（七味・京都市北区）  這間七味粉是現買才現做，依唐辛子(辣椒粉)的含量多寡分小辣、中辣、辣、大辣，搭配其他辛香料（ 山椒、麻の実(大麻籽)、芥子(罌粟籽)、青海苔、黒胡麻、白胡麻、紫蘇）而成，總共會加到八味，多加一味青紫蘇。
+ 需要再注意營業日與時間
+ ■地址：京都市北区北野下白梅町54-8
+■電話/傳真：075-467-0217
+■營業時間：10：00-18：00 ■ 法定假日：週三，週四</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Resource/Travel/%E6%97%A5%E6%9C%AC%E6%97%85%E9%81%8A/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Resource/Travel/%E6%97%A5%E6%9C%AC%E6%97%85%E9%81%8A/</guid>
+      <description>1  {&amp;#34;name&amp;#34;:&amp;#34;Default&amp;#34;,&amp;#34;mapZoom&amp;#34;:5,&amp;#34;centerLat&amp;#34;:37.5561912158483,&amp;#34;centerLng&amp;#34;:138.35449397563937,&amp;#34;query&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;chosenMapSource&amp;#34;:0}   溫泉地圖: https://yadococo.net/?mibextid=Zxz2cZ
+[[東京近郊自助]] [[北海道自助]] [[京阪自由行]]
+ 東京   東洋大學   古桑庵tag:coffee  巴西烤肉吃到飽 シュラスコ&amp;amp;ビアレストランtag:food 土古里: 據傳比敘敘園好，2人分和牛拼盤 6600    大阪  燒肉力丸/烤肉力丸，有很多分店!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://brainynight.github.io/second-brain/notes/Resource/%E5%AE%A4%E5%85%A7%E6%94%B6%E7%B4%8D/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Resource/%E5%AE%A4%E5%85%A7%E6%94%B6%E7%B4%8D/</guid>
+      <description>大創 A4 檔案架  適合收納圓形碗盤、鍋蓋 https://shop.daiso.com.tw/products/4984355713968 ![[daiso_book_box.png]]  大創網架  </description>
+    </item>
+    
+    <item>
+      <title>80-20 Rule</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/80-20-Rule/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/80-20-Rule/</guid>
       <description>Effective C++ 的 80/20 Rule 程式往往把 80% 的時間花費在 20% 的程式碼上，你應該針對這 20% 的程式碼做優化，才能有效增進程式的效率。
 網路資源 「80/20法則」又被稱為「帕雷托法則（Pareto principle）」，維基百科上對這個條目的解釋是：「在眾多現象中，80％的結果取決於20％的原因」
  80％的收穫源自於20％的努力，其餘20％的結果卻必須付出80％的力氣才能獲得。
@@ -134,11 +353,21 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     
     <item>
       <title>Array As an Argument</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Array-As-an-Argument/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Array-As-an-Argument/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Array-As-an-Argument/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Array-As-an-Argument/</guid>
       <description>當 Template 定義成 Pass by value 形式時，傳入的 array name 會轉換成 point to array (the first item)。 當 Template 定義成 Pass by ref 形式時，傳入的 array name 是 真的傳入整個 Object。   在進入正文之前須釐清一個觀念，array type 和 pointer type 是不同的，儘管有時候他們「看起來」可以互換。</description>
+    </item>
+    
+    <item>
+      <title>Associative Containers</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Associative-Containers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Associative-Containers/</guid>
+      <description>Chapter5
+Associative Containers  Unordered containers have better performance.      Unordered Container Ordered Container     Access Time Constant Logarithmic    Ordered Container map &amp;amp; multimap 對 key 與 value 有一些規定</description>
     </item>
     
     <item>
@@ -147,98 +376,121 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://brainynight.github.io/second-brain/notes/Resource/MOCs/C&#43;&#43;-Resources/</guid>
-      <description>Notes  [[../../Project/Effective C++ Series/Effective C++ Outline |Effective C++ Outline]] [[../../Project/Effective C++ Series/Effective modern C++ Outline|Effective modern C++ Outline]]  Webs   CppCoreGuidelines  CppDeveloperRoadmap [整理了一份C++学习路线图](- https://mp.</description>
+      <description>Notes  [[../../Project/C++/Effective C++ Outline|Effective C++ Outline]] [[../../Project/C++/Effective modern C++ Outline|Effective modern C++ Outline]] [[../../Project/C++/The C++ STL Outline]]  Webs   CppCoreGuidelines  CppDeveloperRoadmap [整理了一份C++学习路线图](- https://mp.</description>
     </item>
     
     <item>
       <title>C&#43;&#43;11 std function</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/C&#43;&#43;11-std-function/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/C&#43;&#43;11-std-function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/C&#43;&#43;11-std-function/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/C&#43;&#43;11-std-function/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Classic Strategy Pattern</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Classic-Strategy-Pattern/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Classic-Strategy-Pattern/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Classic-Strategy-Pattern/</guid>
-      <description>![[Item35_Classic_Strategy_Pattern.png]]</description>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Classic-Strategy-Pattern/</guid>
+      <description>#DesignPattern
+![[Item35_Classic_Strategy_Pattern.png]]</description>
     </item>
     
     <item>
       <title>Copying Function</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Copying-Function/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Copying-Function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Copying-Function/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Copying-Function/</guid>
       <description>Effective C++ 中，Copying Function 指的是 Copy construcot &amp;amp; Copy Assignment
    當 Programmer 自己定義 Copying function 時，Compiler 不會警告你出錯!</description>
     </item>
     
     <item>
       <title>Default Generated Functions</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Default-Generated-Functions/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Default-Generated-Functions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Default-Generated-Functions/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Default-Generated-Functions/</guid>
       <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  class Empty; // you declare, but implement nothing.</description>
     </item>
     
     <item>
       <title>Deleted Function</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Deleted-Function/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Deleted-Function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Deleted-Function/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Deleted-Function/</guid>
       <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  class A{ public: A(int x) : m(x) {} A&amp;amp; operator = (const A &amp;amp;) = delete; // Declare the copy assignment operator  // as a deleted function.</description>
     </item>
     
     <item>
-      <title>Design Pattern</title>
-      <link>https://brainynight.github.io/second-brain/notes/Resource/MOCs/Design-Pattern/</link>
+      <title>Dependency Injection</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Dependency-Injection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Resource/MOCs/Design-Pattern/</guid>
-      <description>[[../../Project/Effective C++ Series/Template Method|Template Method]] [[../../Project/Effective C++ Series/Classic Strategy Pattern|Classic Strategy Pattern]]</description>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Dependency-Injection/</guid>
+      <description>相依注入(Dependency Injection, DI) Types of dependency injection 有多種，
+ Constructor injection Setter injection Interface injection 總之就是: 如果我需要 &amp;ldquo;A&amp;rdquo;，呼叫取得 A 的 function (或產生 A ) 會有某些巨大的代價，像是必須被迫呼叫 singleton 之類的。相依注入就是在外面取得這個結果，然後透過 constructor 或 setter 把這個相依 &amp;ldquo;注入&amp;rdquo; 到 Client 的 Argument 當中。  因為沒在 Client 中 hard-coded 呼叫到那個有巨大代價的東西，不直接相依於它，重構上會變得容易。</description>
+    </item>
+    
+    <item>
+      <title>Do not pass an array as a single pointer</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Do-not-pass-an-array-as-a-single-pointer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Do-not-pass-an-array-as-a-single-pointer/</guid>
+      <description>不要直接把 C-array 以 Pointer 的方式到處傳遞，這很容易導致 Undefined Behavior。
+例如: Copy 的時候忘記幫末位留一個空位，導致差一錯誤 (off-by-one error, 計數時由於邊界條件判斷失誤導致結果多了一或少了一的錯誤)。
+迴避的方式很簡單，直接使用 STL container。像是 std::vector，
+ 同樣可以用 operator[] 直接以 member function size  甚至 C++20 提供 std::span 可以更優雅的解決此問題:</description>
+    </item>
+    
+    <item>
+      <title>Drawback of non const global variable</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Drawback-of-non-const-global-variable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Drawback-of-non-const-global-variable/</guid>
+      <description> 單元測試: 當每個 function 都用到同一個 global variable ，根本抽不出單元，只能做整體測試。 重構: Code 之間不是獨立的，很難抽出來。 Performance Optimization: 難以用 multiple thread 之類的手段，因為各個部份之間對同一個 global variable 有 dependency。 Concurrency: 可能會有競速 (data race) 問題。  </description>
     </item>
     
     <item>
       <title>EBO (Empty Base Optimization)</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/EBO-Empty-Base-Optimization/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/EBO-Empty-Base-Optimization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/EBO-Empty-Base-Optimization/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/EBO-Empty-Base-Optimization/</guid>
       <description>空白基本類別最佳化 effective c++ 191</description>
     </item>
     
     <item>
       <title>Effective modern C&#43;&#43; Outline</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Effective-modern-C&#43;&#43;-Outline/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Effective-modern-C&#43;&#43;-Outline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Effective-modern-C&#43;&#43;-Outline/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Effective-modern-C&#43;&#43;-Outline/</guid>
       <description>外部資源   網友中譯版  Deducing Types 條款1 了解 Template 的型別推斷規則 [[Template ParamType deduction]]
 條款2 了解 auto 的型別推斷規則 條款3 了解 decltype 條款4 了解如何檢視型別推斷 auto Item 5: Prefer auto to explicit type declarations Item 6: Use the explicitly typed initializer idiom when auto deduces undesired types</description>
     </item>
     
     <item>
       <title>enum hack</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/enum-hack/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/enum-hack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/enum-hack/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/enum-hack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Friend Function</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Friend-Function/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Friend-Function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Friend-Function/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Friend-Function/</guid>
       <description>提供私用成員給某些外部函式來存取，這個有權調用某類別私有成員的函式就稱為 Friend Function
  Friend Function 實質上定義在外面，但是在 Class 內部需要用 keyword friend 再提及一次該 function。因此，Friend Function 是 Non-member function !
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  class Ball; int compare(Ball &amp;amp;b1, Ball &amp;amp;b2) { // 可直接存取私用成員  if(b1.</description>
@@ -246,76 +498,114 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     
     <item>
       <title>Function As an Argument</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Function-As-an-Argument/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Function-As-an-Argument/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Function-As-an-Argument/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Function-As-an-Argument/</guid>
       <description>Array 並不是 C++ 中唯一可以 decay 成 pointer 的東西。function type 也同樣的可以 decay 成 function pointer。
  Function Argument 在 Template Type Deduction 的原則跟 Array Argumnet 是一樣的。</description>
     </item>
     
     <item>
       <title>Identify Initialization and Assignment</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Identify-Initialization-and-Assignment/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Identify-Initialization-and-Assignment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Identify-Initialization-and-Assignment/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Identify-Initialization-and-Assignment/</guid>
       <description>C++ 規定，member data initialization 發生在進入 Constructor 之前。在 Constructor 賦值屬於 assignment。 正確的 initialization 是使用 member initialization list (成員初值列)，取代賦值 (assignment)。
  此例中，第一種的做法效率好:</description>
     </item>
     
     <item>
-      <title>Implicit TemplateInstantiation</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Implicit-TemplateInstantiation/</link>
+      <title>Implementation defined</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Implementation-defined/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Implicit-TemplateInstantiation/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Implementation-defined/</guid>
+      <description>行為取決於(Compiler?) 如何實作，但是實作們必須明確的撰寫 (document) 行為應當如何，並遵守他們定義的行為。
+ This term means that the implementation is free to do what it likes, but must document its choice and stick to it.</description>
+    </item>
+    
+    <item>
+      <title>Implicit TemplateInstantiation</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Implicit-TemplateInstantiation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Implicit-TemplateInstantiation/</guid>
       <description> Occurs when a template is used to declare a pointer variable or a variable with the provided arguments
  </description>
     </item>
     
     <item>
-      <title>Item15 constexpr</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item15-constexpr/</link>
+      <title>Initializer List</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Initializer-List/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item15-constexpr/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Initializer-List/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interface of all containers</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Interface-of-all-containers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Interface-of-all-containers/</guid>
+      <description>每個 Container 至少會有一個 type parameter 與該 type 的 allocator，allocator 多數時候在背景運行 (在需要它的時候默默調用，user 不需要直接呼叫 allocator)。 以 std::vector 為例，std::vector&amp;lt;int&amp;gt; 實際上呼叫的是 std::vector&amp;lt;int, std::allocator&amp;lt;int&amp;gt; &amp;gt;。有了 std::allocator，你可以動態的調整除了 std::array 之外，所有 container 的 size。</description>
+    </item>
+    
+    <item>
+      <title>Internal and External Linkage</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Internal-and-External-Linkage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Internal-and-External-Linkage/</guid>
+      <description>https://learn.microsoft.com/en-us/cpp/cpp/program-and-linkage-cpp?view=msvc-170
+External vs. internal linkage A free function is a function that is defined at global or namespace scope. Non-const global variables and free functions by default have external linkage; they&amp;rsquo;re visible from any translation unit in the program.</description>
+    </item>
+    
+    <item>
+      <title>Item15 constexpr</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Item15-constexpr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Item15-constexpr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Item47 Use traits classes for information about types</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item47-Use-traits-classes-for-information-about-types/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Item47-Use-traits-classes-for-information-about-types/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item47-Use-traits-classes-for-information-about-types/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Item47-Use-traits-classes-for-information-about-types/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Item54 Familiarize yourself with the standard library including TR1</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item54-Familiarize-yourself-with-the-standard-library-including-TR1/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Item54-Familiarize-yourself-with-the-standard-library-including-TR1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item54-Familiarize-yourself-with-the-standard-library-including-TR1/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Item54-Familiarize-yourself-with-the-standard-library-including-TR1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Item55 Familiarize yourself with Boost</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item55-Familiarize-yourself-with-Boost/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Item55-Familiarize-yourself-with-Boost/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Item55-Familiarize-yourself-with-Boost/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Item55-Familiarize-yourself-with-Boost/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Member Function Template</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Member-Function-Template/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Member-Function-Template/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Member-Function-Template/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Member-Function-Template/</guid>
       <description>並不限用於 constructor，它常被用來處理賦值操作。
 以 shared_ptr 為例，它的 copy ctor 可以接受 weak_ptr 與 shared_ptr (不限此二類，沒有全列)。且包含 copy assignment 也是透過 member function template 達成。
 只不過 constructor 類的，除了 generic copy constructor (接收 shared pointer type 的) 是接受隱式轉換的，</description>
@@ -323,78 +613,78 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     
     <item>
       <title>Member Initialization List</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Member-Initialization-List/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Member-Initialization-List/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Member-Initialization-List/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Member-Initialization-List/</guid>
       <description>無論如何，使用 member initializer list 對 member data 初始化是最好的。儘管這麼做對內建型別的資料沒差，對非內建型別卻有巨大的意義。
  如果你就是想要 call member data 的 default constructor，依然可以透過 member initializer list 達成。只要給予空括號，不填內容即可。 這樣的好處是明白地列出所有 member data，避免有 data 忘記給初始值，特別是對非內建型別的member data，沒有初始化的結果是災難的。</description>
     </item>
     
     <item>
       <title>Modern C&#43;&#43; noexcept</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Modern-C&#43;&#43;-noexcept/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Modern-C&#43;&#43;-noexcept/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Modern-C&#43;&#43;-noexcept/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Modern-C&#43;&#43;-noexcept/</guid>
       <description>[[為異常安全 (Exception-safe) 而努力是值得的]] C++11 中新增的 noexcept 有如 const 一般，是 function signature 的一部分。
 固然，在 Effective Modern C++ Item 14 當中提及將 function 標示為 noexcept 所帶來的 object file optimize 益處。仍需要切記，noexcept 也是 signature 的一部分，如果只是想要享受優化的好處，而沒有仔細審視 function 是否真的 exception safe，直接將 API 暴露給客戶端，而在日後發現並非 exception safe 而收回 noexcept 保證，這將嚴重影響客戶端的使用。 多數的 function 是 exception natural (中性的)，意即，不主動拋出 exception，但 exception 可能從此 func 所 invoke 的 function 中被拋出來。這就表示此 function 非 exception safe</description>
     </item>
     
     <item>
       <title>Mutex</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Mutex/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Mutex/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Mutex/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Mutex/</guid>
       <description>假設我們用 C API 處理 Mutex 物件
 1 2  void lock(Mutex *pm); // lock mutex pointed to by pm void unlock(Mutex *pm); // unlock the mutex   使用者需要自己手動分別呼叫 lock 與 unlock。為了確保不會忘記幫 Mutex 解鎖，可以建立一個由 RAII 守則支配的 Class &amp;ndash;資源在建構期間獲得(lock)，在解構期間釋放(unlock)&amp;ndash;來管理資源「Mutex 物件」。</description>
     </item>
     
     <item>
       <title>non-member &amp;&amp; non-friend function</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/non-member-non-friend-function/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/non-member-non-friend-function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/non-member-non-friend-function/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/non-member-non-friend-function/</guid>
       <description>[[Non-member &amp;amp;&amp;amp; Non-friend Function 的封裝度優於 Member Function]]</description>
     </item>
     
     <item>
       <title>Non-member &amp;&amp; Non-friend Function 的封裝度優於 Member Function</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Non-member-Non-friend-Function-%E7%9A%84%E5%B0%81%E8%A3%9D%E5%BA%A6%E5%84%AA%E6%96%BC-Member-Function/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Non-member-Non-friend-Function-%E7%9A%84%E5%B0%81%E8%A3%9D%E5%BA%A6%E5%84%AA%E6%96%BC-Member-Function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Non-member-Non-friend-Function-%E7%9A%84%E5%B0%81%E8%A3%9D%E5%BA%A6%E5%84%AA%E6%96%BC-Member-Function/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Non-member-Non-friend-Function-%E7%9A%84%E5%B0%81%E8%A3%9D%E5%BA%A6%E5%84%AA%E6%96%BC-Member-Function/</guid>
       <description>Non-member function 帶來更佳的封裝度、與 Packaging 彈性。
  這邊說的是 Non-member 且(AND) Non-friend function (Pure function) vs. Member Function。(關於 [[Friend Function]] )</description>
     </item>
     
     <item>
       <title>Obsidian Map View</title>
-      <link>https://brainynight.github.io/second-brain/notes/Area/Obsidian/Obsidian-Map-View/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Archive/Obsidian/Obsidian-Map-View/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Area/Obsidian/Obsidian-Map-View/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Archive/Obsidian/Obsidian-Map-View/</guid>
       <description>Github: Obsidian Map View
 紀錄 導入已記錄在 Map 的地點  開啟命令面板 -&amp;gt; &amp;ldquo;Map View: add inline geolocation link&amp;rdquo;，文字 [](geo:) 會被插入。 在中括號中輸入地點，像是: [台北101]，會跳出下拉選單，點選之後經緯度位置會自動填在 (geo:) 當中。  從 Command 上新增地點  開啟命令面板 -&amp;gt;&amp;ldquo;Map View: New geolocation note&amp;rdquo;。 跳出一個 Dialog，貼上連結、或是 Search 地點都可以。  網址連結分析的規則: URL parsing rules Search 地點會受到選擇哪一個地點資訊提供者所影響: configured geocoding provider     從既有的筆記新增地點 Inline geolocation link 如前面「從 Command 新增地點」，在文章中以 [](geo:) 標示地點。</description>
     </item>
     
     <item>
       <title>Obsidian Plugins</title>
-      <link>https://brainynight.github.io/second-brain/notes/Area/Obsidian/Obsidian-Plugins/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Archive/Obsidian/Obsidian-Plugins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Area/Obsidian/Obsidian-Plugins/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Archive/Obsidian/Obsidian-Plugins/</guid>
       <description>Theme  當前用的是 Thing2  minimal 也是熱門的主題，且與許多 plugin 相容  但是 header 之間不同階級沒有大小之分，我不喜歡，要用需要改 CSS。    Plugin  Obsidian Dataview mode: like notion https://ithelp.</description>
     </item>
     
     <item>
       <title>Obsidian Publish 的替代選擇</title>
-      <link>https://brainynight.github.io/second-brain/notes/Area/Obsidian/Sync-Obsidian/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Archive/Obsidian/Sync-Obsidian/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Area/Obsidian/Sync-Obsidian/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Archive/Obsidian/Sync-Obsidian/</guid>
       <description>想在 IOS 上面也有 Sync 的 Obsidian 可以用!
 社群的作法是裝 ISH 以 Git 同步，我想實驗用 Terminus (比起 ISH 有在維護)
   Sync with git on iOS for free using iSH  Setting up iOS git-based syncing with mobile app (using Working Copy)  </description>
@@ -402,138 +692,168 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     
     <item>
       <title>ODR use</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/ODR-use/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/ODR-use/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/ODR-use/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/ODR-use/</guid>
       <description> https://en.cppreference.com/w/cpp/language/definition#ODR-use
  當一個物件被稱為 odr use: 物件被讀取 (例外: compile time constant) 或寫入、它的 address 被取用，或有 reference 綁到他身上 當一個 reference 被稱為 odr use: 當它所 reference 到的物件在 compile 期間是未知的 一個 function 被稱為 odr use: 有產生對它的 function call，或它的 address 被取用 總結: 當一個物件、reference 或 function 被稱為 odr use，表示它的定義必定 exist 於 program 的某處，違反這一點會導致 Link time error。  </description>
     </item>
     
     <item>
       <title>One Definition Rule</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/One-Definition-Rule/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/One-Definition-Rule/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/One-Definition-Rule/</guid>
-      <description>Source: https://en.cppreference.com/w/cpp/language/definition Source: https://en.wikipedia.org/wiki/One_Definition_Rule
- 在一個 translation unit 當中，template, type, function, object 只能一份 definition (一份實作)。 在整個 program 當中，一個 object 或 non-inline function 不能有多於一個 definition Some things, like types, templates, and extern inline functions, can be defined in more than one translation unit.</description>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/One-Definition-Rule/</guid>
+      <description>在一個 translation unit 當中，Symbol 可以被「宣告」無數次，但只能被定義一次。
+ 宣告將符號的名稱導入 program 當中，定義提供創建此 symbol 的所有資訊。
+如果名稱表示變量，定義會對該變數進行初始化。function definition 包含 signature 與 function body，class definition 包含 class name, class member，然而 member function 的 definition 是允許被放在其他檔案的。</description>
     </item>
     
     <item>
       <title>operator overloading</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/operator-overloading/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/operator-overloading/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/operator-overloading/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/operator-overloading/</guid>
       <description></description>
     </item>
     
     <item>
       <title>override</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/override/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/override/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/override/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/override/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ParamType 是 Pointer 或 Reference 但不是 Universal Reference</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/ParamType-%E6%98%AF-Pointer-%E6%88%96-Reference-%E4%BD%86%E4%B8%8D%E6%98%AF-Universal-Reference/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/ParamType-%E6%98%AF-Pointer-%E6%88%96-Reference-%E4%BD%86%E4%B8%8D%E6%98%AF-Universal-Reference/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/ParamType-%E6%98%AF-Pointer-%E6%88%96-Reference-%E4%BD%86%E4%B8%8D%E6%98%AF-Universal-Reference/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/ParamType-%E6%98%AF-Pointer-%E6%88%96-Reference-%E4%BD%86%E4%B8%8D%E6%98%AF-Universal-Reference/</guid>
       <description>Rule:
  If expr(argument) has reference, ignore the reference part. T = ArgumentType - declared ParamType.  </description>
     </item>
     
     <item>
       <title>ParamType 是 Universal Reference</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/ParamType-%E6%98%AF-Universal-Reference/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/ParamType-%E6%98%AF-Universal-Reference/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/ParamType-%E6%98%AF-Universal-Reference/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/ParamType-%E6%98%AF-Universal-Reference/</guid>
       <description>當 ParamType 被宣告成 T&amp;amp;&amp;amp; (Universal Reference) 時，傳入的變數是 rvalue 或 lvalue 在推斷的流程是不同的。詳細在 [[Item24 Distinguish universal references from rvalue references]] 會說明。
 原則是:</description>
     </item>
     
     <item>
       <title>ParamType 非 Reference 或 Pointer</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/ParamType-%E9%9D%9E-Reference-%E6%88%96-Pointer/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/ParamType-%E9%9D%9E-Reference-%E6%88%96-Pointer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/ParamType-%E9%9D%9E-Reference-%E6%88%96-Pointer/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/ParamType-%E9%9D%9E-Reference-%E6%88%96-Pointer/</guid>
       <description>當 ParamType 不是 Ref 也非 ptr，真正的 ParamType=T 時，傳入的物件會被做 pass by value。 在 pass by value 中，只有 pure class infomation 會被保留下來</description>
     </item>
     
     <item>
       <title>Pass by value 當中的 Copy 行為</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Pass-by-value-%E7%95%B6%E4%B8%AD%E7%9A%84-Copy-%E8%A1%8C%E7%82%BA/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Pass-by-value-%E7%95%B6%E4%B8%AD%E7%9A%84-Copy-%E8%A1%8C%E7%82%BA/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Pass-by-value-%E7%95%B6%E4%B8%AD%E7%9A%84-Copy-%E8%A1%8C%E7%82%BA/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Pass-by-value-%E7%95%B6%E4%B8%AD%E7%9A%84-Copy-%E8%A1%8C%E7%82%BA/</guid>
       <description>Simple Pass By Value 考量下面的程式 validateStudent(s) 執行的成本有什麼?
 1 2 3 4 5  class Person; class Student: public Person; bool validateStudent(Student s); // pass by value = copy Student s = Student(); validateStudent(s);   成本是</description>
     </item>
     
     <item>
       <title>pimpl idiom (pointer to implementation)</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/pimpl-idiom-pointer-to-implementation/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/pimpl-idiom-pointer-to-implementation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/pimpl-idiom-pointer-to-implementation/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/pimpl-idiom-pointer-to-implementation/</guid>
       <description>將物件的實作細目隱藏在一個指標背後
  第一種手法: Handle Class 此手法會把一個類別分成兩個 Class:
  一個是暴露給客戶端的接口 Handle Class (ex. Person)，它只會擁有一個 pointer 指向實作 class 一個是實作類別 Implementation Class (ex.</description>
     </item>
     
     <item>
-      <title>Protected 與 Public 都是低封裝度的 Access Level</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Protected-%E8%88%87-Public-%E9%83%BD%E6%98%AF%E4%BD%8E%E5%B0%81%E8%A3%9D%E5%BA%A6%E7%9A%84-Access-Level/</link>
+      <title>Prefer simple and conventional ways of passing information</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Prefer-simple-and-conventional-ways-of-passing-information/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Protected-%E8%88%87-Public-%E9%83%BD%E6%98%AF%E4%BD%8E%E5%B0%81%E8%A3%9D%E5%BA%A6%E7%9A%84-Access-Level/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Prefer-simple-and-conventional-ways-of-passing-information/</guid>
+      <description>如何決定 Function Signature 的長相  headings: 資料結構 copying 跟 moving 的成本 row: parameter 的性質  In &amp;amp; retain copy: 在 function 內部會發生 copy In &amp;amp; retain &amp;ldquo;copy&amp;rdquo;: Moved-from means that it is in a valid but not nearer specified state.</description>
+    </item>
+    
+    <item>
+      <title>Protected 與 Public 都是低封裝度的 Access Level</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Protected-%E8%88%87-Public-%E9%83%BD%E6%98%AF%E4%BD%8E%E5%B0%81%E8%A3%9D%E5%BA%A6%E7%9A%84-Access-Level/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Protected-%E8%88%87-Public-%E9%83%BD%E6%98%AF%E4%BD%8E%E5%B0%81%E8%A3%9D%E5%BA%A6%E7%9A%84-Access-Level/</guid>
       <description>思維誤區: Protected 不比 Public 具有更好的封裝性
  取消一個 Public Member Data 的成本: 所有使用他的客戶端 取消一個 Protected Member Data 的成本 : 所有繼承他的 Derived Class 這兩種 Access Level 的封裝性都不佳，仍該盡可能的使用 Private。  </description>
     </item>
     
     <item>
       <title>Pure Virtual Destructor</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Pure-Virtual-Destructor/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Pure-Virtual-Destructor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Pure-Virtual-Destructor/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Pure-Virtual-Destructor/</guid>
       <description>現在的情境是，如果，你想要有一個抽象類 &amp;ndash; 抽象類的好處是自身無法被實例化。然而，抽象類的定義是，至少有一個 function 是 Pure Virtural Function。該選擇 &amp;ldquo;誰&amp;rdquo; 成為 Pure virtural function 呢? 洽巧手上沒有適合的人選! Destructor 會是個好選擇。因為
  Abstract Class 總是被當作 Base Class Base Class 作為多型用途時，應當帶有 virtural destructor [[Pure Virtual Function]] 可使該 Class 形成 Abstract 三個點串起來&amp;ndash;「讓 destructor 變成 Pure Virtural 吧」，這樣不會有不該被 virtural 的 function 遭殃!</description>
     </item>
     
     <item>
       <title>Pure Virtual Function</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Pure-Virtual-Function/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Pure-Virtual-Function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Pure-Virtual-Function/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Pure-Virtual-Function/</guid>
       <description>只繼承 Interface 需自行實做
  相當於告訴 Client: 你需要提供一個這樣的函式，但我不干涉你怎麼做它。
 1 2 3 4  class Shape { public: virtual void draw() const = 0; };   不過，我們其實可以為 Pure Virtual Function 提供一份實作碼，只是需要通過 Class Name 呼叫 (以 Shape::draw 而非 shape.</description>
     </item>
     
     <item>
-      <title>Singleton</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Singleton/</link>
+      <title>Sequence Containers</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Sequence-Containers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Singleton/</guid>
-      <description></description>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Sequence-Containers/</guid>
+      <description>Complexity O(1): 與容器的 size 無關，具有 constant runtime，但兩個容器的 complexity 都是 O(1) 並不表示相同的操作有相同的速度，僅表示不隨著容器的增加而影響 runtime。
+ std::array : homogeneous container of fixed length. std::vector : homogeneous container, which length is automatically adjusted at runtime.</description>
+    </item>
+    
+    <item>
+      <title>shared_ptr</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/shared_ptr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/shared_ptr/</guid>
+      <description>shared_ptr in cppreference
+ Constructing a new shared_ptr using the raw underlying pointer owned by another shared_ptr leads to undefined behavior.</description>
+    </item>
+    
+    <item>
+      <title>Singleton</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Singleton/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Singleton/</guid>
+      <description>Drawback of Singleton  誰負責銷毀它? 這個 singleton 應該可以被繼承嗎? 怎麼實作 singleton 使它 thread-safe 如果 singleton 之間有相依性，而且在不同的 translation unit，順序應該是?   What’s the “static initialization order ‘fiasco’ (problem)”?</description>
     </item>
     
     <item>
       <title>Smart Pointer</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Smart-Pointer/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Smart-Pointer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Smart-Pointer/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Smart-Pointer/</guid>
       <description>在[[為多型用途的基礎類別宣告 virtual 解構式]]文章中的 TimeKeeper 例子，我們提及了工廠函式 (factory function)，在該例子，我們把 delete new resource 的責任交給 Client。
 然而有很多情況&amp;ndash;例如 main flow 中過早的 return，resource 可能沒有成功被銷毀。善用 Pointer-like 物件，並把銷毀資源的操作確實的寫在 Destructor 中可以避免這些問題。</description>
     </item>
@@ -549,69 +869,78 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     
     <item>
       <title>Static Object</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Static-Object/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Static-Object/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Static-Object/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Static-Object/</guid>
       <description>壽命從被建構出來，持續到程式結束為止。
  因此 Stack 和 Heap-based 物件都不是 static object。 這種物件包含 Global Object，定義在 Namespace Scope 的物件，Class &amp;amp; Function &amp;amp; File 內宣告成 static 的物件。</description>
     </item>
     
     <item>
-      <title>Swap and pimpl</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Swap-and-pimpl/</link>
+      <title>STL alogirthm</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/STL-alogirthm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Swap-and-pimpl/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/STL-alogirthm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Swap and pimpl</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Swap-and-pimpl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Swap-and-pimpl/</guid>
       <description>std::swap STL 的 swap 平凡無奇，涉及了三次的複製。
 1 2 3 4 5 6 7 8  namespace std { template&amp;lt;typename T&amp;gt; void swap (T&amp;amp; a, T&amp;amp; b) { T tmp(a); a = b; b = tmp; } }   但對於「某些型別」而言，他們滿足某些資格。因為有這種前提，std::swap 的標準做法(三次複製)是多餘的，他們有更快的解法。</description>
     </item>
     
     <item>
       <title>Template and Generic Programming</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-and-Generic-Programming/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Template-and-Generic-Programming/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-and-Generic-Programming/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Template-and-Generic-Programming/</guid>
       <description>本文中要透過 [[Member Function Template]] (成員函式模板) 完成一個泛化的 copy constructor。
  這段範例的意思是，對於 SmartPtr&amp;lt;T&amp;gt; 存在一個由 SmartPtr&amp;lt;U&amp;gt; 建構的管道 (透過 Copy Constructor)。 這邊的型別轉換沒有標示為 explicit，一旦標示為 explicit，就需要明白寫出轉型 (cast) 動作。 使用隱式轉換式因為 raw pointer 本來就支援隱式轉換，仿效相同模式，SmartPtr 也使用隱式轉換。</description>
     </item>
     
     <item>
       <title>Template Method</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-Method/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Template-Method/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-Method/</guid>
-      <description></description>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Template-Method/</guid>
+      <description>#DesignPattern</description>
     </item>
     
     <item>
       <title>Template ParamType deduction</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-ParamType-deduction/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Template-ParamType-deduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-ParamType-deduction/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Template-ParamType-deduction/</guid>
       <description>T is a part of ParamType when it declared in template.
   Case1. [[ParamType 是 Pointer 或 Reference 但不是 Universal Reference]] Case2.</description>
     </item>
     
     <item>
       <title>Template Specialization</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-Specialization/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Template-Specialization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-Specialization/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Template-Specialization/</guid>
       <description>Template 可以針對特定的 Type 特化，寫法如下
  template&amp;lt;&amp;gt; 裡面不放任何參數，表示這不是 template 也不是標準的 class，是一個特化的 MsgSender。 class MsgSender&amp;lt;CompanyZ&amp;gt; 表示 template MsgSender 在遇到 input type 是 CompanyZ 的時候，要用以下定義的內容。 以下這段範例就是 MsgSender 針對 CompanyZ 特別訂製的內容，這就是模板全特化 (Total Template Specialization)。  1 2 3 4 5 6  template&amp;lt;&amp;gt; // a total specialization of class MsgSender&amp;lt;CompanyZ&amp;gt; { // MsgSender; the same as the public: // general template, except sendClear is omitted void sendSecret(const MsgInfo&amp;amp; info) { .</description>
     </item>
     
     <item>
       <title>Template 帶來的程式碼膨脹</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-%E5%B8%B6%E4%BE%86%E7%9A%84%E7%A8%8B%E5%BC%8F%E7%A2%BC%E8%86%A8%E8%84%B9/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Template-%E5%B8%B6%E4%BE%86%E7%9A%84%E7%A8%8B%E5%BC%8F%E7%A2%BC%E8%86%A8%E8%84%B9/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-%E5%B8%B6%E4%BE%86%E7%9A%84%E7%A8%8B%E5%BC%8F%E7%A2%BC%E8%86%A8%E8%84%B9/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Template-%E5%B8%B6%E4%BE%86%E7%9A%84%E7%A8%8B%E5%BC%8F%E7%A2%BC%E8%86%A8%E8%84%B9/</guid>
       <description>Template 可能導致 binary 內有重複的程式碼、資料，儘管 source code 看起來沒有重複的問題，object code 卻異常肥大。
 避免輸入類別無關的 code 帶來的程式膨脹 跟共性與變性分析 (commonality and variability analysis) 把程式碼中與「輸入類別有關」跟「與輸入類別無關」的部分分開。困難的是需要學習「感受」template 被具現化很多次時可能發生的「重複行為」。
 下面這段例子，Template 輸入參數有兩個: T 跟 n (矩陣的 size)，只要這兩個參數的組合不一樣，就會具現化一次物件。 sm1 跟 sm2 分別是一個 &amp;ldquo;5*5 矩陣&amp;rdquo; 跟 &amp;ldquo;10*10矩陣&amp;rdquo; 物件，並且 SquareMatrix::invert 會被具現化兩次!</description>
@@ -619,86 +948,148 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     
     <item>
       <title>Template 的用途</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-%E7%9A%84%E7%94%A8%E9%80%94/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Template-%E7%9A%84%E7%94%A8%E9%80%94/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-%E7%9A%84%E7%94%A8%E9%80%94/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Template-%E7%9A%84%E7%94%A8%E9%80%94/</guid>
       <description>Container Used: Template 讓 Programmer 得以建立 Type-Safe 的容器，像是 list, map, vector&amp;hellip; Generic Programming: 寫出的程式碼跟所處理的類別彼此獨立 (ex. STL 的 for_each, find 和 merge) Template metaprogramming: 在 Compiler 內執行、並在編譯完成時停止執行的 program (the creation of programs that execute inside C++ compilers and that stop running when compilation is complete.</description>
     </item>
     
     <item>
       <title>Template 與隱式介面</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-%E8%88%87%E9%9A%B1%E5%BC%8F%E4%BB%8B%E9%9D%A2/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Template-%E8%88%87%E9%9A%B1%E5%BC%8F%E4%BB%8B%E9%9D%A2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Template-%E8%88%87%E9%9A%B1%E5%BC%8F%E4%BB%8B%E9%9D%A2/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Template-%E8%88%87%E9%9A%B1%E5%BC%8F%E4%BB%8B%E9%9D%A2/</guid>
       <description>物件導向以顯式介面 (explicit interface) 和執行期多型 (runtime polymorphism) 解決問題。 Template 與 Generic Programming 而言，隱式介面 (implicit interface) 與編譯期多型 (compile-time) 更重要。  多型     物件導向 Generic Programming     多型 執行期多型 (runtime polymorphism) 編譯期多型 (compile-time)   概念(打比方) 執行期間決定哪一個 virtual function 要被呼叫 編譯期間做 template 具象化、與函式重載決議 (function overloading resolving)    介面     物件導向 Generic Programming     介面 顯式介面 (explicit interface) 隱式介面 (implicit interface)   說明 Signature 由函式名稱、參數型別、反回型態構成，class 明確定義有哪些 function 沒有定義明確的 signature，只要有對應的 overloading function 被呼叫即可。    顯式介面  Function Signature 由函式名稱、參數型別、反回型態構成。  對 overloading 而言，函式名稱相同、參數型別相同、return type 不同，無法成功 overload。他們會被視為 duplicate。 但對一個 function 而言，function name, parameter type, return type 是必須的，而 effective C++ 的作者習慣將這三組一起稱為 signature。   Class 會明確的定義有哪些 function，下例 Widget 就有 constructor, destructor, size, normalize, swap。並且 Widget 具有 virtual function，表示它有可能有 Derived class 而得以做 runtime polymorphism。  1 2 3 4 5 6 7 8  class Widget { public: Widget(); virtual ~Widget(); virtual std::size_t size() const; virtual void normalize(); void swap(Widget&amp;amp; other); };   隱式介面 再看下例的 Template function:</description>
     </item>
     
     <item>
-      <title>The definition and declaration of static const</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/The-definition-and-declaration-of-static-const/</link>
+      <title>The C&#43;&#43; Compilation Model</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/C&#43;&#43;-Compilation-Model/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/The-definition-and-declaration-of-static-const/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/C&#43;&#43;-Compilation-Model/</guid>
+      <description> https://subscription.packtpub.com/book/programming/9781789801491/1/ch01lvl1sec03/the-c-compilation-model
+![[Pasted image 20230918000719.png]]
+[[Experiment Compile stage by stage]]
+ </description>
+    </item>
+    
+    <item>
+      <title>The C&#43;&#43; STL Outline</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/The-C&#43;&#43;-STL-Outline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/The-C&#43;&#43;-STL-Outline/</guid>
+      <description>Containers  共同介面: Ch3 [[Interface of all containers]] Ch4 [[Sequence Containers]] Ch5 [[Associative Containers]]  Sequence Containers Associative Continers  Unordered containers have better performance.</description>
+    </item>
+    
+    <item>
+      <title>The definition and declaration of static const</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/The-definition-and-declaration-of-static-const/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/The-definition-and-declaration-of-static-const/</guid>
       <description> [!todo] P14
  </description>
     </item>
     
     <item>
       <title>Translation Unit</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Translation-Unit/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Translation-Unit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Translation-Unit/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Translation-Unit/</guid>
       <description>A translation unit is the source code giving rise to a single object file. It&amp;rsquo;s basically a single source file, plus all of its #include files.</description>
     </item>
     
     <item>
-      <title>typedef and using</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/typedef-and-using/</link>
+      <title>Translation Unit and Linkage</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Translation-Unit-and-Linkage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/typedef-and-using/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Translation-Unit-and-Linkage/</guid>
+      <description>https://learn.microsoft.com/en-us/cpp/cpp/program-and-linkage-cpp?view=msvc-170
+一個 program 是由一個或多個 translation unit 組成，一個 translation unit 則由一個 implementation file (cpp) 和它使用到的所有 header file (hpp) 所組成。
+每一個 translation unit 可以被獨立編譯，當所有的 translation unit 都編譯完成，linker 會把 translation units 融合成一個 Program。違反 [[One Definition Rule]] 會在這個階段爆出 linking error，其原因是有同名稱的 symbol 被定義了多次。</description>
+    </item>
+    
+    <item>
+      <title>typedef and using</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/typedef-and-using/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/typedef-and-using/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Virtual Base Class</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Virtual-Base-Class/</link>
+      <title>Undeined behavior and Implementation defined behavior</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Undeined-behavior-and-Implementation-defined-behavior/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Virtual-Base-Class/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Undeined-behavior-and-Implementation-defined-behavior/</guid>
+      <description> Undefined behavior : 無法預期結果 [[Implementation-defined]] behavior: 取決於編譯器  </description>
+    </item>
+    
+    <item>
+      <title>Vim and System Clipboard</title>
+      <link>https://brainynight.github.io/second-brain/notes/Area/VimSeries/Vim-and-System-Clipboard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Area/VimSeries/Vim-and-System-Clipboard/</guid>
+      <description>在 Linux Neovim 上面使用系統剪貼簿  確認 $DISPLAY 有正確的數值 確認 xclip 可執行 在 init.nvim 中設置，意思是把 neovim 的剪貼簿連到 register +或 * 1 2 3  &amp;#34;choose 1 set clipboard=unnamed set clipboard=unnamedplus   `` ff  unnamed 與 unnamedplus 的差別 unmaed register 是 *，unnamedplus 是 +，兩者都是 system clipboard，差別在於</description>
+    </item>
+    
+    <item>
+      <title>Virtual Base Class</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Virtual-Base-Class/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Virtual-Base-Class/</guid>
       <description>讓鑽石繼承中，帶有該資料的 Base Class 成為 virtual base class。
  此例中就是 File 要成為 virtual base class，InputFile &amp;amp; OutputFile 在繼承 File 時要加上 virtual。 !</description>
     </item>
     
     <item>
       <title>Virtual Function</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Virtual-Function/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Virtual-Function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/Virtual-Function/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/Virtual-Function/</guid>
       <description>在 Ctor / Dtor 呼叫 virtual function ![[Itm10_TranscationUML.png]]
 在這裡，Transcation 的 Constructor 呼叫的會是 Transcation::logTranscation。 又，該 function 為 Pure virtual function，若它沒被定義，則當編譯器呼叫時會引發錯誤，而若有&amp;hellip;. 就會 Link 到該 base class function。 Related: [[區分介面繼承(interface)和實作繼承(implement)]]</description>
     </item>
     
     <item>
       <title>不要為非多型用途的 Base Class 宣告 Virtual Function</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E4%B8%8D%E8%A6%81%E7%82%BA%E9%9D%9E%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84-Base-Class-%E5%AE%A3%E5%91%8A-Virtual-Function/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E4%B8%8D%E8%A6%81%E7%82%BA%E9%9D%9E%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84-Base-Class-%E5%AE%A3%E5%91%8A-Virtual-Function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E4%B8%8D%E8%A6%81%E7%82%BA%E9%9D%9E%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84-Base-Class-%E5%AE%A3%E5%91%8A-Virtual-Function/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E4%B8%8D%E8%A6%81%E7%82%BA%E9%9D%9E%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84-Base-Class-%E5%AE%A3%E5%91%8A-Virtual-Function/</guid>
       <description>無端將不該擁有 virtual 的 class 宣告 virtual，與無端將所有的 function 宣告成 virtual，都是有毒的。
  當類別不作為 Base Class，或是不作為多型時的基本 Class 時，不應該使用 virtual。 原因是，virtual 背後是以 vptr (virtual table pointer) 和 vtbl (virtual table) 實作 virtual，需要耗費額外的記憶體。</description>
     </item>
     
     <item>
-      <title>了解 Inline 的裡裡外外</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96/</link>
+      <title>世界第一的R90高效睡眠法</title>
+      <link>https://brainynight.github.io/second-brain/notes/Resource/Books/%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80%E7%9A%84R90%E9%AB%98%E6%95%88%E7%9D%A1%E7%9C%A0%E6%B3%95/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Resource/Books/%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80%E7%9A%84R90%E9%AB%98%E6%95%88%E7%9D%A1%E7%9C%A0%E6%B3%95/</guid>
+      <description>世界第一的R90高效睡眠法:C羅、貝克漢的睡眠教練教你如何睡得少，也能表現得好
+![[Pasted image 20240119131524.png]]
+咖啡因 英國食品標準: 每日攝取咖啡因含量 400mg:
+ 星巴克每日精選: 330g、濃縮咖啡: 75g、 咖啡因半衰期 6hr  陽光  Lumie , 飛利浦，晨光喚醒燈  Step  選定一個應該起床的最早時間!</description>
+    </item>
+    
+    <item>
+      <title>了解 Inline 的裡裡外外</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96/</guid>
       <description>原理 用程式碼取代 function call
 向 Compiler 發出申請 Programmer 可以明確的提出請求，或隱喻的提出。但編譯器可以拒絕這個申請，大部分過於複雜的函式都會被拒絕 inline:
  有 loop 的 多數的 virtual function (等 Runtime 才確定哪個被喚醒)  顯示與隱式的分別:</description>
@@ -706,58 +1097,75 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     
     <item>
       <title>了解如何在 Template 中指涉 Base Class 成員</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E4%BA%86%E8%A7%A3%E5%A6%82%E4%BD%95%E5%9C%A8-Template-%E4%B8%AD%E6%8C%87%E6%B6%89-Base-Class-%E6%88%90%E5%93%A1/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E4%BA%86%E8%A7%A3%E5%A6%82%E4%BD%95%E5%9C%A8-Template-%E4%B8%AD%E6%8C%87%E6%B6%89-Base-Class-%E6%88%90%E5%93%A1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E4%BA%86%E8%A7%A3%E5%A6%82%E4%BD%95%E5%9C%A8-Template-%E4%B8%AD%E6%8C%87%E6%B6%89-Base-Class-%E6%88%90%E5%93%A1/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E4%BA%86%E8%A7%A3%E5%A6%82%E4%BD%95%E5%9C%A8-Template-%E4%B8%AD%E6%8C%87%E6%B6%89-Base-Class-%E6%88%90%E5%93%A1/</guid>
       <description>考量以下的類別關係，Company classes 會作為 template 的輸入參數傳入 MsgSender 體系的 Template。 LoggingMsgSender 在繼承 MsgSender 的時候，刻意為新的 function 取 sendClearMsg ，不同於 Base class sendClear，這是好的做法，避免了 [[繼承時的名稱遮掩行為]] 以及遵守 [[絕不重新定義繼承來的 Non-virtual Function]]。 !</description>
     </item>
     
     <item>
       <title>以 Const 取代使用 Define</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E4%BB%A5-Const-%E5%8F%96%E4%BB%A3%E4%BD%BF%E7%94%A8-Define/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E4%BB%A5-Const-%E5%8F%96%E4%BB%A3%E4%BD%BF%E7%94%A8-Define/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E4%BB%A5-Const-%E5%8F%96%E4%BB%A3%E4%BD%BF%E7%94%A8-Define/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E4%BB%A5-Const-%E5%8F%96%E4%BB%A3%E4%BD%BF%E7%94%A8-Define/</guid>
       <description>以編譯器取代前處理器 #define 的本質是 word replacement，如: #define RATIO 1.653，編譯器可能不認得 RATIO 並在錯誤訊息中從頭到尾以 1.653 取代 RATIO。
 1  const double Ratio=1.653; // Prefer   當以 const 取代 #define 時，有兩個需要注意的點</description>
     </item>
     
     <item>
       <title>使用 Quartz 建立部落格</title>
-      <link>https://brainynight.github.io/second-brain/notes/Area/Quartz/%E4%BD%BF%E7%94%A8-Quartz-%E5%BB%BA%E7%AB%8B%E9%83%A8%E8%90%BD%E6%A0%BC/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Archive/Quartz/%E4%BD%BF%E7%94%A8-Quartz-%E5%BB%BA%E7%AB%8B%E9%83%A8%E8%90%BD%E6%A0%BC/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Area/Quartz/%E4%BD%BF%E7%94%A8-Quartz-%E5%BB%BA%E7%AB%8B%E9%83%A8%E8%90%BD%E6%A0%BC/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Archive/Quartz/%E4%BD%BF%E7%94%A8-Quartz-%E5%BB%BA%E7%AB%8B%E9%83%A8%E8%90%BD%E6%A0%BC/</guid>
       <description>Install  Git Go lang Hugo: 需要手動加環境變數 go-obsidian 1  go install github.com/jackyzha0/hugo-obsidian@latest    Optional make `: Windows 下須使用 MinGW 安裝，參考: C++ 開發環境 在 Windows 11 中安裝 mingw-w64 及設定環境變數  Hugo 需要以 PowerShell 或 WSL , Git Bash 這種 linux-based terminal 運行。</description>
     </item>
     
     <item>
       <title>使用關鍵字 using 讓特定 function 在 Scope 內可見</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E4%BD%BF%E7%94%A8%E9%97%9C%E9%8D%B5%E5%AD%97-using-%E8%AE%93%E7%89%B9%E5%AE%9A-function-%E5%9C%A8-Scope-%E5%85%A7%E5%8F%AF%E8%A6%8B/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E4%BD%BF%E7%94%A8%E9%97%9C%E9%8D%B5%E5%AD%97-using-%E8%AE%93%E7%89%B9%E5%AE%9A-function-%E5%9C%A8-Scope-%E5%85%A7%E5%8F%AF%E8%A6%8B/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E4%BD%BF%E7%94%A8%E9%97%9C%E9%8D%B5%E5%AD%97-using-%E8%AE%93%E7%89%B9%E5%AE%9A-function-%E5%9C%A8-Scope-%E5%85%A7%E5%8F%AF%E8%A6%8B/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E4%BD%BF%E7%94%A8%E9%97%9C%E9%8D%B5%E5%AD%97-using-%E8%AE%93%E7%89%B9%E5%AE%9A-function-%E5%9C%A8-Scope-%E5%85%A7%E5%8F%AF%E8%A6%8B/</guid>
       <description>首先了解 [[繼承時的名稱遮掩行為]]。
 如果，我們只是想為 Derived Class 增加同名稱、Signature 不同的 function? 我們希望 Base Class 的 function 仍然可以被使用! 則，需要做的是用 using 讓 Base Function 變得可見，如下例:</description>
     </item>
     
     <item>
-      <title>區分介面繼承(interface)和實作繼承(implement)</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%8D%80%E5%88%86%E4%BB%8B%E9%9D%A2%E7%B9%BC%E6%89%BFinterface%E5%92%8C%E5%AF%A6%E4%BD%9C%E7%B9%BC%E6%89%BFimplement/</link>
+      <title>優先嘗試料理</title>
+      <link>https://brainynight.github.io/second-brain/notes/Area/Cooking/%E5%84%AA%E5%85%88%E5%98%97%E8%A9%A6%E6%96%99%E7%90%86/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%8D%80%E5%88%86%E4%BB%8B%E9%9D%A2%E7%B9%BC%E6%89%BFinterface%E5%92%8C%E5%AF%A6%E4%BD%9C%E7%B9%BC%E6%89%BFimplement/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Area/Cooking/%E5%84%AA%E5%85%88%E5%98%97%E8%A9%A6%E6%96%99%E7%90%86/</guid>
+      <description>涼拌木耳豆皮 藜麥毛豆便當 可做冷凍包! 壓力鍋一鍋到底
+藜麥 約300公克
+毛豆仁 約100公克
+紅甜椒 黃甜椒 各半條。
+雞蛋 2顆
+雞高湯 約500c.c.
+橄欖油 適量
+砂糖 約1湯匙
+黑胡椒 適量 https://www.</description>
+    </item>
+    
+    <item>
+      <title>區分介面繼承(interface)和實作繼承(implement)</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E5%8D%80%E5%88%86%E4%BB%8B%E9%9D%A2%E7%B9%BC%E6%89%BFinterface%E5%92%8C%E5%AF%A6%E4%BD%9C%E7%B9%BC%E6%89%BFimplement/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E5%8D%80%E5%88%86%E4%BB%8B%E9%9D%A2%E7%B9%BC%E6%89%BFinterface%E5%92%8C%E5%AF%A6%E4%BD%9C%E7%B9%BC%E6%89%BFimplement/</guid>
       <description>背景 Base Class Designer 在設計界面的時候，可能對 Derived Class 實踐者有三種期許
  只繼承 Member Function Interface (承襲宣告式) 同時繼承 Member Function Interface 和預設的實作，也可以 override。 同時繼承 Member Function Interface 和實作，不允許 override (不要自己改實作!</description>
     </item>
     
     <item>
       <title>多重繼承</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%A4%9A%E9%87%8D%E7%B9%BC%E6%89%BF-Multiple-Inheritance-MI/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E5%A4%9A%E9%87%8D%E7%B9%BC%E6%89%BF-Multiple-Inheritance-MI/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%A4%9A%E9%87%8D%E7%B9%BC%E6%89%BF-Multiple-Inheritance-MI/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E5%A4%9A%E9%87%8D%E7%B9%BC%E6%89%BF-Multiple-Inheritance-MI/</guid>
       <description>單一繼承 (Single Inheritance, SI) 多重繼承 (Multiple Inheritance, MI)   了解 C++ 如何解決歧異 (ambiguity) 函式名稱、typedef 都可能發生歧異。C++ 解決歧異的方式與決議(resolving) overloading function 的規則相同</description>
     </item>
     
@@ -767,24 +1175,25 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://brainynight.github.io/second-brain/notes/Resource/Whisky/%E9%A1%98%E6%9C%9B%E6%B8%85%E5%96%AE/</guid>
-      <description>待過濾   五支波本威士忌推薦文  </description>
+      <description>雅墨12年單一純麥威士忌700ml Aultmore 12 Year Old ($1180) https://www.609.com.tw/Product/110880
+待過濾   五支波本威士忌推薦文  </description>
     </item>
     
     <item>
       <title>審慎的使用 Private 繼承</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%AF%A9%E6%85%8E%E7%9A%84%E4%BD%BF%E7%94%A8-Private-%E7%B9%BC%E6%89%BF/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E5%AF%A9%E6%85%8E%E7%9A%84%E4%BD%BF%E7%94%A8-Private-%E7%B9%BC%E6%89%BF/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%AF%A9%E6%85%8E%E7%9A%84%E4%BD%BF%E7%94%A8-Private-%E7%B9%BC%E6%89%BF/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E5%AF%A9%E6%85%8E%E7%9A%84%E4%BD%BF%E7%94%A8-Private-%E7%B9%BC%E6%89%BF/</guid>
       <description>Private 繼承代表 implemented in terms of (根據某物實作出) 當 class D 以 Private 繼承 class B，目的是「調用 class B 的 API」，通常意味著只有實作要被繼承，介面不需要。所以 private 繼承來的 function 也只應該放在 private 區塊。 Private 繼承是實作上的手段，跟 OO design 沒有關係。  implemented in terms of (根據某物實作出) 在 [[確定 Composition 塑造的是 &amp;lsquo;Has-A&amp;rsquo;關係 或 &amp;lsquo;根據某物實作&amp;rsquo;的關係]] 裡面也提及 implemented in terms of (根據某物實作出) 的關係。</description>
     </item>
     
     <item>
       <title>將 Quartz 發佈到 Github Page</title>
-      <link>https://brainynight.github.io/second-brain/notes/Area/Quartz/Publish-Quartz-to-Github-Page/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Archive/Quartz/Publish-Quartz-to-Github-Page/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Area/Quartz/Publish-Quartz-to-Github-Page/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Archive/Quartz/Publish-Quartz-to-Github-Page/</guid>
       <description>由於我對 github action 不熟悉，在設置到 github page 的時候遇到了一點困難&amp;hellip;。
 首先，如果專案是從 templage fork 過來的，它應該分成 hugo 跟 master 兩個 branch。其中
  hugo: 存放 config, markdown files (content 底下) 的地方 master: 利用 github action 把專案內容轉成靜態網頁  我因為是 clone 下來再 push 到自己的專案，沒有遵守這兩個命名方式而遇到了一點困難。在我的專案中，main 對應的是存放 markdown files (轉換前) 的 page，publish 才是 github page 再生成時所根據的 branch。</description>
@@ -792,58 +1201,58 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     
     <item>
       <title>將檔案的編譯依存關係降到最低</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%87%E6%AA%94%E6%A1%88%E7%9A%84%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98%E9%97%9C%E4%BF%82%E9%99%8D%E5%88%B0%E6%9C%80%E4%BD%8E/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E5%B0%87%E6%AA%94%E6%A1%88%E7%9A%84%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98%E9%97%9C%E4%BF%82%E9%99%8D%E5%88%B0%E6%9C%80%E4%BD%8E/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%87%E6%AA%94%E6%A1%88%E7%9A%84%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98%E9%97%9C%E4%BF%82%E9%99%8D%E5%88%B0%E6%9C%80%E4%BD%8E/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E5%B0%87%E6%AA%94%E6%A1%88%E7%9A%84%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98%E9%97%9C%E4%BF%82%E9%99%8D%E5%88%B0%E6%9C%80%E4%BD%8E/</guid>
       <description>首先清楚此內容: [[編譯依存-宣告式、定義式與實作細節]]。 接著，需要分清楚「被 include 的對象」與「被前置宣告的對象」。
 被 include 的對象  當需要創建某類別的物件，例如 : 要創建 member data m_date，則需要 include Date.hpp。 有用到 STL 物件，則直接 include STL 函式庫。  對於 STL 函式庫，應該用 #include，而不是使用前置宣告。include 標準函式庫的 header file 幾乎不會造成編譯瓶頸。</description>
     </item>
     
     <item>
       <title>少做轉型 Minimize casting</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting/</guid>
       <description>常見的轉型語法 1 2 3 4 5 6 7 8 9  // 舊式轉型 (T) expr; // C-style T(expr); // func style  // New-style/ C++ Style casting const_cast&amp;lt;T&amp;gt;(expr); static_cast&amp;lt;T&amp;gt;(expr); reinterpret_cast&amp;lt;T&amp;gt;(expr); dynamic_cast&amp;lt;T&amp;gt;(expr);    dynamic_cast: 安全向下轉型 (safe downcasting)，是一個可能耗費重大執行成本的轉型動作 static_cast: 強迫隱式轉換，像是 non-const to const, int to double&amp;hellip;，但不能做 const to non-const.</description>
     </item>
     
     <item>
       <title>工廠函式 (Factory Function)</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B7%A5%E5%BB%A0%E5%87%BD%E5%BC%8F-Factory-Function/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E5%B7%A5%E5%BB%A0%E5%87%BD%E5%BC%8F-Factory-Function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%B7%A5%E5%BB%A0%E5%87%BD%E5%BC%8F-Factory-Function/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E5%B7%A5%E5%BB%A0%E5%87%BD%E5%BC%8F-Factory-Function/</guid>
       <description>Factory method pattern enables us to create an object without exposing the creation logic to the client and refer to the newly-created object using a common interface.</description>
     </item>
     
     <item>
       <title>建構和解構式是 inline 的糟糕人選</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%BB%BA%E6%A7%8B%E5%92%8C%E8%A7%A3%E6%A7%8B%E5%BC%8F%E6%98%AF-inline-%E7%9A%84%E7%B3%9F%E7%B3%95%E4%BA%BA%E9%81%B8/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E5%BB%BA%E6%A7%8B%E5%92%8C%E8%A7%A3%E6%A7%8B%E5%BC%8F%E6%98%AF-inline-%E7%9A%84%E7%B3%9F%E7%B3%95%E4%BA%BA%E9%81%B8/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E5%BB%BA%E6%A7%8B%E5%92%8C%E8%A7%A3%E6%A7%8B%E5%BC%8F%E6%98%AF-inline-%E7%9A%84%E7%B3%9F%E7%B3%95%E4%BA%BA%E9%81%B8/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E5%BB%BA%E6%A7%8B%E5%92%8C%E8%A7%A3%E6%A7%8B%E5%BC%8F%E6%98%AF-inline-%E7%9A%84%E7%B3%9F%E7%B3%95%E4%BA%BA%E9%81%B8/</guid>
       <description>考量以下例子:
 1 2 3 4 5 6 7 8 9 10 11 12 13  class Base { public: ... private: std::string bm1, bm2; // base members 1 and 2 }; class Derived: public Base { public: Derived() {} // Derived’s ctor is empty — or is it?</description>
     </item>
     
     <item>
       <title>思維誤區-物件很小就可以 Pass By Value</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E6%80%9D%E7%B6%AD%E8%AA%A4%E5%8D%80-%E7%89%A9%E4%BB%B6%E5%BE%88%E5%B0%8F%E5%B0%B1%E5%8F%AF%E4%BB%A5-Pass-By-value/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E6%80%9D%E7%B6%AD%E8%AA%A4%E5%8D%80-%E7%89%A9%E4%BB%B6%E5%BE%88%E5%B0%8F%E5%B0%B1%E5%8F%AF%E4%BB%A5-Pass-By-Value/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E6%80%9D%E7%B6%AD%E8%AA%A4%E5%8D%80-%E7%89%A9%E4%BB%B6%E5%BE%88%E5%B0%8F%E5%B0%B1%E5%8F%AF%E4%BB%A5-Pass-By-value/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E6%80%9D%E7%B6%AD%E8%AA%A4%E5%8D%80-%E7%89%A9%E4%BB%B6%E5%BE%88%E5%B0%8F%E5%B0%B1%E5%8F%AF%E4%BB%A5-Pass-By-Value/</guid>
       <description>有三個主因:
  並非「該物件/container」看起來很小，用 Pass by value 就沒有問題。許多 STL Container 在實作上的大小也就一個 Pointer 大一點，但 Copy Container 卻有「複製每一個 Pointer 所指向的物件」的風險在。 視 Compiler 而定，有些 Compiler 對待 Custom class 跟 built-in class 的態度大不相同，即使底層表述(underlying representation) 相同，仍可能以不同的操作對待，導致 Copy 在 Custom Class 就是比較慢。 Type 實作可能發生改變，現在 Copy 的代價不昂貴，不代表以後不會。  Pass By Value 的代價 [[Pass by value 當中的 Copy 行為]]</description>
     </item>
     
     <item>
       <title>打破 Constness 限制</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E6%89%93%E7%A0%B4-Constness-%E9%99%90%E5%88%B6/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E6%89%93%E7%A0%B4-Constness-%E9%99%90%E5%88%B6/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E6%89%93%E7%A0%B4-Constness-%E9%99%90%E5%88%B6/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E6%89%93%E7%A0%B4-Constness-%E9%99%90%E5%88%B6/</guid>
       <description>Physical Constness  編譯器堅守的觀點: Physical Constness，又稱 Bitwise constness。Const member function 不可以修改任何 non-static member data。
  然而，請看下例: operator[] 確實不會更動到 member data，可以通過 Bitwise Testing，卻把「改動權」暴露給 Client 端，造成不應該的賦值行為。</description>
     </item>
@@ -859,6 +1268,24 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     </item>
     
     <item>
+      <title>日月潭紅茶</title>
+      <link>https://brainynight.github.io/second-brain/notes/Area/Cooking/%E6%97%A5%E6%9C%88%E6%BD%AD%E7%B4%85%E8%8C%B6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Area/Cooking/%E6%97%A5%E6%9C%88%E6%BD%AD%E7%B4%85%E8%8C%B6/</guid>
+      <description> 謝江林茶莊: 容易腸胃不舒服，不回購。   </description>
+    </item>
+    
+    <item>
+      <title>書單</title>
+      <link>https://brainynight.github.io/second-brain/notes/Resource/Books/%E6%9B%B8%E5%96%AE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Resource/Books/%E6%9B%B8%E5%96%AE/</guid>
+      <description>紐約時報   《紐約時報》2023年度十大好書  選擇書單 思維鍛鍊   提案高手不靠靈感的12個思考拆解術:迪士尼、豐田、時尚大師與樂高都在用!輕鬆存取好點子, 老闆、客戶都買單  逆向思考  本質思考習慣:逃脫陷阱，從根本解決問題的九大鍛鍊  判斷的基本:明確丶適時丶精準丶長遠，高績效工作的70個原則   人生   七個問題看見你的天賦(說書)[有聲書]:在人生下半場, 展開自己人生的模樣  </description>
+    </item>
+    
+    <item>
       <title>格蘭傑-單一麥芽威士忌</title>
       <link>https://brainynight.github.io/second-brain/notes/Resource/Whisky/%E6%A0%BC%E8%98%AD%E5%82%91-%E5%96%AE%E4%B8%80%E9%BA%A5%E8%8A%BD%E5%A8%81%E5%A3%AB%E5%BF%8C/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -869,11 +1296,32 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     </item>
     
     <item>
-      <title>為什麼要用獨立句將物件放入 Smart Pointer</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8%E7%8D%A8%E7%AB%8B%E5%8F%A5%E5%B0%87%E7%89%A9%E4%BB%B6%E6%94%BE%E5%85%A5-Smart-Pointer/</link>
+      <title>永遠不該扔例外的 function</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E6%B0%B8%E9%81%A0%E4%B8%8D%E8%A9%B2%E6%89%94%E4%BE%8B%E5%A4%96%E7%9A%84-function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8%E7%8D%A8%E7%AB%8B%E5%8F%A5%E5%B0%87%E7%89%A9%E4%BB%B6%E6%94%BE%E5%85%A5-Smart-Pointer/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E6%B0%B8%E9%81%A0%E4%B8%8D%E8%A9%B2%E6%89%94%E4%BE%8B%E5%A4%96%E7%9A%84-function/</guid>
+      <description>The following types of functions should never throw: destructors (see the section Failing Destructor in Chapter 5), swap functions, move operations, and default constructors.</description>
+    </item>
+    
+    <item>
+      <title>汀士頓-處女桶單一純麥威士忌 (波本)</title>
+      <link>https://brainynight.github.io/second-brain/notes/Resource/Whisky/%E6%B1%80%E5%A3%AB%E9%A0%93-%E8%99%95%E5%A5%B3%E6%A1%B6%E5%96%AE%E4%B8%80%E7%B4%94%E9%BA%A5%E5%A8%81%E5%A3%AB%E5%BF%8C-%E6%B3%A2%E6%9C%AC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Resource/Whisky/%E6%B1%80%E5%A3%AB%E9%A0%93-%E8%99%95%E5%A5%B3%E6%A1%B6%E5%96%AE%E4%B8%80%E7%B4%94%E9%BA%A5%E5%A8%81%E5%A3%AB%E5%BF%8C-%E6%B3%A2%E6%9C%AC/</guid>
+      <description> 價格: 799 色澤:金黃色  酒條通介紹 香氣:風頭正勁的初次橡木香氣和檸檬皮和甜麥芽糖與蘋果和肉荳蔻美味的迴盪。
+口感:愉悅的甜味喚起果脯和香草太妃糖與石楠蜂蜜平衡的層次。
+尾韻:一個令人滿意的新鮮香料與蜂蜜麥芽和甜美的橡木味再帶出更多驚奇的滋味。
+個人感覺  辣度比雪莉桶強烈且持久  </description>
+    </item>
+    
+    <item>
+      <title>為什麼要用獨立句將物件放入 Smart Pointer</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8%E7%8D%A8%E7%AB%8B%E5%8F%A5%E5%B0%87%E7%89%A9%E4%BB%B6%E6%94%BE%E5%85%A5-Smart-Pointer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8%E7%8D%A8%E7%AB%8B%E5%8F%A5%E5%B0%87%E7%89%A9%E4%BB%B6%E6%94%BE%E5%85%A5-Smart-Pointer/</guid>
       <description>盡可能確保 new 出來的物件，可以立即被放入 smart pointer 裡面，避免任何額外的步驟。只要有多餘的步驟，就可能因為意外而使得 smart pointer 沒有真正掌控到資源。
  以獨立一句話將 newed 物件加入 smart pointer，格式如下
 1 2  std::shared_ptr&amp;lt;Widget&amp;gt; pw(new Widget); processWidget(pw, priority());    其原因是，如果像以下寫法</description>
@@ -881,49 +1329,70 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     
     <item>
       <title>為多型用途的基礎類別宣告 virtual 解構式</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%82%BA%E5%A4%9A%E5%9E%8B%E7%94%A8%E9%80%94%E7%9A%84%E5%9F%BA%E7%A4%8E%E9%A1%9E%E5%88%A5%E5%AE%A3%E5%91%8A-virtual-%E8%A7%A3%E6%A7%8B%E5%BC%8F/</guid>
       <description>多型 多型有個特點: Base Class 的存在是為了「經由 Base Class Interface 處置 Drived Class Object」，以下例來說， TimeKeeper 是一個 Polymorphic Base Class，所以持有一個 TimeKeeper Pointer 就可以處理 WaterClock, WristWatch 物件，這就是上面那句話的意思。</description>
     </item>
     
     <item>
       <title>為異常安全 (Exception-safe) 而努力是值得的</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%82%BA%E7%95%B0%E5%B8%B8%E5%AE%89%E5%85%A8-Exception-safe-%E8%80%8C%E5%8A%AA%E5%8A%9B%E6%98%AF%E5%80%BC%E5%BE%97%E7%9A%84/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%82%BA%E7%95%B0%E5%B8%B8%E5%AE%89%E5%85%A8-Exception-safe-%E8%80%8C%E5%8A%AA%E5%8A%9B%E6%98%AF%E5%80%BC%E5%BE%97%E7%9A%84/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%82%BA%E7%95%B0%E5%B8%B8%E5%AE%89%E5%85%A8-Exception-safe-%E8%80%8C%E5%8A%AA%E5%8A%9B%E6%98%AF%E5%80%BC%E5%BE%97%E7%9A%84/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%82%BA%E7%95%B0%E5%B8%B8%E5%AE%89%E5%85%A8-Exception-safe-%E8%80%8C%E5%8A%AA%E5%8A%9B%E6%98%AF%E5%80%BC%E5%BE%97%E7%9A%84/</guid>
       <description>異常安全的條件  不洩漏任何資源 不允許資料敗壞  Bad Case 先看一個很糟糕的例子:
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  class PrettyMenu { public: .</description>
     </item>
     
     <item>
-      <title>當所有的參數都需要型別轉換，採用 Non-member Function</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%95%B6%E6%89%80%E6%9C%89%E7%9A%84%E5%8F%83%E6%95%B8%E9%83%BD%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%8E%A1%E7%94%A8-Non-member-Function/</link>
+      <title>番茄鐘</title>
+      <link>https://brainynight.github.io/second-brain/notes/Resource/Books/%E7%95%AA%E8%8C%84%E9%90%98/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%95%B6%E6%89%80%E6%9C%89%E7%9A%84%E5%8F%83%E6%95%B8%E9%83%BD%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%8E%A1%E7%94%A8-Non-member-Function/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Resource/Books/%E7%95%AA%E8%8C%84%E9%90%98/</guid>
+      <description>番茄鐘的重點不是浪費了多少時間，是達成多少個番茄! 不要亡羊補牢，不要加班減輕罪惡感。
+ 番茄鐘工作法的目標  減少時間流逝的焦慮 削減干擾以提升專注程度 改進工作坊是 增加 &amp;ldquo;質&amp;rdquo; 和 &amp;ldquo;量&amp;rdquo; 的評估能力   番茄工作法的靈感來自 &amp;ldquo;時間箱 (time boxing)&amp;quot;，用番茄鐘來「量化」精力 (注意力)，</description>
+    </item>
+    
+    <item>
+      <title>當所有的參數都需要型別轉換，採用 Non-member Function</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%95%B6%E6%89%80%E6%9C%89%E7%9A%84%E5%8F%83%E6%95%B8%E9%83%BD%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%8E%A1%E7%94%A8-Non-member-Function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%95%B6%E6%89%80%E6%9C%89%E7%9A%84%E5%8F%83%E6%95%B8%E9%83%BD%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%8E%A1%E7%94%A8-Non-member-Function/</guid>
       <description>讓 Class 支援隱式轉換通常不是好事 &amp;ndash; 但也有例外，最常見的就是數值型別。書中以有理數 Rational 為例，他設計了一個允許 Int 隱式轉換成 Rational 的 Constructor。
 1 2 3 4 5 6 7 8 9  class Rational { public: Rational(int numerator=0, int denominator=1); // 允許 int-to-Rational 的隱式轉換  int numerator(); // 分子  int denominator(); // 分母  const Rational operator*(const Rational rhs) const; }   當實作乘法運算時，若兩個數字都是有理數沒有問題。與 Int 相乘，Int 在前項卻出了問題。</description>
     </item>
     
     <item>
-      <title>盡可能延後變數定義式的出現時間</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%9B%A1%E5%8F%AF%E8%83%BD%E5%BB%B6%E5%BE%8C%E8%AE%8A%E6%95%B8%E5%AE%9A%E7%BE%A9%E5%BC%8F%E7%9A%84%E5%87%BA%E7%8F%BE%E6%99%82%E9%96%93/</link>
+      <title>白木耳料理</title>
+      <link>https://brainynight.github.io/second-brain/notes/Area/Cooking/%E7%99%BD%E6%9C%A8%E8%80%B3%E6%96%99%E7%90%86/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%9B%A1%E5%8F%AF%E8%83%BD%E5%BB%B6%E5%BE%8C%E8%AE%8A%E6%95%B8%E5%AE%9A%E7%BE%A9%E5%BC%8F%E7%9A%84%E5%87%BA%E7%8F%BE%E6%99%82%E9%96%93/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Area/Cooking/%E7%99%BD%E6%9C%A8%E8%80%B3%E6%96%99%E7%90%86/</guid>
+      <description> https://tokyonion52.pixnet.net/blog/post/354828454-%E6%A1%82%E8%8A%B1%E9%87%80%E5%A5%B6%E8%8C%B6%E6%9C%A8%E8%80%B3
+看到全聯的奶茶木耳特價，想模仿白木耳的方式，也參考人家的甜湯作法
+ 木耳摘除硬耳部分，手撕成小朵(撕成不規則切面，比較容易釋出膠質!) 放入、水，大火煮滾後小火煮 1hr 關火，悶 30~1hr，可以釋放更多膠質 (也可省略) 喝之前加入桂花釀  </description>
+    </item>
+    
+    <item>
+      <title>盡可能延後變數定義式的出現時間</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%9B%A1%E5%8F%AF%E8%83%BD%E5%BB%B6%E5%BE%8C%E8%AE%8A%E6%95%B8%E5%AE%9A%E7%BE%A9%E5%BC%8F%E7%9A%84%E5%87%BA%E7%8F%BE%E6%99%82%E9%96%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%9B%A1%E5%8F%AF%E8%83%BD%E5%BB%B6%E5%BE%8C%E8%AE%8A%E6%95%B8%E5%AE%9A%E7%BE%A9%E5%BC%8F%E7%9A%84%E5%87%BA%E7%8F%BE%E6%99%82%E9%96%93/</guid>
       <description>不只延後變數的定義式的出現，甚至該嘗試延後這份定義直到能夠給它初始值引數為止。
   盡可能延後參數的定義，直到它被使用的前一刻再定義。  過早的定義它，有可能根本沒用到就先 return 了，無謂的承受了該變數的 construct &amp;amp; destruct 成本。   「前一刻」甚至是指: 得到初始值了再一口氣「建構並指定初始值」  1 2 3 4 5 6 7 8 9 10 11 12 13 14  std::string worstCase(const std::string&amp;amp; password) { std::string encrypted; // 過早宣告: 承受建構成本 	if (password.</description>
     </item>
     
     <item>
       <title>確保 Derived Class 和 Base Class 之間必然保持 Is-a 關係</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%A2%BA%E4%BF%9D-Derived-Class-%E5%92%8C-Base-Class-%E4%B9%8B%E9%96%93%E5%BF%85%E7%84%B6%E4%BF%9D%E6%8C%81-Is-a-%E9%97%9C%E4%BF%82/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%A2%BA%E4%BF%9D-Derived-Class-%E5%92%8C-Base-Class-%E4%B9%8B%E9%96%93%E5%BF%85%E7%84%B6%E4%BF%9D%E6%8C%81-Is-a-%E9%97%9C%E4%BF%82/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%A2%BA%E4%BF%9D-Derived-Class-%E5%92%8C-Base-Class-%E4%B9%8B%E9%96%93%E5%BF%85%E7%84%B6%E4%BF%9D%E6%8C%81-Is-a-%E9%97%9C%E4%BF%82/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%A2%BA%E4%BF%9D-Derived-Class-%E5%92%8C-Base-Class-%E4%B9%8B%E9%96%93%E5%BF%85%E7%84%B6%E4%BF%9D%E6%8C%81-Is-a-%E9%97%9C%E4%BF%82/</guid>
       <description>&amp;ldquo;Is A&amp;rdquo; 關係，代表是用於 Base Class 的每一件事，必定也是用在 Derived Class，因為每一個 Derived Class 都 &amp;ldquo;Is A&amp;rdquo; Base Class。
 物件導向上的關係可能跟真實世界的理解有所不同， 例如: 企鵝是一種鳥，若
  Base Class 為 Bird、Bird 裡面有個 function fly。 Derived Class 為 Penguin，Penguin 繼承 Bird，但企鵝不會飛!</description>
@@ -931,69 +1400,93 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     
     <item>
       <title>確定 Composition 塑造的是 &#39;Has-A&#39;關係 或 &#39;根據某物實作&#39;的關係</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%A2%BA%E5%AE%9A-Composition-%E5%A1%91%E9%80%A0%E7%9A%84%E6%98%AF-Has-A%E9%97%9C%E4%BF%82-%E6%88%96-%E6%A0%B9%E6%93%9A%E6%9F%90%E7%89%A9%E5%AF%A6%E4%BD%9C%E7%9A%84%E9%97%9C%E4%BF%82/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%A2%BA%E5%AE%9A-Composition-%E5%A1%91%E9%80%A0%E7%9A%84%E6%98%AF-Has-A%E9%97%9C%E4%BF%82-%E6%88%96-%E6%A0%B9%E6%93%9A%E6%9F%90%E7%89%A9%E5%AF%A6%E4%BD%9C%E7%9A%84%E9%97%9C%E4%BF%82/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%A2%BA%E5%AE%9A-Composition-%E5%A1%91%E9%80%A0%E7%9A%84%E6%98%AF-Has-A%E9%97%9C%E4%BF%82-%E6%88%96-%E6%A0%B9%E6%93%9A%E6%9F%90%E7%89%A9%E5%AF%A6%E4%BD%9C%E7%9A%84%E9%97%9C%E4%BF%82/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%A2%BA%E5%AE%9A-Composition-%E5%A1%91%E9%80%A0%E7%9A%84%E6%98%AF-Has-A%E9%97%9C%E4%BF%82-%E6%88%96-%E6%A0%B9%E6%93%9A%E6%9F%90%E7%89%A9%E5%AF%A6%E4%BD%9C%E7%9A%84%E9%97%9C%E4%BF%82/</guid>
       <description>Has A 關係 &amp;ldquo;Has-A&amp;rdquo; 指的是擁有一個 應用域 (application domain) 的物件，像是
  Person &amp;lsquo;has a&amp;rsquo; name. Person &amp;lsquo;has a&amp;rsquo; address &amp;hellip; 這沒什麼爭議。  根據某物實作出的關係 這是指 實作域 (implementation domain)，表示 is-implemented-in-terms-of 關係。像是</description>
     </item>
     
     <item>
-      <title>絕不重新定義繼承來的 Non-virtual Function</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%B5%95%E4%B8%8D%E9%87%8D%E6%96%B0%E5%AE%9A%E7%BE%A9%E7%B9%BC%E6%89%BF%E4%BE%86%E7%9A%84-Non-virtual-Function/</link>
+      <title>素食高蛋白料理</title>
+      <link>https://brainynight.github.io/second-brain/notes/Area/Cooking/%E7%B4%A0%E9%A3%9F%E9%AB%98%E8%9B%8B%E7%99%BD%E6%96%99%E7%90%86/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%B5%95%E4%B8%8D%E9%87%8D%E6%96%B0%E5%AE%9A%E7%BE%A9%E7%B9%BC%E6%89%BF%E4%BE%86%E7%9A%84-Non-virtual-Function/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Area/Cooking/%E7%B4%A0%E9%A3%9F%E9%AB%98%E8%9B%8B%E7%99%BD%E6%96%99%E7%90%86/</guid>
+      <description>素食者蛋白質來源  黃豆製品: 豆漿、豆腐、豆乾、豆包，但炸豆皮、豆腐忌口，會吸收過多的油。 黑豆 毛豆 鷹嘴豆     一顆雞蛋 換算      兩格傳統豆腐    半盒嫩豆腐    無糖豆漿 190cc    25g 黑豆    50g 毛豆    33g 鷹嘴豆        500 kcal 便當  https://www.</description>
+    </item>
+    
+    <item>
+      <title>絕不重新定義繼承來的 Non-virtual Function</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%B5%95%E4%B8%8D%E9%87%8D%E6%96%B0%E5%AE%9A%E7%BE%A9%E7%B9%BC%E6%89%BF%E4%BE%86%E7%9A%84-Non-virtual-Function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%B5%95%E4%B8%8D%E9%87%8D%E6%96%B0%E5%AE%9A%E7%BE%A9%E7%B9%BC%E6%89%BF%E4%BE%86%E7%9A%84-Non-virtual-Function/</guid>
       <description>![[Item36.png]] 試想圖中這個繼承關係，D 繼承 B。而下面這段 code 分別以 B pointer 和 D pointer 持有 x 物件後呼叫 mf 方法。你會預期，這兩者的結果會相同，因為他們指向同一個物件。
 1 2 3 4 5 6 7  D x; // x is an object of type D  B *pB = &amp;amp;x; // get pointer to x pB-&amp;gt;mf(); // call mf through pointer  D *pD = &amp;amp;x; // get pointer to x pD-&amp;gt;mf(); // call mf through pointer   事實卻是，當 D 繼承 B 後如果自行實作了 mf，在以上這段例子中，x 會因為被 B* 或 D* 持有，而有不同的表現!</description>
     </item>
     
     <item>
       <title>編譯依存-宣告式、定義式與實作細節</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98-%E5%AE%A3%E5%91%8A%E5%BC%8F%E5%AE%9A%E7%BE%A9%E5%BC%8F%E8%88%87%E5%AF%A6%E4%BD%9C%E7%B4%B0%E7%AF%80/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98-%E5%AE%A3%E5%91%8A%E5%BC%8F%E5%AE%9A%E7%BE%A9%E5%BC%8F%E8%88%87%E5%AF%A6%E4%BD%9C%E7%B4%B0%E7%AF%80/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98-%E5%AE%A3%E5%91%8A%E5%BC%8F%E5%AE%9A%E7%BE%A9%E5%BC%8F%E8%88%87%E5%AF%A6%E4%BD%9C%E7%B4%B0%E7%AF%80/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%B7%A8%E8%AD%AF%E4%BE%9D%E5%AD%98-%E5%AE%A3%E5%91%8A%E5%BC%8F%E5%AE%9A%E7%BE%A9%E5%BC%8F%E8%88%87%E5%AF%A6%E4%BD%9C%E7%B4%B0%E7%AF%80/</guid>
       <description>分辨以下三個名詞
  宣告式: 僅僅宣告某個類別名稱(?) 定義式: 定義物件的 member data、function，透過定義式可以得知物件的大小 實踐細節: 演算法細節。  1 2 3 4 5 6 7 8 9  class Date; // 宣告式 class Person { public: Person(const std::string&amp;amp; name, const Date&amp;amp; birthday, const Address&amp;amp; addr); private: // ptr to implementation; 	std::tr1::shared_ptr&amp;lt;PersonImpl&amp;gt; pImpl; // see Item 13 for info on };   Compiler 在編譯期間需要知道物件的大小，如下例。Compiler 可以輕鬆知道 built in type int的大小，但 Person 呢?</description>
     </item>
     
     <item>
       <title>繼承時的名稱遮掩行為</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%B9%BC%E6%89%BF%E6%99%82%E7%9A%84%E5%90%8D%E7%A8%B1%E9%81%AE%E6%8E%A9%E8%A1%8C%E7%82%BA/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%B9%BC%E6%89%BF%E6%99%82%E7%9A%84%E5%90%8D%E7%A8%B1%E9%81%AE%E6%8E%A9%E8%A1%8C%E7%82%BA/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E7%B9%BC%E6%89%BF%E6%99%82%E7%9A%84%E5%90%8D%E7%A8%B1%E9%81%AE%E6%8E%A9%E8%A1%8C%E7%82%BA/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E7%B9%BC%E6%89%BF%E6%99%82%E7%9A%84%E5%90%8D%E7%A8%B1%E9%81%AE%E6%8E%A9%E8%A1%8C%E7%82%BA/</guid>
       <description>當 Derived 和 Base Class 有相同名稱的 function 時，Derived 的 function 會直接遮住 Base Class 的同名稱 function (讓 Compiler 不會去找 Base Class 的該同名 function)，即使 signature 不同、不是做 override，也會找不到該 Base Class Function。</description>
     </item>
     
     <item>
-      <title>藉由 Function Pointer 手法實現 Strategy Pattern</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%97%89%E7%94%B1-Function-Pointer-%E5%92%8C-tr1-function-%E6%89%8B%E6%B3%95%E5%AF%A6%E7%8F%BE-Strategy-Pattern/</link>
+      <title>艾倫-陳釀單一純麥威士忌700ml (波本)</title>
+      <link>https://brainynight.github.io/second-brain/notes/Resource/Whisky/%E8%89%BE%E5%80%AB-%E9%99%B3%E9%87%80%E5%96%AE%E4%B8%80%E7%B4%94%E9%BA%A5%E5%A8%81%E5%A3%AB%E5%BF%8C700ml-%E6%B3%A2%E6%9C%AC/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%97%89%E7%94%B1-Function-Pointer-%E5%92%8C-tr1-function-%E6%89%8B%E6%B3%95%E5%AF%A6%E7%8F%BE-Strategy-Pattern/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Resource/Whisky/%E8%89%BE%E5%80%AB-%E9%99%B3%E9%87%80%E5%96%AE%E4%B8%80%E7%B4%94%E9%BA%A5%E5%A8%81%E5%A3%AB%E5%BF%8C700ml-%E6%B3%A2%E6%9C%AC/</guid>
+      <description>價錢 899  https://www.609.com.tw/Product/113312  介紹 艾倫酒廠位於蘇格蘭最美及最有名的島嶼之一：艾倫島。
+酒廠坐落於島上的Lochranza，擁有蘇格蘭最純淨的水源Loch na Davie。
+堅持不添加人工色素，波本桶熟成。
+香氣:柑橘和香草的香氣混合著活潑的蘋果和精緻的海風氣息。
+口感:散發出甜美水果、溫暖香料、柑橘、奶油香草和燒焦橡木的香氣。
+感想 顏色是麥穗田般淺淺的金黃色，店員介紹說有種口腔被油脂包覆的感覺。
+入口並不嗆辣，鼻腔能感受到橡木的尾韻，</description>
+    </item>
+    
+    <item>
+      <title>藉由 Function Pointer 手法實現 Strategy Pattern</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E8%97%89%E7%94%B1-Function-Pointer-%E5%92%8C-tr1-function-%E6%89%8B%E6%B3%95%E5%AF%A6%E7%8F%BE-Strategy-Pattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E8%97%89%E7%94%B1-Function-Pointer-%E5%92%8C-tr1-function-%E6%89%8B%E6%B3%95%E5%AF%A6%E7%8F%BE-Strategy-Pattern/</guid>
       <description>NVI 方法為 Public Virtual Function 提供了替代方案，但仍沒有脫離 virtual。 新的做法是，把 Function 用 Function Pointer 傳入，這實際上是 [[Classic Strategy Pattern|Strategy Pattern]] 的一種實作。
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  class GameCharacter; // forward declaration // function for the default health calculation algorithm int defaultHealthCalc(const GameCharacter&amp;amp; gc); class GameCharacter { public: typedef int (*HealthCalcFunc)(const GameCharacter&amp;amp;); explicit GameCharacter(HealthCalcFunc hcf = defaultHealthCalc) : healthFunc(hcf) {} int healthValue() const { return healthFunc(*this); } private: HealthCalcFunc healthFunc; }   更進一步的，使用 tr1::function，使得任何像是 function 一般 callable 且 signature 符合的 callable 物件 (std::tr1::function&amp;lt;int (const GameCharacter&amp;amp;)&amp;gt;)，都可以是被傳入的物件。 [[C++11 std function]]</description>
     </item>
     
     <item>
       <title>藉由 Non-Virtual Interface 手法實現 Template Method Pattern</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%97%89%E7%94%B1-Non-Virtual-Interface-%E6%89%8B%E6%B3%95%E5%AF%A6%E7%8F%BE-Template-Method-Pattern/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E8%97%89%E7%94%B1-Non-Virtual-Interface-%E6%89%8B%E6%B3%95%E5%AF%A6%E7%8F%BE-Template-Method-Pattern/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%97%89%E7%94%B1-Non-Virtual-Interface-%E6%89%8B%E6%B3%95%E5%AF%A6%E7%8F%BE-Template-Method-Pattern/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E8%97%89%E7%94%B1-Non-Virtual-Interface-%E6%89%8B%E6%B3%95%E5%AF%A6%E7%8F%BE-Template-Method-Pattern/</guid>
       <description>The Template Method Pattern via the Non-Virtual Interface Idiom
  這個方法是 Design Pattern [[Template Method]] 的表現形式，而跟 C++ Template 無關。</description>
     </item>
     
     <item>
       <title>解構式與異常</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%A7%A3%E6%A7%8B%E5%BC%8F%E8%88%87%E7%95%B0%E5%B8%B8/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E8%A7%A3%E6%A7%8B%E5%BC%8F%E8%88%87%E7%95%B0%E5%B8%B8/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%A7%A3%E6%A7%8B%E5%BC%8F%E8%88%87%E7%95%B0%E5%B8%B8/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E8%A7%A3%E6%A7%8B%E5%BC%8F%E8%88%87%E7%95%B0%E5%B8%B8/</guid>
       <description>在 C++11 中，Destructor and delete 被自動宣告為 noexcept。
  [[Modern C++ noexcept]]
 情境: 當Destructor 必須執行某項會丟Exception 的程序 舉例，我們有一個資料庫連線的 class DBConnection，這類資源管理的 Class 在 [[Chapter3]] 中會有更詳細的探討。</description>
@@ -1001,50 +1494,59 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     
     <item>
       <title>設計新 Class 的準則</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%A8%AD%E8%A8%88%E6%96%B0-Class-%E7%9A%84%E6%BA%96%E5%89%87/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E8%A8%AD%E8%A8%88%E6%96%B0-Class-%E7%9A%84%E6%BA%96%E5%89%87/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%A8%AD%E8%A8%88%E6%96%B0-Class-%E7%9A%84%E6%BA%96%E5%89%87/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E8%A8%AD%E8%A8%88%E6%96%B0-Class-%E7%9A%84%E6%BA%96%E5%89%87/</guid>
       <description>在設計 class 之前，思考以下問題
  記憶體如何產生跟銷毀? (參見第八章) 物件初始化與賦值的差別? Constructor &amp;amp; Assignment  [[Effective C++ Outline#條款4 確定物件在使用前已經初始化 |條款4 確定物件在使用前已經初始化]]   Pass by value 對它代表甚麼?</description>
     </item>
     
     <item>
       <title>讓介面易於被使用，不易誤用</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E6%98%93%E6%96%BC%E8%A2%AB%E4%BD%BF%E7%94%A8%E4%B8%8D%E6%98%93%E8%AA%A4%E7%94%A8/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E8%AE%93%E4%BB%8B%E9%9D%A2%E6%98%93%E6%96%BC%E8%A2%AB%E4%BD%BF%E7%94%A8%E4%B8%8D%E6%98%93%E8%AA%A4%E7%94%A8/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E8%AE%93%E4%BB%8B%E9%9D%A2%E6%98%93%E6%96%BC%E8%A2%AB%E4%BD%BF%E7%94%A8%E4%B8%8D%E6%98%93%E8%AA%A4%E7%94%A8/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E8%AE%93%E4%BB%8B%E9%9D%A2%E6%98%93%E6%96%BC%E8%A2%AB%E4%BD%BF%E7%94%A8%E4%B8%8D%E6%98%93%E8%AA%A4%E7%94%A8/</guid>
       <description>用 struct 包覆簡單的資料結構可以帶來可讀性 考量下面的例子:
 1 2 3 4 5 6 7  class Date { public: Date(int month, int day, int year); } Date(3, 31, 1999); // 正確 Date(30, 3, 1999); // 可能會誤打 Date(3, 40, 1999); // 可能有無效值   如果我們改以 struct如下，你幾乎不會犯下寫錯格的錯，Compiler 會自動提醒!</description>
     </item>
     
     <item>
       <title>運用成員函式模板，接受所有相容的型別</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%81%8B%E7%94%A8%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F%E6%A8%A1%E6%9D%BF%E6%8E%A5%E5%8F%97%E6%89%80%E6%9C%89%E7%9B%B8%E5%AE%B9%E7%9A%84%E5%9E%8B%E5%88%A5/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E9%81%8B%E7%94%A8%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F%E6%A8%A1%E6%9D%BF%E6%8E%A5%E5%8F%97%E6%89%80%E6%9C%89%E7%9B%B8%E5%AE%B9%E7%9A%84%E5%9E%8B%E5%88%A5/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%81%8B%E7%94%A8%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F%E6%A8%A1%E6%9D%BF%E6%8E%A5%E5%8F%97%E6%89%80%E6%9C%89%E7%9B%B8%E5%AE%B9%E7%9A%84%E5%9E%8B%E5%88%A5/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E9%81%8B%E7%94%A8%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F%E6%A8%A1%E6%9D%BF%E6%8E%A5%E5%8F%97%E6%89%80%E6%9C%89%E7%9B%B8%E5%AE%B9%E7%9A%84%E5%9E%8B%E5%88%A5/</guid>
       <description>參考以下繼承體系的範例: 在原生的 Pointer 系統當中，在合理的繼承關係之下，這些不同類別在 Raw Pointer 很容易互相轉換。
 1 2 3 4 5 6  class Top { ... }; class Middle: public Top { .</description>
     </item>
     
     <item>
       <title>關鍵字 typename 在 Template 中的意涵</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%97%9C%E9%8D%B5%E5%AD%97-typename-%E5%9C%A8-Template-%E4%B8%AD%E7%9A%84%E6%84%8F%E6%B6%B5/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E9%97%9C%E9%8D%B5%E5%AD%97-typename-%E5%9C%A8-Template-%E4%B8%AD%E7%9A%84%E6%84%8F%E6%B6%B5/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%97%9C%E9%8D%B5%E5%AD%97-typename-%E5%9C%A8-Template-%E4%B8%AD%E7%9A%84%E6%84%8F%E6%B6%B5/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E9%97%9C%E9%8D%B5%E5%AD%97-typename-%E5%9C%A8-Template-%E4%B8%AD%E7%9A%84%E6%84%8F%E6%B6%B5/</guid>
       <description>試想，下例中使用 class 跟 typname 之間有甚麼區別?
 1 2  template&amp;lt;class T&amp;gt; class Widget; // uses “class” template&amp;lt;typename T&amp;gt; class Widget; // uses “typename”   答案是意義完全相同，在宣告 template 參數時，這兩個 keywords 並沒有差別，但 class 與 typename 並不是總是等價。</description>
     </item>
     
     <item>
-      <title>需要型別轉換時請為模板定義非成員函式</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F/</link>
+      <title>電子書平台</title>
+      <link>https://brainynight.github.io/second-brain/notes/Resource/Books/%E9%9B%BB%E5%AD%90%E6%9B%B8%E5%B9%B3%E5%8F%B0/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Resource/Books/%E9%9B%BB%E5%AD%90%E6%9B%B8%E5%B9%B3%E5%8F%B0/</guid>
+      <description>HyRead 新北市</description>
+    </item>
+    
+    <item>
+      <title>需要型別轉換時請為模板定義非成員函式</title>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E9%9C%80%E8%A6%81%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E6%99%82%E8%AB%8B%E7%82%BA%E6%A8%A1%E6%9D%BF%E5%AE%9A%E7%BE%A9%E9%9D%9E%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8F/</guid>
       <description>文章 [[當所有的參數都需要型別轉換，採用 Non-member Function]] 中提到，能被隱式轉換的只有位於參數列的對象，因此針對 operator* 採用了 Non-member function。
 現在，將這個 operator* 改成 Template function。
 1 2 3 4 5 6 7 8 9 10 11 12 13 14  template&amp;lt;typename T&amp;gt; class Rational { public: Rational(const T&amp;amp; numerator = 0, // see Item 20 for why params 	const T&amp;amp; denominator = 1); // are now passed by reference 	const T numerator() const; // see Item 28 for why return 	const T denominator() const; // values are still passed by value, }; template&amp;lt;typename T&amp;gt; const Rational&amp;lt;T&amp;gt; operator*(const Rational&amp;lt;T&amp;gt;&amp;amp; lhs, const Rational&amp;lt;T&amp;gt;&amp;amp; rhs) { }   </description>
@@ -1052,11 +1554,20 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/an
     
     <item>
       <title>靜態綁定 (statically bound) 與動態綁定 (dynamically bound)</title>
-      <link>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%9D%9C%E6%85%8B%E7%B6%81%E5%AE%9A-statically-bound-%E8%88%87%E5%8B%95%E6%85%8B%E7%B6%81%E5%AE%9A-dynamically-bound/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E9%9D%9C%E6%85%8B%E7%B6%81%E5%AE%9A-statically-bound-%E8%88%87%E5%8B%95%E6%85%8B%E7%B6%81%E5%AE%9A-dynamically-bound/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Project/Effective-C&#43;&#43;-Series/%E9%9D%9C%E6%85%8B%E7%B6%81%E5%AE%9A-statically-bound-%E8%88%87%E5%8B%95%E6%85%8B%E7%B6%81%E5%AE%9A-dynamically-bound/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E9%9D%9C%E6%85%8B%E7%B6%81%E5%AE%9A-statically-bound-%E8%88%87%E5%8B%95%E6%85%8B%E7%B6%81%E5%AE%9A-dynamically-bound/</guid>
       <description>靜態綁定 (statically bound, early binding)  Non-virtual function Default Parameter Non-virtual function 是 statically bound，也就是說，由 Base Class Pointer 喚起的物件在呼叫 non-virtual function 時，就只會呼叫 Base Class 的版本，即使 Base Class Pointer 指向的物件是 Derived Class Instance 亦然。 這會形成 [[絕不重新定義繼承來的 Non-virtual Function]] 當中敘述的，由 Base Class Pointer 和 Derived Class Pointer 指向同一個物件，卻導致不同的行為結果這種，非預期中的奇怪狀態。不只是 Pointer 有此問題，Reference 也相同。  動態綁定 (dynamically bound, late binding)  virtual function virtual function 走的卻是動態綁定 (dynamically bound)，它不受此困擾，不管由 B* 或 D* 指向物件 x (D 的 instance)，都會喚起 D::func。  物件的動態型別與靜態型別 物件分成動態與靜態型別</description>
+    </item>
+    
+    <item>
+      <title>飛利浦壓力鍋 內鍋研究</title>
+      <link>https://brainynight.github.io/second-brain/notes/Area/Cooking/%E9%A3%9B%E5%88%A9%E6%B5%A6%E5%A3%93%E5%8A%9B%E9%8D%8B-%E5%85%A7%E9%8D%8B%E7%A0%94%E7%A9%B6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Area/Cooking/%E9%A3%9B%E5%88%A9%E6%B5%A6%E5%A3%93%E5%8A%9B%E9%8D%8B-%E5%85%A7%E9%8D%8B%E7%A0%94%E7%A9%B6/</guid>
+      <description>安康內鍋: 不鏽鋼 $2000 UP，材質後時可直火 第一夫人: 不鏽鋼 $500~1000，不可直火但便宜 飛利浦不沾鍋: 可以到 $500，有時 momo 定價 $1000，建議一年換一個。  不沾鍋 魚骨頭、骨頭湯等硬殼東西建議不要用不沾內鍋煮。</description>
     </item>
     
   </channel>

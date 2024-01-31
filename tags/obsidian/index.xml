@@ -8,10 +8,10 @@
     <language>en-us</language><atom:link href="https://brainynight.github.io/second-brain/tags/obsidian/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Obsidian Map View</title>
-      <link>https://brainynight.github.io/second-brain/notes/Area/Obsidian/Obsidian-Map-View/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Archive/Obsidian/Obsidian-Map-View/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Area/Obsidian/Obsidian-Map-View/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Archive/Obsidian/Obsidian-Map-View/</guid>
       <description>Github: Obsidian Map View
 紀錄 導入已記錄在 Map 的地點  開啟命令面板 -&amp;gt; &amp;ldquo;Map View: add inline geolocation link&amp;rdquo;，文字 [](geo:) 會被插入。 在中括號中輸入地點，像是: [台北101]，會跳出下拉選單，點選之後經緯度位置會自動填在 (geo:) 當中。  從 Command 上新增地點  開啟命令面板 -&amp;gt;&amp;ldquo;Map View: New geolocation note&amp;rdquo;。 跳出一個 Dialog，貼上連結、或是 Search 地點都可以。  網址連結分析的規則: URL parsing rules Search 地點會受到選擇哪一個地點資訊提供者所影響: configured geocoding provider     從既有的筆記新增地點 Inline geolocation link 如前面「從 Command 新增地點」，在文章中以 [](geo:) 標示地點。</description>
     </item>

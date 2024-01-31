@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta
+    name="description"
+    content="常見的轉型語法 1 2 3 4 5 6 7 8 9  // 舊式轉型 (T) expr; // C-style T(expr); // func style  // New-style/ C&#43;&#43; Style casting const_cast&lt;T&gt;(expr); static_cast&lt;T&gt;(expr); reinterpret_cast&lt;T&gt;(expr); dynamic_cast&lt;T&gt;(expr);    dynamic_cast: 安全向下轉型 (safe downcasting)，是一個可能耗費重大執行成本的轉型動作 static_cast: 強迫隱式轉換，像是 non-const to const, int to double&hellip;，但不能做 const to non-const."
+  />
+  <meta property="og:title" content="少做轉型 Minimize casting">
+  <meta property="og:description" content="常見的轉型語法 1 2 3 4 5 6 7 8 9  // 舊式轉型 (T) expr; // C-style T(expr); // func style  // New-style/ C&#43;&#43; Style casting const_cast&lt;T&gt;(expr); static_cast&lt;T&gt;(expr); reinterpret_cast&lt;T&gt;(expr); dynamic_cast&lt;T&gt;(expr);    dynamic_cast: 安全向下轉型 (safe downcasting)，是一個可能耗費重大執行成本的轉型動作 static_cast: 強迫隱式轉換，像是 non-const to const, int to double&hellip;，但不能做 const to non-const.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
+  <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Project/C&#43;&#43;/%E5%B0%91%E5%81%9A%E8%BD%89%E5%9E%8B%E5%8B%95%E4%BD%9CMinimize-casting/">
+  <meta property="og:width" content="200">
+  <meta property="og:height" content="200">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="少做轉型 Minimize casting" />
+  <meta name="twitter:description" content="常見的轉型語法 1 2 3 4 5 6 7 8 9  // 舊式轉型 (T) expr; // C-style T(expr); // func style  // New-style/ C&#43;&#43; Style casting const_cast&lt;T&gt;(expr); static_cast&lt;T&gt;(expr); reinterpret_cast&lt;T&gt;(expr); dynamic_cast&lt;T&gt;(expr);    dynamic_cast: 安全向下轉型 (safe downcasting)，是一個可能耗費重大執行成本的轉型動作 static_cast: 強迫隱式轉換，像是 non-const to const, int to double&hellip;，但不能做 const to non-const." />
+  <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
+  
+    
+  
+
+  <title>
+    少做轉型 Minimize casting
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+  
+  
+  
+  
+  <link rel="shortcut icon" type="image/png"  href="https://brainynight.github.io/second-brain//icon.png" />
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <link href="https://brainynight.github.io/second-brain/styles.7d481813bbe4f502154ba7bb5eb73d2d.min.css" rel="stylesheet" />
+
+  
+  <link href="https://brainynight.github.io/second-brain/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css" rel="stylesheet" id="theme-link">
+
+   
+  
+  
+  
+  
+  <script src="https://brainynight.github.io/second-brain/js/darkmode.ad5fa1629664e806f9e2c4589974fc3d.min.js"></script>
+  
+  
+  
+  <script src="https://brainynight.github.io/second-brain/js/util.00639692264b21bc3ee219733d38a8be.min.js"></script>
+  
+  
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"
+        integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx"
+        crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js"
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+        crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js"
+        integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A"
+        crossorigin="anonymous"></script>
+
+
+  
+  
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.2.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.2.1"></script>
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/popover.aa9bc99c7c38d3ae9538f218f1416adb.min.js"></script>
+
+  
+  
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js"></script>
+  
+
+  
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js"></script>
+  
+
+  
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js"></script>
+  
+
+  
+   
+  <script>
+    const SEARCH_ENABLED =  false 
+    const LATEX_ENABLED =  true 
+    const PRODUCTION =  true 
+    const BASE_URL = "https://brainynight.github.io/second-brain/"
+    const fetchData = Promise.all([
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.bc3b7e71c66f798adba93ec7661aff7c.min.json")
+            .then(data => data.json())
+            .then(data => ({
+              index: data.index,
+              links: data.links,
+            })),
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.567d2a37f4cddc208eb0fd325470f6f7.min.json")
+            .then(data => data.json()),
+        ])
+        .then(([{index, links}, content]) => ({
+          index,
+          links,
+          content,
+        }))
+
+      const render = () => {
+      
+
+      const siteBaseURL = new URL(BASE_URL);
+      const pathBase = siteBaseURL.pathname;
+      const pathWindow = window.location.pathname;
+      const isHome = pathBase == pathWindow;
+
+      addCopyButtons();
+      
+
+      addTitleToCodeBlocks();
+      
+
+      addCollapsibleCallouts();
+      
+
+      
+      initPopover(
+        "https://brainynight.github.io/second-brain",
+         true 
+      )
+      
+
+      
+      const footer = document.getElementById("footer")
+      if (footer) {
+        const container = document.getElementById("graph-container")
+        
+        if (!container) return requestAnimationFrame(render)
+        
+        container.textContent = ""
+
+        const drawGlobal = isHome &&  false ;
+        drawGraph(
+            "https://brainynight.github.io/second-brain",
+            drawGlobal,
+            [{"/notes/Project/Effective-C++-Series/Effective-C++-Outline":"#4388cc"}],
+            drawGlobal ? {"centerForce":1,"depth":-1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.5,"linkDistance":1,"opacityScale":3,"repelForce":1,"scale":1.4} : {"centerForce":1,"depth":1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.6,"linkDistance":1,"opacityScale":3,"repelForce":2,"scale":1.2}
+          );
+
+        }
+      
+
+      
+        var els = document.getElementsByClassName("mermaid");
+        if (els.length > 0) {
+          import('https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs').then(
+            (obj) => {
+              
+              
+              obj.default.init();
+            }
+          )
+        }
+      
+      
+      
+      function clickHandler(evt) {
+        const target = evt.target 
+        const classNames = target.className.split(" ")
+        const broken = classNames.includes("broken")
+        const internal = classNames.includes("internal-link")
+        plausible("Link Click", {
+          props: {
+            href: target.href,
+            broken,
+            internal,
+            graph: false,
+          }
+        })
+      }
+
+      const links = document.querySelectorAll("a")
+      for (link of links) {
+        if (link.className.includes("root-title")) {
+          link.addEventListener('click', clickHandler, {once: true})
+        }
+      }
+    }
+
+    const init = (doc = document) => {
+      
+      addCopyButtons();
+      
+
+      addTitleToCodeBlocks();
+      renderMathInElement(doc.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+        ],
+        macros: {
+          '’': "'"
+        },
+        throwOnError : false
+      });
+      
+    };
+  </script>
+  
+  
+  <script type="module">
+    import { attachSPARouting } from "https:\/\/brainynight.github.io\/second-brain\/js\/router.d6fe6bd821db9ea97f9aeefae814d8e7.min.js"
+    attachSPARouting(init, render)
+  </script>
+  
+  
+  <script defer data-domain="brainynight.github.io/second-brain" src="https://plausible.io/js/script.js"></script>
+  <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+</head>
+
+
+<body>
+<div id="search-container">
+  <div id="search-space">
+    <input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search"
+      placeholder="Search for something..." dir="">
+    <div id="results-container">
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"
+  integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin="anonymous" defer></script>
+
+<script defer src="https://brainynight.github.io/second-brain/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js"></script>
+
+
+
+<div class="singlePage">
+    
+    <header>
+    
+    <h1 id="page-title"><a class="root-title" href="https://brainynight.github.io/second-brain/">🪴 Digital Note</a></h1>
+    <div class="spacer"></div>
+    <div id="search-icon">
+      <p>Search</p>
+      <svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg>
+    </div>
+    <div class='darkmode'>
+    <input class='toggle' id='darkmode-toggle' type='checkbox' tabindex="-1">
+    <label id="toggle-label-light" for='darkmode-toggle' tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35;" xml:space="preserve">
+            <title>Light Mode</title>
+            <path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z" />
+        </svg>
+    </label>
+    <label id="toggle-label-dark" for='darkmode-toggle' tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'" xml:space="preserve">
+            <title>Dark Mode</title>
+            <path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z" />
+        </svg>
+    </label>
+</div>
+</header>
+
+
+    <article>
+      <h1>少做轉型 Minimize casting</h1>
+      <p class="meta">
+        Last updated 
+Unknown
+
+ 
+          
+
+      </p>
+      <ul class="tags">
+          
+          <li><a href="https://brainynight.github.io/second-brain/tags/cpp/">
+          
+            Cpp
+          
+            </a>
+           </li>
+          
+      </ul>
+      
+
+<aside class="mainTOC">
+    <details open >
+        <summary>Table of Contents</summary>
+        <nav id="TableOfContents">
+  <ol>
+    <li><a href="#常見的轉型語法">常見的轉型語法</a></li>
+    <li><a href="#不是圖臆測轉型的-pointer-如何實作">不是圖臆測轉型的 Pointer 如何實作</a></li>
+    <li><a href="#常見的轉型誤用-試圖使用-casting-以呼叫-base-class-方法">常見的轉型誤用: 試圖使用 Casting 以呼叫 Base Class 方法</a></li>
+    <li><a href="#dynamic-cast">Dynamic Cast</a>
+      <ol>
+        <li><a href="#效率問題">效率問題</a></li>
+      </ol>
+    </li>
+    <li><a href="#如何避免使用">如何避免使用?</a>
+      <ol>
+        <li><a href="#dynamic-cast-的使用場合">Dynamic Cast 的使用場合</a></li>
+        <li><a href="#solution1-使用-type-safe-container">Solution1 使用 Type-Safe Container</a></li>
+        <li><a href="#solution2-在-base-class-撰寫對應的-virtual-func">Solution2 在 Base Class 撰寫對應的 Virtual Func</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+    </details>
+</aside>
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+      
+      
+        
+      
+      
+      
+      
+    
+    
+  
+  
+  
+  
+
+
+
+
+
+
+<a href="#常見的轉型語法"><h2 id="常見的轉型語法"><span class="hanchor" ariaLabel="Anchor"># </span>常見的轉型語法</h2></a>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// 舊式轉型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="n">expr</span><span class="p">;</span> <span class="c1">// C-style
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">T</span><span class="p">(</span><span class="n">expr</span><span class="p">);</span>  <span class="c1">// func style
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// New-style/ C++ Style  casting 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const_cast</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">expr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">expr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">expr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">expr</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>dynamic_cast</code>: 安全向下轉型 (safe downcasting)，是一個可能耗費重大執行成本的轉型動作</li>
+<li><code>static_cast</code>: 強迫隱式轉換，像是 non-const to const, int to double&hellip;，但不能做 const to non-const.</li>
+<li><code>const_cast</code>: 唯一可以做到 const to non-const.</li>
+</ul>
+<p>即使舊式轉型依然有用，通常建議用新式，好處是</p>
+<ol>
+<li>容易在程式碼中被搜尋</li>
+<li>意圖窄化，像是如果想移除 constness，則必須使用 const_cast，其他都不會通過編譯。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a</span><span class="p">);</span> <span class="c1">// fail
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="k">const_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a</span><span class="p">);</span> <span class="c1">// ok
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><a href="#不是圖臆測轉型的-pointer-如何實作"><h2 id="不是圖臆測轉型的-pointer-如何實作"><span class="hanchor" ariaLabel="Anchor"># </span>不是圖臆測轉型的 Pointer 如何實作</h2></a>
+<p>在某些語言中，Drived Class 轉成 Base Class 在 Pointer 上只是一個 Offset。但在 C++ 中，Pointer 是怎麼「算」出來的取決於 Compiler。不要試圖「猜」要抓哪個 Address，相當於 Casting，該用 <code>static_cast</code> 就乖乖用。</p>
+<a href="#常見的轉型誤用-試圖使用-casting-以呼叫-base-class-方法"><h2 id="常見的轉型誤用-試圖使用-casting-以呼叫-base-class-方法"><span class="hanchor" ariaLabel="Anchor"># </span>常見的轉型誤用: 試圖使用 Casting 以呼叫 Base Class 方法</h2></a>
+<p>有些框架要求 Drived Classes 的 Virtual func 實作時，要先呼叫 Base Class 的對應函式。
+在 Python 中，呼叫 Parent 的方法可以使用 <code>super()</code>，在 C++ 中，直接在 Drived Class 當中，使用 Base Class 的名稱空間以呼叫 Base Class 方法!</p>
+<p>Example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Window</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="k">virtual</span> <span class="kt">void</span> <span class="n">onResize</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SpecicalWindow</span><span class="o">:</span> <span class="k">public</span> <span class="n">Window</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span> 
+</span></span><span class="line"><span class="cl">	<span class="k">virtual</span> <span class="kt">void</span> <span class="n">onResize</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// 錯誤作法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Window</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">).</span><span class="n">onResize</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// 正確做法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">Window</span><span class="o">::</span><span class="n">onResize</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>錯誤方法的呼叫，相當於</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Window</span> <span class="n">tmp</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Window</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">tmp</span><span class="p">.</span><span class="n">onResize</span><span class="p">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><a href="#dynamic-cast"><h2 id="dynamic-cast"><span class="hanchor" ariaLabel="Anchor"># </span>Dynamic Cast</h2></a>
+<a href="#效率問題"><h3 id="效率問題"><span class="hanchor" ariaLabel="Anchor"># </span>效率問題</h3></a>
+<p><code>dynamic_cast</code> 有嚴重的效率問題，多重繼承/深度繼承越多，效率成本越大。
+某些時候採用它有必要的原因: 需要支援動態連結。</p>
+<a href="#如何避免使用"><h2 id="如何避免使用"><span class="hanchor" ariaLabel="Anchor"># </span>如何避免使用?</h2></a>
+<a href="#dynamic-cast-的使用場合"><h3 id="dynamic-cast-的使用場合"><span class="hanchor" ariaLabel="Anchor"># </span>Dynamic Cast 的使用場合</h3></a>
+<p>手上握有一個 base class pointer/reference，但你認定這個 base class pointer 所指向的對象是某一個 dirved classs。</p>
+<a href="#solution1-使用-type-safe-container"><h3 id="solution1-使用-type-safe-container"><span class="hanchor" ariaLabel="Anchor"># </span>Solution1 使用 Type-Safe Container</h3></a>
+<p>同樣接續上例的 <code>Window</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Window</span><span class="o">&gt;</span> <span class="n">winPtrs</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">SpecialWindow</span><span class="o">&gt;</span> <span class="n">SPW</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">SPW</span> <span class="n">sp_ptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">sp_ptr</span> <span class="o">=</span> <span class="o">*</span><span class="n">winPtrs</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote class="question-callout">
+<p></p>
+<ol>
+<li>這裡本質不還是 static cast?</li>
+<li>如何保證 type 正確?? container 有測試?</li>
+</ol>
+</blockquote>
+<a href="#solution2-在-base-class-撰寫對應的-virtual-func"><h3 id="solution2-在-base-class-撰寫對應的-virtual-func"><span class="hanchor" ariaLabel="Anchor"># </span>Solution2 在 Base Class 撰寫對應的 Virtual Func</h3></a>
+<p><a href="/second-brain/notes/Project/C++/%E5%8D%80%E5%88%86%E4%BB%8B%E9%9D%A2%E7%B9%BC%E6%89%BFinterface%E5%92%8C%E5%AF%A6%E4%BD%9C%E7%B9%BC%E6%89%BFimplement" rel="noopener" class="internal-link" data-src="/second-brain/notes/Project/C++/%E5%8D%80%E5%88%86%E4%BB%8B%E9%9D%A2%E7%B9%BC%E6%89%BFinterface%E5%92%8C%E5%AF%A6%E4%BD%9C%E7%B9%BC%E6%89%BFimplement">區分介面繼承(interface)和實作繼承(implement)</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Window</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="k">virtual</span> <span class="kt">void</span> <span class="n">onResize</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">virtual</span> <span class="kt">void</span> <span class="nf">blink</span><span class="p">()</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SpecicalWindow</span><span class="o">:</span> <span class="k">public</span> <span class="n">Window</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span> 
+</span></span><span class="line"><span class="cl">	<span class="k">virtual</span> <span class="kt">void</span> <span class="n">onResize</span><span class="p">()</span> <span class="p">{...};</span>
+</span></span><span class="line"><span class="cl">	<span class="k">virtual</span> <span class="kt">void</span> <span class="nf">blink</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// implement!!
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+    </article>
+    
+
+<hr/>
+
+
+<div class="page-end" id="footer">
+    <div class="backlinks-container">
+        <h3>Backlinks</h3>
+<ul class="backlinks">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/C&#43;&#43;/Effective-C&#43;&#43;-Outline/" data-ctx="少做轉型動作(Minimize casting)" data-src="/notes/Project/C&#43;&#43;/Effective-C&#43;&#43;-Outline" class="internal-link">Effective C&#43;&#43; Outline</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/second-brain/notes/Project/C&#43;&#43;/Virtual-Function/" data-ctx="少做轉型動作(Minimize casting)" data-src="/notes/Project/C&#43;&#43;/Virtual-Function" class="internal-link">Virtual Function</a>
+      </li>
+      
+      
+      
+</ul>
+
+    </div>
+    <div>
+        <script
+  src="https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js"
+  integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI="
+  crossorigin="anonymous"
+></script>
+<h3>Interactive Graph</h3>
+<div id="graph-container"></div>
+<style>
+  :root {
+    --g-node: var(--secondary);
+    --g-node-active: var(--primary);
+    --g-node-inactive: var(--visited);
+    --g-link: var(--outlinegray);
+    --g-link-active: #5a7282;
+  }
+</style>
+
+<script src="https://brainynight.github.io/second-brain/js/graph.6579af7b10c818dbd2ca038702db0224.js"></script>
+
+    </div>
+</div>
+
+
+
+
+
+
+<div id="contact_buttons">
+    <footer>
+        
+        
+        <p>Made by Judy using <a href="https://github.com/jackyzha0/quartz">Quartz</a>, © 2024</p>
+        <ul>
+            
+            <li><a href="https://brainynight.github.io/second-brain/">Home</a></li>
+            <li><a href="https://github.com/BRainynight">GitHub</a></li></ul>
+    </footer>
+</div>
+
+
+</div>
+</body>
+</html>
