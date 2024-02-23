@@ -5,14 +5,45 @@
     <link>https://brainynight.github.io/second-brain/tags/moc/</link>
     <description>Recent content in moc on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://brainynight.github.io/second-brain/tags/moc/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://brainynight.github.io/second-brain/tags/moc/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>C&#43;&#43; Resources</title>
-      <link>https://brainynight.github.io/second-brain/notes/Resource/MOCs/C&#43;&#43;-Resources/</link>
+      <title>Effective C&#43;&#43; Outline</title>
+      <link>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Effective-C&#43;&#43;-Outline/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Effective-C&#43;&#43;-Outline/</guid>
+      <description>Chapter 1 條款1 C++ 是一個語言聯邦 C++ 融合了多種形式的 programming 手法，物件導向、procedural、generic、metaprogramming、functional&amp;hellip;。
+條款2 盡量以 const , enum, inline 取代 #define  以 const, enum, inline 取代 #define， 寧可以編譯器 (compiler) 取代前處理器 (pre-processor)。 對於單純的常數，以 const 或 enum 取代 對於形似 function 的巨集(macro)，用 inline 取代。  Const  [[以 Const 取代使用 Define]] [[The definition and declaration of static const]]  Enum  [[enum hack]]  Inline 條款3 盡可能使用 const 盡可能的使用 const，它可以確保物件不被改變。特別是 custom class designer 更加需要注意 operator 的 constness。</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; Core Guidelines</title>
+      <link>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/C&#43;&#43;-Core-Guidelines/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Resource/MOCs/C&#43;&#43;-Resources/</guid>
-      <description>Notes  [[../../Project/C++/Effective C++ Outline|Effective C++ Outline]] [[../../Project/C++/Effective modern C++ Outline|Effective modern C++ Outline]] [[../../Project/C++/The C++ STL Outline]]  Webs   CppCoreGuidelines  CppDeveloperRoadmap [整理了一份C++学习路线图](- https://mp.</description>
+      <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/C&#43;&#43;-Core-Guidelines/</guid>
+      <description>This is a quick note
+ Ch2 Philosophy 幾乎沒有理由應該遵守的 P.1 Express ideas directly in code
+P.2 Write in ISO Standard C++</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; Resources</title>
+      <link>https://brainynight.github.io/second-brain/notes/Focus/MOCs/C&#43;&#43;-Resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Focus/MOCs/C&#43;&#43;-Resources/</guid>
+      <description>Notes  [[../C++/C++ Core Guidelines|C++ Core Guidelines]] [[../C++/The C++ STL Outline|The C++ STL Outline]] [[../C++/Effective C++ Outline|Effective C++ Outline]]  Webs   CppCoreGuidelines  CppDeveloperRoadmap [整理了一份C++学习路线图](- https://mp.</description>
+    </item>
+    
+    <item>
+      <title>The C&#43;&#43; STL Outline</title>
+      <link>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/The-C&#43;&#43;-STL-Outline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/The-C&#43;&#43;-STL-Outline/</guid>
+      <description>Containers  共同介面: Ch3 [[Interface of all containers]] Ch4 [[Sequence Containers]] Ch5 [[Associative Containers]]  Sequence Containers Associative Continers  Unordered containers have better performance.</description>
     </item>
     
   </channel>

@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta
+    name="description"
+    content="如何決定 Function Signature 的長相  headings: 資料結構 copying 跟 moving 的成本 row: parameter 的性質  In &amp; retain copy: 在 function 內部會發生 copy In &amp; retain &ldquo;copy&rdquo;: Moved-from means that it is in a valid but not nearer specified state."
+  />
+  <meta property="og:title" content="Prefer simple and conventional ways of passing information">
+  <meta property="og:description" content="如何決定 Function Signature 的長相  headings: 資料結構 copying 跟 moving 的成本 row: parameter 的性質  In &amp; retain copy: 在 function 內部會發生 copy In &amp; retain &ldquo;copy&rdquo;: Moved-from means that it is in a valid but not nearer specified state.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
+  <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Prefer-simple-and-conventional-ways-of-passing-information/">
+  <meta property="og:width" content="200">
+  <meta property="og:height" content="200">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Prefer simple and conventional ways of passing information" />
+  <meta name="twitter:description" content="如何決定 Function Signature 的長相  headings: 資料結構 copying 跟 moving 的成本 row: parameter 的性質  In &amp; retain copy: 在 function 內部會發生 copy In &amp; retain &ldquo;copy&rdquo;: Moved-from means that it is in a valid but not nearer specified state." />
+  <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
+  
+    
+  
+
+  <title>
+    Prefer simple and conventional ways of passing information
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+  
+  
+  
+  
+  <link rel="shortcut icon" type="image/png"  href="https://brainynight.github.io/second-brain//icon.png" />
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <link href="https://brainynight.github.io/second-brain/styles.7d481813bbe4f502154ba7bb5eb73d2d.min.css" rel="stylesheet" />
+
+  
+  <link href="https://brainynight.github.io/second-brain/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css" rel="stylesheet" id="theme-link">
+
+   
+  
+  
+  
+  
+  <script src="https://brainynight.github.io/second-brain/js/darkmode.ad5fa1629664e806f9e2c4589974fc3d.min.js"></script>
+  
+  
+  
+  <script src="https://brainynight.github.io/second-brain/js/util.00639692264b21bc3ee219733d38a8be.min.js"></script>
+  
+  
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"
+        integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx"
+        crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js"
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+        crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js"
+        integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A"
+        crossorigin="anonymous"></script>
+
+
+  
+  
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.2.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.2.1"></script>
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/popover.aa9bc99c7c38d3ae9538f218f1416adb.min.js"></script>
+
+  
+  
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js"></script>
+  
+
+  
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js"></script>
+  
+
+  
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js"></script>
+  
+
+  
+   
+  <script>
+    const SEARCH_ENABLED =  false 
+    const LATEX_ENABLED =  true 
+    const PRODUCTION =  true 
+    const BASE_URL = "https://brainynight.github.io/second-brain/"
+    const fetchData = Promise.all([
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.a0b3f347ae9c1aab372d2b99a4f357b0.min.json")
+            .then(data => data.json())
+            .then(data => ({
+              index: data.index,
+              links: data.links,
+            })),
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.22d0811d7162975892790ada9d644107.min.json")
+            .then(data => data.json()),
+        ])
+        .then(([{index, links}, content]) => ({
+          index,
+          links,
+          content,
+        }))
+
+      const render = () => {
+      
+
+      const siteBaseURL = new URL(BASE_URL);
+      const pathBase = siteBaseURL.pathname;
+      const pathWindow = window.location.pathname;
+      const isHome = pathBase == pathWindow;
+
+      addCopyButtons();
+      
+
+      addTitleToCodeBlocks();
+      
+
+      addCollapsibleCallouts();
+      
+
+      
+      initPopover(
+        "https://brainynight.github.io/second-brain",
+         true 
+      )
+      
+
+      
+      const footer = document.getElementById("footer")
+      if (footer) {
+        const container = document.getElementById("graph-container")
+        
+        if (!container) return requestAnimationFrame(render)
+        
+        container.textContent = ""
+
+        const drawGlobal = isHome &&  false ;
+        drawGraph(
+            "https://brainynight.github.io/second-brain",
+            drawGlobal,
+            [{"/notes/Project/Effective-C++-Series/Effective-C++-Outline":"#4388cc"}],
+            drawGlobal ? {"centerForce":1,"depth":-1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.5,"linkDistance":1,"opacityScale":3,"repelForce":1,"scale":1.4} : {"centerForce":1,"depth":1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.6,"linkDistance":1,"opacityScale":3,"repelForce":2,"scale":1.2}
+          );
+
+        }
+      
+
+      
+        var els = document.getElementsByClassName("mermaid");
+        if (els.length > 0) {
+          import('https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs').then(
+            (obj) => {
+              
+              
+              obj.default.init();
+            }
+          )
+        }
+      
+      
+      
+      function clickHandler(evt) {
+        const target = evt.target 
+        const classNames = target.className.split(" ")
+        const broken = classNames.includes("broken")
+        const internal = classNames.includes("internal-link")
+        plausible("Link Click", {
+          props: {
+            href: target.href,
+            broken,
+            internal,
+            graph: false,
+          }
+        })
+      }
+
+      const links = document.querySelectorAll("a")
+      for (link of links) {
+        if (link.className.includes("root-title")) {
+          link.addEventListener('click', clickHandler, {once: true})
+        }
+      }
+    }
+
+    const init = (doc = document) => {
+      
+      addCopyButtons();
+      
+
+      addTitleToCodeBlocks();
+      renderMathInElement(doc.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+        ],
+        macros: {
+          '’': "'"
+        },
+        throwOnError : false
+      });
+      
+    };
+  </script>
+  
+  
+  <script type="module">
+    import { attachSPARouting } from "https:\/\/brainynight.github.io\/second-brain\/js\/router.d6fe6bd821db9ea97f9aeefae814d8e7.min.js"
+    attachSPARouting(init, render)
+  </script>
+  
+  
+  <script defer data-domain="brainynight.github.io/second-brain" src="https://plausible.io/js/script.js"></script>
+  <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+</head>
+
+
+<body>
+<div id="search-container">
+  <div id="search-space">
+    <input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search"
+      placeholder="Search for something..." dir="">
+    <div id="results-container">
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"
+  integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin="anonymous" defer></script>
+
+<script defer src="https://brainynight.github.io/second-brain/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js"></script>
+
+
+
+<div class="singlePage">
+    
+    <header>
+    
+    <h1 id="page-title"><a class="root-title" href="https://brainynight.github.io/second-brain/">🪴 Digital Note</a></h1>
+    <div class="spacer"></div>
+    <div id="search-icon">
+      <p>Search</p>
+      <svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg>
+    </div>
+    <div class='darkmode'>
+    <input class='toggle' id='darkmode-toggle' type='checkbox' tabindex="-1">
+    <label id="toggle-label-light" for='darkmode-toggle' tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35;" xml:space="preserve">
+            <title>Light Mode</title>
+            <path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z" />
+        </svg>
+    </label>
+    <label id="toggle-label-dark" for='darkmode-toggle' tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'" xml:space="preserve">
+            <title>Dark Mode</title>
+            <path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z" />
+        </svg>
+    </label>
+</div>
+</header>
+
+
+    <article>
+      <h1>Prefer simple and conventional ways of passing information</h1>
+      <p class="meta">
+        Last updated 
+Feb 23, 2024
+
+ 
+          
+
+      </p>
+      <ul class="tags">
+          
+          <li><a href="https://brainynight.github.io/second-brain/tags/cpp/">
+          
+            Cpp
+          
+            </a>
+           </li>
+          
+      </ul>
+      
+
+<aside class="mainTOC">
+    <details open >
+        <summary>Table of Contents</summary>
+        <nav id="TableOfContents">
+  <ol>
+    <li><a href="#如何決定-function-signature-的長相">如何決定 Function Signature 的長相</a></li>
+    <li><a href="#in-parameter">&ldquo;in&rdquo; parameter</a></li>
+    <li><a href="#forward-parameter">&ldquo;forward&rdquo; Parameter</a></li>
+    <li><a href="#in-out-parameters">&ldquo;in-out&rdquo; Parameters</a></li>
+    <li><a href="#資源所有權-ownersip-semantics-for-parameter-passing">資源所有權 Ownersip Semantics for Parameter Passing</a></li>
+  </ol>
+</nav>
+    </details>
+</aside>
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+    
+    
+
+  
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+      
+      
+    
+    
+  
+  
+  
+  
+
+
+
+
+
+
+<a href="#如何決定-function-signature-的長相"><h2 id="如何決定-function-signature-的長相"><span class="hanchor" ariaLabel="Anchor"># </span>如何決定 Function Signature 的長相</h2></a>
+<ul>
+<li>headings: 資料結構 copying 跟 moving 的成本</li>
+<li>row: parameter 的性質
+<ul>
+<li>In &amp; retain copy: 在 function 內部會發生 copy</li>
+<li>In &amp; retain &ldquo;copy&rdquo;: Moved-from means that it is in a valid but not nearer specified state.</li>
+<li>In/out: 在 function 會被變更內容</li>
+<li>out: 透過 function 所產生的回傳值
+後面會有更多 rule 說明這些東西
+<a class="internal-link broken">Pasted image 20240114215359.png</a></li>
+</ul>
+</li>
+</ul>
+<p>案例</p>
+<ul>
+<li>當 Copy 很輕鬆，或不可能發生 Copy 的時候，pass by copy 沒問題: int, std::uniqure_ptr。</li>
+<li>Move 的成本低: <code>std::vector</code>, <code>std::string</code></li>
+<li>Move 的成本適中: <code>std::array&lt;std::vector&gt;</code> or BigPOD (POD stands for Plain Old Data—that is, a class without constructors, destructors, and virtual member functions.)</li>
+<li>不知道 Move 的成本: Template。</li>
+</ul>
+<a href="#in-parameter"><h2 id="in-parameter"><span class="hanchor" ariaLabel="Anchor"># </span>&ldquo;in&rdquo; parameter</h2></a>
+<ol>
+<li>只有非常「便宜」的才 pass by copy</li>
+<li>其他用 <code>const &amp; </code></li>
+</ol>
+<p>C++ Core guideline 提供一個標準衡量 copy 物件是否足夠「便宜」</p>
+<blockquote>
+<p>當 <code>sizeof(parm) &lt; 3*sizeof(void*)</code></p>
+</blockquote>
+<a href="#forward-parameter"><h2 id="forward-parameter"><span class="hanchor" ariaLabel="Anchor"># </span>&ldquo;forward&rdquo; Parameter</h2></a>
+<p>這種參數對 lvalue 做 copy，rvalue 做 move。constness 在 lvalue 被忽略，但保留於 rvalue。</p>
+<p>forwarding parameter 通常用於<a href="/second-brain/notes/Focus/C++/%E5%B7%A5%E5%BB%A0%E5%87%BD%E5%BC%8F-Factory-Function" rel="noopener" class="internal-link" data-src="/second-brain/notes/Focus/C++/%E5%B7%A5%E5%BB%A0%E5%87%BD%E5%BC%8F-Factory-Function">工廠函式 (Factory Function)</a> &ndash;  像是透過一個 construct function 生成任意物件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="p">...</span> <span class="n">T1</span><span class="o">&gt;</span>  <span class="c1">// parameter pack 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">T</span> <span class="n">create</span><span class="p">(</span><span class="n">T1</span><span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">t1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="nf">T</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t1</span><span class="p">)...);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">// lvalue
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="kt">int</span> <span class="n">five</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   <span class="kt">int</span> <span class="n">myFive</span><span class="o">=</span> <span class="n">create</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">five</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="c1">// rvalues
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="kt">int</span> <span class="n">myFive2</span><span class="o">=</span> <span class="n">create</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="c1">// no arguments
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="kt">int</span> <span class="n">myZero</span><span class="o">=</span> <span class="n">create</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="c1">// three arguments; (lvalue, rvalue, rvalue)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="n">MyType</span> <span class="n">myType</span> <span class="o">=</span> <span class="n">create</span><span class="o">&lt;</span><span class="n">MyType</span><span class="o">&gt;</span><span class="p">(</span><span class="n">myZero</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Related syntax: <a href="/second-brain/notes/Focus/C++/Parameter-Pack" rel="noopener" class="internal-link" data-src="/second-brain/notes/Focus/C++/Parameter-Pack">Parameter Pack</a></p>
+<p>Forward argument 與 template 結合的最好範例就是 <code>std::make_unique</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">make_unique</span><span class="p">(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span> <span class="n">T</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Args</span><span class="o">&gt;</span><span class="p">(</span><span class="n">args</span><span class="p">)...));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">creates</span> <span class="n">a</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span> <span class="k">for</span> <span class="n">T</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><a href="#in-out-parameters"><h2 id="in-out-parameters"><span class="hanchor" ariaLabel="Anchor"># </span>&ldquo;in-out&rdquo; Parameters</h2></a>
+<p>在 function 中會更動 object 的數值，因此應以 non-const reference 傳遞。</p>
+<a href="#資源所有權-ownersip-semantics-for-parameter-passing"><h2 id="資源所有權-ownersip-semantics-for-parameter-passing"><span class="hanchor" ariaLabel="Anchor"># </span>資源所有權 Ownersip Semantics for Parameter Passing</h2></a>
+<p>&ldquo;Ownersip Semantics&rdquo; 直翻 &ldquo;所有權語義&rdquo;，在談論不同的 Parameter type 宣告下的「資源所有權」。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pass by Copy</td>
+<td>Function 直接擁有資源</td>
+</tr>
+<tr>
+<td>Pass by pointer</td>
+<td>Function &ldquo;借用(borrow)&rdquo; 此資源，使用前應確認 pointer 非 Null，它「應當」無權釋放資源。</td>
+</tr>
+<tr>
+<td>Pass by reference</td>
+<td>同樣 &ldquo;借用&rdquo; 資源，但 reference 永遠是 valid value。</td>
+</tr>
+<tr>
+<td>func(std::unique_ptr)</td>
+<td><code>func</code> 是資源的新擁有者 (owner)，互叫此 <code>func</code> 的 caller 相當於把 ownership 轉移給 <code>func</code> (callee)，並且資源會在 function 結束時 release。</td>
+</tr>
+<tr>
+<td>func(std::shared_ptr)</td>
+<td><code>func</code> 是新增的資源擁有者，他延長了資源的 lifetime。<code>func</code> 在離開前，會把自己的擁有權從資源刪掉，如果它是最後一個擁有者，則資源會在 <code>func</code> 離開時 release。</td>
+</tr>
+</tbody>
+</table>
+<p>弄清楚誰是資源的 owner 至關重要，以下面這個範例，誰應該是資源 <code>ptr</code> 的擁有者? (誰應負責 delete resource? )</p>
+<p>按照前面的分配，<code>func</code> 是 pass by pointer，它可以改寫內容、可以讀取，但不應刪除資源。</p>
+<p>我想這一段在說明的是一個「準則」，讓大家一起 follow 這段準則，避免資源所有權混亂造成記憶體洩漏。更方便的做法，不外乎別用 C-array，多用 smart_ptr &hellip;. 。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">func</span><span class="p">(</span><span class="kt">double</span><span class="o">*</span> <span class="n">ptr</span><span class="p">)</span> <span class="p">{...};</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">double</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span> <span class="p">[];</span> 
+</span></span><span class="line"><span class="cl"><span class="n">func</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a href="/second-brain/notes/Focus/C++/How-to-Pass-Output-Value" rel="noopener" class="internal-link" data-src="/second-brain/notes/Focus/C++/How-to-Pass-Output-Value">How to Pass Output Value</a></p>
+
+
+    </article>
+    
+
+<hr/>
+
+
+<div class="page-end" id="footer">
+    <div class="backlinks-container">
+        <h3>Backlinks</h3>
+<ul class="backlinks">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+      
+    
+      
+      
+      <li>
+        <a href="/second-brain/notes/Focus/C&#43;&#43;/C&#43;&#43;-Core-Guidelines/" data-ctx="Prefer simple and conventional ways of passing information" data-src="/notes/Focus/C&#43;&#43;/C&#43;&#43;-Core-Guidelines" class="internal-link">C&#43;&#43; Core Guidelines</a>
+      </li>
+      
+      
+      
+</ul>
+
+    </div>
+    <div>
+        <script
+  src="https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js"
+  integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI="
+  crossorigin="anonymous"
+></script>
+<h3>Interactive Graph</h3>
+<div id="graph-container"></div>
+<style>
+  :root {
+    --g-node: var(--secondary);
+    --g-node-active: var(--primary);
+    --g-node-inactive: var(--visited);
+    --g-link: var(--outlinegray);
+    --g-link-active: #5a7282;
+  }
+</style>
+
+<script src="https://brainynight.github.io/second-brain/js/graph.6579af7b10c818dbd2ca038702db0224.js"></script>
+
+    </div>
+</div>
+
+
+
+
+
+
+<div id="contact_buttons">
+    <footer>
+        
+        
+        <p>Made by Judy using <a href="https://github.com/jackyzha0/quartz">Quartz</a>, © 2024</p>
+        <ul>
+            
+            <li><a href="https://brainynight.github.io/second-brain/">Home</a></li>
+            <li><a href="https://github.com/BRainynight">GitHub</a></li></ul>
+    </footer>
+</div>
+
+
+</div>
+</body>
+</html>

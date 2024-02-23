@@ -8,19 +8,19 @@
     <language>en-us</language><atom:link href="https://brainynight.github.io/second-brain/categories/obsidian/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Obsidian Plugins</title>
-      <link>https://brainynight.github.io/second-brain/notes/Archive/Obsidian/Obsidian-Plugins/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Obsidian/Obsidian-Plugins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Archive/Obsidian/Obsidian-Plugins/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Obsidian/Obsidian-Plugins/</guid>
       <description>Theme  當前用的是 Thing2  minimal 也是熱門的主題，且與許多 plugin 相容  但是 header 之間不同階級沒有大小之分，我不喜歡，要用需要改 CSS。    Plugin  Obsidian Dataview mode: like notion https://ithelp.</description>
     </item>
     
     <item>
       <title>Obsidian Publish 的替代選擇</title>
-      <link>https://brainynight.github.io/second-brain/notes/Archive/Obsidian/Sync-Obsidian/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Obsidian/Sync-Obsidian/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Archive/Obsidian/Sync-Obsidian/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Obsidian/Sync-Obsidian/</guid>
       <description>想在 IOS 上面也有 Sync 的 Obsidian 可以用!
 社群的作法是裝 ISH 以 Git 同步，我想實驗用 Terminus (比起 ISH 有在維護)
   Sync with git on iOS for free using iSH  Setting up iOS git-based syncing with mobile app (using Working Copy)  </description>

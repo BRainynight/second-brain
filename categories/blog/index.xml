@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 09 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://brainynight.github.io/second-brain/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo 可使用的metadata</title>
-      <link>https://brainynight.github.io/second-brain/notes/Archive/Hugo/usable-meta-data/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Hugo/usable-meta-data/</link>
       <pubDate>Sun, 09 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Archive/Hugo/usable-meta-data/</guid>
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Hugo/usable-meta-data/</guid>
       <description>Source: https://gohugo.io/content-management/front-matter/
 舉例:
 1 2 3 4 5 6 7 8 9 10 11 12 13  categories:- Development- VIMdate:&amp;#34;2012-04-06&amp;#34;description:spf13-vim is a cross platform distribution of vim plugins and resourcesfor Vim.</description>

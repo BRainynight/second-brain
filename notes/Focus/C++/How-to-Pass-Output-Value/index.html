@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta
+    name="description"
+    content="多數情況下，請 Return Value (by Copy)。
+ Single value 直接 return value ，不要以 const value 回傳，因為特地以 const value 回傳並沒有特別的意義。 (Since C&#43;&#43;17) 雖然 copy 「看似」昂貴，但 compiler 有 RVO (return value optimization) 或 NRVO (Named returned value optimization)，經過 optimize 後 copy 得以被省略"
+  />
+  <meta property="og:title" content="How to Pass Output Value">
+  <meta property="og:description" content="多數情況下，請 Return Value (by Copy)。
+ Single value 直接 return value ，不要以 const value 回傳，因為特地以 const value 回傳並沒有特別的意義。 (Since C&#43;&#43;17) 雖然 copy 「看似」昂貴，但 compiler 有 RVO (return value optimization) 或 NRVO (Named returned value optimization)，經過 optimize 後 copy 得以被省略">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
+  <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/How-to-Pass-Output-Value/">
+  <meta property="og:width" content="200">
+  <meta property="og:height" content="200">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="How to Pass Output Value" />
+  <meta name="twitter:description" content="多數情況下，請 Return Value (by Copy)。
+ Single value 直接 return value ，不要以 const value 回傳，因為特地以 const value 回傳並沒有特別的意義。 (Since C&#43;&#43;17) 雖然 copy 「看似」昂貴，但 compiler 有 RVO (return value optimization) 或 NRVO (Named returned value optimization)，經過 optimize 後 copy 得以被省略" />
+  <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
+  
+    
+  
+
+  <title>
+    How to Pass Output Value
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+  
+  
+  
+  
+  <link rel="shortcut icon" type="image/png"  href="https://brainynight.github.io/second-brain//icon.png" />
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <link href="https://brainynight.github.io/second-brain/styles.7d481813bbe4f502154ba7bb5eb73d2d.min.css" rel="stylesheet" />
+
+  
+  <link href="https://brainynight.github.io/second-brain/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css" rel="stylesheet" id="theme-link">
+
+   
+  
+  
+  
+  
+  <script src="https://brainynight.github.io/second-brain/js/darkmode.ad5fa1629664e806f9e2c4589974fc3d.min.js"></script>
+  
+  
+  
+  <script src="https://brainynight.github.io/second-brain/js/util.00639692264b21bc3ee219733d38a8be.min.js"></script>
+  
+  
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"
+        integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx"
+        crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js"
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+        crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js"
+        integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A"
+        crossorigin="anonymous"></script>
+
+
+  
+  
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.2.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.2.1"></script>
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/popover.aa9bc99c7c38d3ae9538f218f1416adb.min.js"></script>
+
+  
+  
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js"></script>
+  
+
+  
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js"></script>
+  
+
+  
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js"></script>
+  
+
+  
+   
+  <script>
+    const SEARCH_ENABLED =  false 
+    const LATEX_ENABLED =  true 
+    const PRODUCTION =  true 
+    const BASE_URL = "https://brainynight.github.io/second-brain/"
+    const fetchData = Promise.all([
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.a0b3f347ae9c1aab372d2b99a4f357b0.min.json")
+            .then(data => data.json())
+            .then(data => ({
+              index: data.index,
+              links: data.links,
+            })),
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.22d0811d7162975892790ada9d644107.min.json")
+            .then(data => data.json()),
+        ])
+        .then(([{index, links}, content]) => ({
+          index,
+          links,
+          content,
+        }))
+
+      const render = () => {
+      
+
+      const siteBaseURL = new URL(BASE_URL);
+      const pathBase = siteBaseURL.pathname;
+      const pathWindow = window.location.pathname;
+      const isHome = pathBase == pathWindow;
+
+      addCopyButtons();
+      
+
+      addTitleToCodeBlocks();
+      
+
+      addCollapsibleCallouts();
+      
+
+      
+      initPopover(
+        "https://brainynight.github.io/second-brain",
+         true 
+      )
+      
+
+      
+      const footer = document.getElementById("footer")
+      if (footer) {
+        const container = document.getElementById("graph-container")
+        
+        if (!container) return requestAnimationFrame(render)
+        
+        container.textContent = ""
+
+        const drawGlobal = isHome &&  false ;
+        drawGraph(
+            "https://brainynight.github.io/second-brain",
+            drawGlobal,
+            [{"/notes/Project/Effective-C++-Series/Effective-C++-Outline":"#4388cc"}],
+            drawGlobal ? {"centerForce":1,"depth":-1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.5,"linkDistance":1,"opacityScale":3,"repelForce":1,"scale":1.4} : {"centerForce":1,"depth":1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.6,"linkDistance":1,"opacityScale":3,"repelForce":2,"scale":1.2}
+          );
+
+        }
+      
+
+      
+        var els = document.getElementsByClassName("mermaid");
+        if (els.length > 0) {
+          import('https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs').then(
+            (obj) => {
+              
+              
+              obj.default.init();
+            }
+          )
+        }
+      
+      
+      
+      function clickHandler(evt) {
+        const target = evt.target 
+        const classNames = target.className.split(" ")
+        const broken = classNames.includes("broken")
+        const internal = classNames.includes("internal-link")
+        plausible("Link Click", {
+          props: {
+            href: target.href,
+            broken,
+            internal,
+            graph: false,
+          }
+        })
+      }
+
+      const links = document.querySelectorAll("a")
+      for (link of links) {
+        if (link.className.includes("root-title")) {
+          link.addEventListener('click', clickHandler, {once: true})
+        }
+      }
+    }
+
+    const init = (doc = document) => {
+      
+      addCopyButtons();
+      
+
+      addTitleToCodeBlocks();
+      renderMathInElement(doc.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+        ],
+        macros: {
+          '’': "'"
+        },
+        throwOnError : false
+      });
+      
+    };
+  </script>
+  
+  
+  <script type="module">
+    import { attachSPARouting } from "https:\/\/brainynight.github.io\/second-brain\/js\/router.d6fe6bd821db9ea97f9aeefae814d8e7.min.js"
+    attachSPARouting(init, render)
+  </script>
+  
+  
+  <script defer data-domain="brainynight.github.io/second-brain" src="https://plausible.io/js/script.js"></script>
+  <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+</head>
+
+
+<body>
+<div id="search-container">
+  <div id="search-space">
+    <input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search"
+      placeholder="Search for something..." dir="">
+    <div id="results-container">
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"
+  integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin="anonymous" defer></script>
+
+<script defer src="https://brainynight.github.io/second-brain/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js"></script>
+
+
+
+<div class="singlePage">
+    
+    <header>
+    
+    <h1 id="page-title"><a class="root-title" href="https://brainynight.github.io/second-brain/">🪴 Digital Note</a></h1>
+    <div class="spacer"></div>
+    <div id="search-icon">
+      <p>Search</p>
+      <svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg>
+    </div>
+    <div class='darkmode'>
+    <input class='toggle' id='darkmode-toggle' type='checkbox' tabindex="-1">
+    <label id="toggle-label-light" for='darkmode-toggle' tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35;" xml:space="preserve">
+            <title>Light Mode</title>
+            <path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z" />
+        </svg>
+    </label>
+    <label id="toggle-label-dark" for='darkmode-toggle' tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'" xml:space="preserve">
+            <title>Dark Mode</title>
+            <path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z" />
+        </svg>
+    </label>
+</div>
+</header>
+
+
+    <article>
+      <h1>How to Pass Output Value</h1>
+      <p class="meta">
+        Last updated 
+Feb 23, 2024
+
+ 
+          
+
+      </p>
+      <ul class="tags">
+          
+          <li><a href="https://brainynight.github.io/second-brain/tags/cpp/">
+          
+            Cpp
+          
+            </a>
+           </li>
+          
+      </ul>
+      
+
+<aside class="mainTOC">
+    <details open >
+        <summary>Table of Contents</summary>
+        <nav id="TableOfContents">
+  <ol>
+    <li><a href="#single-value">Single value</a></li>
+    <li><a href="#multiple-output-value--return-struct-or-tuple">Multiple output value : return struct or tuple</a>
+      <ol>
+        <li><a href="#stdtie">std::tie</a></li>
+        <li><a href="#structured-binding">Structured Binding</a></li>
+      </ol>
+    </li>
+    <li><a href="#例外-return-with-pointer-或-lvalue-reference">例外: Return with pointer 或 lvalue reference</a>
+      <ol>
+        <li><a href="#pointer-只代表-position-return-t">Pointer 只代表 Position: return <code>T*</code></a></li>
+        <li><a href="#不想要-copy-發生且不需要回傳物件的時候-return-t">不想要 Copy 發生，且不需要回傳物件的時候 return <code>T&amp;</code></a></li>
+      </ol>
+    </li>
+    <li><a href="#危險動作-return-a-reference-to-a-local-variable">危險動作: return a reference to a local variable</a>
+      <ol>
+        <li><a href="#return-t">Return <code>T&amp;&amp;</code></a></li>
+        <li><a href="#return-stdmovelocal">Return <code>std::move(local)</code></a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+    </details>
+</aside>
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+      
+      
+    
+    
+  
+  
+  
+  
+
+
+
+
+
+
+<blockquote>
+<p>多數情況下，請 Return Value (by Copy)。</p>
+</blockquote>
+<a href="#single-value"><h2 id="single-value"><span class="hanchor" ariaLabel="Anchor"># </span>Single value</h2></a>
+<p>直接 return value ，不要以 const value 回傳，因為特地以 const value 回傳並沒有特別的意義。
+(Since C++17) 雖然 copy 「看似」昂貴，但 compiler 有 RVO (return value optimization) 或 NRVO (Named returned value optimization)，經過 optimize 後 copy 得以被省略</p>
+<a href="#multiple-output-value--return-struct-or-tuple"><h2 id="multiple-output-value--return-struct-or-tuple"><span class="hanchor" ariaLabel="Anchor"># </span>Multiple output value : return struct or tuple</h2></a>
+<p>C++ STL 中 <code>std::set::insert</code> 的回傳就是一個 <code>std::pair</code>，內容存了 iterator 與 bool (是否插入新值)。</p>
+<p>至於如何優雅的接收這類(多個)回傳值，建議用 C++11 的 <code>std::tie</code> 或 C++17 的 
+<a href="https://en.cppreference.com/w/cpp/language/structured_binding" rel="noopener">Structured binding</a> 。</p>
+<a href="#stdtie"><h3 id="stdtie"><span class="hanchor" ariaLabel="Anchor"># </span>std::tie</h3></a>
+<p>透過 <code>std::tie</code>，直接把 <code>std::pair</code> 的第一位與第二位分別指派給 <code>iter</code> 與 <code>is_inserted</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">tie</span><span class="p">(</span><span class="n">iter</span><span class="p">,</span> <span class="n">is_inserted</span><span class="p">)</span> <span class="o">=</span> <span class="n">mySet</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2020</span><span class="p">);</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><a href="#structured-binding"><h3 id="structured-binding"><span class="hanchor" ariaLabel="Anchor"># </span>Structured Binding</h3></a>
+<p>更直覺的用法 unpack 回傳值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="p">[</span><span class="n">iter</span><span class="p">,</span> <span class="n">is_inserted</span><span class="p">]</span> <span class="o">=</span> <span class="n">mySet</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2021</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><a href="#例外-return-with-pointer-或-lvalue-reference"><h2 id="例外-return-with-pointer-或-lvalue-reference"><span class="hanchor" ariaLabel="Anchor"># </span>例外: Return with pointer 或 lvalue reference</h2></a>
+<p>像後面會提到的，pass by pointer/reference 都<strong>不應</strong>具有轉移所有權的情況發生 (不應，不是辦不到。一旦做了很容易發生所有權混亂，導致 memory leak)。</p>
+<p>下列的情況都應該 follow 這個準則: 雖然 return by pointer/reference，但不具有轉移所有權的問題。</p>
+<a href="#pointer-只代表-position-return-t"><h3 id="pointer-只代表-position-return-t"><span class="hanchor" ariaLabel="Anchor"># </span>Pointer 只代表 Position: return <code>T*</code></h3></a>
+<p>當回傳的內容只代表一個記憶體位置 (tree node, an address in std::list &hellip; )，該資源本身在 function 之外，則可以回傳 pointer。</p>
+<a href="#不想要-copy-發生且不需要回傳物件的時候-return-t"><h3 id="不想要-copy-發生且不需要回傳物件的時候-return-t"><span class="hanchor" ariaLabel="Anchor"># </span>不想要 Copy 發生，且不需要回傳物件的時候 return <code>T&amp;</code></h3></a>
+<p>當不需要複製並且不需要「不回傳物件」時傳回 T&amp;</p>
+<p>當 &ldquo;Return no object&rdquo; 不是選項，則 return by reference，而非 return by pointer。</p>
+<p>為了避免一些暫時變數的 copying, destruction，有時會選擇 chain operation。
+通常發生在 assignment operator。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">A</span><span class="o">&amp;</span> <span class="k">operator</span> <span class="o">=</span> <span class="p">(</span><span class="k">const</span> <span class="n">A</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">A</span> <span class="k">operator</span> <span class="o">=</span> <span class="p">(</span><span class="k">const</span> <span class="n">A</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">A</span>  <span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">a1</span> <span class="o">=</span> <span class="n">a2</span> <span class="o">=</span> <span class="n">a3</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>兩個 copy assignment 分別多創建了兩個 temporary object。</p>
+<a href="#危險動作-return-a-reference-to-a-local-variable"><h2 id="危險動作-return-a-reference-to-a-local-variable"><span class="hanchor" ariaLabel="Anchor"># </span>危險動作: return a reference to a local variable</h2></a>
+<p>回傳一個 reference/pointer 到 local variable 都會造成 undefined variable，結果無法預期，也不一定總會 crash。</p>
+<p>這兩個動作也同樣危險</p>
+<ol>
+<li>Return <code>T&amp;&amp;</code></li>
+<li>Return <code>std::move(local)</code></li>
+</ol>
+<a href="#return-t"><h3 id="return-t"><span class="hanchor" ariaLabel="Anchor"># </span>Return <code>T&amp;&amp;</code></h3></a>
+<p>下面這段範例，就意義上 rvalue 在 <code>auto myInt</code> 接收完，該行執行完，就已經結束 lifetime 了。GCC Compiler 甚至不會讓這種 code 通過。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">&amp;&amp;</span> <span class="n">returnRvalueReference</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="kt">int</span><span class="p">{};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="k">auto</span> <span class="n">myInt</span> <span class="o">=</span> <span class="n">returnRvalueReference</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">// lifetime for myInt (rvalue) is END!!!
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><a href="#return-stdmovelocal"><h3 id="return-stdmovelocal"><span class="hanchor" ariaLabel="Anchor"># </span>Return <code>std::move(local)</code></h3></a>
+<p>由於 Compiler Optimization 在 return value (by copy) 已經推出 RVO, NRVO &ndash; 在優化時直接省略 Copy，<code>std::move(local)</code> 反而不是優化的手段，甚至可能更慢。</p>
+
+
+    </article>
+    
+
+<hr/>
+
+
+<div class="page-end" id="footer">
+    <div class="backlinks-container">
+        <h3>Backlinks</h3>
+<ul class="backlinks">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+      
+    
+      
+      
+      <li>
+        <a href="/second-brain/notes/Focus/C&#43;&#43;/Prefer-simple-and-conventional-ways-of-passing-information/" data-ctx="How to Pass Output Value" data-src="/notes/Focus/C&#43;&#43;/Prefer-simple-and-conventional-ways-of-passing-information" class="internal-link">Prefer simple and conventional ways of passing information</a>
+      </li>
+      
+      
+      
+</ul>
+
+    </div>
+    <div>
+        <script
+  src="https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js"
+  integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI="
+  crossorigin="anonymous"
+></script>
+<h3>Interactive Graph</h3>
+<div id="graph-container"></div>
+<style>
+  :root {
+    --g-node: var(--secondary);
+    --g-node-active: var(--primary);
+    --g-node-inactive: var(--visited);
+    --g-link: var(--outlinegray);
+    --g-link-active: #5a7282;
+  }
+</style>
+
+<script src="https://brainynight.github.io/second-brain/js/graph.6579af7b10c818dbd2ca038702db0224.js"></script>
+
+    </div>
+</div>
+
+
+
+
+
+
+<div id="contact_buttons">
+    <footer>
+        
+        
+        <p>Made by Judy using <a href="https://github.com/jackyzha0/quartz">Quartz</a>, © 2024</p>
+        <ul>
+            
+            <li><a href="https://brainynight.github.io/second-brain/">Home</a></li>
+            <li><a href="https://github.com/BRainynight">GitHub</a></li></ul>
+    </footer>
+</div>
+
+
+</div>
+</body>
+</html>
