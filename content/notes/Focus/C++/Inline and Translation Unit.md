@@ -1,3 +1,10 @@
+---
+title: Inline and Translation Unit
+date: 2024-02-23 13:00
+tags:
+  - cpp
+---
+
 ## CPP Ref
 https://en.cppreference.com/w/cpp/language/inline
 

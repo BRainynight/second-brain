@@ -1,3 +1,10 @@
+---
+title: Impure Virtual Function
+date: 2024-02-23 12:57
+tags:
+  - cpp
+---
+
 ```cpp
 class Airport { ... }; // represents airports
 class Airplane {

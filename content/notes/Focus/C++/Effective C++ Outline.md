@@ -1,8 +1,9 @@
 ---
-title: "Effective C++ Outline"
+title: Effective C++ Outline
 date: 2023-04-10
 tags:
-- cpp
+  - cpp
+  - moc
 ---
 ## Chapter 1
 

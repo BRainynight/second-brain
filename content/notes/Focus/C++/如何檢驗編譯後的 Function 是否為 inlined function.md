@@ -1,3 +1,10 @@
+---
+title: 如何檢驗編譯後的 Function 是否為 inlined function
+date: 2024-02-23 12:59
+tags:
+  - cpp
+---
+
 
 理論上，programmer 不需要知道，這些交給 compiler 決定就好。我根據 [Stackoverflow 的討論](https://stackoverflow.com/questions/10631283/how-will-i-know-whether-inline-function-is-actually-replaced-at-the-place-where)串做了些研究。
 

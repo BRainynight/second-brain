@@ -1,3 +1,10 @@
+---
+title: Experiment Compile stage by stage
+date: 2024-02-23 12:58
+tags:
+  - cpp
+---
+
 https://www.cs.nmsu.edu/~jcook/posts/c-compiling-linking/
 
 

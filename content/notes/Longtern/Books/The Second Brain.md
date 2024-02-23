@@ -7,7 +7,19 @@ title: "打造第二大腦"
 	- Can construct infomation
 	- Can express info effectively
 
-## CODE 
+## 小心效率陷阱
+讀完此書後，我嘗試將 CODE 與 PARA 實踐在個人資料庫上，卻發現十分的困難，特別是 PARA。我無法將各類別的界線劃分清楚，層層架構只給我帶來麻煩。
+
+在 [YT 影片:小心效率陷阱](https://www.youtube.com/watch?v=5kNCcpM61eo)中，我找到了共鳴。
+
+
+CODE，特別是多階段的萃取，本就是在過去的筆記系統中會做的事。PARA 並沒有為我帶來太大的效益。
+要說有什麼啟發，就是 "Project 導向" 而非 "類別導向"，再更進一步地說，影片作者提到的「只要將類別分成長期、短期兩種」，正是我從「打造第二大腦」中學習到並可接受的新想法 。
+
+我將影片中獲得的 Idea 放在: [[小心效率陷阱]] 
+
+
+## CODE : 萃取知識的順序
 
 ### C (Capture)
 > 將資訊蒐集在沒有雜訊的地方，你可以心無旁騖地找到它。
@@ -20,9 +32,7 @@ title: "打造第二大腦"
 > 以 Project 分類 ，不要以類別分類。
 
 - 淺台詞: 以目的導向分類。ex. 「專注力協議」的書摘應該放在「成為心無旁鶩的人」而不是「心理學」。
-- 像是歸類在「心理學」、或是「工作生產力」這種圖書館式的分類，你不分看標題也知道它是哪一類，不需要做無意義的分類。
-- 放在「成為心無旁鶩的人」，點進去這個目標，此書摘就會快速地浮現上來，告訴你快使用它! 
-- 知識必須用到才有用! 
+- 像是歸類在「心理學」、或是「工作生產力」這種圖書館式的分類，不看標題也知道它是哪一類，不需要做無意義的分類。
 
 ### D (Distill, 萃取)
 > 用 Bullet Point 告訴未來的你，這篇筆記在說什麼?
@@ -34,18 +44,16 @@ title: "打造第二大腦"
 ### E (Express, 表達)
 > Any way. Deliver it, and share! 
 
+寫文章、影片... 總之分享它!
 
-## 釐清目標: 你想解決什麼問題?
+## 輸出決定輸入! 你想解決什麼問題?
 > Which problems do you want to resovle by The Second Brain? 
 
 **費曼: 12道難題**
 它應該具有轉移性，核心精神不變，但領域可能改變的特質。記得這些你的目標，當資訊流過你身邊時，驗證他們是否能幫助你解決這些難題? If true, Capture it! 
 
-My current thinking: 
-1. How to improve poor english?
-2. How to spend time & learning effectively?
-3. How to take effective note?
-4. How to debug (gdb) effective?
+
+---
 
 ## Capture: What Info Can put into Your Second Brain?
 
@@ -67,6 +75,9 @@ P (Project): 短期任務
 - Working project
 - Personal project (ex. blog), side project, 減重... 
 - 
+
+> 事實上剩下三個類別過於雷同
+
 
 A (Area): 長期任務，長期想掌握的目標
 - 健康，不同於 project 中的「減重」是明確目標、是達成健康的手段，健康是長期目標。

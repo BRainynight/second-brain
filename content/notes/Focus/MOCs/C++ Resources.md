@@ -7,10 +7,9 @@ tags:
 ---
 
 ## Notes
-- [[../../Project/C++/Effective C++ Outline|Effective C++ Outline]]
-- [[../../Project/C++/Effective modern C++ Outline|Effective modern C++ Outline]]
-- [[../../Project/C++/The C++ STL Outline]]
-
+- [[../C++/C++ Core Guidelines|C++ Core Guidelines]]
+- [[../C++/The C++ STL Outline|The C++ STL Outline]]
+- [[../C++/Effective C++ Outline|Effective C++ Outline]]
 
 ## Webs
 - [CppCoreGuidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)

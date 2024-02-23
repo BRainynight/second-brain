@@ -1,3 +1,10 @@
+---
+title: nm
+date: 2024-02-23 12:59
+tags:
+  - cpp
+---
+
 
 [man](https://linux.die.net/man/1/nm)
 [nm 的中文摘錄](https://pxnet2768.pixnet.net/blog/post/69177699)

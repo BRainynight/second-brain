@@ -1,3 +1,11 @@
+---
+title: C++ Core Guidelines
+date: 2024-02-23 13:02
+tags:
+  - cpp
+  - moc
+---
+
 
 > This is a quick note 
 
@@ -58,11 +66,11 @@ F.21 To return multiple “out” values, prefer returning a struct or tuple
 F.42 Return a T* to indicate a position (only) 
 F.44 Return a T& when copy is undesirable and “returning no object” isn’t needed 
 F.45 Don’t return a T&& 
-
-
 F.48 Don’t return std::move(local) 
 F.46 int is the return type for main() 
+
 F.50 Use a lambda when a function won’t do (to capture local variables, or to write a local function) 
+- [[Lambda]]
 F.52 Prefer capturing by reference in lambdas that will be used locally, including passed to algorithms 
 F.53 Avoid capturing by reference in lambdas that will be used nonlocally, including returned, stored on the heap, or passed to another thread 
 F.51 Where there is a choice, prefer default arguments over overloading 
