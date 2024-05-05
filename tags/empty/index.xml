@@ -16,6 +16,24 @@
     </item>
     
     <item>
+      <title>clangd</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/clangd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/clangd/</guid>
+      <description>CompileFlags 1 2 3 4  CompileFlags: # Tweak the parse settings Add: [-xc++, -Wall] # treat all files as C++, enable more warnings Remove: -W* # strip all other warning-related flags Compiler: clang++ # Change argv[0] of compile flags to `clang++`   告訴 clangd 如何解讀當前的檔案，簡單來說，</description>
+    </item>
+    
+    <item>
+      <title>Deep Learning MOC</title>
+      <link>https://brainynight.github.io/second-brain/notes/Focus/MOCs/Deep-Learning-MOC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Focus/MOCs/Deep-Learning-MOC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>EBO (Empty Base Optimization)</title>
       <link>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/EBO-Empty-Base-Optimization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -42,6 +60,25 @@
       <description> https://en.cppreference.com/w/cpp/language/storage_duration#external_linkage
  The name can be referred to from the scopes in the other translation units
  </description>
+    </item>
+    
+    <item>
+      <title>Golang Miscs</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Blog-related-tech/Golang-Miscs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Blog-related-tech/Golang-Miscs/</guid>
+      <description>Golang go: go.mod file not found in current directory or any parent directory 在嘗試安裝模組時出現問題，需要先 init module 再下 mod get
+1  go mod init &amp;lt;current-dir-name&amp;gt;    https://www.</description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Blog-related-tech/Hugo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Blog-related-tech/Hugo/</guid>
+      <description>Hugo and go version Hugo 的版本必須與 go 相互搭配，否則會出現 Error: failed to download modules: binary with name “go” not found 之類的 error。</description>
     </item>
     
     <item>
@@ -101,6 +138,16 @@ External vs. internal linkage A free function is a function that is defined at
     </item>
     
     <item>
+      <title>Mistakes for Presentation with PowerPoint</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Self-Improve/Mistakes-for-Presentation-with-PowerPoint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Self-Improve/Mistakes-for-Presentation-with-PowerPoint/</guid>
+      <description>Net Out: 當同一頁有主要、次要重點時，最重要的要強化 左邊的投影片使用了預設模板，問題在於「主要與次要資訊給予相同的權重」。 右邊的投影片改用區塊，首先各大項目用 boxes 強化出來，接著最重要的項目&amp;quot;Problem&amp;quot; 單獨一個 column。
+  3 Tips For Visually Selling Your Ideas On PowerPoint</description>
+    </item>
+    
+    <item>
       <title>operator overloading</title>
       <link>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/operator-overloading/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -148,6 +195,15 @@ External vs. internal linkage A free function is a function that is defined at
     </item>
     
     <item>
+      <title>Storytelling with Data</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Self-Improve/Storytelling-with-Data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Self-Improve/Storytelling-with-Data/</guid>
+      <description>探索行分析 vs 解釋型分析  探索型分析: 拿到第一手資料，理解資料、判斷什麼內容是有價值時的工具。 (參考: 數據之美 Nanthan Yau) 解釋型分析: 只要是上台，就是這類。目的是告訴別人「你看到什麼 (你的 Insight) 」，而不是讓別人跟著你一起，再研究資料一番，做出他們自己的結論。 本書強調於解釋型分析  演講的共通條件 Who: 溝通對象是誰? 鎖定觀眾範圍，判斷關鍵決策者</description>
+    </item>
+    
+    <item>
       <title>Template Method</title>
       <link>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Template-Method/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -173,6 +229,45 @@ External vs. internal linkage A free function is a function that is defined at
       
       <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/typedef-and-using/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>原子思考</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Self-Improve/%E5%8E%9F%E5%AD%90%E6%80%9D%E8%80%83/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Self-Improve/%E5%8E%9F%E5%AD%90%E6%80%9D%E8%80%83/</guid>
+      <description>提升解析度: Task -&amp;gt; (t1, t2, t3)  高解析度 (拆解問題) 有助於分析對整體重要的、對特定聽眾重要的因此，做針對性分析    乘法分解 用數字呈現、乘法勝過加法 用一條公式 modulize 問題，如果，但盡量用乘法 (1) 提升業績 2 倍 = 客戶Ａ $200 + 客戶 B $150 + 客戶 C $50 = 400 - 即使針對客戶 A 提出變成 2 倍的方案，最終也不過 600。 (2) 提升業績 2 倍 = 來客量 8 * 單價 $50 - 提升單價 x2 、鞏固來客量</description>
+    </item>
+    
+    <item>
+      <title>室內收納</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/%E5%AE%A4%E5%85%A7%E6%94%B6%E7%B4%8D/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/%E5%AE%A4%E5%85%A7%E6%94%B6%E7%B4%8D/</guid>
+      <description>大創 A4 檔案架  適合收納圓形碗盤、鍋蓋 https://shop.daiso.com.tw/products/4984355713968 ![[daiso_book_box.png]]  大創網架  </description>
+    </item>
+    
+    <item>
+      <title>從零開始 docsy</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Blog-related-tech/%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B-docsy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Blog-related-tech/%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B-docsy/</guid>
+      <description>本文的使用 docsy@0.10.0，hugo version 和 go version 分別為
+1 2  go version go1.20.2 windows/amd64 hugo v0.119.0+extended windows/amd64 BuildDate=unknown   注意 hugo 對 go 的版本有要求，錯誤的版本將無法執行 hugo command。</description>
+    </item>
+    
+    <item>
+      <title>日本旅遊</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Travel/%E6%97%A5%E6%9C%AC%E6%97%85%E9%81%8A/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Travel/%E6%97%A5%E6%9C%AC%E6%97%85%E9%81%8A/</guid>
+      <description>1  {&amp;#34;name&amp;#34;:&amp;#34;Default&amp;#34;,&amp;#34;mapZoom&amp;#34;:5,&amp;#34;centerLat&amp;#34;:37.5561912158483,&amp;#34;centerLng&amp;#34;:138.35449397563937,&amp;#34;query&amp;#34;:&amp;#34;&amp;#34;,&amp;#34;chosenMapSource&amp;#34;:0}   溫泉地圖: https://yadococo.net/?mibextid=Zxz2cZ
+[[東京近郊自助]] [[北海道自助]] [[京阪自由行]]
+ 東京   東洋大學   古桑庵tag:coffee  巴西烤肉吃到飽 シュラスコ&amp;amp;ビアレストランtag:food 土古里: 據傳比敘敘園好，2人分和牛拼盤 6600    大阪  燒肉力丸/烤肉力丸，有很多分店!</description>
     </item>
     
     <item>
@@ -210,6 +305,18 @@ External vs. internal linkage A free function is a function that is defined at
 口感:散發出甜美水果、溫暖香料、柑橘、奶油香草和燒焦橡木的香氣。
 感想 顏色是麥穗田般淺淺的金黃色，店員介紹說有種口腔被油脂包覆的感覺。
 入口並不嗆辣，鼻腔能感受到橡木的尾韻，</description>
+    </item>
+    
+    <item>
+      <title>輸入決定輸出</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Self-Improve/%E6%95%B8%E4%BD%8D%E7%AD%86%E8%A8%98%E6%87%89%E8%A9%B2%E6%B3%A8%E9%87%8D%E7%9A%84%E9%97%9C%E9%8D%B5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Self-Improve/%E6%95%B8%E4%BD%8D%E7%AD%86%E8%A8%98%E6%87%89%E8%A9%B2%E6%B3%A8%E9%87%8D%E7%9A%84%E9%97%9C%E9%8D%B5/</guid>
+      <description>此篇為個人心得
+  輸入決定輸出 在一個有「搜索」功能的軟體撰寫數位筆記 透過搜索取代分類  輸入決定輸出 在 [[小心效率陷阱]] 中作者提到，&amp;ldquo;The Second Brain&amp;rdquo; 給人一種把資料蒐集進數位筆記，就能得到想要東西的錯覺，實而不然。
+應當是先決定了「想要做哪些事情」，當看到新東西時比對這些列出來的 item，將其放在對應的類別，也就是「打造第二大腦」中提到的「費曼的十二道難題」。
+「費曼的十二道難題」也許把問題講得嚴肅了，除了你終其一生想要解決的問題，一些你關注的事 &amp;ndash; 像是 Netfilx 片單、食譜、想吃的餐廳&amp;hellip;。</description>
     </item>
     
     <item>

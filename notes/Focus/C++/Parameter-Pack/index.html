@@ -8,10 +8,14 @@
   <meta charset="UTF-8" />
   <meta
     name="description"
-    content="When the ellipsis ... is on the left of the type parameter T1, the parameter pack is packed; when on the right, it is unpacked."
+    content="(Since C&#43;&#43;11) variadic templates 可以接受任意數量的輸入。 Cpp Reference-Parameter Pack
+ C&#43;&#43;11 提供了 variadic templates 得以接收任意數量的輸入變數:
+1 2  template&lt;class... Types&gt; void f(Types."
   />
   <meta property="og:title" content="Parameter Pack">
-  <meta property="og:description" content="When the ellipsis ... is on the left of the type parameter T1, the parameter pack is packed; when on the right, it is unpacked.">
+  <meta property="og:description" content="(Since C&#43;&#43;11) variadic templates 可以接受任意數量的輸入。 Cpp Reference-Parameter Pack
+ C&#43;&#43;11 提供了 variadic templates 得以接收任意數量的輸入變數:
+1 2  template&lt;class... Types&gt; void f(Types.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
   <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Parameter-Pack/">
@@ -19,7 +23,9 @@
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Parameter Pack" />
-  <meta name="twitter:description" content="When the ellipsis ... is on the left of the type parameter T1, the parameter pack is packed; when on the right, it is unpacked." />
+  <meta name="twitter:description" content="(Since C&#43;&#43;11) variadic templates 可以接受任意數量的輸入。 Cpp Reference-Parameter Pack
+ C&#43;&#43;11 提供了 variadic templates 得以接收任意數量的輸入變數:
+1 2  template&lt;class... Types&gt; void f(Types." />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
   
     
@@ -130,13 +136,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.a0b3f347ae9c1aab372d2b99a4f357b0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.9ba02b1bf144fa4c812e1d8d3f88506b.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.22d0811d7162975892790ada9d644107.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.ee9886aef859166cbd6acf1be82f0744.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -307,7 +313,7 @@
       <h1>Parameter Pack</h1>
       <p class="meta">
         Last updated 
-Feb 23, 2024
+May 5, 2024
 
  
           
@@ -355,16 +361,38 @@ Feb 23, 2024
   
   
   
+    
+    
+      
+      
+    
+    
   
   
   
+  
 
 
 
 
 
 
-<p>When the ellipsis <code>...</code> is on the left of the type parameter T1, the parameter pack is packed; when on the right, it is unpacked.</p>
+<blockquote>
+<p>(Since C++11) variadic templates 可以接受任意數量的輸入。
+<a href="https://en.cppreference.com/w/cpp/language/parameter_pack" rel="noopener">Cpp Reference-Parameter Pack</a></p>
+</blockquote>
+<p>C++11 提供了 variadic templates 得以接收任意數量的輸入變數:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="err">... </span><span class="nc">Types</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">Types</span><span class="p">...</span> <span class="n">args</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>When the ellipsis <code>...</code> is on the left of the type parameter T1, the parameter pack is packed; when on the right, it is unpacked.</p>
 <p>This unpacking in the return statement <code>T(std::forward&lt;T1&gt;(t1)...)</code> essentially means that the expression <code>std::forward&lt;T1&gt;(t1)</code> is repeated until all arguments of the parameter pack are consumed and a comma is put between each subexpression.</p>
 <p>For the curious, 
 <a href="https://cppinsights.io/s/ad5b8b5d" rel="noopener">C++ Insights</a> shows this unpacking process.</p>
@@ -393,6 +421,16 @@ Feb 23, 2024
       
       
     
+      
+      
+      
+    
+      
+      
+      <li>
+        <a href="/second-brain/notes/Focus/C&#43;&#43;/Fold-Expression/" data-ctx="Parameter Pack" data-src="/notes/Focus/C&#43;&#43;/Fold-Expression" class="internal-link">Fold Expression</a>
+      </li>
+      
       
       
       <li>

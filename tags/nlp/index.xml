@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nlp on </title>
+    <link>https://brainynight.github.io/second-brain/tags/nlp/</link>
+    <description>Recent content in nlp on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://brainynight.github.io/second-brain/tags/nlp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>keyBERT</title>
+      <link>https://brainynight.github.io/second-brain/notes/Focus/Deep-Learning/KeyBERT/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Focus/Deep-Learning/KeyBERT/</guid>
+      <description>架構  Input: 一段文字   把 input doc 切成 tokenize words. 分別對 input doc 與 tokens 取 embeddings:  Doc -&amp;gt; doc level embeded vector.</description>
+    </item>
+    
+  </channel>
+</rss>

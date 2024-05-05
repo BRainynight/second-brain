@@ -24,8 +24,7 @@
       
       <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/C&#43;&#43;-Core-Guidelines/</guid>
       <description>This is a quick note
- Ch2 Philosophy 幾乎沒有理由應該遵守的 P.1 Express ideas directly in code
-P.2 Write in ISO Standard C++</description>
+ Ch2 Philosophy 幾乎沒有理由應該遵守的  直接在 code 中解釋邏輯 以 ISO Standard C++ 為標準撰寫  為了兼容，不要寫出依賴於特定架構、特定 Compiler 才可行的 code。 小心 [[Undeined behavior and Implementation defined behavior]]   表達意圖  善用 STL Algorithms library ，比起單純的 for loop 改用 std::find 去找值，也表達意圖。   理論上，程式應該保持 [[Type Safety]] 比起 runtime checking，傾向於 Compile time checking。  C++14 起添加了 [[Item15 constexpr]] 之類的，可以在編譯期間優化的內容，也新增的編譯期間可用的 assert。如果有編譯期間檢查的，就該在編譯期間確定。   不能再 compile time checking 的，應該也要有辦法在 runtime checking 盡早捕捉 runtime error 相較於 mutable data，傾向使用 immutable data  P.</description>
     </item>
     
     <item>

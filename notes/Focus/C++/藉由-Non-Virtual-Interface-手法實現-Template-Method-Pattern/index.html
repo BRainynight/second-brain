@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.a0b3f347ae9c1aab372d2b99a4f357b0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.9ba02b1bf144fa4c812e1d8d3f88506b.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.22d0811d7162975892790ada9d644107.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.ee9886aef859166cbd6acf1be82f0744.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -479,7 +479,7 @@ Unknown
 </blockquote>
 <p>這個方法是 Design Pattern <a href="/second-brain/notes/Focus/C++/Template-Method" rel="noopener" class="internal-link" data-src="/second-brain/notes/Focus/C++/Template-Method">Template Method</a> 的表現形式，而跟 C++ Template 無關。</p>
 <a href="#non-virtual-interface-nvi"><h2 id="non-virtual-interface-nvi"><span class="hanchor" ariaLabel="Anchor"># </span>Non-Virtual Interface (NVI)</h2></a>
-<p>NVI 主張 Virtual 應為 Private，如果有暴露的需求，則應該以一個 Public non-virtual function (as a <em>wrapper</em>) 呼叫 Private virtual function。</p>
+<p>NVI 主張 Virtual 應為 Private (Private virtual function)，如果有暴露的需求，則應該以一個 Public non-virtual function (as a <em>wrapper</em>) 呼叫 Private virtual function。</p>
 <a href="#wrapper-function"><h2 id="wrapper-function"><span class="hanchor" ariaLabel="Anchor"># </span>wrapper function</h2></a>
 <p>Wrapper 的優點可以把一些呼叫 virtual 前後需要處理的事情藏起來，確保這些事情必定會執行:
 例如</p>

@@ -7,6 +7,70 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://brainynight.github.io/second-brain/tags/food/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Asyncio</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Python/Asyncio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Python/Asyncio/</guid>
+      <description>在 Asyncio 這篇簡介的文章中，有一個簡單的例子如下。本文將針對此例仔細探討。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27  import asyncio async def single_process(cmd): proc = await asyncio.</description>
+    </item>
+    
+    <item>
+      <title>coc-snippets</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/VimSeries/coc-snippets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/VimSeries/coc-snippets/</guid>
+      <description>  只要檔名有包含語言名稱，就可以被載入
+1 2 3  python1.snippets python2.snippets ...     </description>
+    </item>
+    
+    <item>
+      <title>京都散策</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Travel/%E4%BA%AC%E9%83%BD%E6%95%A3%E7%AD%96/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Travel/%E4%BA%AC%E9%83%BD%E6%95%A3%E7%AD%96/</guid>
+      <description>飯店   櫻花台畫廊酒店   https://www.youtube.com/watch?v=h6oUyvCPZuw  https://immay.tw/post-222160129/ 京都的八条口附近也算是住宿很方便的地方，從關西空港來的話，有直達的機場巴士，下車後走到飯店也不到五分鐘就能抵達    賞楓   https://osaka.letsgojp.com/archives/55899/  主行程   嵐山一日遊 貴船神社 鴨川散步 和服(清水寺)  候補行程  山崎釀酒廠: https://unclecoffee.</description>
+    </item>
+    
+    <item>
+      <title>京都近郊之旅</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Travel/%E4%BA%AC%E9%83%BD%E8%BF%91%E9%83%8A%E4%B9%8B%E6%97%85/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Travel/%E4%BA%AC%E9%83%BD%E8%BF%91%E9%83%8A%E4%B9%8B%E6%97%85/</guid>
+      <description>飛機  8:10 ~ 11:35 台北 - 關西，預計13:35 出關西機場 12:45 ~ 14:55 關西 - 台北，預計 9:45 前需抵達關西機場。  行程 Day1 (日) 機場 &amp;gt; 京都，晚上京都車站周圍採買。 Day2 (一) 京都 &amp;gt; 天橋立 &amp;gt; 伊根 (15:00 起 check in) Day3 (二) 伊根 &amp;gt; 京都 (18:00) Day4 (三) 貴船 Day5 (四) 清水寺 Day6 (五) 宇治，15:00 前往大阪 Day7 (六) 返程</description>
+    </item>
+    
+    <item>
+      <title>京阪自由行</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Travel/%E4%BA%AC%E9%98%AA%E8%87%AA%E7%94%B1%E8%A1%8C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Travel/%E4%BA%AC%E9%98%AA%E8%87%AA%E7%94%B1%E8%A1%8C/</guid>
+      <description>https://www.google.com/maps/d/u/0/edit?hl=zh-TW&amp;mid=158vpdkObAFS45TZNWz6fMtHHnIdmz5Q
+資料   HotelsCombined  https://resv.kyototeikikanko.gr.jp/Teikan/Web/Default.aspx  機場交通 ![[關西機場交通.png]]
+ https://www.youtube.com/watch?v=GoxGEMl35HI 可以在 kkday 購票，有外國人特價。
+ 可以考慮購買 ICOCA (類似台灣的悠遊卡) 留意何處&amp;amp;如何取票  素食  Tully&amp;rsquo;s (連鎖咖啡店) 有素食餐點可選 都野菜賀茂: 青菜吃到飽，有早餐時段。注意營業時間: https://yukigo.</description>
+    </item>
+    
+    <item>
+      <title>伴手禮研究</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Travel/%E4%BC%B4%E6%89%8B%E7%A6%AE%E7%A0%94%E7%A9%B6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Travel/%E4%BC%B4%E6%89%8B%E7%A6%AE%E7%A0%94%E7%A9%B6/</guid>
+      <description>原了郭 黑七味  『原了郭』是京都知名的七味粉專賣店。創業於元祿16年（西元1703年），已有超過300歷史。 招牌產品是手工製的『黑七味』，有別於一般的七味粉，使用黑芝麻、白芝麻、山椒、大麻籽、罌粟籽、海苔、唐辛子。據說是百年來代代相傳的配方，加上手工研製，因此只要稍微撒一些就香氣四溢，並能增加料理的風味。
+長文屋七味粉   https://winnie-cucina.com/20200106/  京都で最高の七味を手に入れた！美味しくて唸る名店紹介「長文屋」（七味・京都市北区）  這間七味粉是現買才現做，依唐辛子(辣椒粉)的含量多寡分小辣、中辣、辣、大辣，搭配其他辛香料（ 山椒、麻の実(大麻籽)、芥子(罌粟籽)、青海苔、黒胡麻、白胡麻、紫蘇）而成，總共會加到八味，多加一味青紫蘇。
+ 需要再注意營業日與時間
+ ■地址：京都市北区北野下白梅町54-8
+■電話/傳真：075-467-0217
+■營業時間：10：00-18：00 ■ 法定假日：週三，週四</description>
+    </item>
+    
+    <item>
       <title>優先嘗試料理</title>
       <link>https://brainynight.github.io/second-brain/notes/Longtern/Cooking/%E5%84%AA%E5%85%88%E5%98%97%E8%A9%A6%E6%96%99%E7%90%86/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -24,12 +88,64 @@
     </item>
     
     <item>
+      <title>壓力鍋煮優格</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Cooking/%E5%A3%93%E5%8A%9B%E9%8D%8B%E7%85%AE%E5%84%AA%E6%A0%BC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Cooking/%E5%A3%93%E5%8A%9B%E9%8D%8B%E7%85%AE%E5%84%AA%E6%A0%BC/</guid>
+      <description>1，先將裝優格容器用熱水煮過，擦乾這個步驟很重要喔！ - 食材 AB優酪乳跟六甲莊鮮奶 - 可用你喜歡的鮮奶，我也看過有人用豆漿 2，優酪乳1:3鮮奶 3，倒入容器裡攪拌均勻 4，放入萬用鍋，按保溫狀態6~9小時 所以我都是睡前做，早上起床都有溫溫的優格可以吃 這邊要提醒一下，天氣也會影響做優格的時間，冬天時間會比較長一點，我不知道每個人萬用鍋型號會不會有差異，做優格的溫度40-60度，你們可以去試看看，我這次嚐試在萬用鍋裡放點水跟蒸架，有留點細縫，沒有完全蓋上，（發現有縮短做優格的時間）如果全蓋上溫度好像比較高，如果要更精準一點可以用溫度計量一下
+5，剛做好的優格是溫溫的很像豆花，放涼我才進冰箱冷藏，定型過的優格
+優格上層會有一層水是正常的，那是乳清蛋白，不要到掉，我會加點水果跟優格或是巧克力粉……之類的打一打淋在沙拉，布丁，優格上面。優格我沒有加糖，盡量在3天內吃完
+  https://www.menustudy.com/blogs/daily-menu/107840 菜單研究室
+  金小萬做優格</description>
+    </item>
+    
+    <item>
+      <title>大餐料理</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Cooking/%E5%A4%A7%E9%A4%90%E6%96%99%E7%90%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Cooking/%E5%A4%A7%E9%A4%90%E6%96%99%E7%90%86/</guid>
+      <description>BBQ 汁手撕豬肉  https://www.christinesrecipes.com/2016/07/bbq-pulled-pork.html
+ 自家煮的 BBQ 汁，非常好用。用這個汁煮 BBQ手撕豬肉，味道很讚。如果有壓力煲，就非常方便，45分鐘搞定。或用慢煮煲高火 6小時。煮好的豬肉撕開時，透出清香，非常惹味。一次煮多一些，以備不時之需。把煮好的手撕豬肉和汁，分開用盒子放在冷凍室（freezer）中，可存放3個多星期。隨時需要，就拿出適當分量加熱。早餐，午餐或下午茶作三文治，非常方便呢。
+食譜 預備時間: 10 分鐘
+烹調時間: 50 分鐘
+分量: 6 至 8人</description>
+    </item>
+    
+    <item>
+      <title>撰寫 Nvim Plugin</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/VimSeries/%E6%92%B0%E5%AF%AB-Nvim-Plugin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/VimSeries/%E6%92%B0%E5%AF%AB-Nvim-Plugin/</guid>
+      <description>Nvim 有建 Python interface，需要下載模組 pynvim。可以下指令 :h remote-plugin 看官方給的教學，:h python 也有其他資訊。
+如何確定當前的 Nvim 有支援 Python Nvim 可以使用 checkhealth 得知
+1  :checkhealth   如何確定當前的 Vim 有支援 Python 用 :echo has(&amp;quot;python&amp;quot;), :echo has(&amp;quot;python3&amp;quot;) 來看是否支援 Python, Python3。</description>
+    </item>
+    
+    <item>
       <title>日月潭紅茶</title>
       <link>https://brainynight.github.io/second-brain/notes/Longtern/Cooking/%E6%97%A5%E6%9C%88%E6%BD%AD%E7%B4%85%E8%8C%B6/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://brainynight.github.io/second-brain/notes/Longtern/Cooking/%E6%97%A5%E6%9C%88%E6%BD%AD%E7%B4%85%E8%8C%B6/</guid>
       <description> 謝江林茶莊: 容易腸胃不舒服，不回購。   </description>
+    </item>
+    
+    <item>
+      <title>清酒大集合</title>
+      <link>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/%E6%B8%85%E9%85%92%E5%A4%A7%E9%9B%86%E5%90%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/%E6%B8%85%E9%85%92%E5%A4%A7%E9%9B%86%E5%90%88/</guid>
+      <description>京姬 純米大吟釀 匠 味道：入口有香甜果香，帶有微辛口的餘韻(建議凍飲)
+配搭：海鮮、刺身、壽司
+酒造採用山田錦，精米步合精磨至45%釀造，酒款散發出優雅的吟釀香氣，入口後會有感覺舒適的餘韻。雖然此 清酒採用了酒米之王山田錦來釀造，但價格卻非常親民，絕對是入門級的純米大吟釀！
+京姬 大吟釀 匠 北秋田大吟釀 酒精度：15 ~ 16%
+口　感：甜味和清爽之間的完美平衡。
+味道　：精彩而豐富的口感
+酸　度：1.3</description>
     </item>
     
     <item>
@@ -50,6 +166,26 @@
       
       <guid>https://brainynight.github.io/second-brain/notes/Longtern/Cooking/%E7%B4%A0%E9%A3%9F%E9%AB%98%E8%9B%8B%E7%99%BD%E6%96%99%E7%90%86/</guid>
       <description>素食者蛋白質來源  黃豆製品: 豆漿、豆腐、豆乾、豆包，但炸豆皮、豆腐忌口，會吸收過多的油。 黑豆 毛豆 鷹嘴豆     一顆雞蛋 換算      兩格傳統豆腐    半盒嫩豆腐    無糖豆漿 190cc    25g 黑豆    50g 毛豆    33g 鷹嘴豆        500 kcal 便當  https://www.</description>
+    </item>
+    
+    <item>
+      <title>網友壓力鍋用時經驗</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Cooking/%E7%B6%B2%E5%8F%8B%E5%A3%93%E5%8A%9B%E9%8D%8B%E7%94%A8%E6%99%82%E7%B6%93%E9%A9%97/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Cooking/%E7%B6%B2%E5%8F%8B%E5%A3%93%E5%8A%9B%E9%8D%8B%E7%94%A8%E6%99%82%E7%B6%93%E9%A9%97/</guid>
+      <description>蒸東西: 開蓋蒸就像一般電鍋，用壓力蒸可以少一半的水。
+蒸早餐  用不銹鋼內鍋，內鍋放半杯水 無水料理、焗烤時蔬3分鐘 3分鐘立馬拿出來，蛋是溏心蛋，如果想要熟一點可以悶一下再拿，或用4分鐘 蓋上一般鍋蓋，不必蓋上蓋。時間到就可以了  烤三層肉 看起來普普，但很下飯，搭配檸檬汁沾著吃也比較去油解膩。 作法：
+ 三層肉刷上醬油 (我用薄鹽醬油) 整塊放入內鍋(因為我用安康內鍋所以有鋪烤焙紙)。 用無水烹調烤排骨模式，剩13分鐘時候開鍋翻面灑孜然粉，剩3分鐘的時候再開鍋將另一面也灑孜然粉，繼續烤到結束。 沾醬是檸檬汁(有加一點點水)+迷迭香  健康版本鹹酥雞  醃料：蒜頭，醬油，五香粉，味霖，黑胡椒 把里肌雞條放進去捏一捏，冰進冰箱。晚上，雞里肌切小塊，沾地瓜粉，等回潮。  回潮：肉沾完地瓜粉白白的，靜置在盤裏讓白白的粉變得濕濕的，變成咖啡色的感   無水料理，烤雞模式 18 分鐘。(也有說法可以兩段九分鐘，中途翻肉)。 反省：粉最後有點沾黏，濕濕的，下次再試試其他方法或是粉～突發其想，用蕃茄醬感覺會變估佬肉或是韓式炸雞的效果   https://www.</description>
+    </item>
+    
+    <item>
+      <title>萬用鍋使用經驗</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Cooking/%E8%90%AC%E7%94%A8%E9%8D%8B%E4%BD%BF%E7%94%A8%E7%B6%93%E9%A9%97/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Cooking/%E8%90%AC%E7%94%A8%E9%8D%8B%E4%BD%BF%E7%94%A8%E7%B6%93%E9%A9%97/</guid>
+      <description>手撕豬 材料  約 1kg 的五花肉 醬料: 黃芥末醬、A1 牛排醬、米酒 &amp;hellip;.  步驟  肉四面拍鹽巴、黑白胡椒粉，煎的金黃 把肉浸在調好的醬料醃漬至少 30分鐘 壓力鍋「豆類模式」: 先設保壓 1hr，翻面再 30 分鐘。   </description>
     </item>
     
     <item>

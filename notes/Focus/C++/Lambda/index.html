@@ -8,10 +8,12 @@
   <meta charset="UTF-8" />
   <meta
     name="description"
-    content=""
+    content="如何決定該使用 Lambda 還是 Function:
+ 只會使用到 local variable 或只宣告於 local scope: 使用 lambda 必須 support overloading: 直接選擇 function.  使用 Lambda 的時候要注意資料的有效性，Pass by copy / Pass by reference 在 lambda 也有準則"
   />
   <meta property="og:title" content="Lambda">
-  <meta property="og:description" content="">
+  <meta property="og:description" content="如何決定該使用 Lambda 還是 Function:
+ 只會使用到 local variable 或只宣告於 local scope: 使用 lambda 必須 support overloading: 直接選擇 function.  使用 Lambda 的時候要注意資料的有效性，Pass by copy / Pass by reference 在 lambda 也有準則">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
   <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Lambda/">
@@ -19,7 +21,8 @@
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Lambda" />
-  <meta name="twitter:description" content="" />
+  <meta name="twitter:description" content="如何決定該使用 Lambda 還是 Function:
+ 只會使用到 local variable 或只宣告於 local scope: 使用 lambda 必須 support overloading: 直接選擇 function.  使用 Lambda 的時候要注意資料的有效性，Pass by copy / Pass by reference 在 lambda 也有準則" />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
   
     
@@ -130,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.a0b3f347ae9c1aab372d2b99a4f357b0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.9ba02b1bf144fa4c812e1d8d3f88506b.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.22d0811d7162975892790ada9d644107.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.ee9886aef859166cbd6acf1be82f0744.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -307,7 +310,7 @@
       <h1>Lambda</h1>
       <p class="meta">
         Last updated 
-Feb 23, 2024
+May 5, 2024
 
  
           
@@ -364,6 +367,16 @@ Feb 23, 2024
 
 
 
+<p>如何決定該使用 Lambda 還是 Function:</p>
+<ol>
+<li>只會使用到 local variable  或只宣告於 local scope: 使用 lambda</li>
+<li>必須 support overloading: 直接選擇 function.</li>
+</ol>
+<p>使用 Lambda 的時候要注意資料的有效性，Pass by copy / Pass by reference 在 lambda 也有準則</p>
+<ul>
+<li>當 lambda function 只在該段 local scope 被使用，則 Pass by reference</li>
+<li>當 lambda function 不只在 local 被使用，它可能被作為回傳物件、存在 heap，或被傳到 thread 去，則 Capture variable 的方式都應該 Pass by Copy.</li>
+</ul>
 
 
     </article>

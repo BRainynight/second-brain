@@ -85,8 +85,7 @@ Associative Containers  Unordered containers have better performance.      Unord
       
       <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/C&#43;&#43;-Core-Guidelines/</guid>
       <description>This is a quick note
- Ch2 Philosophy 幾乎沒有理由應該遵守的 P.1 Express ideas directly in code
-P.2 Write in ISO Standard C++</description>
+ Ch2 Philosophy 幾乎沒有理由應該遵守的  直接在 code 中解釋邏輯 以 ISO Standard C++ 為標準撰寫  為了兼容，不要寫出依賴於特定架構、特定 Compiler 才可行的 code。 小心 [[Undeined behavior and Implementation defined behavior]]   表達意圖  善用 STL Algorithms library ，比起單純的 for loop 改用 std::find 去找值，也表達意圖。   理論上，程式應該保持 [[Type Safety]] 比起 runtime checking，傾向於 Compile time checking。  C++14 起添加了 [[Item15 constexpr]] 之類的，可以在編譯期間優化的內容，也新增的編譯期間可用的 assert。如果有編譯期間檢查的，就該在編譯期間確定。   不能再 compile time checking 的，應該也要有辦法在 runtime checking 盡早捕捉 runtime error 相較於 mutable data，傾向使用 immutable data  P.</description>
     </item>
     
     <item>
@@ -159,6 +158,17 @@ P.2 Write in ISO Standard C++</description>
     </item>
     
     <item>
+      <title>Don’t use va_arg arguments</title>
+      <link>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Dont-use-va_arg-arguments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Dont-use-va_arg-arguments/</guid>
+      <description>當 Function 需要接受任意數量的輸入的時候，不要使用 va_arg (macro)。
+ Variadic functions 是像 std::printf 這類可以接受任意數量輸入的 function。
+困難的地方在於，寫這種 function 需要假設傳入的型態是正確的，但這個假設卻是一個 error prone (錯誤傾向?) 的假設，非常依賴於 Programmer 的紀律。</description>
+    </item>
+    
+    <item>
       <title>Drawback of non const global variable</title>
       <link>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Drawback-of-non-const-global-variable/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -179,17 +189,16 @@ P.2 Write in ISO Standard C++</description>
     
     <item>
       <title>Everyday business storytelling</title>
-      <link>https://brainynight.github.io/second-brain/notes/Longtern/Books/Everyday-business-storytelling/</link>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Self-Improve/Everyday-business-storytelling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Books/Everyday-business-storytelling/</guid>
-      <description>今日的我們過分規範 (overcodifiying) 這個世界，試圖捕捉與系統化一切事務(大數據!)，這是一種強左腦、強調邏輯的誘惑。麥克爾吉里斯特主張，執著於嚴格計算每一件事，將阻擋想像力帶來的重大突破。
-  如今我們在溝通的時候，過度強調數字、統計、分析。
- 數據帶來洞見! 數據能支撐故事嗎? 數據能推動敘事嗎? 數據是否編排得當? (請反覆推敲，使得洞見變得顯眼)
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Self-Improve/Everyday-business-storytelling/</guid>
+      <description>數據帶來洞見! 數據能支撐故事嗎? 數據能推動敘事嗎? 數據是否編排得當? (請反覆推敲，使得洞見變得顯眼)
+對於商業敘事來說，你的洞見、解決方案，遠比真實且完整的數據更重要。你的目的是「說服領導者採用你的方案」，而不是把數據呈現給他，讓他在珍貴的會議時間上推敲你的意圖。
 好的故事 故事必須引人入勝，才讓人願意看下去。
 跳過建立脈絡的環節，相當於忘記告訴所有人，你提出的 Solution 為何重要。講快一點，不是劈頭就講結局!
 前三個路標怎麼融合、順序怎麼出場都行，但結局必須在最後。
-四大路標 背景 = 關注點 拋出主要內容前，先建立背景 (脈絡)，把鎂光燈打在「你想解決的議題」上。</description>
+四大路標  背景 (關注點) 人物 (受眾) 衝突 (舊故事) 結局 (新故事)  背景+人物+衝突: 應該讓這場演講的聆聽者感受到切身之痛，任為這是必須解決的問題。 結局: 應是解決方案的細節。</description>
     </item>
     
     <item>
@@ -213,6 +222,16 @@ Generate object file only
       <description> https://en.cppreference.com/w/cpp/language/storage_duration#external_linkage
  The name can be referred to from the scopes in the other translation units
  </description>
+    </item>
+    
+    <item>
+      <title>Fold Expression</title>
+      <link>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Fold-Expression/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Fold-Expression/</guid>
+      <description>允許 Progreammer 在「摺疊 (fold)」Parameter Pack 的情況下使用 Binary Operator。
+ 透過 fold expression，一些敘述性的語法 (iterate and sum) 得以被簡化，有點像 Python 的 one line 寫法。</description>
     </item>
     
     <item>
@@ -305,12 +324,22 @@ Explanation 當 function or variable (C++17) 被宣告為 inline，代表它擁�
     </item>
     
     <item>
+      <title>invariant class</title>
+      <link>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/invariant-class/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/invariant-class/</guid>
+      <description>An invariant is a logical condition for the members of an object that a constructor must establish for the public member functions to assume.</description>
+    </item>
+    
+    <item>
       <title>Lambda</title>
       <link>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Lambda/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Lambda/</guid>
-      <description></description>
+      <description>如何決定該使用 Lambda 還是 Function:
+ 只會使用到 local variable 或只宣告於 local scope: 使用 lambda 必須 support overloading: 直接選擇 function.  使用 Lambda 的時候要注意資料的有效性，Pass by copy / Pass by reference 在 lambda 也有準則</description>
     </item>
     
     <item>
@@ -410,7 +439,9 @@ Explanation 當 function or variable (C++17) 被宣告為 inline，代表它擁�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Parameter-Pack/</guid>
-      <description>When the ellipsis ... is on the left of the type parameter T1, the parameter pack is packed; when on the right, it is unpacked.</description>
+      <description>(Since C++11) variadic templates 可以接受任意數量的輸入。 Cpp Reference-Parameter Pack
+ C++11 提供了 variadic templates 得以接收任意數量的輸入變數:
+1 2  template&amp;lt;class... Types&amp;gt; void f(Types.</description>
     </item>
     
     <item>
@@ -469,7 +500,7 @@ Explanation 當 function or variable (C++17) 被宣告為 inline，代表它擁�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Prefer-simple-and-conventional-ways-of-passing-information/</guid>
-      <description>如何決定 Function Signature 的長相  headings: 資料結構 copying 跟 moving 的成本 row: parameter 的性質  In &amp;amp; retain copy: 在 function 內部會發生 copy In &amp;amp; retain &amp;ldquo;copy&amp;rdquo;: Moved-from means that it is in a valid but not nearer specified state.</description>
+      <description>如何決定 Function Signature 使用 By Copy, Move, 或 Reference  headings: 資料結構 copying 跟 moving 的成本 row: parameter 的性質  In &amp;amp; retain copy: 在 function 內部會發生 copy In &amp;amp; retain &amp;ldquo;copy&amp;rdquo;: Moved-from means that it is in a valid but not nearer specified state.</description>
     </item>
     
     <item>
@@ -541,6 +572,16 @@ Impure function  impure function: 包含了 random, time 之類的。  impure fu
       <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Static-Object/</guid>
       <description>壽命從被建構出來，持續到程式結束為止。
  因此 Stack 和 Heap-based 物件都不是 static object。 這種物件包含 Global Object，定義在 Namespace Scope 的物件，Class &amp;amp; Function &amp;amp; File 內宣告成 static 的物件。</description>
+    </item>
+    
+    <item>
+      <title>Stock</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/EPS-and-Operation-Margin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/EPS-and-Operation-Margin/</guid>
+      <description>EPS  EPS = (淨利潤-優先股)/普通股在外股數  凈利潤 = 營業利潤 - 稅費 - 利息支出 + 利息收入 + 其他非營業收入 - 其他非營業支出。
+Operation Margin  公司的營運效率，公司從其主營業務中賺取的利潤比例</description>
     </item>
     
     <item>
@@ -654,6 +695,16 @@ Impure function  impure function: 包含了 random, time 之類的。  impure fu
     </item>
     
     <item>
+      <title>Type Safety</title>
+      <link>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Type-Safety/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Type-Safety/</guid>
+      <description>原則上，C++ 是靜態定型。但要小心 union, cast, array decay, range error, narrowing conversion 帶來的型態變換。
+ union 的問題: C++17 之後可用 std::variant 取代 templated based 的 generic code 可以降低 casting 的需求，進而減少 type error。 Array decay 通常發生於，呼叫一個 function 並傳入 c array。對 function 而言拿到的是第一個 item 的 pointer (?</description>
+    </item>
+    
+    <item>
       <title>Undeined behavior and Implementation defined behavior</title>
       <link>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Undeined-behavior-and-Implementation-defined-behavior/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -699,7 +750,7 @@ Impure function  impure function: 包含了 random, time 之類的。  impure fu
       
       <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96/</guid>
       <description>原理 用程式碼取代 function call
-向 Compiler 發出申請 Programmer 可以明確的提出請求，或隱喻的提出。但編譯器可以拒絕這個申請，大部分過於複雜的函式都會被拒絕 inline:
+關鍵字 inline 僅意味「向 Compiler 發出申請」 Programmer 可以明確的提出請求，或隱喻的提出。但編譯器可以拒絕這個申請，大部分過於複雜的函式都會被拒絕 inline:
  有 loop 的 多數的 virtual function (等 Runtime 才確定哪個被喚醒)  顯示與隱式的分別:</description>
     </item>
     
@@ -807,6 +858,16 @@ Winline 對於那些被標示為 inline，編譯結果卻沒有被 inlined 的 f
       <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/%E5%BB%BA%E6%A7%8B%E5%92%8C%E8%A7%A3%E6%A7%8B%E5%BC%8F%E6%98%AF-inline-%E7%9A%84%E7%B3%9F%E7%B3%95%E4%BA%BA%E9%81%B8/</guid>
       <description>考量以下例子:
 1 2 3 4 5 6 7 8 9 10 11 12 13  class Base { public: ... private: std::string bm1, bm2; // base members 1 and 2 }; class Derived: public Base { public: Derived() {} // Derived’s ctor is empty — or is it?</description>
+    </item>
+    
+    <item>
+      <title>必須使用 Class 而非 Struct 的情況</title>
+      <link>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/%E5%BF%85%E9%A0%88%E4%BD%BF%E7%94%A8-Class-%E8%80%8C%E9%9D%9E-Struct-%E7%9A%84%E6%83%85%E6%B3%81/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/%E5%BF%85%E9%A0%88%E4%BD%BF%E7%94%A8-Class-%E8%80%8C%E9%9D%9E-Struct-%E7%9A%84%E6%83%85%E6%B3%81/</guid>
+      <description>透過 Member Data 決定: invariant 使用 class, member 之間互相獨立用 struct 常見的[[invariant class]]: 有 private data 必須透過 constructor 創建其實體 (object)。
+Data member 之間互相獨立用 struct</description>
     </item>
     
     <item>
@@ -987,6 +1048,16 @@ Winline 對於那些被標示為 inline，編譯結果卻沒有被 inlined 的 f
       <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/%E8%AE%93%E4%BB%8B%E9%9D%A2%E6%98%93%E6%96%BC%E8%A2%AB%E4%BD%BF%E7%94%A8%E4%B8%8D%E6%98%93%E8%AA%A4%E7%94%A8/</guid>
       <description>用 struct 包覆簡單的資料結構可以帶來可讀性 考量下面的例子:
 1 2 3 4 5 6 7  class Date { public: Date(int month, int day, int year); } Date(3, 31, 1999); // 正確 Date(30, 3, 1999); // 可能會誤打 Date(3, 40, 1999); // 可能有無效值   如果我們改以 struct如下，你幾乎不會犯下寫錯格的錯，Compiler 會自動提醒!</description>
+    </item>
+    
+    <item>
+      <title>透過關鍵字 inline 解決 Template Specilization 中的 Multiple Definition</title>
+      <link>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/%E9%80%8F%E9%81%8E%E9%97%9C%E9%8D%B5%E5%AD%97-inline-%E8%A7%A3%E6%B1%BA-Template-Specilization-%E4%B8%AD%E7%9A%84-Multiple-Definition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/%E9%80%8F%E9%81%8E%E9%97%9C%E9%8D%B5%E5%AD%97-inline-%E8%A7%A3%E6%B1%BA-Template-Specilization-%E4%B8%AD%E7%9A%84-Multiple-Definition/</guid>
+      <description>雖然 Template 多習慣把實作寫在 hpp，若將 Template Specialiaztion 的實作寫在 hpp 卻可能發生問題。
+假設有三個檔案，temp.hpp 寫著 template 與 Template Specialiaztion 的實作，兩個 cpp: a.cpp 與 b.cpp 分別 include temp.</description>
     </item>
     
     <item>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Default on </title>
+    <link>https://brainynight.github.io/second-brain/categories/Default/</link>
+    <description>Recent content in Default on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://brainynight.github.io/second-brain/categories/Default/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docsy 踩坑雜談</title>
+      <link>https://brainynight.github.io/second-brain/notes/Longtern/Blog-related-tech/Docsy-%E8%B8%A9%E5%9D%91%E9%9B%9C%E8%AB%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brainynight.github.io/second-brain/notes/Longtern/Blog-related-tech/Docsy-%E8%B8%A9%E5%9D%91%E9%9B%9C%E8%AB%87/</guid>
+      <description>我在嘗試加 date 屬性的時候發現，有些時間不會讓文章出現在列表上。 首先，時間格式需要到秒: 2024/05/03 13:00:00。
+接著， 現在時間是 2024/05/03 21:52，我發現 2024/05/03 13:09:00 之後的文章，即使格式對了也不會出現在列表上。懷疑是否是時區問題 (台灣時間是 +8)，但此時此刻，21:52:00 的文章調整成 13:52:00 也仍不行。
+因此，寫好文章是要檢查一下有沒有成功被列上。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -133,13 +133,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.a0b3f347ae9c1aab372d2b99a4f357b0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.9ba02b1bf144fa4c812e1d8d3f88506b.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.22d0811d7162975892790ada9d644107.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.ee9886aef859166cbd6acf1be82f0744.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -310,7 +310,7 @@
       <h1>Template Specialization</h1>
       <p class="meta">
         Last updated 
-Feb 23, 2024
+May 5, 2024
 
  
           
@@ -333,17 +333,7 @@ Feb 23, 2024
         <summary>Table of Contents</summary>
         <nav id="TableOfContents">
   <ol>
-    <li><a href="#template-specialiaztion-與-declaration">Template Specialiaztion 與 Declaration</a>
-      <ol>
-        <li><a href="#分離-template-specialiaztion-實作">分離 Template Specialiaztion 實作</a></li>
-      </ol>
-    </li>
-    <li><a href="#應該選擇分離-definition-還是宣告-inline">應該選擇分離 Definition 還是宣告 inline?</a>
-      <ol>
-        <li><a href="#對-template-specialiaztion-的實作宣告-inline">對 Template Specialiaztion 的實作宣告 inline</a></li>
-      </ol>
-    </li>
-    <li><a href="#resources">Resources</a></li>
+    <li><a href="#related-content">Related Content</a></li>
   </ol>
 </nav>
     </details>
@@ -382,22 +372,6 @@ Feb 23, 2024
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
   
 
@@ -440,241 +414,6 @@ Feb 23, 2024
 
   
   
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-  
-
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-      
-      
-      
-      
-      
-    
-    
-
-  
-
-  
-  
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-  
-
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-      
-      
-      
-      
-      
-    
-    
-
-  
-
-  
-  
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-  
-
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-      
-      
-      
-      
-      
-    
-    
-
-  
-
-  
-  
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -743,20 +482,6 @@ Feb 23, 2024
   
   
   
-  
-    
-    
-      
-      
-    
-    
-  
-    
-    
-      
-      
-    
-    
   
   
   
@@ -792,66 +517,8 @@ Feb 23, 2024
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>此例呼應 <a href="/second-brain/notes/Focus/C++/%E4%BA%86%E8%A7%A3%E5%A6%82%E4%BD%95%E5%9C%A8-Template-%E4%B8%AD%E6%8C%87%E6%B6%89-Base-Class-%E6%88%90%E5%93%A1" rel="noopener" class="internal-link" data-src="/second-brain/notes/Focus/C++/%E4%BA%86%E8%A7%A3%E5%A6%82%E4%BD%95%E5%9C%A8-Template-%E4%B8%AD%E6%8C%87%E6%B6%89-Base-Class-%E6%88%90%E5%93%A1">了解如何在 Template 中指涉 Base Class 成員</a> 的範例，<code>MsgSender</code> 對於一般輸入類別都有 <code>sendSecret</code> 跟 <code>sendClear</code> 兩個 function。但在這裡，<code>CompanyZ</code> 的特化版將不存在 <code>sendClear</code>!</p>
-<a href="#template-specialiaztion-與-declaration"><h2 id="template-specialiaztion-與-declaration"><span class="hanchor" ariaLabel="Anchor"># </span>Template Specialiaztion 與 Declaration</h2></a>
-<p>雖然 Template 多習慣把實作寫在 hpp，若將 Template Specialiaztion 實作寫在 hpp 卻可能發生問題。
-假設有三個檔案，<code>temp.hpp</code> 寫著 template 與 Template Specialiaztion 的實作，兩個 cpp: <code>a.cpp</code> 與 <code>b.cpp</code> 分別 include  temp.hpp，基於 <a href="/second-brain/notes/Focus/C++/One-Definition-Rule" rel="noopener" class="internal-link" data-src="/second-brain/notes/Focus/C++/One-Definition-Rule">One Definition Rule</a>，這會引發 multiple definition (見 
-<a href="https://stackoverflow.com/questions/4445654/multiple-definition-of-template-specialization-when-using-different-objects" rel="noopener">multiple definition of template specialization when using different objects</a>)。</p>
-<p>解決方法有兩種</p>
-<ol>
-<li>宣告 Template Specialiaztion 於 hpp，實作放在 cpp</li>
-<li>一樣把實作放在 hpp，但是多宣告 inline 於 Template Specialiaztion 的實作上。</li>
-</ol>
-<a href="#分離-template-specialiaztion-實作"><h3 id="分離-template-specialiaztion-實作"><span class="hanchor" ariaLabel="Anchor"># </span>分離 Template Specialiaztion 實作</h3></a>
-<p>temp.hpp:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">func</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span> <span class="n">val</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="k">template</span><span class="o">&lt;&gt;</span> <span class="kt">void</span> <span class="n">func</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">val</span><span class="p">);</span> <span class="c1">// Specialiaztion
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>temp.cpp</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span><span class="o">&lt;&gt;</span> <span class="kt">void</span> <span class="n">func</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="p">)</span> <span class="p">{}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><a href="#應該選擇分離-definition-還是宣告-inline"><h2 id="應該選擇分離-definition-還是宣告-inline"><span class="hanchor" ariaLabel="Anchor"># </span>應該選擇分離 Definition 還是宣告 inline?</h2></a>
-<p>Like the other Q&amp;A mentions, the specialization is its own entity. If you do as you did, declare the specialization in a header, and then define them in another (single) TU, that is well-formed. Any TU that includes that header will see that the specialization for <code>int</code> and <code>float</code> are only declarations.
-As such, their definition may be placed elsewhere, just like a non-template function.</p>
-<p>If you want a header only library, where the specialized functions are defined inline, then you must use the <code>inline</code> specifier, as the ODR requires.</p>
-<p>Neither way is &ldquo;the correct&rdquo; way in the sense you seem to be asking about. Each has its own advantages and disadvantages. Defining the functions inline helps make libraries be header only. But if the functions are complex, then all of their dependencies are pulled into every TU that includes the header.</p>
-<p>Also, changing the specializations will cause all of those TU&rsquo;s to be re-compiled. So there&rsquo;s merit for tucking the implementation away too at times. You&rsquo;ll need to judge on a case by case basis.</p>
-<p>
-<a href="https://stackoverflow.com/questions/63867758/c-inline-or-not-inline-declarations-of-template-class-specializations" rel="noopener">https://stackoverflow.com/questions/63867758/c-inline-or-not-inline-declarations-of-template-class-specializations</a></p>
-<a href="#對-template-specialiaztion-的實作宣告-inline"><h3 id="對-template-specialiaztion-的實作宣告-inline"><span class="hanchor" ariaLabel="Anchor"># </span>對 Template Specialiaztion 的實作宣告 inline</h3></a>
-<p>這其實相當有趣，因為 function 是否 inline 取決於 compiler，即使宣告 inline 也不一定代表 compiler 會真的對 function inline  (<a href="/second-brain/notes/Focus/C++/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96" rel="noopener" class="internal-link" data-src="/second-brain/notes/Focus/C++/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96">了解 Inline 的裡裡外外</a>)。
-那麼為何在 hpp 內對  Template Specialiaztion definition 宣告 inline 能解決問題?  
-<a href="https://stackoverflow.com/a/48403514" rel="noopener">Stackoverflow 的回答</a> 給出了解答。</p>
-<p>根據  C++ standard 條目 3.2:4 (
-<a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3690.pdf" rel="noopener">file</a> P49 One definition rule)，可以拆成兩段來看:</p>
-<blockquote>
-<p>(1) Every program shall contain exactly one definition of every non-inline function or variable that is odr-used in that program; no diagnostic required. The definition can appear explicitly in the program, it can be found in the standard or a user-defined library, or (when appropriate) it is implicitly defined (see 12.1, 12.4 and 12.8).
-(2) An inline function shall be defined in every translation unit in which it is <a href="/second-brain/notes/Focus/C++/ODR-use" rel="noopener" class="internal-link" data-src="/second-brain/notes/Focus/C++/ODR-use">ODR use</a>.</p>
-</blockquote>
-<p>當 Specialiaztion 不是 inline 的時候，它被當作 non inline function 對待，而對於 non inline function/variable，在 program 中只應該擁有一份 definition。因此兩次 include 同一份 header 造成了問題: 多個 definition (include 的本質就是把 hpp 貼到 cpp 裡面)。</p>
-<p>當 Specialiaztion 是 inline 的時候，Specialiaztion 滿足了條目的第二部分: inline function 必須被定義於每一個使用到的 translation unit，也就是該則回答裡面提到的 :</p>
-<blockquote>
-<p>an inline function must be defined in each module using the function.</p>
-</blockquote>
-<p>這或許也可以反向說明，在 <a href="/second-brain/notes/Focus/C++/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96" rel="noopener" class="internal-link" data-src="/second-brain/notes/Focus/C++/%E4%BA%86%E8%A7%A3-Inline-%E7%9A%84%E8%A3%A1%E8%A3%A1%E5%A4%96%E5%A4%96">了解 Inline 的裡裡外外</a> 環節中提到的，只有 hpp 中含有實作的 function 可以有隱性 inline 申請，因為想要 inline 一個 function，在編譯期間，每一個使用到這個 function 的 translate unit 都需要有這個 function。當實作抽離，這個條件就沒辦法達成。</p>
-<a href="#resources"><h2 id="resources"><span class="hanchor" ariaLabel="Anchor"># </span>Resources</h2></a>
-<ul>
-<li>
-<a href="https://wiki.sei.cmu.edu/confluence/display/cplusplus/DCL60-CPP.&#43;Obey&#43;the&#43;one-definition&#43;rule" rel="noopener">Examples for ORD</a></li>
-<li></li>
-</ul>
+<a href="#related-content"><h2 id="related-content"><span class="hanchor" ariaLabel="Anchor"># </span>Related Content</h2></a>
+<p><a href="/second-brain/notes/Focus/C++/%E9%80%8F%E9%81%8E%E9%97%9C%E9%8D%B5%E5%AD%97-inline-%E8%A7%A3%E6%B1%BA-Template-Specilization-%E4%B8%AD%E7%9A%84-Multiple-Definition" rel="noopener" class="internal-link" data-src="/second-brain/notes/Focus/C++/%E9%80%8F%E9%81%8E%E9%97%9C%E9%8D%B5%E5%AD%97-inline-%E8%A7%A3%E6%B1%BA-Template-Specilization-%E4%B8%AD%E7%9A%84-Multiple-Definition">透過關鍵字 inline 解決 Template Specilization 中的 Multiple Definition</a></p>
 
 
     </article>

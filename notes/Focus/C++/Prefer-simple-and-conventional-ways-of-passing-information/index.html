@@ -8,10 +8,10 @@
   <meta charset="UTF-8" />
   <meta
     name="description"
-    content="如何決定 Function Signature 的長相  headings: 資料結構 copying 跟 moving 的成本 row: parameter 的性質  In &amp; retain copy: 在 function 內部會發生 copy In &amp; retain &ldquo;copy&rdquo;: Moved-from means that it is in a valid but not nearer specified state."
+    content="如何決定 Function Signature 使用 By Copy, Move, 或 Reference  headings: 資料結構 copying 跟 moving 的成本 row: parameter 的性質  In &amp; retain copy: 在 function 內部會發生 copy In &amp; retain &ldquo;copy&rdquo;: Moved-from means that it is in a valid but not nearer specified state."
   />
   <meta property="og:title" content="Prefer simple and conventional ways of passing information">
-  <meta property="og:description" content="如何決定 Function Signature 的長相  headings: 資料結構 copying 跟 moving 的成本 row: parameter 的性質  In &amp; retain copy: 在 function 內部會發生 copy In &amp; retain &ldquo;copy&rdquo;: Moved-from means that it is in a valid but not nearer specified state.">
+  <meta property="og:description" content="如何決定 Function Signature 使用 By Copy, Move, 或 Reference  headings: 資料結構 copying 跟 moving 的成本 row: parameter 的性質  In &amp; retain copy: 在 function 內部會發生 copy In &amp; retain &ldquo;copy&rdquo;: Moved-from means that it is in a valid but not nearer specified state.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
   <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Focus/C&#43;&#43;/Prefer-simple-and-conventional-ways-of-passing-information/">
@@ -19,7 +19,7 @@
   <meta property="og:height" content="200">
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Prefer simple and conventional ways of passing information" />
-  <meta name="twitter:description" content="如何決定 Function Signature 的長相  headings: 資料結構 copying 跟 moving 的成本 row: parameter 的性質  In &amp; retain copy: 在 function 內部會發生 copy In &amp; retain &ldquo;copy&rdquo;: Moved-from means that it is in a valid but not nearer specified state." />
+  <meta name="twitter:description" content="如何決定 Function Signature 使用 By Copy, Move, 或 Reference  headings: 資料結構 copying 跟 moving 的成本 row: parameter 的性質  In &amp; retain copy: 在 function 內部會發生 copy In &amp; retain &ldquo;copy&rdquo;: Moved-from means that it is in a valid but not nearer specified state." />
   <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
   
     
@@ -130,13 +130,13 @@
     const PRODUCTION =  true 
     const BASE_URL = "https://brainynight.github.io/second-brain/"
     const fetchData = Promise.all([
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.a0b3f347ae9c1aab372d2b99a4f357b0.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.9ba02b1bf144fa4c812e1d8d3f88506b.min.json")
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.22d0811d7162975892790ada9d644107.min.json")
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.ee9886aef859166cbd6acf1be82f0744.min.json")
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
@@ -307,7 +307,7 @@
       <h1>Prefer simple and conventional ways of passing information</h1>
       <p class="meta">
         Last updated 
-Feb 23, 2024
+May 5, 2024
 
  
           
@@ -330,7 +330,7 @@ Feb 23, 2024
         <summary>Table of Contents</summary>
         <nav id="TableOfContents">
   <ol>
-    <li><a href="#如何決定-function-signature-的長相">如何決定 Function Signature 的長相</a></li>
+    <li><a href="#如何決定-function-signature-使用-by-copy-move-或-reference">如何決定 Function Signature 使用 By Copy, Move, 或 Reference</a></li>
     <li><a href="#in-parameter">&ldquo;in&rdquo; parameter</a></li>
     <li><a href="#forward-parameter">&ldquo;forward&rdquo; Parameter</a></li>
     <li><a href="#in-out-parameters">&ldquo;in-out&rdquo; Parameters</a></li>
@@ -653,7 +653,7 @@ Feb 23, 2024
 
 
 
-<a href="#如何決定-function-signature-的長相"><h2 id="如何決定-function-signature-的長相"><span class="hanchor" ariaLabel="Anchor"># </span>如何決定 Function Signature 的長相</h2></a>
+<a href="#如何決定-function-signature-使用-by-copy-move-或-reference"><h2 id="如何決定-function-signature-使用-by-copy-move-或-reference"><span class="hanchor" ariaLabel="Anchor"># </span>如何決定 Function Signature 使用 By Copy, Move, 或 Reference</h2></a>
 <ul>
 <li>headings: 資料結構 copying 跟 moving 的成本</li>
 <li>row: parameter 的性質

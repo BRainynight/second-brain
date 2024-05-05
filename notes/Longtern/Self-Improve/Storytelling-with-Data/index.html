@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta
+    name="description"
+    content="探索行分析 vs 解釋型分析  探索型分析: 拿到第一手資料，理解資料、判斷什麼內容是有價值時的工具。 (參考: 數據之美 Nanthan Yau) 解釋型分析: 只要是上台，就是這類。目的是告訴別人「你看到什麼 (你的 Insight) 」，而不是讓別人跟著你一起，再研究資料一番，做出他們自己的結論。 本書強調於解釋型分析  演講的共通條件 Who: 溝通對象是誰? 鎖定觀眾範圍，判斷關鍵決策者"
+  />
+  <meta property="og:title" content="Storytelling with Data">
+  <meta property="og:description" content="探索行分析 vs 解釋型分析  探索型分析: 拿到第一手資料，理解資料、判斷什麼內容是有價值時的工具。 (參考: 數據之美 Nanthan Yau) 解釋型分析: 只要是上台，就是這類。目的是告訴別人「你看到什麼 (你的 Insight) 」，而不是讓別人跟著你一起，再研究資料一番，做出他們自己的結論。 本書強調於解釋型分析  演講的共通條件 Who: 溝通對象是誰? 鎖定觀眾範圍，判斷關鍵決策者">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://brainynight.github.io/second-brain/icon.png">
+  <meta property="og:url" content="https://brainynight.github.io/second-brain/notes/Longtern/Self-Improve/Storytelling-with-Data/">
+  <meta property="og:width" content="200">
+  <meta property="og:height" content="200">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Storytelling with Data" />
+  <meta name="twitter:description" content="探索行分析 vs 解釋型分析  探索型分析: 拿到第一手資料，理解資料、判斷什麼內容是有價值時的工具。 (參考: 數據之美 Nanthan Yau) 解釋型分析: 只要是上台，就是這類。目的是告訴別人「你看到什麼 (你的 Insight) 」，而不是讓別人跟著你一起，再研究資料一番，做出他們自己的結論。 本書強調於解釋型分析  演講的共通條件 Who: 溝通對象是誰? 鎖定觀眾範圍，判斷關鍵決策者" />
+  <meta name="twitter:image" content="https://brainynight.github.io/second-brain/icon.png">
+  
+    
+  
+
+  <title>
+    Storytelling with Data
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+  
+  
+  
+  
+  <link rel="shortcut icon" type="image/png"  href="https://brainynight.github.io/second-brain//icon.png" />
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <link href="https://brainynight.github.io/second-brain/styles.7d481813bbe4f502154ba7bb5eb73d2d.min.css" rel="stylesheet" />
+
+  
+  <link href="https://brainynight.github.io/second-brain/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css" rel="stylesheet" id="theme-link">
+
+   
+  
+  
+  
+  
+  <script src="https://brainynight.github.io/second-brain/js/darkmode.ad5fa1629664e806f9e2c4589974fc3d.min.js"></script>
+  
+  
+  
+  <script src="https://brainynight.github.io/second-brain/js/util.00639692264b21bc3ee219733d38a8be.min.js"></script>
+  
+  
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"
+        integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx"
+        crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js"
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+        crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js"
+        integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A"
+        crossorigin="anonymous"></script>
+
+
+  
+  
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.2.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.2.1"></script>
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/popover.aa9bc99c7c38d3ae9538f218f1416adb.min.js"></script>
+
+  
+  
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js"></script>
+  
+
+  
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js"></script>
+  
+
+  
+  
+  <script defer src="https://brainynight.github.io/second-brain/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js"></script>
+  
+
+  
+   
+  <script>
+    const SEARCH_ENABLED =  false 
+    const LATEX_ENABLED =  true 
+    const PRODUCTION =  true 
+    const BASE_URL = "https://brainynight.github.io/second-brain/"
+    const fetchData = Promise.all([
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/linkIndex.9ba02b1bf144fa4c812e1d8d3f88506b.min.json")
+            .then(data => data.json())
+            .then(data => ({
+              index: data.index,
+              links: data.links,
+            })),
+          fetch("https:\/\/brainynight.github.io\/second-brain\/indices\/contentIndex.ee9886aef859166cbd6acf1be82f0744.min.json")
+            .then(data => data.json()),
+        ])
+        .then(([{index, links}, content]) => ({
+          index,
+          links,
+          content,
+        }))
+
+      const render = () => {
+      
+
+      const siteBaseURL = new URL(BASE_URL);
+      const pathBase = siteBaseURL.pathname;
+      const pathWindow = window.location.pathname;
+      const isHome = pathBase == pathWindow;
+
+      addCopyButtons();
+      
+
+      addTitleToCodeBlocks();
+      
+
+      addCollapsibleCallouts();
+      
+
+      
+      initPopover(
+        "https://brainynight.github.io/second-brain",
+         true 
+      )
+      
+
+      
+      const footer = document.getElementById("footer")
+      if (footer) {
+        const container = document.getElementById("graph-container")
+        
+        if (!container) return requestAnimationFrame(render)
+        
+        container.textContent = ""
+
+        const drawGlobal = isHome &&  false ;
+        drawGraph(
+            "https://brainynight.github.io/second-brain",
+            drawGlobal,
+            [{"/notes/Project/Effective-C++-Series/Effective-C++-Outline":"#4388cc"}],
+            drawGlobal ? {"centerForce":1,"depth":-1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.5,"linkDistance":1,"opacityScale":3,"repelForce":1,"scale":1.4} : {"centerForce":1,"depth":1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.6,"linkDistance":1,"opacityScale":3,"repelForce":2,"scale":1.2}
+          );
+
+        }
+      
+
+      
+        var els = document.getElementsByClassName("mermaid");
+        if (els.length > 0) {
+          import('https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs').then(
+            (obj) => {
+              
+              
+              obj.default.init();
+            }
+          )
+        }
+      
+      
+      
+      function clickHandler(evt) {
+        const target = evt.target 
+        const classNames = target.className.split(" ")
+        const broken = classNames.includes("broken")
+        const internal = classNames.includes("internal-link")
+        plausible("Link Click", {
+          props: {
+            href: target.href,
+            broken,
+            internal,
+            graph: false,
+          }
+        })
+      }
+
+      const links = document.querySelectorAll("a")
+      for (link of links) {
+        if (link.className.includes("root-title")) {
+          link.addEventListener('click', clickHandler, {once: true})
+        }
+      }
+    }
+
+    const init = (doc = document) => {
+      
+      addCopyButtons();
+      
+
+      addTitleToCodeBlocks();
+      renderMathInElement(doc.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+        ],
+        macros: {
+          '’': "'"
+        },
+        throwOnError : false
+      });
+      
+    };
+  </script>
+  
+  
+  <script type="module">
+    import { attachSPARouting } from "https:\/\/brainynight.github.io\/second-brain\/js\/router.d6fe6bd821db9ea97f9aeefae814d8e7.min.js"
+    attachSPARouting(init, render)
+  </script>
+  
+  
+  <script defer data-domain="brainynight.github.io/second-brain" src="https://plausible.io/js/script.js"></script>
+  <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+</head>
+
+
+<body>
+<div id="search-container">
+  <div id="search-space">
+    <input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search"
+      placeholder="Search for something..." dir="">
+    <div id="results-container">
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"
+  integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin="anonymous" defer></script>
+
+<script defer src="https://brainynight.github.io/second-brain/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js"></script>
+
+
+
+<div class="singlePage">
+    
+    <header>
+    
+    <h1 id="page-title"><a class="root-title" href="https://brainynight.github.io/second-brain/">🪴 Digital Note</a></h1>
+    <div class="spacer"></div>
+    <div id="search-icon">
+      <p>Search</p>
+      <svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg>
+    </div>
+    <div class='darkmode'>
+    <input class='toggle' id='darkmode-toggle' type='checkbox' tabindex="-1">
+    <label id="toggle-label-light" for='darkmode-toggle' tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35;" xml:space="preserve">
+            <title>Light Mode</title>
+            <path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z" />
+        </svg>
+    </label>
+    <label id="toggle-label-dark" for='darkmode-toggle' tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'" xml:space="preserve">
+            <title>Dark Mode</title>
+            <path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z" />
+        </svg>
+    </label>
+</div>
+</header>
+
+
+    <article>
+      <h1>Storytelling with Data</h1>
+      <p class="meta">
+        Last updated 
+May 5, 2024
+
+ 
+          
+
+      </p>
+      <ul class="tags">
+          
+          <li><a href="https://brainynight.github.io/second-brain/tags/empty/">
+          
+            Empty
+          
+            </a>
+           </li>
+          
+      </ul>
+      
+
+<aside class="mainTOC">
+    <details open >
+        <summary>Table of Contents</summary>
+        <nav id="TableOfContents">
+  <ol>
+    <li><a href="#探索行分析-vs-解釋型分析">探索行分析 vs 解釋型分析</a></li>
+    <li><a href="#演講的共通條件">演講的共通條件</a>
+      <ol>
+        <li><a href="#who-溝通對象是誰">Who: 溝通對象是誰?</a></li>
+        <li><a href="#what-你希望觀眾知道什麼做出什麼行動">What: 你希望觀眾知道什麼，做出什麼行動?</a></li>
+        <li><a href="#how-如何使用資料佐證訴說你的觀點">How: 如何使用資料佐證、訴說你的觀點</a></li>
+      </ol>
+    </li>
+    <li><a href="#有效的視覺元素">有效的視覺元素</a>
+      <ol>
+        <li><a href="#萬惡的圓餅圖">萬惡的圓餅圖?</a></li>
+        <li><a href="#避免雙-y-軸">避免雙 Y 軸</a></li>
+      </ol>
+    </li>
+    <li><a href="#collect">Collect!</a></li>
+  </ol>
+</nav>
+    </details>
+</aside>
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+<a href="#探索行分析-vs-解釋型分析"><h2 id="探索行分析-vs-解釋型分析"><span class="hanchor" ariaLabel="Anchor"># </span>探索行分析 vs 解釋型分析</h2></a>
+<ul>
+<li>探索型分析: 拿到第一手資料，理解資料、判斷什麼內容是有價值時的<strong>工具</strong>。 (參考: 數據之美 Nanthan Yau)</li>
+<li>解釋型分析: 只要是上台，就是這類。目的是告訴別人「你看到什麼 (你的 Insight) 」，而不是讓別人跟著你一起，再研究資料一番，做出他們自己的結論。
+本書強調於解釋型分析</li>
+</ul>
+<a href="#演講的共通條件"><h2 id="演講的共通條件"><span class="hanchor" ariaLabel="Anchor"># </span>演講的共通條件</h2></a>
+<a href="#who-溝通對象是誰"><h3 id="who-溝通對象是誰"><span class="hanchor" ariaLabel="Anchor"># </span>Who: 溝通對象是誰?</h3></a>
+<p>鎖定觀眾範圍，判斷關鍵決策者</p>
+<a href="#what-你希望觀眾知道什麼做出什麼行動"><h3 id="what-你希望觀眾知道什麼做出什麼行動"><span class="hanchor" ariaLabel="Anchor"># </span>What: 你希望觀眾知道什麼，做出什麼行動?</h3></a>
+<a href="#行動"><h4 id="行動"><span class="hanchor" ariaLabel="Anchor"># </span>行動</h4></a>
+<p>任何簡報必須有一個目的: 將某樣資訊傳達給觀眾，讓觀眾持有特定的行動。如果說不出你的目的，該思考這次的溝通是否有此必要。</p>
+<p><strong>思維誤區</strong>: 講者認為聽眾比較清楚狀況，是否根據簡報的資訊行動，應由他們決定?</p>
+<ul>
+<li>給出建議，勝於複述一手資料: 錯! 只要分析、交流資料的是你，最清楚狀況的就是你，必須自己詮釋資料。即使抓錯重點、給了錯誤的建議，激起有效的相關討論也是貢獻。</li>
+<li>提出多種可行的方向，激發討論: 不方便明說立場或建議行動，提出多種可行的方向，可以使討論有基礎。如果單純展示資料，聽眾當下可能沒有想法，也沒有討論的產生。</li>
+</ul>
+<a href="#機制媒介"><h4 id="機制媒介"><span class="hanchor" ariaLabel="Anchor"># </span>機制/媒介?</h4></a>
+<ul>
+<li>現場簡報: 主講人控制力高，內容的詳盡程度可以較低，因為口頭能補足觀眾的提問。</li>
+<li>email: 你無法直接對觀眾做出回應，文件必須針對可能有的問題進行說明。</li>
+</ul>
+<a href="#how-如何使用資料佐證訴說你的觀點"><h3 id="how-如何使用資料佐證訴說你的觀點"><span class="hanchor" ariaLabel="Anchor"># </span>How: 如何使用資料佐證、訴說你的觀點</h3></a>
+<a href="#不要掠過不利的資料"><h4 id="不要掠過不利的資料"><span class="hanchor" ariaLabel="Anchor"># </span>不要掠過不利的資料</h4></a>
+<p>呈現單方面的資料會誤導聽眾，應注意正反面資料的平衡。</p>
+<a href="#搞懂脈絡"><h4 id="搞懂脈絡"><span class="hanchor" ariaLabel="Anchor"># </span>搞懂脈絡</h4></a>
+<p>你需要先搞懂/打聽溝通對象的相關資訊，也許可以直接問對方，以便了解整體情形</p>
+<ol>
+<li>哪些必要的相關資料</li>
+<li>決策者? 我們對他的認識?</li>
+<li>聽眾有何先入為主的偏見，讓他們支持或反對我們的訊息?</li>
+<li>什麼可以加強論點的資料? 聽眾是否看過</li>
+<li>哪裡有風險: 什麼因素會削弱我們的論點，需要主動提出釐清潛在的疑問?</li>
+<li>理想的成功結果?</li>
+<li>時間有限 (3 min)，只能用一句話傳達，你要說什麼。</li>
+</ol>
+<ul>
+<li>先畫靶再射箭: 搞清楚討論的目的，應該達到的結果。</li>
+<li>為訊息套上限制: 核心想法 (big idea) 、3 分鐘故事</li>
+</ul>
+<a href="#核心想法-big-idea-的要素"><h4 id="核心想法-big-idea-的要素"><span class="hanchor" ariaLabel="Anchor"># </span>核心想法 (Big Idea) 的要素</h4></a>
+<ol>
+<li>能夠闡明你獨特的觀點</li>
+<li>能夠說明風險的存在</li>
+<li>要是完整的句子</li>
+</ol>
+<a href="#分鏡腳本"><h4 id="分鏡腳本"><span class="hanchor" ariaLabel="Anchor"># </span>分鏡腳本</h4></a>
+<p>用紙筆、白板、便利貼，迅速的為簡報分鏡腳本畫草稿。不要被簡報軟體定型了!</p>
+<a href="#有效的視覺元素"><h2 id="有效的視覺元素"><span class="hanchor" ariaLabel="Anchor"># </span>有效的視覺元素</h2></a>
+<ol>
+<li>數據少，用純文字強調。</li>
+<li>表格的主角是<strong>佐證論點</strong>的資料
+<ol>
+<li>弱化框線，甚至無框線，強化支持資料。</li>
+<li>熱區圖: 用色彩飽和度強調數字的相對規模</li>
+</ol>
+</li>
+<li>圖的四種類別
+<ol>
+<li>點型圖: Scatter polt 散佈圖</li>
+<li>線型圖: 折線圖、斜線圖</li>
+<li>條狀圖: 橫條、直條圖、橫直堆疊圖</li>
+<li>區域圖: 看巨大的差異</li>
+</ol>
+</li>
+</ol>
+<a href="#萬惡的圓餅圖"><h3 id="萬惡的圓餅圖"><span class="hanchor" ariaLabel="Anchor"># </span>萬惡的圓餅圖?</h3></a>
+<p>作者在書中以「萬惡」評論圓餅圖，原因是不容易判斷相對大小。但她在 Podcast 當中提到，並非不能用，在強調巨大的差異時特別適合。然而針對這種用途，也有區域圖、或直接用強化的文字表達 (1% vs. 99%)，使她不會選擇圓餅圖。</p>
+<a href="#避免雙-y-軸"><h3 id="避免雙-y-軸"><span class="hanchor" ariaLabel="Anchor"># </span>避免雙 Y 軸</h3></a>
+<p>避免左右兩個 Y 軸 (通常是一組直條圖、一組折線圖) ，有兩種替代方案</p>
+<ol>
+<li>直接標記折線圖上每個點的數字</li>
+<li>分成上下兩層，但 Y 軸統一在左邊，共用 X 軸。</li>
+</ol>
+<a href="#collect"><h2 id="collect"><span class="hanchor" ariaLabel="Anchor"># </span>Collect!</h2></a>
+<ul>
+<li>激發行動的字眼 P37</li>
+</ul>
+
+
+    </article>
+    
+
+<hr/>
+
+
+<div class="page-end" id="footer">
+    <div class="backlinks-container">
+        <h3>Backlinks</h3>
+<ul class="backlinks">
+    
+    
+    
+    
+    
+    
+    
+    <li>
+      No backlinks found
+    </li>
+    
+</ul>
+
+    </div>
+    <div>
+        <script
+  src="https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js"
+  integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI="
+  crossorigin="anonymous"
+></script>
+<h3>Interactive Graph</h3>
+<div id="graph-container"></div>
+<style>
+  :root {
+    --g-node: var(--secondary);
+    --g-node-active: var(--primary);
+    --g-node-inactive: var(--visited);
+    --g-link: var(--outlinegray);
+    --g-link-active: #5a7282;
+  }
+</style>
+
+<script src="https://brainynight.github.io/second-brain/js/graph.6579af7b10c818dbd2ca038702db0224.js"></script>
+
+    </div>
+</div>
+
+
+
+
+
+
+<div id="contact_buttons">
+    <footer>
+        
+        
+        <p>Made by Judy using <a href="https://github.com/jackyzha0/quartz">Quartz</a>, © 2024</p>
+        <ul>
+            
+            <li><a href="https://brainynight.github.io/second-brain/">Home</a></li>
+            <li><a href="https://github.com/BRainynight">GitHub</a></li></ul>
+    </footer>
+</div>
+
+
+</div>
+</body>
+</html>
