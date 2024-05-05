@@ -4,7 +4,7 @@ date: 2024-01-14 21:41
 tags:
   - cpp
 ---
-## 如何決定 Function Signature 的長相
+## 如何決定 Function Signature 使用 By Copy, Move, 或 Reference
 
 - headings: 資料結構 copying 跟 moving 的成本
 - row: parameter 的性質

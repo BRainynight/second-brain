@@ -9,7 +9,7 @@ tags:
 這個方法是 Design Pattern [[Template Method]] 的表現形式，而跟 C++ Template 無關。
 
 ## Non-Virtual Interface (NVI)
-NVI 主張 Virtual 應為 Private，如果有暴露的需求，則應該以一個 Public non-virtual function (as a *wrapper*) 呼叫 Private virtual function。
+NVI 主張 Virtual 應為 Private (Private virtual function)，如果有暴露的需求，則應該以一個 Public non-virtual function (as a *wrapper*) 呼叫 Private virtual function。
 
 ## wrapper function
 Wrapper 的優點可以把一些呼叫 virtual 前後需要處理的事情藏起來，確保這些事情必定會執行: 

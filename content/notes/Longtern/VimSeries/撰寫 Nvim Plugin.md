@@ -1,3 +1,10 @@
+---
+title: 撰寫 Nvim Plugin
+date: 2024-05-05 12:07
+tags:
+  - food
+---
+
 Nvim 有建 Python interface，需要下載模組 `pynvim`。可以下指令 `:h remote-plugin` 看官方給的教學，`:h python` 也有其他資訊。
 
 

@@ -1,4 +1,10 @@
-# Asyncio 
+---
+title: Asyncio
+date: 2024-05-05 12:06
+tags:
+  - food
+---
+
 
 在 [Asyncio](https://brainynight.github.io/posts/2022-10-23-python-asyncio) 這篇簡介的文章中，有一個簡單的例子如下。本文將針對此例仔細探討。
 

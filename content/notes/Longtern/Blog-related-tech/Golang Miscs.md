@@ -1,3 +1,10 @@
+---
+title: Golang Miscs
+date: 2024-05-05 12:05
+tags:
+  - empty
+---
+
 # Golang
 
 
